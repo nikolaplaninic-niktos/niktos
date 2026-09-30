@@ -1,0 +1,14 @@
+NEUE WEBSITE-ANFRAGE: {{topic}}
+==============================================
+
+{{rows}}
+
+Eingegangen:          {{datum}}
+
+----------------------------------------------
+Kunde direkt kontaktieren:
+WhatsApp:  {{wa_link}}
+Anrufen:   {{tel_link}}
+E-Mail:    {{email}}
+
+Gesendet über {{site_url}}

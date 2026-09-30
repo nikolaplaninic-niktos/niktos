@@ -1,0 +1,56 @@
+{
+ "photos": {
+  "kabicDesktop": {
+   "name": "referenz-kabic-hausmeister-gartenpflege-website",
+   "alt": "Website von Kabic Hausmeister & Gartenpflege – erstellt von Niktos Webdesign Ludwigsburg",
+   "widths": [
+    480,
+    800,
+    1200,
+    1440
+   ],
+   "ratio": 0.625
+  },
+  "kabicMobile": {
+   "name": "referenz-kabic-hausmeister-mobil",
+   "alt": "Mobile Ansicht der Website von Kabic Hausmeister & Gartenpflege",
+   "widths": [
+    480,
+    780
+   ],
+   "ratio": 2.1641
+  },
+  "spatzennestDesktop": {
+   "name": "referenz-kinderbetreuung-spatzennest-website",
+   "alt": "Website der Kinderbetreuung Spatzennest UG – Webdesign von Niktos",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "ratio": 0.4521
+  },
+  "komlabDesktop": {
+   "name": "referenz-projekt-komlab-website",
+   "alt": "Website von Projekt KomLab „Wir helfen Familien“ – Webdesign von Niktos",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "ratio": 0.4569
+  }
+ },
+ "og": {
+  "og-niktos-webdesign-ludwigsburg.jpg": true,
+  "og-preise-webdesign.jpg": true,
+  "og-blog-professionelle-website.jpg": true,
+  "og-seo-ki-sichtbarkeit.jpg": true
+ },
+ "emailLogo": {
+  "width": 272,
+  "height": 120
+ }
+}

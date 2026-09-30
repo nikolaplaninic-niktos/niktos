@@ -1,0 +1,103 @@
+# =====================================================================
+# Niktos – Hostinger (Apache / LiteSpeed)
+# Deployed from the `deploy` branch (staging: public_html/novi → novi.*, live: public_html).
+# Source: src/static/.htaccess – never edit on the server.
+# =====================================================================
+Options -Indexes
+DirectoryIndex index.html index.php
+ErrorDocument 404 /404.html
+AddDefaultCharset utf-8
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # --- 0. Staging host (novi.*): flag it so section 5 sends X-Robots-Tag: noindex
+  RewriteCond %{HTTP_HOST} ^novi\. [NC]
+  RewriteRule ^ - [E=NK_STAGING:1]
+
+  # --- 1. Canonical host: HTTPS + non-www -------------------------------
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301,NE]
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteCond %{HTTP:X-Forwarded-SSL} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
+  # --- 2. Legacy WordPress URLs (301, keeps rankings) -------------------
+  RewriteCond %{QUERY_STRING} (^|&)(p|page_id|cat|author|attachment_id)=[0-9]+ [NC]
+  RewriteRule ^$ /? [L,R=301]
+  RewriteCond %{QUERY_STRING} (^|&)s=
+  RewriteRule ^$ /? [L,R=301]
+
+  RewriteRule ^cookie-richtlinie-eu/?$ /datenschutzerklaerung/ [L,R=301]
+  RewriteRule ^(sitemap_index|page-sitemap|post-sitemap|category-sitemap|metform-form-sitemap|wp-sitemap[a-z0-9_-]*)\.xml$ /sitemap.xml [L,R=301,NC]
+  RewriteRule ^(wp-content|wp-admin|wp-includes|wp-json)(/.*)?$ / [L,R=301,NC]
+  RewriteRule ^(wp-login\.php|xmlrpc\.php|wp-cron\.php)$ / [L,R=301,NC]
+  RewriteRule ^(.*/)?feed(/.*)?$ / [L,R=301,NC]
+  RewriteRule ^home/?$ / [L,R=301]
+  RewriteRule ^metform-form/.*$ /kontakt/ [L,R=301,NC]
+
+  # Friendly aliases
+  RewriteRule ^(webdesign|website-erstellen|website-erstellung)/?$ /webdesign-ludwigsburg/ [L,R=301]
+  RewriteRule ^(seo|suchmaschinenoptimierung|ki-sichtbarkeit)/?$ /seo-ludwigsburg/ [L,R=301]
+  RewriteRule ^(wartung|hosting|support)/?$ /wartung-hosting/ [L,R=301]
+  RewriteRule ^(pakete|preis|kosten)/?$ /preise/ [L,R=301]
+  RewriteRule ^(portfolio|projekte)/?$ /referenzen/ [L,R=301]
+  RewriteRule ^(ueber-uns|about)/?$ /ueber-mich/ [L,R=301]
+  RewriteRule ^(anfrage|projekt|start)/?$ /projekt-anfrage/ [L,R=301]
+  RewriteRule ^(analyse|website-analyse)/?$ /website-check/ [L,R=301]
+
+  # --- 3. Trailing slash for folder URLs ---------------------------------
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^(.*[^/])$ /$1/ [L,R=301]
+</IfModule>
+
+# --- 4. Protect private files ---------------------------------------------
+<FilesMatch "^(config|niktos-config)\.php$|\.(md|lock|log|gitignore|txt\.bak)$">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 /\.git
+RedirectMatch 404 ^/mail-preview
+
+# --- 5. Security headers --------------------------------------------------
+<IfModule mod_setenvif.c>
+  SetEnvIfNoCase Host "^novi\." NK_STAGING=1
+</IfModule>
+<IfModule mod_headers.c>
+  Header always set X-Robots-Tag "noindex, nofollow" env=NK_STAGING
+  Header always set X-Robots-Tag "noindex, nofollow" env=REDIRECT_NK_STAGING
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+  Header unset X-Powered-By
+</IfModule>
+
+# --- 6. Compression (Brotli if available, otherwise gzip) -----------------
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml application/xml application/javascript application/json application/manifest+json image/svg+xml
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/javascript application/json application/manifest+json image/svg+xml
+</IfModule>
+
+# --- 7. Caching -----------------------------------------------------------
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|php|xml|txt|webmanifest)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(png|svg|ico)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+AddType font/woff2 .woff2
+AddType application/manifest+json .webmanifest
+AddType image/webp .webp

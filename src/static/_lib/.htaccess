@@ -1,0 +1,2 @@
+# PHP libraries are included by kontakt.php only – never served directly.
+Require all denied

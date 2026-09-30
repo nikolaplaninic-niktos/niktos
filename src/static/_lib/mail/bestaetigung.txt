@@ -1,0 +1,25 @@
+Hallo {{name}},
+
+vielen Dank für Ihre Anfrage! Ich schaue mir Ihre Angaben persönlich an und melde mich innerhalb von 24 Stunden (werktags) bei Ihnen.
+
+So geht es weiter:
+1. Kurzes, kostenloses Erstgespräch (Telefon, WhatsApp oder Video)
+2. Ihr Festpreis-Angebot mit Seitenstruktur und Zeitplan
+3. Start – und in wenigen Wochen sind Sie online
+
+Ihre Angaben:
+{{rows}}
+
+Es eilt? Dann erreichen Sie mich direkt:
+WhatsApp:  https://wa.me/491622403682
+Telefon:   0162 2403682
+E-Mail:    info@niktos.com
+
+Beste Grüße
+Nikola Planinić
+Niktos · Webdesign & SEO aus Ludwigsburg
+
+--
+Niktos Nikola Planinić · 71642 Ludwigsburg
+{{site_url}}
+Diese E-Mail wurde automatisch erstellt. Sie können direkt auf diese Nachricht antworten.

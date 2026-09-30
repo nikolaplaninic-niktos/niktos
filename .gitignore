@@ -1,0 +1,19 @@
+# Dependencies & build output (dist/ is published via the `deploy` branch)
+node_modules/
+dist/
+.deploy/
+
+# Secrets – never commit
+config.php
+niktos-config.php
+.env
+*.local.php
+
+# QA / OS noise
+qa/
+*.log
+.DS_Store
+Thumbs.db
+
+# Generated e-mail preview (npm run mail)
+mail-preview/
