@@ -26,41 +26,21 @@
     reveals.forEach((el) => io.observe(el));
   } else reveals.forEach((el) => el.classList.add('is-in'));
 
-  /* ---------- Hero headline: word-by-word entrance ---------- */
-  if (!reduce) d.querySelectorAll('[data-split]').forEach((h) => {
-    let i = 0;
-    // gradient text (background-clip) doesn't survive transformed children → re-apply .grad per word
-    const walk = (node, grad) => {
-      [...node.childNodes].forEach((n) => {
-        if (n.nodeType === 3) {
-          const frag = d.createDocumentFragment();
-          n.textContent.split(/(\s+)/).forEach((part) => {
-            if (!part) return;
-            if (/^\s+$/.test(part)) { frag.appendChild(d.createTextNode(part)); return; }
-            const w = d.createElement('span'); w.className = 'w';
-            const s = d.createElement('span'); s.textContent = part; s.style.animationDelay = (0.06 * i++) + 's';
-            if (grad) s.className = 'grad';
-            w.appendChild(s); frag.appendChild(w);
-          });
-          n.replaceWith(frag);
-        } else if (n.nodeType === 1 && n.tagName !== 'BR') {
-          const g = grad || n.classList.contains('grad');
-          if (n.classList.contains('grad')) n.classList.remove('grad');
-          walk(n, g);
-        }
-      });
+  /* ---------- Typing headline (like the old niktos.com) ---------- */
+  // The first word is in the HTML (SEO + no-JS); the others are typed in and out.
+  d.querySelectorAll('[data-type]').forEach((el) => {
+    const words = el.dataset.type.split('|');
+    if (reduce || words.length < 2) return;
+    let w = 0, i = words[0].length, del = true;
+    const tick = () => {
+      const word = words[w];
+      if (del) { i--; el.textContent = word.slice(0, i); if (i === 0) { del = false; w = (w + 1) % words.length; } setTimeout(tick, 45); return; }
+      i++; el.textContent = words[w].slice(0, i);
+      if (i === words[w].length) { del = true; setTimeout(tick, 2600); return; }
+      setTimeout(tick, 85);
     };
-    walk(h); h.classList.add('split-words');
+    setTimeout(tick, 3200);
   });
-
-  /* ---------- Spotlight on cards (follows the cursor) ---------- */
-  if (mq('(hover: hover)')) d.addEventListener('pointermove', (e) => {
-    const c = e.target.closest && e.target.closest('[data-spot]');
-    if (!c) return;
-    const r = c.getBoundingClientRect();
-    c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-    c.style.setProperty('--my', (e.clientY - r.top) + 'px');
-  }, { passive: true });
 
   /* ---------- Count-up numbers ---------- */
   const counters = d.querySelectorAll('[data-count-to]');

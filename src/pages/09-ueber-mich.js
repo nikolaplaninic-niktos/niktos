@@ -38,10 +38,10 @@ ${C.pageHero({
       <p class="signature">— ${site.owner}</p>
 
       <div class="grid grid--2" style="margin-top:40px">
-        <div class="card" data-spot><span class="card__ico">${icon('handshake')}</span><h3>Ehrlich</h3><p class="mb-0">Ich sage Ihnen, was Sie brauchen – und was nicht. Auch wenn das bedeutet, dass ich weniger verkaufe.</p></div>
-        <div class="card" data-spot><span class="card__ico">${icon('bolt')}</span><h3>Schnell</h3><p class="mb-0">Antwort innerhalb von 24 Stunden, klare Zeitpläne, keine monatelangen Warteschleifen.</p></div>
-        <div class="card" data-spot><span class="card__ico">${icon('target')}</span><h3>Zielorientiert</h3><p class="mb-0">Schön ist gut. Wirksam ist besser. Jede Entscheidung dient Ihrem Ziel: mehr Kunden.</p></div>
-        <div class="card" data-spot><span class="card__ico">${icon('heart')}</span><h3>Persönlich</h3><p class="mb-0">Ein Ansprechpartner, der Ihr Unternehmen kennt – heute, morgen und in drei Jahren.</p></div>
+        <div class="card"><span class="card__ico">${icon('handshake')}</span><h3>Ehrlich</h3><p class="mb-0">Ich sage Ihnen, was Sie brauchen – und was nicht. Auch wenn das bedeutet, dass ich weniger verkaufe.</p></div>
+        <div class="card"><span class="card__ico">${icon('bolt')}</span><h3>Schnell</h3><p class="mb-0">Antwort innerhalb von 24 Stunden, klare Zeitpläne, keine monatelangen Warteschleifen.</p></div>
+        <div class="card"><span class="card__ico">${icon('target')}</span><h3>Zielorientiert</h3><p class="mb-0">Schön ist gut. Wirksam ist besser. Jede Entscheidung dient Ihrem Ziel: mehr Kunden.</p></div>
+        <div class="card"><span class="card__ico">${icon('heart')}</span><h3>Persönlich</h3><p class="mb-0">Ein Ansprechpartner, der Ihr Unternehmen kennt – heute, morgen und in drei Jahren.</p></div>
       </div>
     </div>
   </div>

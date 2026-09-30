@@ -29,18 +29,20 @@ async function photos() {
   }
 }
 
-// Dark brand canvas with blue glow + grid, used for all OG images (1200×630, JPG for WhatsApp/Facebook).
+// Light "paper" canvas with dots + a tilted blue sticker, used for all OG images (1200×630, JPG for WhatsApp/Facebook).
 const ogBase = (w = 1200, h = 630) => Buffer.from(`<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <radialGradient id="a" cx="85%" cy="10%" r="75%"><stop offset="0" stop-color="#1f5bff" stop-opacity=".75"/><stop offset="1" stop-color="#1f5bff" stop-opacity="0"/></radialGradient>
-    <radialGradient id="b" cx="10%" cy="110%" r="60%"><stop offset="0" stop-color="#4b33d6" stop-opacity=".55"/><stop offset="1" stop-color="#4b33d6" stop-opacity="0"/></radialGradient>
-    <pattern id="p" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M60 0H0v60" fill="none" stroke="#ffffff" stroke-opacity=".05"/></pattern>
-    <linearGradient id="l" x1="0" x2="1"><stop offset="0" stop-color="#0a6cff"/><stop offset="1" stop-color="#3a2fc8"/></linearGradient>
-  </defs>
-  <rect width="${w}" height="${h}" fill="#06070b"/><rect width="${w}" height="${h}" fill="url(#p)"/>
-  <rect width="${w}" height="${h}" fill="url(#a)"/><rect width="${w}" height="${h}" fill="url(#b)"/>
-  <rect y="${h - 10}" width="${w}" height="10" fill="url(#l)"/>
+  <defs><pattern id="p" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#0b0d14" fill-opacity=".09"/></pattern></defs>
+  <rect width="${w}" height="${h}" fill="#ffffff"/><rect width="${w}" height="${h}" fill="url(#p)"/>
+  <rect x="${w - 250}" y="-90" width="380" height="380" rx="56" fill="#0a66ff" stroke="#0b0d14" stroke-width="6" transform="rotate(14 ${w - 60} 100)"/>
+  <rect y="${h - 16}" width="${w}" height="16" fill="#0b0d14"/>
 </svg>`);
+
+async function stickers() {
+  // Brand process icons from the old site (blue tiles) → small WebP stickers
+  for (let i = 1; i <= 6; i++) {
+    await load(`media/originals/ablauf-${i}.jpg`).resize(200, 200).webp({ quality: 82 }).toFile(path.join(OUT, `ablauf-${i}.webp`));
+  }
+}
 
 function wrap(text, max) {
   const words = text.split(' '); const lines = []; let cur = '';
@@ -51,14 +53,14 @@ function wrap(text, max) {
 
 async function og(file, { eyebrow, title, sub }) {
   const icon = await load('media/originals/logo-icon.png').trim({ threshold: 10 }).resize({ height: 84 }).png().toBuffer();
-  const word = await load('media/originals/logo-text-white.png').trim({ threshold: 10 }).resize({ height: 38 }).png().toBuffer();
+  const word = await load('media/originals/logo-text-black.png').trim({ threshold: 10 }).resize({ height: 38 }).png().toBuffer();
   const wm = await sharp(word).metadata();
-  const lines = wrap(title, 26).slice(0, 3);
+  const lines = wrap(title, 28).slice(0, 3);
   const fs0 = lines.length > 2 ? 62 : 72;
   const txt = Buffer.from(`<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
-    <text x="80" y="${250 - (lines.length - 2) * 20}" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="5" fill="#7fa2ff">${esc(eyebrow.toUpperCase())}</text>
-    ${lines.map((l, i) => `<text x="78" y="${(330 - (lines.length - 2) * 20) + i * (fs0 + 8)}" font-family="Arial, Helvetica, sans-serif" font-size="${fs0}" font-weight="700" fill="#ffffff">${esc(l)}</text>`).join('')}
-    <text x="80" y="560" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#aab4c8">${esc(sub)}</text>
+    <text x="80" y="${250 - (lines.length - 2) * 20}" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="5" fill="#0a66ff">${esc(eyebrow.toUpperCase())}</text>
+    ${lines.map((l, i) => `<text x="78" y="${(330 - (lines.length - 2) * 20) + i * (fs0 + 8)}" font-family="Arial, Helvetica, sans-serif" font-size="${fs0}" font-weight="700" fill="#0b0d14">${esc(l)}</text>`).join('')}
+    <text x="80" y="560" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#3c4254">${esc(sub)}</text>
   </svg>`);
   await sharp(ogBase()).composite([
     { input: icon, left: 80, top: 70 },
@@ -87,6 +89,7 @@ async function logos() {
 
 (async () => {
   await logos();
+  await stickers();
   await og('og-niktos-webdesign-ludwigsburg.jpg', { eyebrow: 'Webdesign & SEO · Ludwigsburg', title: 'Websites, die Kunden bringen.', sub: 'Individuelles Webdesign · SEO · KI-Sichtbarkeit — niktos.com' });
   await og('og-preise-webdesign.jpg', { eyebrow: 'Pakete & Preise', title: 'Launch · Boost · Dominate', sub: 'Festpreise ab 990 € — transparent & ohne versteckte Kosten' });
   await og('og-blog-professionelle-website.jpg', { eyebrow: 'Niktos Blog', title: 'Warum eine professionelle Website 2026 unverzichtbar ist', sub: 'Von Nikola Planinić · Webdesign & SEO Ludwigsburg' });

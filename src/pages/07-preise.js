@@ -90,7 +90,7 @@ ${C.pageHero({
 <section class="section">
   <div class="container">
     ${C.head({ eyebrow: 'Extras', title: 'Individuell erweiterbar.', lead: 'Jedes Paket lässt sich flexibel ergänzen – Sie zahlen nur, was Sie wirklich brauchen.' })}
-    <div class="grid grid--3">${addons.map(([ic, t, p], i) => `<div class="card reveal reveal-d${i % 3}" data-spot style="display:flex;align-items:center;gap:18px"><span class="card__ico" style="margin:0;flex:none">${icon(ic)}</span><div><h3 style="font-size:1.15rem;margin:0 0 4px">${t}</h3><p class="mb-0" style="color:#fff;font-weight:600">${p}</p></div></div>`).join('')}</div>
+    <div class="grid grid--3">${addons.map(([ic, t, p], i) => `<div class="card reveal reveal-d${i % 3}" style="display:flex;align-items:center;gap:18px"><span class="card__ico" style="margin:0;flex:none">${icon(ic)}</span><div><h3 style="font-size:1.15rem;margin:0 0 4px">${t}</h3><p class="mb-0" style="color:#fff;font-weight:600">${p}</p></div></div>`).join('')}</div>
   </div>
 </section>
 

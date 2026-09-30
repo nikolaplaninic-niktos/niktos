@@ -31,6 +31,7 @@ const FAQ = C.faq([
 
 const article = `
 <div class="tldr" id="kurz">
+  <span class="tape" aria-hidden="true"></span>
   <strong>${icon('bolt')} Die Kurzantwort</strong>
   <p>Eine professionelle Website ist 2026 der zentrale Ort, an dem <b>Kunden, Google und KI-Assistenten wie ChatGPT</b> entscheiden, ob sie Ihrem Unternehmen vertrauen. Sie ist das einzige digitale Schaufenster, das Ihnen vollständig gehört, sie arbeitet rund um die Uhr – und sie ist die Grundlage dafür, bei Google, in Google Maps und in KI-Antworten empfohlen zu werden. Entscheidend ist nicht, <i>dass</i> Sie eine Website haben, sondern dass sie <b>schnell, mobil, vertrauenswürdig und klar auf Anfragen ausgerichtet</b> ist.</p>
 </div>
@@ -183,9 +184,9 @@ module.exports = {
     citation: 'Lindgaard, G., Fernandes, G., Dudek, C. & Brown, J. (2006): Attention web designers: You have 50 milliseconds to make a good first impression! Behaviour & Information Technology, 25(2).',
   }],
   body: `
-<div aria-hidden="true" style="position:fixed;top:0;left:0;right:0;height:3px;z-index:80;background:var(--grad);transform-origin:left;transform:scaleX(0)" data-read-progress></div>
+<div aria-hidden="true" style="position:fixed;top:0;left:0;right:0;height:3px;z-index:80;background:var(--blue);transform-origin:left;transform:scaleX(0)" data-read-progress></div>
 <section class="phero">
-  <div class="bg-grid"></div><div class="glow glow--a"></div>
+  <div class="dots"></div>
   <div class="container">
     ${C.breadcrumb(crumbs)}
     <p class="eyebrow">Ratgeber · Webdesign & Sichtbarkeit</p>

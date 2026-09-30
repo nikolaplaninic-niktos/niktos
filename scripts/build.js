@@ -84,20 +84,21 @@ function graph(page) {
 }
 
 /* ---------- Sidebar header / mobile header ---------- */
+// Blue icon "stickers" next to every menu item – like the old niktos.com
 const NAV = [
-  ['home', '/', 'Start'],
-  ['leistungen', '/leistungen/', 'Leistungen'],
-  ['preise', '/preise/', 'Preise'],
-  ['referenzen', '/referenzen/', 'Referenzen'],
-  ['ueber', '/ueber-mich/', 'Über mich'],
-  ['blog', '/blog/', 'Blog'],
-  ['kontakt', '/kontakt/', 'Kontakt'],
+  ['home', '/', 'Home', 'home'],
+  ['leistungen', '/leistungen/', 'Leistungen', 'briefcase'],
+  ['preise', '/preise/', 'Preise', 'euro'],
+  ['referenzen', '/referenzen/', 'Referenzen', 'starline'],
+  ['ueber', '/ueber-mich/', 'Über mich', 'smile'],
+  ['blog', '/blog/', 'Blog', 'book'],
+  ['kontakt', '/kontakt/', 'Kontakt', 'chat'],
 ];
 function header(active, page) {
   const svcActive = ['leistungen', 'webdesign', 'seo', 'wartung', 'check'];
-  const items = NAV.map(([key, href, label], i) => {
+  const items = NAV.map(([key, href, label, ic]) => {
     const cur = active === key || (key === 'leistungen' && svcActive.includes(active));
-    const link = `<a href="${href}"${cur ? ' aria-current="page"' : ''}><small>0${i + 1}</small>${label}</a>`;
+    const link = `<a href="${href}"${cur ? ' aria-current="page"' : ''}><span class="nav-ico">${icon(ic)}</span>${label}</a>`;
     if (key !== 'leistungen') return `<li>${link}</li>`;
     return `<li${cur ? ' class="is-open"' : ''}>${link}<div class="side__sub">${site.services.map((s) => `<a href="${s.href}"${active === s.id ? ' aria-current="page"' : ''}>${s.title.replace(' & Website-Erstellung', '').replace(', Hosting & Support', ' & Hosting')}</a>`).join('')}</div></li>`;
   }).join('');
@@ -109,10 +110,9 @@ function header(active, page) {
 </header>
 <aside class="side" id="navigation" aria-label="Hauptnavigation">
   <a class="brand" href="/" aria-label="${site.name} – Startseite">${logoMark(42)}<span class="brand__word">NIKTOS</span></a>
-  <p class="side__tag">Webdesign & SEO<br>aus ${site.address.city}</p>
+  <p class="side__tag">Webdesign & SEO aus ${site.address.city}</p>
   <nav class="side__nav" aria-label="Hauptmenü"><ul>${items}</ul></nav>
   <div class="side__cta">
-    ${site.availability ? `<p class="side__avail"><span class="dot"></span>${site.availability}</p>` : ''}
     ${page.path === '/projekt-anfrage/' ? '' : C.startBtn('Projekt starten', { cls: 'btn--block' })}
     <a class="btn btn--wa btn--block" href="${site.whatsapp}" target="_blank" rel="noopener">${icon('wa')} WhatsApp</a>
     <a class="side__phone" href="tel:${site.phoneIntl}">Direkt anrufen<strong>${site.phone}</strong></a>
@@ -130,11 +130,11 @@ function footer(page) {
   return `
 <footer class="footer">
   <div class="container">
-    <p class="footer__big" aria-hidden="true">Niktos</p>
+    <p class="footer__big" aria-hidden="true">Niktos<span>.</span></p>
     <div class="footer__grid">
       <div>
         <a class="brand" href="/" aria-label="${site.name} – Startseite">${logoMark(40)}<span class="brand__word">NIKTOS</span></a>
-        <p style="margin-top:18px">Webdesign, SEO & KI-Sichtbarkeit aus ${site.address.city}. Individuelle Websites, die schnell laden, gefunden werden und Kunden bringen – persönlich von ${site.owner}.</p>
+        <p style="margin-top:18px">Webdesign & SEO aus ${site.address.city}. Ich baue Websites, die schnell laden, gefunden werden und Ihnen Kunden bringen. Persönlich, ehrlich und mit Herz.</p>
         <div class="footer__social">
           <a href="${site.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${icon('insta')}</a>
           <a href="${site.whatsapp}" target="_blank" rel="noopener" aria-label="WhatsApp">${icon('wa')}</a>
@@ -143,11 +143,11 @@ function footer(page) {
         </div>
       </div>
       <div>
-        <h2>Leistungen</h2>
+        <h2>Was ich mache</h2>
         <ul>${site.services.map((s) => `<li><a href="${s.href}">${s.title}</a></li>`).join('')}<li><a href="/preise/">Pakete & Preise</a></li></ul>
       </div>
       <div>
-        <h2>Niktos</h2>
+        <h2>Mehr entdecken</h2>
         <ul>
           <li><a href="/referenzen/">Referenzen</a></li>
           <li><a href="/ueber-mich/">Über mich</a></li>
@@ -159,7 +159,7 @@ function footer(page) {
         </ul>
       </div>
       <div>
-        <h2>Kontakt</h2>
+        <h2>Sag Hallo</h2>
         <address class="footer__nap">
           <span>${icon('pin')}<span>${site.legalName}<br>${site.address.street ? site.address.street + '<br>' : ''}${site.address.zip} ${site.address.city}</span></span>
           <a href="tel:${site.phoneIntl}">${icon('phone')}${site.phone}</a>
@@ -170,7 +170,8 @@ function footer(page) {
     </div>
     <p class="footer__towns"><strong style="color:#fff">Webdesign & SEO für:</strong> ${site.towns.join(' · ')} · Landkreis Ludwigsburg · Region Stuttgart · deutschlandweit</p>
     <div class="footer__bottom">
-      <span>© <span id="year">${new Date().getFullYear()}</span> ${site.legalName} · ${site.address.city}</span>
+      <span>© <span id="year">${new Date().getFullYear()}</span> ${site.legalName}</span>
+      <span class="footer__heart">Mit ${icon('heartfill')} gemacht in Ludwigsburg</span>
       <nav aria-label="Rechtliches"><a href="/impressum/">Impressum</a><a href="/datenschutzerklaerung/">Datenschutz</a></nav>
     </div>
   </div>
@@ -181,7 +182,7 @@ function footer(page) {
   <a class="is-primary" href="/projekt-anfrage/"${page.path === '/projekt-anfrage/' ? '' : ' data-open-funnel'}>${icon('rocket')}Projekt starten</a>
 </nav>
 <a class="wa-float" href="${site.whatsapp}" target="_blank" rel="noopener" aria-label="Kontakt per WhatsApp">${icon('wa')}</a>
-${page.path === '/projekt-anfrage/' ? '' : `<a class="fab" href="/projekt-anfrage/" data-open-funnel><span class="fab__ico">${icon('rocket')}</span><span><small>In 60 Sek. zum Angebot</small>Projekt starten</span></a>
+${page.path === '/projekt-anfrage/' ? '' : `<a class="fab" href="/projekt-anfrage/" data-open-funnel><span class="fab__ico">${icon('rocket')}</span><span><small>in 1 Minute zum Angebot</small>Projekt starten</span></a>
 ${C.funnelDialog()}`}`;
 }
 
@@ -201,7 +202,7 @@ ${page.noindex ? '' : `<link rel="canonical" href="${url}">`}
 <meta name="author" content="${site.owner}">
 <meta name="geo.region" content="DE-BW">
 <meta name="geo.placename" content="${site.address.city}">
-<meta name="theme-color" content="#05060a">
+<meta name="theme-color" content="#0a66ff">
 <meta property="og:type" content="${page.ogType || 'website'}">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="${site.name}">
@@ -221,6 +222,7 @@ ${page.head || ''}
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-Zusammenfassung">
 <link rel="preload" href="/assets/fonts/league-spartan-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/caveat-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>${CSS}</style>
 <script>document.documentElement.classList.replace('no-js','js')</script>
 <script type="application/ld+json">${graph(page)}</script>
@@ -348,7 +350,7 @@ ${indexable.map((p) => `- [${p.title.split(' | ')[0]}](${abs(p.path)}): ${p.desc
 
 // Web app manifest
 fs.writeFileSync(path.join(DIST, 'site.webmanifest'), JSON.stringify({
-  name: `${site.name} – Webdesign & SEO`, short_name: 'Niktos', start_url: '/', display: 'standalone', background_color: '#05060a', theme_color: '#05060a', lang: 'de',
+  name: `${site.name} – Webdesign & SEO`, short_name: 'Niktos', start_url: '/', display: 'standalone', background_color: '#ffffff', theme_color: '#0a66ff', lang: 'de',
   icons: [{ src: '/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/icon-512.png', sizes: '512x512', type: 'image/png' }],
 }, null, 2));
 

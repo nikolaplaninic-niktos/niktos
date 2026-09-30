@@ -14,7 +14,7 @@ module.exports = {
   description: 'Starten Sie Ihr Website-Projekt: 6 kurze Fragen, kostenloses Festpreis-Angebot innerhalb von 24 Stunden. Niktos – Webdesign & SEO aus Ludwigsburg.',
   body: `
 <section class="section" style="padding-top:clamp(40px,6vw,80px)">
-  <div class="bg-grid"></div>
+  <div class="dots"></div>
   <div class="container split split--top">
     <div class="reveal">
       ${C.breadcrumb(crumbs)}

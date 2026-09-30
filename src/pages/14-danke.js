@@ -9,9 +9,9 @@ module.exports = {
   description: 'Vielen Dank! Ihre Anfrage ist bei Niktos angekommen – ich melde mich innerhalb von 24 Stunden persönlich bei Ihnen.',
   body: `
 <section class="section notfound">
-  <div class="bg-grid"></div><div class="glow glow--a"></div>
+  <div class="dots"></div>
   <div class="container container--narrow">
-    <div class="map__pin" style="background:var(--ok);box-shadow:0 0 0 14px rgba(61,220,151,.15),0 0 0 30px rgba(61,220,151,.06)">${icon('check')}</div>
+    <div class="big-check">${icon('check')}</div>
     <p class="eyebrow" style="justify-content:center;display:flex">Anfrage erhalten</p>
     <h1 style="font-size:clamp(2.6rem,6vw,5rem)">Danke! <span class="grad">Der erste Schritt ist gemacht.</span></h1>
     <p class="lead" style="margin:0 auto 30px">Ich schaue mir Ihre Angaben persönlich an und melde mich innerhalb von 24 Stunden (werktags). Eine Bestätigung mit Ihren Angaben ist bereits in Ihrem Postfach – schauen Sie ggf. auch im Spam-Ordner nach.</p>

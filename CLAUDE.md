@@ -33,7 +33,7 @@ npm run verify -- <url>
 - Business data only in `src/site.js`. Title ≤ 60, description ≤ 160, exactly one `<h1>`.
 - `mail.php` and `scripts/mail-preview.js` duplicate the e-mail logic – change both.
 - No invented facts (reviews, rankings, stats). AI chat mockups are labelled "Beispielhafte Darstellung".
-- Design tokens: bg `#05060a`, brand gradient `#0a6cff → #3a2fc8`; fonts League Spartan + Inter (self-hosted).
+- Design: light "Sticker Studio" – ink `#0b0d14` 2px borders + hard shadows, blue `#0a66ff`, yellow `#ffd23f`; fonts League Spartan + Inter + Caveat (handwriting), self-hosted. Keep it human: handwritten notes, no dark/glow/gradient AI look.
 - Portrait: add `portrait` in `src/images.config.js` → replaces the placeholder automatically.
 
 ## Open items

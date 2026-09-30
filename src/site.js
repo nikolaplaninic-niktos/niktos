@@ -16,17 +16,16 @@ module.exports = {
   waNumber: phoneIntl.replace('+', ''),
   whatsapp: 'https://wa.me/491622403682?text=' + encodeURIComponent('Hallo Nikola, ich interessiere mich für eine neue Website.'),
   wa: (text) => 'https://wa.me/491622403682?text=' + encodeURIComponent(text),
-  instagram: 'https://www.instagram.com/niktos_m/',
-  instagramHandle: '@niktos_m',
+  instagram: 'https://www.instagram.com/niktos.webdesign/',
+  instagramHandle: '@niktos.webdesign',
   // Google-Unternehmensprofil: sobald vorhanden die Place-ID eintragen → Bewertungs-Links + Maps-Link werden präzise.
   googlePlaceId: '',
-  googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Niktos Webdesign Ludwigsburg'),
-  mapEmbed: 'https://www.google.com/maps?q=' + encodeURIComponent('71642 Ludwigsburg') + '&z=12&output=embed',
+  googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Niktos Webdesign & SEO, 71642 Ludwigsburg'),
+  mapEmbed: 'https://www.google.com/maps?q=' + encodeURIComponent('Niktos Webdesign & SEO, 71642 Ludwigsburg') + '&z=13&output=embed',
+  googleRouteUrl: 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent('Niktos Webdesign & SEO, 71642 Ludwigsburg'),
   // TODO Nikola: Straße + Hausnummer ist im Impressum Pflicht (§ 5 DDG). Leer = wird nicht angezeigt.
   address: { street: '', zip: '71642', city: 'Ludwigsburg', region: 'Baden-Württemberg', country: 'DE' },
   since: 2019, // "7 Jahre Erfahrung" (Stand 2026) – wird automatisch hochgezählt
-  // Aktueller Hinweis in der Sidebar. Leer lassen, um ihn auszublenden.
-  availability: 'Freie Projektplätze ab November',
   replyPromise: 'Antwort innerhalb von 24 Stunden (werktags)',
   kleinunternehmer: true, // § 19 UStG → Preise sind Endpreise
   // Umami Analytics – websiteId aus cloud.umami.is eintragen (Settings → Websites)

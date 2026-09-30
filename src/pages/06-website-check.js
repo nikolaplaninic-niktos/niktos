@@ -49,7 +49,7 @@ ${C.pageHero({
 <section class="section">
   <div class="container">
     ${C.head({ eyebrow: 'Was ich prüfe', title: '8 Bereiche. Ein klares Ergebnis.', center: true })}
-    <div class="grid grid--4">${checks.map(([ic, t, d], i) => `<div class="card reveal reveal-d${i % 4}" data-spot><span class="card__ico">${icon(ic)}</span><h3 style="font-size:1.25rem">${t}</h3><p class="mb-0">${d}</p></div>`).join('')}</div>
+    <div class="grid grid--4">${checks.map(([ic, t, d], i) => `<div class="card reveal reveal-d${i % 4}"><span class="card__ico">${icon(ic)}</span><h3 style="font-size:1.25rem">${t}</h3><p class="mb-0">${d}</p></div>`).join('')}</div>
   </div>
 </section>
 

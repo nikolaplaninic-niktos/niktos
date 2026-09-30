@@ -35,6 +35,11 @@ npm run test     # funkcionalni test (dok serve radi)
 npm run mail     # pregled e-mailova → mail-preview/index.html
 ```
 
+## Dizajn („Sticker Studio“)
+
+Svijetla stranica, crna „tinta“ + Niktos plava `#0a66ff`, žuti marker. Kartice i gumbi s crnim rubom i tvrdom sjenom (naljepnice), okrugli stickeri, polaroid s trakom, rukom pisane bilješke (font Caveat).
+Iz stare stranice preuzeto: plavi kvadrati uz meni, crna linija sidebara, plava traka s *zvjezdicama*, naslov koji se „tipka“, plave ikone procesa (`media/originals/ablauf-*.jpg`).
+
 ## Gdje se što mijenja
 
 - **Cijene, paketi, telefon, Instagram, usluge, referencije, gradovi:** `src/site.js` (jedno mjesto → sve stranice, schema, llms.txt)
@@ -45,12 +50,10 @@ npm run mail     # pregled e-mailova → mail-preview/index.html
 ## Potvrditi prije objave (TODO)
 
 - [ ] **Ulica i kućni broj** – `src/site.js → address.street` (Impressum je bez toga pravno nepotpun)
-- [ ] **Instagram** `@niktos_m` – je li to tvoj profil?
 - [ ] **Cijene paketa** (990 / 1.990 / 3.490 €), Care 39 €/mj., Website-Check 49 €, Extras na `/preise/`, plaćanje 50/50 – sve po mojoj procjeni
-- [ ] **„Freie Projektplätze ab November“** u sidebaru (`site.availability`, prazno = skriveno)
 - [ ] **Jezici** „Deutsch & Kroatisch“ na Über mich
 - [ ] **Dopuštenje klijenata** za screenshotove (Kabic, Spatzennest, KomLab)
-- [ ] **Google-Unternehmensprofil** – ako postoji, upiši `googlePlaceId` u `site.js`
+- [ ] **Google-Unternehmensprofil** – pošalji link profila → `googleMapsUrl`/`mapEmbed` u `site.js` pokazuju točno na Niktos (sad: pretraga „Niktos Webdesign & SEO, 71642 Ludwigsburg“)
 - [ ] **Umami** websiteId (`site.js`) i server regija u Datenschutz
 - [ ] **SMTP**: mailbox `website@niktos.com` + `niktos-config.php` na serveru (predložak `config.example.php`)
 

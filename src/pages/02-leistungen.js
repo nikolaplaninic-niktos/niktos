@@ -54,9 +54,9 @@ ${C.pageHero({
   <div class="container">
     ${C.head({ eyebrow: 'Für wen?', title: 'Für Unternehmer, die wachsen wollen.', lead: 'Meine Kunden sind Selbstständige, Handwerksbetriebe, Dienstleister, Praxen, Gastronomen und soziale Träger – vor allem aus Ludwigsburg und der Region Stuttgart.' })}
     <div class="grid grid--3">
-      <div class="card reveal" data-spot><span class="card__ico">${icon('rocket')}</span><h3>Gründer & Start-ups</h3><p class="mb-0">Vom ersten Tag an professionell auftreten – mit einer Website, die mit Ihnen wächst.</p></div>
-      <div class="card reveal reveal-d1" data-spot><span class="card__ico">${icon('layers')}</span><h3>Handwerk & lokale Dienstleister</h3><p class="mb-0">Mehr Anfragen aus Ihrer Umgebung – über Google, Google Maps und KI-Suche.</p></div>
-      <div class="card reveal reveal-d2" data-spot><span class="card__ico">${icon('refresh')}</span><h3>Unternehmen mit alter Website</h3><p class="mb-0">Relaunch ohne Ranking-Verlust: moderner, schneller, verkaufsstärker.</p></div>
+      <div class="card reveal"><span class="card__ico">${icon('rocket')}</span><h3>Gründer & Start-ups</h3><p class="mb-0">Vom ersten Tag an professionell auftreten – mit einer Website, die mit Ihnen wächst.</p></div>
+      <div class="card reveal reveal-d1"><span class="card__ico">${icon('layers')}</span><h3>Handwerk & lokale Dienstleister</h3><p class="mb-0">Mehr Anfragen aus Ihrer Umgebung – über Google, Google Maps und KI-Suche.</p></div>
+      <div class="card reveal reveal-d2"><span class="card__ico">${icon('refresh')}</span><h3>Unternehmen mit alter Website</h3><p class="mb-0">Relaunch ohne Ranking-Verlust: moderner, schneller, verkaufsstärker.</p></div>
     </div>
   </div>
 </section>

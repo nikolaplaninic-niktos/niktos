@@ -1,4 +1,4 @@
-// Reusable HTML building blocks.
+// Reusable HTML building blocks ("Sticker Studio" design).
 const site = require('./site');
 const { icon, logoMark } = require('./icons');
 const M = require('./images.manifest.json');
@@ -26,6 +26,12 @@ const telBtn = (cls = 'btn--ghost') => `<a class="btn ${cls}" href="tel:${site.p
 
 const ticks = (items, cls = '') => `<ul class="ticks ${cls}">${items.map((i) => `<li>${icon(cls.includes('--x') ? 'x' : 'check')}<span>${i}</span></li>`).join('')}</ul>`;
 
+/* ---------- Stickers & handwritten bits ---------- */
+const sticker = (big, small = '', cls = '', style = '') => `<span class="sticker ${cls}"${style ? ` style="${style}"` : ''} aria-hidden="true"><span>${small && cls.includes('top') ? `<small>${small}</small>` : ''}<b>${big}</b>${small && !cls.includes('top') ? `<small>${small}</small>` : ''}</span></span>`;
+// hand-drawn arrow (points down-left by default)
+const scribbleArrow = (d = 'M50 4C38 10 24 20 14 36m0 0 1-12m-1 12 11-4') => `<svg viewBox="0 0 56 46" aria-hidden="true"><path d="${d}" fill="none" stroke="#0b0d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const arrowNote = (text, style = '') => `<span class="arrow-note"${style ? ` style="${style}"` : ''} aria-hidden="true">${scribbleArrow()}${text}</span>`;
+
 const breadcrumb = (items) => `
 <nav class="crumbs" aria-label="Brotkrumen"><ol>${items.map((it, i) => i === items.length - 1
   ? `<li aria-current="page">${esc(it.name)}</li>`
@@ -45,8 +51,8 @@ const head = ({ eyebrow, title, lead, center = false, split = '', h = 'h2' }) =>
 function pageHero({ crumbs, eyebrow, h1, lead, actions = true, aside = '' }) {
   return `
 <section class="phero">
-  <div class="bg-grid"></div><div class="glow glow--a"></div>
-  <div class="container${aside ? ' phero__grid' : ''}">
+  <div class="dots"></div>
+  <div class="container${aside ? ' phero__grid' : ''}" style="position:relative">
     <div>
       ${breadcrumb(crumbs)}
       ${eyebrow ? `<p class="eyebrow">${eyebrow}</p>` : ''}
@@ -59,15 +65,15 @@ function pageHero({ crumbs, eyebrow, h1, lead, actions = true, aside = '' }) {
 </section>`;
 }
 
-const marquee = (items, grad = false) => {
+const marquee = (items, tilt = false) => {
   const row = items.map((t) => `<span>${t}</span>`).join('');
-  return `<div class="marquee${grad ? ' marquee--grad' : ''}" aria-hidden="true"><div class="marquee__track">${row}${row}</div></div>`;
+  return `<div class="marquee${tilt ? ' marquee--grad' : ''}" aria-hidden="true"><div class="marquee__track">${row}${row}</div></div>`;
 };
 
 /* ---------- Services ---------- */
 const serviceCards = (exclude = []) => `
 <div class="grid grid--${4 - exclude.length > 3 ? 4 : 3}">${site.services.filter((s) => !exclude.includes(s.id)).map((s, i) => `
-  <a class="card reveal reveal-d${i % 4}" href="${s.href}" data-spot>
+  <a class="card reveal reveal-d${i % 4}" href="${s.href}">
     <span class="card__num">0${i + 1}</span>
     <span class="card__ico">${icon(s.icon)}</span>
     <h3>${s.title}</h3>
@@ -79,27 +85,38 @@ const serviceCards = (exclude = []) => `
 
 const features = (items, cols = 3) => `
 <div class="grid grid--${cols}">${items.map(([ic, t, d], i) => `
-  <div class="card reveal reveal-d${i % 3}" data-spot><span class="card__ico">${icon(ic)}</span><h3>${t}</h3><p class="mb-0">${d}</p></div>`).join('')}
+  <div class="card reveal reveal-d${i % 3}"><span class="card__ico">${icon(ic)}</span><h3>${t}</h3><p class="mb-0">${d}</p></div>`).join('')}
 </div>`;
 
+/** Generic numbered steps. items: [title, text, time?] */
 const steps = (items) => `
 <ol class="steps">${items.map(([t, d, time], i) => `
-  <li class="step reveal reveal-d${i % 3}"><span class="step__n">${i + 1}</span>${time ? `<span class="step__time">${time}</span>` : ''}<h3>${t}</h3><p>${d}</p></li>`).join('')}
+  <li class="step reveal reveal-d${i % 3}"><span class="step__n" aria-hidden="true">0${i + 1}</span><span class="step__badge" aria-hidden="true">${i + 1}</span>${time ? `<span class="step__time">${time}</span>` : ''}<h3>${t}</h3><p>${d}</p></li>`).join('')}
 </ol>`;
-const processSteps = () => steps([
-  ['Kontakt', 'Sie schreiben mir per WhatsApp, Formular oder rufen an. Ich melde mich innerhalb von 24 Stunden.', 'Tag 1'],
-  ['Kostenloses Erstgespräch', 'Wir sprechen über Ziele, Zielgruppe und Budget – persönlich in Ludwigsburg oder online. Ehrlich und ohne Verkaufsdruck.', '30 Min.'],
-  ['Festpreis-Angebot & Plan', 'Sie erhalten ein klares Angebot mit Festpreis, Seitenstruktur und Zeitplan. Keine versteckten Kosten.', '48 h'],
-  ['Design & Umsetzung', 'Ich gestalte, schreibe und entwickle Ihre Website. Sie sehen den Fortschritt live und geben Feedback.', '2–6 Wochen'],
-  ['Launch & Google', 'Go-live mit SSL, Search Console, Google-Unternehmensprofil und sauberer Indexierung – Ihre Website ist sofort auffindbar.', 'Launch-Tag'],
-  ['Betreuung & Wachstum', 'Ich bleibe Ihr Ansprechpartner: Änderungen, Updates, SEO-Ausbau. Ihre Website wächst mit Ihrem Unternehmen.', 'laufend'],
-]);
+
+/** The Niktos process – with the blue icon stickers from the old niktos.com */
+const processSteps = () => `
+<ol class="steps">${[
+  ['Kontakt', 'Sie schreiben mir per WhatsApp, rufen an oder nutzen das Formular. Ich melde mich innerhalb von 24 Stunden.', 'Tag 1'],
+  ['Kennenlernen', 'Wir reden über Ihr Unternehmen, Ihre Kunden und Ihr Ziel. Gern bei einem Kaffee in Ludwigsburg, sonst per Video.', 'ca. 30 Minuten'],
+  ['Angebot & Plan', 'Sie bekommen einen Festpreis, die Seitenstruktur und einen klaren Zeitplan. Ohne Kleingedrucktes.', 'innerhalb von 48 h'],
+  ['Design & Umsetzung', 'Ich gestalte, schreibe und baue Ihre Website. Sie sehen jeden Zwischenstand und sagen mir ehrlich Ihre Meinung.', '2 bis 6 Wochen'],
+  ['Launch', 'Ihre Website geht online, mit Google Search Console, Unternehmensprofil und allem, was dazugehört.', 'der große Tag'],
+  ['Betreuung', 'Ich bleibe Ihr Ansprechpartner. Änderungen, Updates und neue Ideen – kurze WhatsApp genügt.', 'solange Sie möchten'],
+].map(([t, d, time], i) => `
+  <li class="step reveal reveal-d${i % 3}">
+    <span class="step__n" aria-hidden="true">0${i + 1}</span>
+    <img class="step__img" src="/assets/img/ablauf-${i + 1}.webp" width="76" height="76" alt="" loading="lazy">
+    <span class="step__time">${time}</span>
+    <h3>${i + 1}. ${t}</h3><p>${d}</p>
+  </li>`).join('')}
+</ol>`;
 
 /* ---------- Pricing ---------- */
 function pricing({ compact = false } = {}) {
   const cards = site.packages.map((p, i) => `
   <article class="price${p.featured ? ' price--featured' : ''} reveal reveal-d${i}" id="paket-${p.id}">
-    ${p.featured ? `<span class="price__badge">★ ${p.tag}</span>` : ''}
+    ${p.featured ? `<span class="price__badge">Die meisten nehmen dieses!</span>` : ''}
     <p class="price__tag">${p.featured ? 'Für wachsende Unternehmen' : p.tag}</p>
     <h3 class="price__name">${p.name}</h3>
     <p class="price__claim">${p.claim}</p>
@@ -114,15 +131,15 @@ function pricing({ compact = false } = {}) {
   </article>`).join('');
   return `<div class="prices">${cards}</div>
   <div class="care reveal">
-    <span class="card__ico mb-0" style="margin:0">${icon('shield')}</span>
-    <div><h3>${site.care.name} – Wartung & Hosting</h3><p>${site.care.features.join(' · ')}. Optional, monatlich kündbar.</p></div>
+    <span class="card__ico" style="margin:0">${icon('shield')}</span>
+    <div><h3>${site.care.name} – Wartung & Hosting</h3><p>${site.care.features.join(' · ')}. Optional und monatlich kündbar.</p></div>
     <p class="care__price mb-0">ab ${site.care.price} € <small>${site.care.unit}</small></p>
   </div>
   <div class="guarantee">
-    <span>${icon('check')} Festpreis – keine versteckten Kosten</span>
+    <span>${icon('check')} Festpreis, keine versteckten Kosten</span>
     <span>${icon('check')} Kostenloses Erstgespräch</span>
-    <span>${icon('check')} Die Website gehört zu 100 % Ihnen</span>
-    <span>${icon('check')} Persönlicher Ansprechpartner</span>
+    <span>${icon('check')} Die Website gehört Ihnen</span>
+    <span>${icon('check')} Ein Ansprechpartner: ich</span>
   </div>`;
 }
 
@@ -130,13 +147,13 @@ const compareTable = () => {
   const Y = `<span class="yes">${icon('check')}</span>`, N = `<span class="no">${icon('x')}</span>`, Mh = (t) => `<span class="meh">${t}</span>`;
   const rows = [
     ['Individuelles Design', Y, Mh('Vorlage'), Y],
-    ['Ladezeit & PageSpeed', Y + ' blitzschnell', Mh('oft langsam'), Mh('unterschiedlich')],
+    ['Ladezeit & PageSpeed', Y + ' sehr schnell', Mh('oft langsam'), Mh('unterschiedlich')],
     ['SEO & KI-Sichtbarkeit inklusive', Y, N, Mh('Aufpreis')],
     ['Texte, die verkaufen', Y, N, Mh('Aufpreis')],
     ['Fester, persönlicher Ansprechpartner', Y + ' Nikola direkt', N, Mh('wechselnd')],
     ['Erreichbar per WhatsApp', Y, N, N],
-    ['Transparenter Festpreis', Y, Mh('Abo-Falle'), Mh('Stundensätze')],
-    ['Typische Kosten', 'ab 990 €', '15–40 € / Monat, für immer', '5.000 – 15.000 €'],
+    ['Transparenter Festpreis', Y, Mh('Abo auf Dauer'), Mh('Stundensätze')],
+    ['Typische Kosten', 'ab 990 €', '15–40 € / Monat, dauerhaft', '5.000 – 15.000 €'],
   ];
   return `<div class="compare-wrap reveal"><table class="compare">
   <thead><tr><th scope="col">Vergleich</th><th scope="col" class="is-us">Niktos</th><th scope="col">Baukasten (Wix & Co.)</th><th scope="col">Große Agentur</th></tr></thead>
@@ -145,7 +162,7 @@ const compareTable = () => {
 };
 
 /* ---------- FAQ → FAQPage schema ---------- */
-function faq(items, { title = 'Häufige Fragen', eyebrow = 'FAQ', lead = '', panel = false, id = 'faq' } = {}) {
+function faq(items, { title = 'Häufige Fragen', eyebrow = 'Gut zu wissen', lead = '', panel = false, id = 'faq' } = {}) {
   const html = `
 <section class="section${panel ? ' section--panel' : ''}" id="${id}">
   <div class="container container--narrow">
@@ -153,7 +170,7 @@ function faq(items, { title = 'Häufige Fragen', eyebrow = 'FAQ', lead = '', pan
     <div class="faq">
       ${items.map(([q, a], i) => `<details class="reveal"${i === 0 ? ' open' : ''}><summary>${q}</summary><div class="faq__a"><p>${a}</p></div></details>`).join('')}
     </div>
-    <p class="center muted" style="margin-top:28px">Ihre Frage ist nicht dabei? <a href="${site.whatsapp}" target="_blank" rel="noopener">Schreiben Sie mir einfach per WhatsApp</a>.</p>
+    <p class="center" style="margin-top:30px"><span class="note note--blue">Ihre Frage fehlt?</span> <a href="${site.whatsapp}" target="_blank" rel="noopener">Schreiben Sie mir einfach per WhatsApp.</a></p>
   </div>
 </section>`;
   const schema = {
@@ -164,11 +181,12 @@ function faq(items, { title = 'Häufige Fragen', eyebrow = 'FAQ', lead = '', pan
 }
 
 /* ---------- CTA band ---------- */
-const ctaBand = ({ title = 'Bereit für eine Website, die <span style="color:#0a0c14">verkauft?</span>', text = 'Erzählen Sie mir in 60 Sekunden von Ihrem Projekt – Sie erhalten innerhalb von 24 Stunden eine ehrliche Einschätzung und ein Festpreis-Angebot. Kostenlos und unverbindlich.', waText } = {}) => `
+const ctaBand = ({ title = 'Lassen Sie uns <span class="hl">gemeinsam starten.</span>', text = 'Erzählen Sie mir in einer Minute von Ihrem Projekt. Innerhalb von 24 Stunden bekommen Sie eine ehrliche Einschätzung und ein Festpreis-Angebot. Kostenlos und unverbindlich.', waText } = {}) => `
 <section class="section section--tight">
   <div class="container">
     <div class="cta reveal">
-      <p class="eyebrow" style="color:#fff">Jetzt starten</p>
+      ${sticker('24 h', 'Antwort', 'sticker--top')}
+      <p class="eyebrow">Bereit?</p>
       <h2>${title}</h2>
       <p>${text}</p>
       <div class="actions">
@@ -176,28 +194,27 @@ const ctaBand = ({ title = 'Bereit für eine Website, die <span style="color:#0a
         ${waBtn('WhatsApp schreiben', { cls: 'btn--lg', text: waText })}
         ${telBtn('btn--ghost btn--lg')}
       </div>
-      <p class="cta__note">${icon('clock')} ${site.replyPromise} · persönlich von ${site.owner}</p>
+      <p class="cta__note">Ich freue mich auf Ihre Nachricht! – ${site.ownerFirst}</p>
     </div>
   </div>
 </section>`;
 
-/* ---------- Portrait (placeholder until the pro photo exists) ---------- */
+/* ---------- Portrait → polaroid (placeholder until the pro photo exists) ---------- */
 function portrait({ eager = false } = {}) {
-  if (hasImg('portrait')) {
-    return `<figure class="portrait mb-0" style="margin:0">${img('portrait', { sizes: '(max-width: 980px) 100vw, 520px', eager })}
-      <figcaption class="portrait__cap"><strong>${site.owner}</strong><span>Inhaber · Webdesigner & SEO</span></figcaption></figure>`;
-  }
-  return `<div class="portrait" role="img" aria-label="${site.owner} – Inhaber von Niktos, Webdesigner und SEO-Experte aus Ludwigsburg">
-    <div class="portrait__code" aria-hidden="true"><b>const</b> niktos = {<br>&nbsp;&nbsp;design: <i>'individuell'</i>,<br>&nbsp;&nbsp;speed: <i>'100'</i>,<br>&nbsp;&nbsp;seo: <i>'lokal + KI'</i>,<br>&nbsp;&nbsp;ziel: <i>'mehr Kunden'</i><br>};</div>
-    <span class="portrait__chip"><span class="dot"></span> ${years()} Jahre Erfahrung</span>
-    <div class="portrait__mono">${logoMark(200)}</div>
-    <div class="portrait__cap"><strong>${site.owner}</strong><span>Inhaber · Webdesigner & SEO · ${site.address.city}</span></div>
-  </div>`;
+  const inner = hasImg('portrait')
+    ? img('portrait', { sizes: '(max-width: 980px) 90vw, 440px', eager })
+    : `<div class="portrait__mono">${logoMark(200)}</div>`;
+  return `<figure class="portrait"${hasImg('portrait') ? '' : ` role="img" aria-label="${site.owner} – Inhaber von Niktos, Webdesigner aus Ludwigsburg"`}>
+    <span class="tape" aria-hidden="true"></span>
+    <div class="portrait__img">${inner}</div>
+    <figcaption class="portrait__cap">${site.ownerFirst} · ${site.address.city}</figcaption>
+    ${sticker(String(years()), 'Jahre Erfahrung')}
+  </figure>`;
 }
 
 /* ---------- Browser frame + projects ---------- */
 const browser = (key, domain, { sizes = '(max-width: 980px) 100vw, 60vw', eager = false } = {}) => `
-<div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span class="browser__url">${icon('lock')} ${domain}</span></div>${img(key, { sizes, eager })}</div>`;
+<div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span class="browser__url">${icon('lock')} ${domain}</span></div><div class="browser__body">${img(key, { sizes, eager })}</div></div>`;
 
 const projects = (list = site.projects, { h = 'h3' } = {}) => list.map((p, i) => `
 <article class="project${i % 2 ? ' project--rev' : ''} reveal" id="projekt-${p.id}">
@@ -214,34 +231,63 @@ const projects = (list = site.projects, { h = 'h3' } = {}) => list.map((p, i) =>
   </div>
 </article>`).join('');
 
-/* ---------- Area + map (Google Maps only after click) ---------- */
-const area = ({ panel = false, title = 'Webdesign für Ludwigsburg, Stuttgart & die ganze Region' } = {}) => `
+/* ---------- Google Maps card: illustrated map + Niktos pin, real map after click ---------- */
+const gmark = `<svg class="gmark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7z" fill="#ea4335"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg>`;
+const mapArt = `<svg class="map__art" viewBox="0 0 400 310" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="400" height="310" fill="#eef3fb"/>
+  <path d="M0 40h400M0 120h400M0 205h400M0 270h400M60 0v310M150 0v310M250 0v310M340 0v310" stroke="#dde4f1" stroke-width="10"/>
+  <path d="M40 0c20 60-10 110 30 160s110 40 120 100 10 50 10 50" fill="none" stroke="#b8d3ff" stroke-width="22" stroke-linecap="round"/>
+  <ellipse cx="300" cy="80" rx="58" ry="34" fill="#d6ecd2"/><ellipse cx="110" cy="250" rx="40" ry="26" fill="#d6ecd2"/><rect x="262" y="210" width="80" height="50" rx="12" fill="#d6ecd2"/>
+  <path d="M0 150C90 140 150 170 210 150s120-60 190-50" fill="none" stroke="#fff" stroke-width="12"/><path d="M0 150C90 140 150 170 210 150s120-60 190-50" fill="none" stroke="#ffd23f" stroke-width="5"/>
+  <path d="M200 0c10 80-20 140 0 200s40 110 40 110" fill="none" stroke="#fff" stroke-width="9"/>
+  <text x="292" y="86" font-family="Caveat, cursive" font-size="20" font-weight="700" fill="#3f7a3a" text-anchor="middle">Schlosspark</text>
+  <text x="74" y="118" font-family="Caveat, cursive" font-size="20" font-weight="700" fill="#2d6de0" transform="rotate(-60 74 118)">Neckar</text>
+  <text x="330" y="292" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#656c80" text-anchor="middle">↓ Stuttgart 15 km</text>
+</svg>`;
+const mapCard = () => `
+<div class="mapcard">
+  <div class="map" data-src="${site.mapEmbed}">
+    ${mapArt}
+    <span class="map__pulse" aria-hidden="true"></span>
+    <span class="map__pin" aria-hidden="true">${logoMark(46)}</span>
+    <span class="map__label">Niktos · Webdesign & SEO<small>${site.address.zip} ${site.address.city}</small></span>
+    <button class="btn btn--sm btn--ghost map__load" type="button" data-map-load>${icon('map')} Interaktive Karte laden</button>
+  </div>
+  <div class="mapcard__bar">
+    <a class="btn btn--sm" href="${site.googleMapsUrl}" target="_blank" rel="noopener">${gmark} Niktos auf Google Maps</a>
+    <a class="btn btn--sm btn--ghost" href="${site.googleRouteUrl}" target="_blank" rel="noopener">${icon('route')} Route planen</a>
+    <p>Die interaktive Karte wird erst nach Klick geladen. Dabei werden Daten an Google übertragen – siehe <a href="/datenschutzerklaerung/">Datenschutz</a>.</p>
+  </div>
+</div>`;
+
+const area = ({ panel = false, title = 'Zuhause in Ludwigsburg. <span class="hl">Unterwegs in der ganzen Region.</span>' } = {}) => `
 <section class="section${panel ? ' section--panel' : ''}" id="einsatzgebiet">
   <div class="container split">
     <div class="reveal">
-      <p class="eyebrow">Regional verwurzelt · deutschlandweit tätig</p>
+      <p class="eyebrow">Hier finden Sie mich</p>
       <h2>${title}</h2>
-      <p class="lead">Niktos sitzt in <strong>Ludwigsburg</strong>. Kunden aus dem Landkreis Ludwigsburg und der Region Stuttgart treffe ich gerne persönlich – alle anderen betreue ich genauso persönlich per Video-Call, Telefon und WhatsApp.</p>
+      <p class="lead">Niktos sitzt in <strong>Ludwigsburg</strong>. Kunden aus dem Landkreis und der Region Stuttgart treffe ich gern persönlich. Alle anderen betreue ich genauso persönlich per Video-Call, Telefon und WhatsApp.</p>
       <ul class="towns">${site.towns.map((t, i) => `<li class="${i < 2 ? 'is-main' : ''}">${icon('pin')}${t}</li>`).join('')}</ul>
       <div class="actions">
-        <a class="btn btn--ghost btn--sm" href="${site.googleMapsUrl}" target="_blank" rel="noopener">${icon('map')} Auf Google Maps ansehen</a>
-        <a class="btn btn--ghost btn--sm" href="${site.instagram}" target="_blank" rel="noopener">${icon('insta')} ${site.instagramHandle}</a>
+        <a class="badge-s" href="${site.googleMapsUrl}" target="_blank" rel="noopener">${gmark} Google Maps</a>
+        <a class="badge-s" href="${site.instagram}" target="_blank" rel="noopener">${icon('insta')} ${site.instagramHandle}</a>
       </div>
     </div>
-    <div class="reveal reveal-d1">
-      <div class="map" data-src="${site.mapEmbed}">
-        <div class="map__consent">
-          <div>
-            <div class="map__pin">${icon('pin')}</div>
-            <p><strong>${site.name} · Webdesign & SEO</strong><br>${site.address.zip} ${site.address.city}</p>
-            <p class="small">Mit Klick auf „Karte laden“ wird Google Maps geladen und Daten an Google übertragen – siehe <a href="/datenschutzerklaerung/">Datenschutz</a>.</p>
-            <div class="actions"><button class="btn btn--sm" type="button" data-map-load>Karte laden</button></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="reveal reveal-d1">${mapCard()}</div>
   </div>
 </section>`;
+
+/* ---------- Google search mock (illustration, clearly labelled) ---------- */
+const serp = () => `
+<div class="serp" aria-label="Beispielhafte Darstellung einer Google-Suche">
+  <div class="serp__bar">${icon('search')} Elektriker Ludwigsburg</div>
+  <div class="serp__map"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="150" fill="#e8f0e4"/><path d="M0 50h400M0 110h400M90 0v150M230 0v150M330 0v150" stroke="#fff" stroke-width="9"/><path d="M0 90c80-20 160 30 240 0s110-40 160-20" fill="none" stroke="#b8d3ff" stroke-width="14"/><g font-family="Arial" font-size="11" font-weight="700" fill="#fff"><circle cx="150" cy="60" r="12" fill="#0a66ff" stroke="#0b0d14" stroke-width="2"/><text x="150" y="64" text-anchor="middle">1</text><circle cx="280" cy="95" r="11" fill="#ea4335"/><text x="280" y="99" text-anchor="middle">2</text><circle cx="60" cy="120" r="11" fill="#ea4335"/><text x="60" y="124" text-anchor="middle">3</text></g></svg></div>
+  <div class="serp__item is-you"><span class="serp__dot">1</span><span><b>Ihr Betrieb</b><span class="stars">★★★★★</span> 4,9 · Elektriker in Ludwigsburg<br>Geöffnet · Website · Route · Anrufen</span></div>
+  <div class="serp__item"><span class="serp__dot">2</span><span><b>Mitbewerber A</b><span class="stars">★★★★</span>☆ 4,1 · Elektriker</span></div>
+  <div class="serp__item" style="border-bottom:0"><span class="serp__dot">3</span><span><b>Mitbewerber B</b>Keine Website</span></div>
+  <p class="serp__cap">Beispielhafte Darstellung</p>
+  <span class="arrow-note" aria-hidden="true">da wollen<br>wir hin!${scribbleArrow()}</span>
+</div>`;
 
 /* ---------- Funnel (step-by-step enquiry) ---------- */
 function funnel(px = 'f') {
@@ -260,9 +306,9 @@ function funnel(px = 'f') {
   <input type="hidden" name="paket" value="">
   <input type="hidden" name="t" value="">
   <div class="hp" aria-hidden="true"><label for="${px}-hp">Firma-Website (leer lassen)</label><input id="${px}-hp" name="_gotcha" tabindex="-1" autocomplete="off"></div>
-  <div class="funnel__top"><span data-count>Schritt 1 von 6</span><span>${icon('clock')} dauert ca. 60 Sekunden</span></div>
+  <div class="funnel__top"><span data-count>Schritt 1 von 6</span><span>${icon('clock')} dauert ca. 1 Minute</span></div>
   <div class="funnel__bar" aria-hidden="true"><i></i></div>
-  ${step(1, 'Worum geht es bei Ihrem Projekt?', 'Wählen Sie, was am besten passt.', `<div class="opts">
+  ${step(1, 'Worum geht es bei Ihrem Projekt?', 'Einfach anklicken, was am besten passt.', `<div class="opts">
     ${opt('anliegen', 'Neue Website', 'Neue Website', 'rocket')}
     ${opt('anliegen', 'Website-Relaunch', 'Relaunch meiner Website', 'refresh')}
     ${opt('anliegen', 'SEO & Google-Sichtbarkeit', 'SEO & Google-Sichtbarkeit', 'search')}
@@ -270,36 +316,36 @@ function funnel(px = 'f') {
     ${opt('anliegen', 'Website-Check', 'Website-Check (' + site.checkPrice + ' €)', 'gauge')}
     ${opt('anliegen', 'Etwas anderes', 'Etwas anderes', 'chat')}
   </div>`)}
-  ${step(2, 'Haben Sie bereits eine Website?', '', `<div class="opts">
+  ${step(2, 'Haben Sie schon eine Website?', '', `<div class="opts">
     ${opt('hat_website', 'Ja', 'Ja, habe ich', 'globe')}
     ${opt('hat_website', 'Nein', 'Nein, noch nicht', 'sparkle')}
   </div>
-  <div class="field" data-if="hat_website=Ja" hidden><label for="${px}-url">Ihre aktuelle Website-Adresse</label><input id="${px}-url" name="website_url" inputmode="url" placeholder="z. B. www.ihre-firma.de" autocomplete="url"></div>
+  <div class="field" data-if="hat_website=Ja" hidden><label for="${px}-url">Wie lautet die Adresse?</label><input id="${px}-url" name="website_url" inputmode="url" placeholder="z. B. www.ihre-firma.de" autocomplete="url"></div>
   <button type="button" class="btn btn--sm fnext" data-next hidden>Weiter ${icon('arrow')}</button>`)}
-  ${step(3, 'In welcher Branche sind Sie tätig?', 'So kann ich Ihnen passende Beispiele zeigen.', `<div class="opts">
+  ${step(3, 'In welcher Branche sind Sie unterwegs?', 'Dann kann ich Ihnen passende Beispiele zeigen.', `<div class="opts">
     ${opt('branche', 'Handwerk & Bau', 'Handwerk & Bau', 'layers')}
     ${opt('branche', 'Dienstleistung & Beratung', 'Dienstleistung & Beratung', 'handshake')}
-    ${opt('branche', 'Gastronomie & Hotel', 'Gastronomie & Hotel', 'heart')}
-    ${opt('branche', 'Gesundheit, Beauty & Fitness', 'Gesundheit, Beauty & Fitness', 'sparkle')}
+    ${opt('branche', 'Gastronomie & Hotel', 'Gastronomie & Hotel', 'coffee')}
+    ${opt('branche', 'Gesundheit, Beauty & Fitness', 'Gesundheit, Beauty & Fitness', 'heart')}
     ${opt('branche', 'Handel & Onlineshop', 'Handel & Onlineshop', 'euro')}
-    ${opt('branche', 'Immobilien & Hausverwaltung', 'Immobilien & Hausverwaltung', 'map')}
+    ${opt('branche', 'Immobilien & Hausverwaltung', 'Immobilien & Hausverwaltung', 'home')}
     ${opt('branche', 'Verein, Soziales & Bildung', 'Verein, Soziales & Bildung', 'users')}
     ${opt('branche', 'Sonstiges', 'Sonstiges', 'plus')}
   </div>`)}
-  ${step(4, 'Welches Budget haben Sie eingeplant?', 'Eine grobe Richtung genügt – so passt das Angebot von Anfang an.', `<div class="opts">
+  ${step(4, 'Welches Budget haben Sie ungefähr eingeplant?', 'Eine grobe Richtung reicht völlig.', `<div class="opts">
     ${opt('budget', 'bis 1.000 €', 'bis 1.000 €', '', 'passt zu Launch')}
     ${opt('budget', '1.000 – 2.000 €', '1.000 – 2.000 €', '', 'passt zu Boost')}
     ${opt('budget', '2.000 – 3.500 €', '2.000 – 3.500 €', '', 'Boost + Extras')}
     ${opt('budget', 'über 3.500 €', 'über 3.500 €', '', 'passt zu Dominate')}
     ${opt('budget', 'Noch unklar', 'Noch unklar – beraten Sie mich', '')}
   </div>`)}
-  ${step(5, 'Wann soll Ihre Website online gehen?', '', `<div class="opts">
+  ${step(5, 'Wann soll die Website online gehen?', '', `<div class="opts">
     ${opt('zeitrahmen', 'So schnell wie möglich', 'So schnell wie möglich', 'bolt')}
     ${opt('zeitrahmen', 'In 1–3 Monaten', 'In 1–3 Monaten', 'calendar')}
     ${opt('zeitrahmen', 'In 3–6 Monaten', 'In 3–6 Monaten', 'clock')}
-    ${opt('zeitrahmen', 'Ich informiere mich erst', 'Ich informiere mich erst', 'eye')}
+    ${opt('zeitrahmen', 'Ich informiere mich erst', 'Ich schaue mich erst um', 'eye')}
   </div>`)}
-  ${step(6, 'Fast geschafft – wie erreiche ich Sie?', 'Sie erhalten innerhalb von 24 Stunden eine persönliche Antwort. Kein Spam, versprochen.', `
+  ${step(6, 'Fast geschafft! Wie erreiche ich Sie?', 'Sie hören innerhalb von 24 Stunden von mir. Versprochen.', `
   <div class="form__grid">
     <div class="field"><label for="${px}-name">Name *</label><input id="${px}-name" name="name" autocomplete="name" required></div>
     <div class="field"><label for="${px}-firma">Unternehmen</label><input id="${px}-firma" name="firma" autocomplete="organization"></div>
@@ -310,7 +356,7 @@ function funnel(px = 'f') {
       ${opt('kontaktweg', 'Anruf', 'Anruf', 'phone')}
       ${opt('kontaktweg', 'E-Mail', 'E-Mail', 'mail')}
     </div></fieldset></div>
-    <div class="field form__full"><label for="${px}-msg">Möchten Sie noch etwas ergänzen? (optional)</label><textarea id="${px}-msg" name="nachricht" rows="3" placeholder="z. B. Wünsche, Beispiele, die Ihnen gefallen, Anzahl Seiten …" style="min-height:100px"></textarea></div>
+    <div class="field form__full"><label for="${px}-msg">Noch etwas, das ich wissen sollte? (optional)</label><textarea id="${px}-msg" name="nachricht" rows="3" placeholder="z. B. Wünsche, Websites, die Ihnen gefallen, Anzahl Seiten …" style="min-height:100px"></textarea></div>
     <label class="consent form__full"><input type="checkbox" name="datenschutz" value="ja" required><span>Ich habe die <a href="/datenschutzerklaerung/" target="_blank">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden. *</span></label>
     <div class="form__full"><button class="btn btn--lg btn--block" type="submit">Kostenloses Angebot anfordern ${icon('arrow')}</button></div>
   </div>
@@ -321,15 +367,17 @@ function funnel(px = 'f') {
 
 const funnelDialog = () => `
 <dialog class="fdialog" id="funnel" aria-labelledby="funnel-title">
-  <div class="fdialog__head"><strong id="funnel-title">${require('./icons').logoMark(28)} Projekt starten</strong><button class="fdialog__close" type="button" data-close aria-label="Schließen">${icon('close')}</button></div>
+  <div class="fdialog__head"><strong id="funnel-title">${logoMark(28)} Projekt starten</strong><button class="fdialog__close" type="button" data-close aria-label="Schließen">${icon('close')}</button></div>
   <div class="fdialog__body">${funnel('d')}</div>
 </dialog>`;
 
 /* ---------- Classic contact form ---------- */
 const contactForm = () => `
 <form class="form reveal reveal-d1" action="/kontakt.php" method="post" data-contact-form novalidate id="formular">
-  <h2>Schreiben Sie mir</h2>
-  <p class="muted">Klassisch per Formular – ich antworte innerhalb von 24 Stunden.</p>
+  ${sticker('24 h', 'Antwortzeit', 'sticker--blue sticker--top')}
+  <p class="eyebrow">Schreib mir</p>
+  <h2>Lassen Sie uns gemeinsam starten</h2>
+  <p class="muted">Haben Sie Fragen oder eine Idee? Schreiben Sie mir – ich antworte schnell und klar.</p>
   <div class="form__grid">
     <input type="hidden" name="form" value="kontakt">
     <div class="field"><label for="c-name">Name *</label><input id="c-name" name="name" autocomplete="name" required></div>
@@ -353,7 +401,7 @@ const contactCards = () => `
   <a class="ccard" href="tel:${site.phoneIntl}"><span class="ccard__ico">${icon('phone')}</span><span><small>Telefon</small><strong>${site.phone}</strong></span>${icon('arrowUpRight')}</a>
   <a class="ccard" href="mailto:${site.email}"><span class="ccard__ico">${icon('mail')}</span><span><small>E-Mail</small><strong>${site.email}</strong></span>${icon('arrowUpRight')}</a>
   <a class="ccard" href="${site.instagram}" target="_blank" rel="noopener"><span class="ccard__ico">${icon('insta')}</span><span><small>Instagram</small><strong>${site.instagramHandle}</strong></span>${icon('arrowUpRight')}</a>
-  <a class="ccard" href="${site.googleMapsUrl}" target="_blank" rel="noopener"><span class="ccard__ico">${icon('pin')}</span><span><small>Standort</small><strong>${site.address.zip} ${site.address.city} & Region Stuttgart</strong></span>${icon('arrowUpRight')}</a>
+  <a class="ccard" href="${site.googleMapsUrl}" target="_blank" rel="noopener"><span class="ccard__ico">${icon('pin')}</span><span><small>Google Maps</small><strong>Niktos · ${site.address.zip} ${site.address.city}</strong></span>${icon('arrowUpRight')}</a>
 </div>`;
 
-module.exports = { esc, euro, years, img, hasImg, icon, logoMark, startBtn, waBtn, telBtn, ticks, breadcrumb, head, pageHero, marquee, serviceCards, features, steps, processSteps, pricing, compareTable, faq, ctaBand, portrait, browser, projects, area, funnel, funnelDialog, contactForm, contactCards };
+module.exports = { esc, euro, years, img, hasImg, icon, logoMark, startBtn, waBtn, telBtn, ticks, sticker, arrowNote, scribbleArrow, breadcrumb, head, pageHero, marquee, serviceCards, features, steps, processSteps, pricing, compareTable, faq, ctaBand, portrait, browser, projects, mapCard, area, serp, funnel, funnelDialog, contactForm, contactCards };
