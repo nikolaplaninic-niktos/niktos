@@ -17,3 +17,6 @@ Thumbs.db
 
 # Generated e-mail preview (npm run mail)
 mail-preview/
+
+# Claude Artifact preview build
+artifact/
