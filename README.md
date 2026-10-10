@@ -44,7 +44,7 @@ Iz stare stranice preuzeto: plavi kvadrati uz meni, crna linija sidebara, plava 
 
 - **Cijene, paketi, telefon, Instagram, usluge, referencije, gradovi:** `src/site.js` (jedno mjesto → sve stranice, schema, llms.txt)
 - **Tekstovi:** `src/pages/*.js` · **Dizajn:** `src/css/style.css` · **JS (formular, meni):** `src/js/main.js`
-- **Tvoja profesionalna slika:** stavi je u `media/originals/`, otkomentiraj `portrait` u `src/images.config.js`, `npm run all` → placeholder s „N“ se automatski zamijeni slikom (početna + Über mich).
+- **Tvoja slika:** `media/originals/nikola-planinic.jpg` (polaroid) i `nikola-avatar.jpg` (avatar) – zamijeni datoteke i pokreni `npm run all`.
 - **Novi blog članak:** kopiraj `src/pages/11-blog-professionelle-website.js` (novi broj, novi `path`), dodaj ga u `posts` u `src/pages/10-blog.js`.
 
 ## Potvrditi prije objave (TODO)
@@ -52,7 +52,8 @@ Iz stare stranice preuzeto: plavi kvadrati uz meni, crna linija sidebara, plava 
 - [ ] **Ulica i kućni broj** – `src/site.js → address.street` (Impressum je bez toga pravno nepotpun)
 - [ ] **Cijene paketa** (990 / 1.990 / 3.490 €), Care 39 €/mj., Website-Check 49 €, Extras na `/preise/`, plaćanje 50/50 – sve po mojoj procjeni
 - [ ] **Jezici** „Deutsch & Kroatisch“ na Über mich
-- [ ] **Dopuštenje klijenata** za screenshotove (Kabic, Spatzennest, KomLab)
+- [ ] **Dopuštenje Kabica** za screenshot (jedina referenca)
+- [ ] **Profi fotka** – zamijeniti `media/originals/nikola-planinic.jpg` i `nikola-avatar.jpg`, pa `npm run all`
 - [ ] **Google-Unternehmensprofil** – pošalji link profila → `googleMapsUrl`/`mapEmbed` u `site.js` pokazuju točno na Niktos (sad: pretraga „Niktos Webdesign & SEO, 71642 Ludwigsburg“)
 - [ ] **Umami** websiteId (`site.js`) i server regija u Datenschutz
 - [ ] **SMTP**: mailbox `website@niktos.com` + `niktos-config.php` na serveru (predložak `config.example.php`)
