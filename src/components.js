@@ -5,7 +5,6 @@ const M = require('./images.manifest.json');
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const euro = (n) => n.toLocaleString('de-DE') + ' €';
-const years = () => new Date().getFullYear() - site.since;
 
 /** Responsive <img> from the manifest. */
 function img(key, { sizes = '100vw', cls = '', eager = false, alt, style = '' } = {}) {
@@ -31,6 +30,36 @@ const sticker = (big, small = '', cls = '', style = '') => `<span class="sticker
 // hand-drawn arrow (points down-left by default)
 const scribbleArrow = (d = 'M50 4C38 10 24 20 14 36m0 0 1-12m-1 12 11-4') => `<svg viewBox="0 0 56 46" aria-hidden="true"><path d="${d}" fill="none" stroke="#0b0d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 const arrowNote = (text, style = '') => `<span class="arrow-note"${style ? ` style="${style}"` : ''} aria-hidden="true">${scribbleArrow()}${text}</span>`;
+
+/** Typing headline part. Invisible "ghost" copies of every phrase reserve the space of the
+ *  largest one, so the headline never grows or shrinks while the words change. */
+const rotator = (words) => `<span class="rot">${words.map((w) => `<span class="rot__g" data-t="${esc(w)}" aria-hidden="true"></span>`).join('')}<span class="grad type" data-type="${words.map(esc).join('|')}">${esc(words[0])}</span></span>`;
+
+/** "Alles aus einer Hand" – one contact for everything */
+const allInOne = ({ panel = false } = {}) => `
+<section class="section${panel ? ' section--panel' : ''}" id="alles-aus-einer-hand">
+  <div class="container split split--top">
+    <div class="reveal">
+      <p class="eyebrow">Alles aus einer Hand</p>
+      <h2>Ein Ansprechpartner. <span class="hl">Null Stress.</span></h2>
+      <p class="lead">Webdesigner, Texter, Hosting-Firma, SEO-Agentur und jemand für Updates – das sind schnell fünf Dienstleister, fünf Rechnungen und fünf Telefonnummern. Bei Niktos kümmere ich mich um alles. Sie haben eine Nummer, einen Festpreis und eine Person, die Ihr Projekt kennt.</p>
+      <div class="aio__vs">
+        <div class="aio__col aio__col--no"><p class="aio__label">Ohne Niktos</p>${ticks(['5 Dienstleister koordinieren', 'Jeder schiebt es auf den anderen', 'Viele Rechnungen, viele Verträge'], 'ticks--x')}</div>
+        <div class="aio__col aio__col--yes"><p class="aio__label">Mit Niktos</p>${ticks(['Ein Ansprechpartner: ich', 'Ein Festpreis, alles drin', 'Änderung? Eine WhatsApp genügt'])}</div>
+      </div>
+    </div>
+    <div class="reveal reveal-d1">
+      <div class="aio">
+        <div class="aio__hub">${logoMark(54)}<span><strong>Niktos</strong>kümmert sich um</span></div>
+        <ul class="aio__grid">${[
+          ['layout', 'Design & Konzept'], ['pen', 'Texte, die verkaufen'], ['globe', 'Domain & E-Mail'], ['lock', 'Hosting & SSL'],
+          ['search', 'SEO & Google'], ['map', 'Google-Profil & Maps'], ['wa', 'WhatsApp & Formulare'], ['shield', 'Sicherheit & Backups'],
+          ['refresh', 'Wartung & Updates'], ['chat', 'Änderungen & Support'],
+        ].map(([ic, t]) => `<li><span class="aio__ico">${icon(ic)}</span>${t}</li>`).join('')}</ul>
+      </div>
+    </div>
+  </div>
+</section>`;
 
 const breadcrumb = (items) => `
 <nav class="crumbs" aria-label="Brotkrumen"><ol>${items.map((it, i) => i === items.length - 1
@@ -66,7 +95,7 @@ function pageHero({ crumbs, eyebrow, h1, lead, actions = true, aside = '' }) {
 }
 
 const marquee = (items, tilt = false) => {
-  const row = items.map((t) => `<span>${t}</span>`).join('');
+  const row = items.map((t) => `<span>${t.replace('⚡', `<i class="bolt">${icon('bolt')}</i>`)}</span>`).join('');
   return `<div class="marquee${tilt ? ' marquee--grad' : ''}" aria-hidden="true"><div class="marquee__track">${row}${row}</div></div>`;
 };
 
@@ -139,7 +168,7 @@ function pricing({ compact = false } = {}) {
     <span>${icon('check')} Festpreis, keine versteckten Kosten</span>
     <span>${icon('check')} Kostenloses Erstgespräch</span>
     <span>${icon('check')} Die Website gehört Ihnen</span>
-    <span>${icon('check')} Ein Ansprechpartner: ich</span>
+    <span>${icon('check')} Alles aus einer Hand</span>
   </div>`;
 }
 
@@ -181,7 +210,7 @@ function faq(items, { title = 'Häufige Fragen', eyebrow = 'Gut zu wissen', lead
 }
 
 /* ---------- CTA band ---------- */
-const ctaBand = ({ title = 'Lassen Sie uns <span class="hl">gemeinsam starten.</span>', text = 'Erzählen Sie mir in einer Minute von Ihrem Projekt. Innerhalb von 24 Stunden bekommen Sie eine ehrliche Einschätzung und ein Festpreis-Angebot. Kostenlos und unverbindlich.', waText } = {}) => `
+const ctaBand = ({ title = 'Lassen Sie uns <span class="hl">gemeinsam starten.</span>', text = 'Erzählen Sie mir in einer Minute von Ihrem Projekt. Innerhalb von 24 Stunden bekommen Sie eine ehrliche Einschätzung und ein Festpreis-Angebot – alles aus einer Hand. Kostenlos und unverbindlich.', waText } = {}) => `
 <section class="section section--tight">
   <div class="container">
     <div class="cta reveal">
@@ -208,7 +237,7 @@ function portrait({ eager = false } = {}) {
     <span class="tape" aria-hidden="true"></span>
     <div class="portrait__img">${inner}</div>
     <figcaption class="portrait__cap">${site.ownerFirst} · ${site.address.city}</figcaption>
-    ${sticker(String(years()), 'Jahre Erfahrung')}
+    ${sticker('LB', 'aus Ludwigsburg', 'sticker--blue')}
   </figure>`;
 }
 
@@ -404,4 +433,4 @@ const contactCards = () => `
   <a class="ccard" href="${site.googleMapsUrl}" target="_blank" rel="noopener"><span class="ccard__ico">${icon('pin')}</span><span><small>Google Maps</small><strong>Niktos · ${site.address.zip} ${site.address.city}</strong></span>${icon('arrowUpRight')}</a>
 </div>`;
 
-module.exports = { esc, euro, years, img, hasImg, icon, logoMark, startBtn, waBtn, telBtn, ticks, sticker, arrowNote, scribbleArrow, breadcrumb, head, pageHero, marquee, serviceCards, features, steps, processSteps, pricing, compareTable, faq, ctaBand, portrait, browser, projects, mapCard, area, serp, funnel, funnelDialog, contactForm, contactCards };
+module.exports = { rotator, allInOne, esc, euro, img, hasImg, icon, logoMark, startBtn, waBtn, telBtn, ticks, sticker, arrowNote, scribbleArrow, breadcrumb, head, pageHero, marquee, serviceCards, features, steps, processSteps, pricing, compareTable, faq, ctaBand, portrait, browser, projects, mapCard, area, serp, funnel, funnelDialog, contactForm, contactCards };

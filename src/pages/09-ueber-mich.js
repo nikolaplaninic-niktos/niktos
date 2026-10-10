@@ -12,14 +12,14 @@ module.exports = {
   crumbs,
   pageType: 'AboutPage',
   title: 'Über mich – Nikola Planinić, Webdesigner Ludwigsburg | Niktos',
-  description: `Nikola Planinić, Inhaber von Niktos: Webdesigner & SEO aus Ludwigsburg mit ${C.years()} Jahren Erfahrung. Persönlich, ehrlich, erreichbar – auch per WhatsApp.`,
+  description: `Nikola Planinić, Inhaber von Niktos: Webdesigner & SEO aus Ludwigsburg – alles aus einer Hand. Persönlich, ehrlich, erreichbar – auch per WhatsApp.`,
   schema: [{ '@type': 'ProfilePage', '@id': site.url + path + '#profile', mainEntity: { '@id': site.url + '/#nikola-planinic' }, url: site.url + path }],
   body: `
 ${C.pageHero({
   crumbs,
   eyebrow: 'Über mich',
   h1: `Hi, ich bin ${site.ownerFirst}. <span class="grad">Ich baue Websites, die wirken.</span>`,
-  lead: `Webdesigner und SEO aus Ludwigsburg, Inhaber von Niktos – und seit ${C.years()} Jahren davon überzeugt, dass eine gute Website das stärkste Verkaufswerkzeug eines Unternehmens ist.`,
+  lead: `Webdesigner und SEO aus Ludwigsburg, Inhaber von Niktos – und fest davon überzeugt, dass eine gute Website das stärkste Verkaufswerkzeug eines Unternehmens ist.`,
   actions: C.waBtn('Schreiben Sie mir', { cls: 'btn--lg' }) + `<a class="btn btn--ghost btn--lg" href="${site.instagram}" target="_blank" rel="noopener">${icon('insta')} ${site.instagramHandle}</a>`,
 })}
 
@@ -50,7 +50,7 @@ ${C.pageHero({
 <section class="section section--tight">
   <div class="container">
     <div class="stats reveal">
-      <div class="stat"><strong class="grad" data-count-to="${C.years()}">${C.years()}</strong><span>Jahre Erfahrung</span></div>
+      <div class="stat"><strong class="grad">1</strong><span>Ansprechpartner für alles</span></div>
       <div class="stat"><strong class="grad">LB</strong><span>Sitz in Ludwigsburg</span></div>
       <div class="stat"><strong class="grad">DE · HR</strong><span>Beratung auf Deutsch & Kroatisch</span></div>
       <div class="stat"><strong class="grad">24 h</strong><span>Antwortzeit (werktags)</span></div>
@@ -62,8 +62,8 @@ ${C.pageHero({
   <div class="container">
     ${C.head({ eyebrow: 'Womit ich arbeite', title: 'Moderne Technik. Kein Ballast.', lead: 'Ich wähle die Technik passend zu Ihrem Ziel – nicht umgekehrt.' })}
     ${C.features([
-      ['code', 'Handgecodete Websites', 'HTML, CSS & JavaScript ohne Baukasten-Ballast: maximale Geschwindigkeit und Sicherheit.'],
-      ['layers', 'WordPress', 'Wenn Sie Inhalte selbst pflegen möchten – sauber aufgesetzt, ohne Plugin-Chaos.'],
+      ['bolt', 'Schnell & schlank', 'Kein Baukasten-Ballast: kurze Ladezeiten, die Google und Ihre Besucher lieben.'],
+      ['pen', 'Auf Wunsch selbst pflegbar', 'Sie möchten Texte und Bilder selbst ändern? Dann bekommen Sie ein einfaches, sauberes Redaktionssystem.'],
       ['search', 'SEO- & Analyse-Tools', 'Google Search Console, PageSpeed Insights, Lighthouse, strukturierte Daten und cookielose Statistik.'],
     ])}
   </div>

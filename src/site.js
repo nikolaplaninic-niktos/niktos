@@ -8,7 +8,7 @@ module.exports = {
   legalName: 'Niktos Nikola Planinić',
   owner: 'Nikola Planinić',
   ownerFirst: 'Nikola',
-  slogan: 'Websites, die Kunden bringen.',
+  slogan: 'Websites, die Kunden bringen. Alles aus einer Hand.',
   phone: '0162 2403682',
   phoneIntl,
   phoneSchema: '+49-162-2403682',
@@ -25,7 +25,6 @@ module.exports = {
   googleRouteUrl: 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent('Niktos Webdesign & SEO, 71642 Ludwigsburg'),
   // TODO Nikola: Straße + Hausnummer ist im Impressum Pflicht (§ 5 DDG). Leer = wird nicht angezeigt.
   address: { street: '', zip: '71642', city: 'Ludwigsburg', region: 'Baden-Württemberg', country: 'DE' },
-  since: 2019, // "7 Jahre Erfahrung" (Stand 2026) – wird automatisch hochgezählt
   replyPromise: 'Antwort innerhalb von 24 Stunden (werktags)',
   kleinunternehmer: true, // § 19 UStG → Preise sind Endpreise
   // Umami Analytics – websiteId aus cloud.umami.is eintragen (Settings → Websites)
@@ -35,7 +34,7 @@ module.exports = {
     { id: 'webdesign', title: 'Webdesign & Website-Erstellung', short: 'Individuelle Websites, die schnell laden, Vertrauen aufbauen und Besucher zu Anfragen machen.', href: '/webdesign-ludwigsburg/', icon: 'layout',
       bullets: ['Individuelles Design statt Baukasten', 'Mobil zuerst, blitzschnell', 'Texte, die verkaufen'] },
     { id: 'seo', title: 'SEO & KI-Sichtbarkeit', short: 'Gefunden werden – bei Google, in Google Maps und in KI-Assistenten wie ChatGPT & Gemini.', href: '/seo-ludwigsburg/', icon: 'search',
-      bullets: ['Lokales SEO & Google Maps', 'Strukturierte Daten & llms.txt', 'Inhalte, die KI zitiert'] },
+      bullets: ['Lokales SEO & Google Maps', 'Technik, die Google & KI verstehen', 'Inhalte, die KI zitiert'] },
     { id: 'wartung', title: 'Wartung, Hosting & Support', short: 'Updates, Backups, Sicherheit und Änderungen – Ihre Website bleibt schnell und aktuell.', href: '/wartung-hosting/', icon: 'shield',
       bullets: ['Hosting & SSL inklusive', 'Änderungen per WhatsApp', 'Monitoring & Backups'] },
     { id: 'check', title: 'Website-Check', short: 'Der ehrliche Profi-Check Ihrer aktuellen Website – mit PDF-Report und klarem Maßnahmenplan.', href: '/website-check/', icon: 'gauge',
@@ -100,7 +99,7 @@ module.exports = {
   projects: [
     { id: 'kabic', name: 'Kabic Hausmeister & Gartenpflege', url: 'https://kabic-hausmeister-gartenpflege.de', domain: 'kabic-hausmeister-gartenpflege.de', img: 'kabicDesktop', mobile: 'kabicMobile',
       place: 'Bietigheim-Bissingen', branch: 'Hausmeisterservice & Gartenpflege',
-      text: 'Kompletter Relaunch: weg von WordPress, hin zu einer handgecodeten, extrem schnellen Website mit 7 SEO-Leistungsseiten, lokalem SEO für den Landkreis Ludwigsburg, Anfrageformular mit Bestätigungs-Mail, WhatsApp-Anbindung und KI-optimierten Inhalten.',
+      text: 'Kompletter Relaunch aus einer Hand: neues Design, extrem schnelle Ladezeit, 7 Leistungsseiten, lokales SEO für den Landkreis Ludwigsburg, Anfrageformular mit Bestätigungs-Mail und WhatsApp-Anbindung.',
       tags: ['Relaunch', 'Lokales SEO', 'KI-Sichtbarkeit', 'Formular + E-Mails'] },
     { id: 'spatzennest', name: 'Kinderbetreuung Spatzennest UG', url: 'https://kinderbetreuung-spatzennest.de', domain: 'kinderbetreuung-spatzennest.de', img: 'spatzennestDesktop',
       place: 'Region Stuttgart', branch: 'Kinderbetreuung & Integration',

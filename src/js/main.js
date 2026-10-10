@@ -8,6 +8,21 @@
   const track = (name, data) => { try { if (window.umami) window.umami.track(name, data); } catch (_) { /* never break a click */ } };
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
+  /* ---------- Every newly opened page starts at the top ---------- */
+  // Browsers (and embedded previews/in-app browsers) sometimes keep the old scroll position.
+  // Back/forward keeps its position, links with #anchor still jump to the anchor.
+  const navEntry = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+  if (!location.hash && !(navEntry && navEntry.type === 'back_forward')) {
+    const toTop = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      try { d.documentElement.scrollIntoView({ block: 'start', behavior: 'instant' }); } catch (_) { /* old browsers */ }
+    };
+    let touched = false;
+    ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach((ev) => window.addEventListener(ev, () => { touched = true; }, { once: true, passive: true }));
+    toTop();
+    window.addEventListener('load', () => { if (!touched) toTop(); }, { once: true });
+  }
+
   /* ---------- Mobile navigation (sidebar becomes a drawer) ---------- */
   const burger = d.querySelector('.burger');
   const setNav = (open) => { d.body.classList.toggle('nav-open', open); burger && burger.setAttribute('aria-expanded', String(open)); burger && burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen'); };

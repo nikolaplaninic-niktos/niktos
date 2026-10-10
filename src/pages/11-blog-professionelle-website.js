@@ -205,7 +205,7 @@ module.exports = {
       ${article}
       <div class="author">
         ${logoMark(64)}
-        <div><strong>${site.owner}</strong><p>Inhaber von Niktos · Webdesigner & SEO aus Ludwigsburg mit ${C.years()} Jahren Erfahrung. Ich baue Websites, die schnell laden, gefunden werden und Kunden bringen. <a href="/ueber-mich/">Mehr über mich</a> · <a href="${site.instagram}" target="_blank" rel="noopener">Instagram</a></p></div>
+        <div><strong>${site.owner}</strong><p>Inhaber von Niktos · Webdesigner & SEO aus Ludwigsburg. Ich baue Websites aus einer Hand, die schnell laden, gefunden werden und Kunden bringen. <a href="/ueber-mich/">Mehr über mich</a> · <a href="${site.instagram}" target="_blank" rel="noopener">Instagram</a></p></div>
       </div>
     </article>
     <aside class="toc" aria-label="Inhaltsverzeichnis">

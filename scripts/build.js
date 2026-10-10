@@ -27,7 +27,7 @@ const address = { '@type': 'PostalAddress', ...(site.address.street ? { streetAd
 const person = {
   '@type': 'Person', '@id': PERSON_ID, name: site.owner, alternateName: 'Nikola Planinic', jobTitle: 'Webdesigner & SEO-Berater, Inhaber von Niktos',
   worksFor: { '@id': BUSINESS_ID }, url: abs('/ueber-mich/'), sameAs: [site.instagram],
-  knowsAbout: ['Webdesign', 'Webentwicklung', 'Suchmaschinenoptimierung', 'Lokales SEO', 'Generative Engine Optimization', 'KI-Suche', 'Conversion-Optimierung', 'WordPress', 'Core Web Vitals'],
+  knowsAbout: ['Webdesign', 'Webentwicklung', 'Suchmaschinenoptimierung', 'Lokales SEO', 'Generative Engine Optimization', 'KI-Suche', 'Conversion-Optimierung', 'Core Web Vitals'],
   address: { '@type': 'PostalAddress', addressLocality: site.address.city, addressCountry: 'DE' },
 };
 const business = {
@@ -48,13 +48,12 @@ const business = {
   paymentAccepted: 'Überweisung',
   founder: { '@id': PERSON_ID },
   employee: { '@id': PERSON_ID },
-  foundingDate: String(site.since),
   address,
   hasMap: site.googleMapsUrl,
   areaServed: site.towns.map((t) => ({ '@type': 'City', name: t })).concat([{ '@type': 'AdministrativeArea', name: 'Landkreis Ludwigsburg' }, { '@type': 'AdministrativeArea', name: 'Region Stuttgart' }, { '@type': 'Country', name: 'Deutschland' }]),
   sameAs: [site.instagram],
   contactPoint: { '@type': 'ContactPoint', telephone: site.phoneSchema, email: site.email, contactType: 'customer service', availableLanguage: ['German', 'Croatian', 'English'], areaServed: 'DE' },
-  knowsAbout: ['Webdesign', 'Website-Erstellung', 'Website-Relaunch', 'Suchmaschinenoptimierung (SEO)', 'Lokales SEO', 'Google-Unternehmensprofil', 'KI-Sichtbarkeit (GEO)', 'ChatGPT-Optimierung', 'Core Web Vitals', 'Conversion-Optimierung', 'Website-Wartung', 'Hosting', 'WordPress'],
+  knowsAbout: ['Webdesign', 'Website-Erstellung', 'Website-Relaunch', 'Suchmaschinenoptimierung (SEO)', 'Lokales SEO', 'Google-Unternehmensprofil', 'KI-Sichtbarkeit (GEO)', 'ChatGPT-Optimierung', 'Core Web Vitals', 'Conversion-Optimierung', 'Website-Wartung', 'Hosting', 'Domain & E-Mail'],
   hasOfferCatalog: {
     '@type': 'OfferCatalog', name: 'Webdesign-Pakete',
     itemListElement: site.packages.map((p) => ({
@@ -134,7 +133,7 @@ function footer(page) {
     <div class="footer__grid">
       <div>
         <a class="brand" href="/" aria-label="${site.name} – Startseite">${logoMark(40)}<span class="brand__word">NIKTOS</span></a>
-        <p style="margin-top:18px">Webdesign & SEO aus ${site.address.city}. Ich baue Websites, die schnell laden, gefunden werden und Ihnen Kunden bringen. Persönlich, ehrlich und mit Herz.</p>
+        <p style="margin-top:18px">Webdesign & SEO aus ${site.address.city}. Websites, die schnell laden, gefunden werden und Ihnen Kunden bringen. Alles aus einer Hand, persönlich und mit Herz.</p>
         <div class="footer__social">
           <a href="${site.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${icon('insta')}</a>
           <a href="${site.whatsapp}" target="_blank" rel="noopener" aria-label="WhatsApp">${icon('wa')}</a>
@@ -342,7 +341,7 @@ ${site.towns.join(', ')}, Landkreis Ludwigsburg, Region Stuttgart sowie deutschl
 - DSGVO-bewusst: keine Tracking-Cookies, lokal gehostete Schriften, Google Maps erst nach Klick
 - Kommunikation auch per WhatsApp; Antwort auf Anfragen in der Regel innerhalb von 24 Stunden (werktags)
 - Kostenloses Erstgespräch, transparente Festpreise, keine versteckten Kosten
-- ${C.years()} Jahre Erfahrung im Webdesign (seit ${site.since})
+- Alles aus einer Hand: Design, Texte, Technik, Domain, Hosting, E-Mail, SEO, Google-Profil, Wartung und Sicherheit – ein Ansprechpartner statt vieler Dienstleister
 
 ## Seiten
 ${indexable.map((p) => `- [${p.title.split(' | ')[0]}](${abs(p.path)}): ${p.description}`).join('\n')}

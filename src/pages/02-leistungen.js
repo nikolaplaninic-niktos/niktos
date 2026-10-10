@@ -6,7 +6,7 @@ const crumbs = [{ name: 'Startseite', url: '/' }, { name: 'Leistungen', url: '/l
 
 const FAQ = C.faq([
   ['Bieten Sie alles aus einer Hand an?', 'Ja. Konzept, Design, Texte, Programmierung, SEO, Google-Unternehmensprofil, Hosting und Wartung – alles bei mir. Sie haben einen Ansprechpartner statt fünf Dienstleister.'],
-  ['Arbeiten Sie mit WordPress?', 'Das hängt von Ihrem Ziel ab. Für maximale Geschwindigkeit und Sicherheit setze ich schlanke, handgecodete Websites um – ohne Plugin-Ballast. Wenn Sie Inhalte oft selbst pflegen möchten, ist ein Redaktionssystem wie WordPress die bessere Wahl. Ich berate Sie ehrlich, was zu Ihnen passt.'],
+  ['Kann ich meine Website später selbst bearbeiten?', 'Ja, wenn Sie das möchten. Ich wähle die Technik passend zu Ihrem Ziel: maximal schnell und sicher oder mit einem einfachen Redaktionssystem, in dem Sie Texte und Bilder selbst ändern. Viele Kunden lassen Änderungen aber einfach von mir erledigen, per WhatsApp.'],
   ['Können Sie meine bestehende Website überarbeiten?', 'Ja – ein Relaunch ist eine meiner häufigsten Aufgaben. Dabei übernehme ich wertvolle Inhalte und Google-Rankings (per 301-Weiterleitungen), damit Sie nichts verlieren, sondern dazugewinnen.'],
   ['Machen Sie auch Onlineshops?', 'Kleinere Shops und Buchungs- oder Anfrage-Systeme setze ich gerne um. Für große Shops mit tausenden Produkten empfehle ich Ihnen im Erstgespräch den passenden Weg.'],
 ]);
@@ -27,7 +27,7 @@ ${C.pageHero({
   crumbs,
   eyebrow: 'Leistungen',
   h1: 'Alles, was Ihre Website <span class="grad">zum Verkaufen</span> braucht.',
-  lead: 'Design, Technik, Texte, Sichtbarkeit und Betreuung – aus einer Hand, zum Festpreis und mit einem festen Ansprechpartner. Damit Sie sich um Ihr Geschäft kümmern können, während Ihre Website neue Kunden bringt.',
+  lead: 'Design, Technik, Texte, Sichtbarkeit und Betreuung – alles aus einer Hand, zum Festpreis und mit einem festen Ansprechpartner. Damit Sie sich um Ihr Geschäft kümmern können, während Ihre Website neue Kunden bringt.',
 })}
 
 <section class="section">
@@ -35,6 +35,8 @@ ${C.pageHero({
     ${C.serviceCards()}
   </div>
 </section>
+
+${C.allInOne({ panel: true })}
 
 <section class="section section--panel">
   <div class="container">

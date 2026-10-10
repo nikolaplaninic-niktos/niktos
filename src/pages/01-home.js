@@ -31,7 +31,7 @@ module.exports = {
       <div class="hero__badges">
         <span class="badge-s">${icon('pin')} Webdesign & SEO aus Ludwigsburg</span>
       </div>
-      <h1>Webdesign in Ludwigsburg, das <span class="grad type" data-type="Kunden bringt.|gefunden wird.|verkauft.|begeistert.">Kunden bringt.</span></h1>
+      <h1>Webdesign in Ludwigsburg, das ${C.rotator(['richtig gut aussieht.', 'schnell online ist.', 'zu Ihnen passt.', 'Kunden bringt.'])}</h1>
       <p class="lead">Hi, ich bin ${site.ownerFirst}. Ich baue Websites für Handwerker, Dienstleister und kleine Unternehmen, die <strong>schnell laden</strong>, <strong>bei Google gefunden werden</strong> und endlich <span class="hl">Anfragen bringen</span>. Persönlich, ehrlich und zum Festpreis.</p>
       <div class="actions">
         ${C.startBtn('Kostenloses Angebot', { cls: 'btn--lg' })}
@@ -40,10 +40,11 @@ module.exports = {
       <div class="hero__trust">
         <span>${icon('check')} Festpreise ab ${C.euro(site.packages[0].price)}</span>
         <span>${icon('check')} Antwort in 24 h</span>
-        <span>${icon('check')} ${C.years()} Jahre Erfahrung</span>
+        <span>${icon('check')} Alles aus einer Hand</span>
       </div>
     </div>
     <div class="stage">
+      <span class="stage__bg" aria-hidden="true"></span>
       ${C.browser(kabic.img, kabic.domain, { sizes: '(max-width: 1280px) 90vw, 40vw', eager: true })}
       <div class="stage__phone">${C.img(kabic.mobile, { sizes: '180px', alt: '' })}</div>
       ${C.sticker(C.euro(site.packages[0].price), 'Festpreis ab', 'sticker--top')}
@@ -53,7 +54,7 @@ module.exports = {
   </div>
 </section>
 
-${C.marquee(['Webdesign', 'SEO', 'Google Maps', 'WhatsApp', 'KI-Sichtbarkeit', 'Relaunch', 'Wartung', 'Ludwigsburg'], true)}
+${C.marquee(['Komplette Websites', 'SEO', 'Wartung', 'Sicherheit', 'Bei Google sichtbar', 'Von KI gefunden', 'Blitzschnell ⚡'], true)}
 
 <section class="section">
   <div class="container">
@@ -82,7 +83,7 @@ ${C.marquee(['Webdesign', 'SEO', 'Google Maps', 'WhatsApp', 'KI-Sichtbarkeit', '
 <section class="section section--tight">
   <div class="container">
     <div class="stats reveal">
-      <div class="stat"><strong data-count-to="${C.years()}">${C.years()}</strong><span>Jahre Erfahrung im Webdesign</span></div>
+      <div class="stat"><strong>0 €</strong><span>versteckte Kosten – Festpreis</span></div>
       <div class="stat"><strong data-count-to="24" data-suffix=" h">24 h</strong><span>maximale Antwortzeit (werktags)</span></div>
       <div class="stat"><strong data-count-to="100" data-suffix=" %">100 %</strong><span>individuell, keine Vorlagen</span></div>
       <div class="stat"><strong>1</strong><span>fester Ansprechpartner: ich</span></div>
@@ -96,6 +97,8 @@ ${C.marquee(['Webdesign', 'SEO', 'Google Maps', 'WhatsApp', 'KI-Sichtbarkeit', '
     ${C.serviceCards()}
   </div>
 </section>
+
+${C.allInOne()}
 
 <section class="section" id="referenzen">
   <div class="container">
@@ -148,7 +151,7 @@ ${C.marquee(['Webdesign', 'SEO', 'Google Maps', 'WhatsApp', 'KI-Sichtbarkeit', '
     <div class="reveal reveal-d1">
       <p class="eyebrow">Wer steckt dahinter?</p>
       <h2>Hi, ich bin ${site.ownerFirst}!</h2>
-      <p class="lead">Seit ${C.years()} Jahren baue ich Websites. Und ich habe gelernt: Unternehmer wollen keine Technik-Vorträge. Sie wollen eine Website, die funktioniert, gut aussieht und Kunden bringt.</p>
+      <p class="lead">Ich baue Websites für Unternehmen aus der Region. Und ich habe gelernt: Unternehmer wollen keine Technik-Vorträge. Sie wollen eine Website, die funktioniert, gut aussieht und Kunden bringt.</p>
       <p style="color:var(--tx2)">Bei Niktos arbeiten Sie direkt mit mir. Ich beantworte Ihre Nachrichten selbst, auch per WhatsApp, und stehe mit meinem Namen für jedes Projekt ein. Am liebsten lerne ich meine Kunden bei einem Kaffee in Ludwigsburg kennen.</p>
       <span class="signature">${site.ownerFirst}</span>
       <div class="actions" style="margin-top:22px">
