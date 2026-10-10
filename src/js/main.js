@@ -226,7 +226,7 @@
     const setPaket = (p) => {
       const inp = form.querySelector('input[name=paket]');
       if (inp) inp.value = p || '';
-      const map = { launch: 'bis 1.000 €', boost: '1.000 – 2.000 €', dominate: 'über 3.500 €' };
+      const map = { launch: 'bis 500 €', boost: '500 – 1.500 €', dominate: 'über 3.500 €' };
       if (p && map[p]) { const r = form.querySelector(`input[name=budget][value="${map[p]}"]`); if (r) r.checked = true; }
     };
     funnels.push({ form, reset: () => go(0, false), setPaket });

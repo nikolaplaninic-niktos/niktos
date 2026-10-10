@@ -80,7 +80,7 @@ function buildBestaetigung(d, logo) {
 
 const sample = {
   form: 'projekt', anliegen: 'Website-Relaunch', paket: 'boost', hat_website: 'Ja', website_url: 'www.muster-baeckerei.de', branche: 'Gastronomie & Hotel',
-  budget: '1.000 – 2.000 €', zeitrahmen: 'In 1–3 Monaten', name: 'Sabine Müller', firma: 'Muster Bäckerei', email: 'sabine.mueller@example.de', telefon: '0171 2345678',
+  budget: '500 – 1.500 €', zeitrahmen: 'In 1–3 Monaten', name: 'Sabine Müller', firma: 'Muster Bäckerei', email: 'sabine.mueller@example.de', telefon: '0171 2345678',
   kontaktweg: 'WhatsApp', nachricht: 'Hallo Nikola,\nunsere Website ist über 8 Jahre alt und auf dem Handy kaum lesbar.\nWir hätten gern auch eine Seite für unseren Catering-Service.\n\nViele Grüße\nSabine Müller',
   datum: '30.09.2026, 14:32 Uhr',
 };

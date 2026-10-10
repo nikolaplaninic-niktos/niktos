@@ -130,7 +130,7 @@ const processSteps = () => `
   ['Kontakt', 'Sie schreiben mir per WhatsApp, rufen an oder nutzen das Formular. Ich melde mich innerhalb von 24 Stunden.', 'Tag 1'],
   ['Kennenlernen', 'Wir reden über Ihr Unternehmen, Ihre Kunden und Ihr Ziel. Gern bei einem Kaffee in Ludwigsburg, sonst per Video.', 'ca. 30 Minuten'],
   ['Angebot & Plan', 'Sie bekommen einen Festpreis, die Seitenstruktur und einen klaren Zeitplan. Ohne Kleingedrucktes.', 'innerhalb von 48 h'],
-  ['Design & Umsetzung', 'Ich gestalte, schreibe und baue Ihre Website. Sie sehen jeden Zwischenstand und sagen mir ehrlich Ihre Meinung.', '2 bis 6 Wochen'],
+  ['Design & Umsetzung', 'Ich gestalte, schreibe und baue Ihre Website. Sie sehen jeden Zwischenstand und sagen mir ehrlich Ihre Meinung.', '1 bis 6 Wochen'],
   ['Launch', 'Ihre Website geht online, mit Google Search Console, Unternehmensprofil und allem, was dazugehört.', 'der große Tag'],
   ['Betreuung', 'Ich bleibe Ihr Ansprechpartner. Änderungen, Updates und neue Ideen – kurze WhatsApp genügt.', 'solange Sie möchten'],
 ].map(([t, d, time], i) => `
@@ -160,9 +160,14 @@ function pricing({ compact = false } = {}) {
     </div>
   </article>`).join('');
   return `<div class="prices">${cards}</div>
+  <div class="fit reveal">
+    <span class="card__ico" style="margin:0">${icon('euro')}</span>
+    <div><p class="eyebrow">Individuelle Preisanpassung</p><h3>Sie bekommen und bezahlen nur, was Sie wirklich brauchen.</h3><p>Die Pakete sind ein Startpunkt, kein Muss. Was Sie nicht brauchen, fällt raus und der Preis sinkt. Was fehlt, kommt dazu. Am Ende steht ein Festpreis, der genau zu Ihrem Projekt passt.</p></div>
+    ${startBtn('Individuelles Angebot anfragen')}
+  </div>
   <div class="care reveal">
     <span class="card__ico" style="margin:0">${icon('shield')}</span>
-    <div><h3>${site.care.name} – Wartung & Hosting</h3><p>${site.care.features.join(' · ')}. Optional und monatlich kündbar.</p></div>
+    <div><h3>${site.care.name} – Wartung & Hosting</h3><p>${site.care.features.join(' · ')}.</p></div>
     <p class="care__price mb-0">ab ${site.care.price} € <small>${site.care.unit}</small></p>
   </div>
   <div class="guarantee">
@@ -183,7 +188,7 @@ const compareTable = () => {
     ['Fester, persönlicher Ansprechpartner', Y + ' Nikola direkt', N, Mh('wechselnd')],
     ['Erreichbar per WhatsApp', Y, N, N],
     ['Transparenter Festpreis', Y, Mh('laufende Abos'), Mh('Stundensätze')],
-    ['Typische Kosten', 'ab 990 € Festpreis', 'mehrere Abos, dauerhaft', '5.000 – 15.000 €'],
+    ['Typische Kosten', `ab ${euro(site.packages[0].price)} Festpreis`, 'mehrere Abos, dauerhaft', '5.000 – 15.000 €'],
   ];
   return `<div class="compare-wrap reveal"><table class="compare">
   <thead><tr><th scope="col">Vergleich</th><th scope="col" class="is-us">Niktos</th><th scope="col">Baukasten</th><th scope="col">Große Agentur</th></tr></thead>
@@ -320,7 +325,7 @@ const illuQuote = () => {
   return `
 <div class="quotec" aria-label="Beispiel eines Festpreis-Angebots">
   <div class="quotec__head">${logoMark(34)}<span><strong>Angebot</strong><small>Website-Paket ${p.name}</small></span></div>
-  <ul>${[['Individuelles Design', 'inklusive'], ['Bis zu 8 Unterseiten', 'inklusive'], ['SEO-Texte', 'inklusive'], ['Google-Unternehmensprofil', 'inklusive'], ['3 Monate Support', 'inklusive']].map(([t, v]) => `<li><span>${t}</span><b>${v}</b></li>`).join('')}</ul>
+  <ul>${[['Individuelles Design', 'inklusive'], ['Bis zu 10 Seiten', 'inklusive'], ['SEO-Texte', 'inklusive'], ['Lokales SEO', 'inklusive'], ['3 Monate Support', 'inklusive']].map(([t, v]) => `<li><span>${t}</span><b>${v}</b></li>`).join('')}</ul>
   <div class="quotec__total"><span>Festpreis</span><strong>${euro(p.price)}</strong></div>
   <span class="quotec__stamp">Keine versteckten Kosten</span>
   <p class="illu-cap">Beispiel</p>
@@ -442,9 +447,9 @@ function funnel(px = 'f') {
     ${opt('branche', 'Sonstiges', 'Sonstiges', 'plus')}
   </div>`)}
   ${step(4, 'Welches Budget haben Sie ungefähr eingeplant?', 'Eine grobe Richtung reicht völlig.', `<div class="opts">
-    ${opt('budget', 'bis 1.000 €', 'bis 1.000 €', '', 'passt zu Launch')}
-    ${opt('budget', '1.000 – 2.000 €', '1.000 – 2.000 €', '', 'passt zu Boost')}
-    ${opt('budget', '2.000 – 3.500 €', '2.000 – 3.500 €', '', 'Boost + Extras')}
+    ${opt('budget', 'bis 500 €', 'bis 500 €', '', 'passt zu Launch')}
+    ${opt('budget', '500 – 1.500 €', '500 – 1.500 €', '', 'passt zu Boost')}
+    ${opt('budget', '1.500 – 3.500 €', '1.500 – 3.500 €', '', 'Boost + Extras')}
     ${opt('budget', 'über 3.500 €', 'über 3.500 €', '', 'passt zu Dominate')}
     ${opt('budget', 'Noch unklar', 'Noch unklar – beraten Sie mich', '')}
   </div>`)}

@@ -44,9 +44,9 @@ module.exports = {
   // Pakete – Preise frei anpassbar. "from": true → "ab"-Preis.
   packages: [
     {
-      id: 'launch', name: 'Launch', price: 990, from: true, tag: 'Für Gründer & Kleinbetriebe',
+      id: 'launch', name: 'Launch', price: 390, from: true, tag: 'Für Gründer & Kleinbetriebe',
       claim: 'Endlich professionell online – schnell, sauber, bezahlbar.',
-      time: 'ca. 2 Wochen',
+      time: 'ca. 1 Woche',
       features: [
         'Individuelles Design – keine Vorlage',
         'One-Pager oder bis zu 3 Seiten',
@@ -60,18 +60,17 @@ module.exports = {
       ],
     },
     {
-      id: 'boost', name: 'Boost', price: 1990, from: true, tag: 'Beliebteste Wahl', featured: true,
+      id: 'boost', name: 'Boost', price: 990, from: true, tag: 'Beliebteste Wahl', featured: true,
       claim: 'Die Website, die bei Google gefunden wird und Anfragen bringt.',
-      time: 'ca. 3–4 Wochen',
+      time: 'ca. 2 Wochen',
       features: [
         '<strong>Alles aus Launch</strong>, plus:',
-        'Bis zu 8 Unterseiten – eigene Seite je Leistung',
+        'Bis zu 10 Seiten – eigene Seite je Leistung',
         'SEO-Texte, für Sie geschrieben',
-        'Lokales SEO + Google-Unternehmensprofil',
+        'Lokales SEO für Ihre Stadt & Region',
         'Sichtbar in Google- & KI-Suche',
         'Blog / News-Bereich',
         'Anfrage-Formular mit automatischer Bestätigungs-Mail',
-        'Cookielose Besucherstatistik',
         '2 Korrekturschleifen · 3 Monate Support',
       ],
     },
@@ -81,18 +80,19 @@ module.exports = {
       time: 'ca. 5–6 Wochen',
       features: [
         '<strong>Alles aus Boost</strong>, plus:',
-        'Bis zu 15 Seiten inkl. Regionen-Landingpages',
+        'Bis zu 30 Seiten inkl. Regionen-Landingpages',
+        'Google-Unternehmensprofil einrichten & optimieren',
         'Keyword- & Wettbewerbsanalyse',
-        'Step-by-Step-Anfrage-Funnel (wie auf dieser Seite)',
+        'Step-by-Step-Anfrage-Funnel',
         '2 SEO-Blogartikel zum Start',
         'Premium-Animationen & Interaktionen',
-        'Search Console, Bing & Monitoring-Setup',
+        'Search Console, Bing, Statistik & Monitoring',
         'Conversion-Optimierung nach dem Launch',
-        '3 Korrekturschleifen · 6 Monate Priority-Support',
+        '5 Korrekturschleifen · 6 Monate Priority-Support',
       ],
     },
   ],
-  care: { name: 'Care', price: 39, unit: '/ Monat', features: ['Hosting, Domain & SSL', 'Updates, Backups & Monitoring', 'Kleine Änderungen per WhatsApp', 'Monatlicher Kurz-Report'] },
+  care: { name: 'Care', price: 39, unit: '/ Monat', features: ['Hosting, Domain & SSL', 'Updates, Backups & Monitoring', 'Kleine Änderungen per WhatsApp', 'Regelmäßiger Sicherheits- & Speed-Check', 'Persönlicher Ansprechpartner'] },
   checkPrice: 49,
 
   // Referenzen (Bilder: src/images.config.js)

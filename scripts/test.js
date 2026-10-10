@@ -58,7 +58,7 @@ const check = (name, ok, info = '') => { if (!ok) fails++; console.log(`${ok ? '
   await pg.type('#d-name', 'Test Kunde'); await pg.type('#d-mail', 'test@test.local'); await pg.type('#d-tel', '0170 1111111');
   await pg.evaluate(() => { document.querySelector('#funnel input[name=kontaktweg][value=WhatsApp]').click(); document.querySelector('#funnel input[name=datenschutz]').click(); });
   const sent = await pg.evaluate(() => { const f = document.querySelector('#funnel form'); const d = new FormData(f); return Object.fromEntries([...d.entries()].filter(([k]) => k !== 't')); });
-  check('payload complete', sent.anliegen === 'Neue Website' && sent.budget === '1.000 – 2.000 €' && sent.website_url === 'www.beispiel-firma.de' && sent.paket === 'boost', JSON.stringify(sent));
+  check('payload complete', sent.anliegen === 'Neue Website' && sent.budget === '500 – 1.500 €' && sent.website_url === 'www.beispiel-firma.de' && sent.paket === 'boost', JSON.stringify(sent));
   await Promise.all([pg.waitForNavigation({ timeout: 5000 }).catch(() => null), pg.evaluate(() => document.querySelector('#funnel [type=submit]').click())]);
   check('funnel submit → /danke/', new URL(pg.url()).pathname === '/danke/');
 

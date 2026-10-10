@@ -14,7 +14,7 @@ Statička web stranica (čisti HTML/CSS/JS, bez WordPressa), generirana iz `src/
 | `/wartung-hosting/` | Care paket (održavanje) |
 | `/website-check/` | Website-Check (49 €) – lead magnet |
 | `/preise/` | 3 paketa + usporedna tablica + extras + primjer izračuna |
-| `/referenzen/` | Kabic, Spatzennest, KomLab |
+| `/referenzen/` | Kabic (jedina referenca) |
 | `/ueber-mich/` | O tebi (s placeholderom za sliku) |
 | `/blog/` + `/blog/warum-eine-professionelle-website-wichtig-ist/` | Blog + prvi članak |
 | `/kontakt/` | Klasični formular + kontakt kartice + mapa |
@@ -50,7 +50,7 @@ Iz stare stranice preuzeto: plavi kvadrati uz meni, crna linija sidebara, plava 
 ## Potvrditi prije objave (TODO)
 
 - [ ] **Ulica i kućni broj** – `src/site.js → address.street` (Impressum je bez toga pravno nepotpun)
-- [ ] **Cijene paketa** (990 / 1.990 / 3.490 €), Care 39 €/mj., Website-Check 49 €, Extras na `/preise/`, plaćanje 50/50 – sve po mojoj procjeni
+- [ ] **Cijene paketa** (Launch 390 / Boost 990 / Dominate 3.490 € – postavio Nikola 10/2026), Care 39 €/mj., Website-Check 49 €, Extras na `/preise/`, plaćanje 50/50
 - [ ] **Jezici** „Deutsch & Kroatisch“ na Über mich
 - [ ] **Dopuštenje Kabica** za screenshot (jedina referenca)
 - [ ] **Profi fotka** – zamijeniti `media/originals/nikola-planinic.jpg` i `nikola-avatar.jpg`, pa `npm run all`
