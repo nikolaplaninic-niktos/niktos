@@ -36,14 +36,14 @@ const modes = args.includes('--mobile-only') ? ['m'] : args.includes('--desktop-
       h1: [...document.querySelectorAll('h1')].length,
     }));
     const name = (p === '/' ? 'home' : p.replace(/\//g, '')) + '-' + mode;
-    const buf = await page.screenshot({ fullPage: true });
-    const meta = await sharp(buf).metadata();
+    // Tile by tile: a single full-page capture repeats content beyond Chrome's 16384px texture limit.
+    const meta = await page.evaluate(() => ({ width: document.documentElement.clientWidth, height: document.documentElement.scrollHeight }));
     const tileH = mode === 'm' ? 1700 : 1400;
     let n = 0;
     for (let y = 0; y < meta.height; y += tileH, n++) {
       const h = Math.min(tileH, meta.height - y);
-      await sharp(buf).extract({ left: 0, top: y, width: meta.width, height: h })
-        .resize({ width: mode === 'm' ? 390 : 1000 }).jpeg({ quality: 70 }).toFile(path.join(OUT, `${name}-${n}.jpg`));
+      const buf = await page.screenshot({ clip: { x: 0, y, width: meta.width, height: h }, captureBeyondViewport: true });
+      await sharp(buf).resize({ width: mode === 'm' ? 390 : 1000 }).jpeg({ quality: 70 }).toFile(path.join(OUT, `${name}-${n}.jpg`));
     }
     console.log(`${name}: ${meta.height}px, ${n} tiles, h1=${info.h1}, overflow=${info.overflow}, broken=${info.broken.length}, errors=${errors.length}`, errors.slice(0, 3), info.broken.slice(0, 3));
     await page.close();

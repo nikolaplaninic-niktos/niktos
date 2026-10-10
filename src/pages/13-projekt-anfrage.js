@@ -15,7 +15,7 @@ module.exports = {
   body: `
 <section class="section" style="padding-top:clamp(40px,6vw,80px)">
   <div class="dots"></div>
-  <div class="container split split--top">
+  <div class="container split split--top split--form">
     <div class="reveal">
       ${C.breadcrumb(crumbs)}
       <p class="eyebrow">Projekt starten</p>

@@ -10,7 +10,6 @@ const FAQ = C.faq([
   ['Ist das Care-Paket Pflicht?', 'Nein. Die Website gehört Ihnen – Sie können sie auch selbst hosten oder von jemand anderem betreuen lassen. Die meisten Kunden entscheiden sich trotzdem dafür, weil sie sich dann um nichts kümmern müssen.'],
   ['Wie schnell werden Änderungen umgesetzt?', 'Kleinere Änderungen erledige ich in der Regel innerhalb von 1–2 Werktagen. Schicken Sie mir einfach eine WhatsApp-Nachricht mit dem, was geändert werden soll – gern mit Foto oder Screenshot.'],
   ['Betreuen Sie auch Websites, die Sie nicht selbst gebaut haben?', 'Gerne nach einer kurzen Prüfung. Je nach Zustand der Website starte ich mit dem Website-Check, damit wir wissen, woran wir sind.'],
-  ['Wie lange läuft der Vertrag?', 'Das Care-Paket ist monatlich kündbar. Keine langen Laufzeiten, keine Knebelverträge.'],
 ]);
 
 module.exports = {

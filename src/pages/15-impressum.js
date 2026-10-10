@@ -25,7 +25,7 @@ ${C.pageHero({ crumbs, h1: 'Impressum', actions: false })}
       <p>Dienstleistungen im Bereich Webdesign, Webentwicklung und Suchmaschinenoptimierung (SEO).</p>
       <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
       <p>${site.owner}<br>${addr}</p>
-      <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+      <h2>Verbraucher&shy;streit&shy;beilegung / Universal&shy;schlichtungs&shy;stelle</h2>
       <p>Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
       <h2>Haftung für Inhalte</h2>
       <p>Als Diensteanbieter bin ich für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Ich bin jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.</p>

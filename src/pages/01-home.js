@@ -11,7 +11,7 @@ const FAQ = C.faq([
   ['Muss ich mich um Texte und Bilder selbst kümmern?', 'Nein. Ab dem Paket Boost schreibe ich verkaufsstarke, SEO-optimierte Texte für Sie, Sie geben mir nur kurz Input. Bei Bildern gilt: Echte Fotos von Ihnen, Ihrem Team und Ihrer Arbeit wirken am besten. Bis die da sind, nehme ich passende lizenzfreie Bilder oder Grafiken.'],
   ['Werde ich mit der Website bei Google gefunden?', 'Jede Niktos-Website ist technisch sauber für Google gebaut: schnelle Ladezeit, klare Struktur, strukturierte Daten, lokale Suchbegriffe und auf Wunsch ein optimiertes Google-Unternehmensprofil. Platz 1 kann Ihnen ehrlicherweise niemand garantieren. Aber ich lege das Fundament, mit dem Sie in Ihrer Region vorne mitspielen.'],
   ['Was bedeutet „KI-Sichtbarkeit“?', 'Immer mehr Menschen fragen ChatGPT, Gemini oder die KI-Übersicht bei Google nach Empfehlungen, zum Beispiel „Welcher Elektriker in Ludwigsburg ist gut?“. Diese Systeme empfehlen Unternehmen, deren Website sie klar verstehen. Dafür optimiere ich Ihre Seite: mit strukturierten Daten, klaren Antworten, FAQ, einer llms.txt-Datei und einheitlichen Firmendaten.'],
-  ['Gehört mir die Website am Ende?', 'Ja, komplett. Keine Abo-Falle und kein Baukasten, an den Sie gebunden sind. Sie bekommen alle Dateien und Zugänge. Wenn Sie möchten, kümmere ich mich mit dem Care-Paket um Hosting, Updates und Änderungen, monatlich kündbar.'],
+  ['Gehört mir die Website am Ende?', 'Ja, komplett. Keine Abo-Falle und kein Baukasten, an den Sie gebunden sind. Sie bekommen alle Dateien und Zugänge. Wenn Sie möchten, kümmere ich mich mit dem Care-Paket um Hosting, Updates und Änderungen.'],
   ['Kann ich später selbst etwas ändern?', 'Klar. Die meisten Kunden schicken mir Änderungen einfach per WhatsApp, im Care-Paket sind kleinere Anpassungen inklusive. Wenn Sie Inhalte regelmäßig selbst pflegen möchten, baue ich Ihre Website mit einem einfachen Redaktionssystem.'],
   ['Arbeiten Sie nur für Kunden in Ludwigsburg?', 'Mein Sitz ist Ludwigsburg und ich betreue viele Unternehmen im Landkreis und in der Region Stuttgart, gern auch persönlich vor Ort. Genauso arbeite ich mit Kunden in ganz Deutschland zusammen: per Video-Call, Telefon und WhatsApp.'],
 ]);
@@ -120,7 +120,7 @@ ${C.allInOne()}
   <div class="container">
     ${C.head({ eyebrow: 'Pakete & Preise', title: 'Festpreise. Keine Überraschungen.', lead: 'Drei Pakete für drei Ziele, jedes individuell für Sie gestaltet. Nicht sicher, welches passt? Das finden wir im kostenlosen Erstgespräch gemeinsam heraus.', center: true })}
     ${C.pricing({ compact: true })}
-    <p class="center" style="margin-top:26px"><a class="link-arrow" href="/preise/">Alle Leistungen & Paket-Vergleich ansehen ${icon('arrow')}</a></p>
+    <p class="center" style="margin-top:26px"><a class="link-arrow" href="/preise/">Alle Pakete im Vergleich ${icon('arrow')}</a></p>
   </div>
 </section>
 

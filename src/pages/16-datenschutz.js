@@ -10,7 +10,7 @@ module.exports = {
   title: 'Datenschutzerklärung | Niktos – Webdesign & SEO Ludwigsburg',
   description: `Datenschutzerklärung von ${site.legalName}: Informationen zur Verarbeitung personenbezogener Daten auf niktos.com gemäß DSGVO.`,
   body: `
-${C.pageHero({ crumbs, h1: 'Datenschutzerklärung', actions: false })}
+${C.pageHero({ crumbs, h1: 'Daten&shy;schutz&shy;erklärung', actions: false })}
 <section class="section" style="padding-top:clamp(40px,5vw,70px)">
   <div class="container">
     <div class="prose prose--card">

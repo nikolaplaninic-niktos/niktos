@@ -4,7 +4,7 @@ const { icon, logoMark } = require('./icons');
 const M = require('./images.manifest.json');
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const euro = (n) => n.toLocaleString('de-DE') + ' €';
+const euro = (n) => n.toLocaleString('de-DE') + ' €'; // non-breaking space: "3.490 €" never splits
 
 /** Responsive <img> from the manifest. */
 function img(key, { sizes = '100vw', cls = '', eager = false, alt, style = '' } = {}) {
@@ -205,7 +205,7 @@ function faq(items, { title = 'Häufige Fragen', eyebrow = 'Gut zu wissen', lead
     <div class="faq">
       ${items.map(([q, a], i) => `<details class="reveal"${i === 0 ? ' open' : ''}><summary>${q}</summary><div class="faq__a"><p>${a}</p></div></details>`).join('')}
     </div>
-    <p class="center" style="margin-top:30px"><span class="note note--blue">Ihre Frage fehlt?</span> <a href="${site.whatsapp}" target="_blank" rel="noopener">Schreiben Sie mir einfach per WhatsApp.</a></p>
+    <p class="center faq-more" style="margin-top:30px"><span class="note note--blue">Ihre Frage fehlt?</span> <a href="${site.whatsapp}" target="_blank" rel="noopener">Schreiben Sie mir einfach per WhatsApp.</a></p>
   </div>
 </section>`;
   const schema = {

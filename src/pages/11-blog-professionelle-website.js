@@ -70,15 +70,15 @@ const article = `
 
 <h2 id="social-media">4. Warum Social Media keine Website ersetzt</h2>
 <p>„Ich habe doch Instagram.“ Das ist gut – Social Media ist ein starkes Werkzeug für Reichweite und Nähe zu Ihren Kunden. Aber es ist kein Ersatz für eine Website. Der Vergleich zeigt, warum:</p>
-<table>
+<table class="ptable">
   <thead><tr><th>Kriterium</th><th>Instagram / Facebook</th><th>Eigene Website</th></tr></thead>
   <tbody>
-    <tr><td>Gehört Ihnen</td><td>Nein – die Plattform bestimmt die Regeln</td><td>Ja, zu 100 %</td></tr>
-    <tr><td>Bei Google auffindbar</td><td>Kaum, meist nur das Profil</td><td>Jede Seite, jede Leistung</td></tr>
-    <tr><td>Von KI-Assistenten nutzbar</td><td>Eingeschränkt</td><td>Ja, mit strukturierten Daten</td></tr>
-    <tr><td>Lebensdauer von Inhalten</td><td>Stunden bis Tage im Feed</td><td>Dauerhaft</td></tr>
-    <tr><td>Anfragen & Formulare</td><td>Nur Direktnachrichten</td><td>Formular, Funnel, WhatsApp, Anruf</td></tr>
-    <tr><td>Seriosität bei Geschäftskunden</td><td>Ergänzend</td><td>Erwartet</td></tr>
+    <tr><th scope="row">Gehört Ihnen</th><td data-l="Instagram / Facebook">Nein – die Plattform bestimmt die Regeln</td><td data-l="Eigene Website">Ja, zu 100 %</td></tr>
+    <tr><th scope="row">Bei Google auffindbar</th><td data-l="Instagram / Facebook">Kaum, meist nur das Profil</td><td data-l="Eigene Website">Jede Seite, jede Leistung</td></tr>
+    <tr><th scope="row">Von KI-Assistenten nutzbar</th><td data-l="Instagram / Facebook">Eingeschränkt</td><td data-l="Eigene Website">Ja, mit strukturierten Daten</td></tr>
+    <tr><th scope="row">Lebensdauer von Inhalten</th><td data-l="Instagram / Facebook">Stunden bis Tage im Feed</td><td data-l="Eigene Website">Dauerhaft</td></tr>
+    <tr><th scope="row">Anfragen & Formulare</th><td data-l="Instagram / Facebook">Nur Direktnachrichten</td><td data-l="Eigene Website">Formular, Funnel, WhatsApp, Anruf</td></tr>
+    <tr><th scope="row">Seriosität bei Geschäftskunden</th><td data-l="Instagram / Facebook">Ergänzend</td><td data-l="Eigene Website">Erwartet</td></tr>
   </tbody>
 </table>
 <p>Die beste Strategie ist deshalb nicht „entweder – oder“, sondern: <strong>Social Media bringt Aufmerksamkeit, die Website macht daraus Kunden.</strong> Verlinken Sie Ihre Beiträge auf Ihre Website – dort, wo Sie alle Informationen und alle Kontaktwege selbst in der Hand haben.</p>
