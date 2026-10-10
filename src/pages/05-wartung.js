@@ -29,6 +29,7 @@ module.exports = {
   body: `
 ${C.pageHero({
   crumbs,
+  aside: C.illuStatus(),
   eyebrow: 'Wartung, Hosting & Support',
   h1: 'Ihre Website. <span class="grad">Immer schnell, sicher, aktuell.</span>',
   lead: 'Eine Website ist nie „fertig“. Updates, Sicherheit, neue Inhalte, neue Angebote – mit Niktos Care kümmere ich mich darum, damit Sie es nicht müssen. Änderungen schicken Sie einfach per WhatsApp.',

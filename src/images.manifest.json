@@ -20,27 +20,23 @@
    ],
    "ratio": 2.1641
   },
-  "spatzennestDesktop": {
-   "name": "referenz-kinderbetreuung-spatzennest-website",
-   "alt": "Website der Kinderbetreuung Spatzennest UG – Webdesign von Niktos",
+  "portrait": {
+   "name": "nikola-planinic-webdesigner-ludwigsburg",
+   "alt": "Nikola Planinić, Webdesigner und Inhaber von Niktos aus Ludwigsburg",
    "widths": [
     480,
     800,
-    1200,
-    1600
+    880
    ],
-   "ratio": 0.4521
+   "ratio": 1.15
   },
-  "komlabDesktop": {
-   "name": "referenz-projekt-komlab-website",
-   "alt": "Website von Projekt KomLab „Wir helfen Familien“ – Webdesign von Niktos",
+  "avatar": {
+   "name": "nikola-planinic-avatar",
+   "alt": "Nikola Planinić",
    "widths": [
-    480,
-    800,
-    1200,
-    1600
+    400
    ],
-   "ratio": 0.4569
+   "ratio": 1
   }
  },
  "og": {

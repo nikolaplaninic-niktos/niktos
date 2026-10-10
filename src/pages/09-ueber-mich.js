@@ -17,6 +17,7 @@ module.exports = {
   body: `
 ${C.pageHero({
   crumbs,
+  aside: C.portrait({ eager: true }),
   eyebrow: 'Über mich',
   h1: `Hi, ich bin ${site.ownerFirst}. <span class="grad">Ich baue Websites, die wirken.</span>`,
   lead: `Webdesigner und SEO aus Ludwigsburg, Inhaber von Niktos – und fest davon überzeugt, dass eine gute Website das stärkste Verkaufswerkzeug eines Unternehmens ist.`,
@@ -25,7 +26,7 @@ ${C.pageHero({
 
 <section class="section">
   <div class="container split split--top">
-    <div class="reveal" style="position:sticky;top:30px">${C.portrait({ eager: true })}</div>
+    <div class="reveal" style="position:sticky;top:30px">${C.factsCard()}</div>
     <div class="reveal reveal-d1">
       <p class="eyebrow">Meine Geschichte</p>
       <h2>Warum ich Niktos gegründet habe.</h2>

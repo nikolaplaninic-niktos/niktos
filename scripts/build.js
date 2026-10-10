@@ -133,7 +133,7 @@ function footer(page) {
     <div class="footer__grid">
       <div>
         <a class="brand" href="/" aria-label="${site.name} – Startseite">${logoMark(40)}<span class="brand__word">NIKTOS</span></a>
-        <p style="margin-top:18px">Webdesign & SEO aus ${site.address.city}. Websites, die schnell laden, gefunden werden und Ihnen Kunden bringen. Alles aus einer Hand, persönlich und mit Herz.</p>
+        <p style="margin-top:18px">Webdesign & SEO aus ${site.address.city}. Websites, die schnell laden, gefunden werden und Ihnen Kunden bringen. Alles aus einer Hand.</p>
         <div class="footer__social">
           <a href="${site.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${icon('insta')}</a>
           <a href="${site.whatsapp}" target="_blank" rel="noopener" aria-label="WhatsApp">${icon('wa')}</a>
@@ -170,7 +170,6 @@ function footer(page) {
     <p class="footer__towns"><strong style="color:#fff">Webdesign & SEO für:</strong> ${site.towns.join(' · ')} · Landkreis Ludwigsburg · Region Stuttgart · deutschlandweit</p>
     <div class="footer__bottom">
       <span>© <span id="year">${new Date().getFullYear()}</span> ${site.legalName}</span>
-      <span class="footer__heart">Mit ${icon('heartfill')} gemacht in Ludwigsburg</span>
       <nav aria-label="Rechtliches"><a href="/impressum/">Impressum</a><a href="/datenschutzerklaerung/">Datenschutz</a></nav>
     </div>
   </div>

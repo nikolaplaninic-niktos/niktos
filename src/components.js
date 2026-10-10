@@ -48,7 +48,11 @@ const allInOne = ({ panel = false } = {}) => `
         <div class="aio__col aio__col--yes"><p class="aio__label">Mit Niktos</p>${ticks(['Ein Ansprechpartner: ich', 'Ein Festpreis, alles drin', 'Änderung? Eine WhatsApp genügt'])}</div>
       </div>
     </div>
-    <div class="reveal reveal-d1">
+    <div class="reveal reveal-d1">${aioCard()}</div>
+  </div>
+</section>`;
+
+const aioCard = () => `
       <div class="aio">
         <div class="aio__hub">${logoMark(54)}<span><strong>Niktos</strong>kümmert sich um</span></div>
         <ul class="aio__grid">${[
@@ -56,10 +60,7 @@ const allInOne = ({ panel = false } = {}) => `
           ['search', 'SEO & Google'], ['map', 'Google-Profil & Maps'], ['wa', 'WhatsApp & Formulare'], ['shield', 'Sicherheit & Backups'],
           ['refresh', 'Wartung & Updates'], ['chat', 'Änderungen & Support'],
         ].map(([ic, t]) => `<li><span class="aio__ico">${icon(ic)}</span>${t}</li>`).join('')}</ul>
-      </div>
-    </div>
-  </div>
-</section>`;
+      </div>`;
 
 const breadcrumb = (items) => `
 <nav class="crumbs" aria-label="Brotkrumen"><ol>${items.map((it, i) => i === items.length - 1
@@ -181,12 +182,12 @@ const compareTable = () => {
     ['Texte, die verkaufen', Y, N, Mh('Aufpreis')],
     ['Fester, persönlicher Ansprechpartner', Y + ' Nikola direkt', N, Mh('wechselnd')],
     ['Erreichbar per WhatsApp', Y, N, N],
-    ['Transparenter Festpreis', Y, Mh('Abo auf Dauer'), Mh('Stundensätze')],
-    ['Typische Kosten', 'ab 990 €', '15–40 € / Monat, dauerhaft', '5.000 – 15.000 €'],
+    ['Transparenter Festpreis', Y, Mh('laufende Abos'), Mh('Stundensätze')],
+    ['Typische Kosten', 'ab 990 € Festpreis', 'mehrere Abos, dauerhaft', '5.000 – 15.000 €'],
   ];
   return `<div class="compare-wrap reveal"><table class="compare">
-  <thead><tr><th scope="col">Vergleich</th><th scope="col" class="is-us">Niktos</th><th scope="col">Baukasten (Wix & Co.)</th><th scope="col">Große Agentur</th></tr></thead>
-  <tbody>${rows.map(([a, b, c, d]) => `<tr><td>${a}</td><td class="is-us">${b}</td><td>${c}</td><td>${d}</td></tr>`).join('')}</tbody>
+  <thead><tr><th scope="col">Vergleich</th><th scope="col" class="is-us">Niktos</th><th scope="col">Baukasten</th><th scope="col">Große Agentur</th></tr></thead>
+  <tbody>${rows.map(([a, b, c, d]) => `<tr><th scope="row">${a}</th><td class="is-us" data-l="Niktos">${b}</td><td data-l="Baukasten">${c}</td><td data-l="Agentur">${d}</td></tr>`).join('')}</tbody>
 </table></div>`;
 };
 
@@ -223,7 +224,7 @@ const ctaBand = ({ title = 'Lassen Sie uns <span class="hl">gemeinsam starten.</
         ${waBtn('WhatsApp schreiben', { cls: 'btn--lg', text: waText })}
         ${telBtn('btn--ghost btn--lg')}
       </div>
-      <p class="cta__note">Ich freue mich auf Ihre Nachricht! – ${site.ownerFirst}</p>
+      <p class="cta__note">${icon('clock')} Antwort innerhalb von 24 Stunden (werktags)</p>
     </div>
   </div>
 </section>`;
@@ -237,7 +238,6 @@ function portrait({ eager = false } = {}) {
     <span class="tape" aria-hidden="true"></span>
     <div class="portrait__img">${inner}</div>
     <figcaption class="portrait__cap">${site.ownerFirst} · ${site.address.city}</figcaption>
-    ${sticker('LB', 'aus Ludwigsburg', 'sticker--blue')}
   </figure>`;
 }
 
@@ -259,6 +259,86 @@ const projects = (list = site.projects, { h = 'h3' } = {}) => list.map((p, i) =>
     <a class="link-arrow" href="${p.url}" target="_blank" rel="noopener">Website ansehen ${icon('arrowUpRight')}</a>
   </div>
 </article>`).join('');
+
+/* ---------- Avatar (real photo of Nikola) ---------- */
+const avatar = (size = 48, cls = '') => {
+  if (!hasImg('avatar')) return `<span class="avatar avatar--mono ${cls}" style="width:${size}px;height:${size}px">${logoMark(size)}</span>`;
+  const a = M.photos.avatar;
+  return `<img class="avatar ${cls}" src="/assets/img/${a.name}-${a.widths[a.widths.length - 1]}.webp" width="${size}" height="${size}" alt="${esc(site.owner)}" loading="lazy" decoding="async">`;
+};
+
+/* ---------- Hero visual: a website assembles itself (CSS only, complete at rest) ---------- */
+const builder = () => `
+<div class="build" aria-label="Illustration: Nikola gestaltet eine neue Website">
+  <span class="stage__bg" aria-hidden="true"></span>
+  <div class="browser build__browser" aria-hidden="true">
+    <div class="browser__bar"><i></i><i></i><i></i><span class="browser__url">${icon('lock')} ihre-firma.de</span></div>
+    <div class="bs">
+      <div class="bs-nav b1"><span class="bs-logo"><i></i>Ihre Firma</span><span class="bs-links"><i></i><i></i><i></i></span><span class="bs-cta">Anfrage</span></div>
+      <div class="bs-hero">
+        <div class="b2">
+          <p class="bs-kicker">Meisterbetrieb · Ludwigsburg</p>
+          <p class="bs-h">Ihr Betrieb.<br>Endlich online.</p>
+          <p class="bs-line"></p><p class="bs-line bs-line--s"></p>
+          <div class="bs-btns"><span class="bs-btn">Angebot anfragen</span><span class="bs-btn bs-btn--wa">${icon('wa')} WhatsApp</span></div>
+        </div>
+        <div class="bs-img b3"><svg viewBox="0 0 120 90"><rect width="120" height="90" fill="#cfe0ff"/><circle cx="90" cy="24" r="10" fill="#ffd23f"/><path d="M0 90 38 46l24 26 18-18 40 36z" fill="#0a66ff"/><path d="M0 90 38 46l24 26 18-18 40 36" fill="none" stroke="#0b0d14" stroke-width="2"/></svg></div>
+      </div>
+      <div class="bs-cards b4"><div><i></i><b></b><s></s></div><div><i></i><b></b><s></s></div><div><i></i><b></b><s></s></div></div>
+    </div>
+  </div>
+  <div class="build__phone b5" aria-hidden="true"><span class="bp-notch"></span><span class="bp-logo"></span><span class="bp-h"></span><span class="bp-l"></span><span class="bp-l bp-l--s"></span><span class="bp-btn"></span><span class="bp-card"></span><span class="bp-card"></span></div>
+  <div class="build__toast b6" aria-hidden="true"><span class="build__toast-ico">${icon('wa')}</span><span><strong>Neue Anfrage</strong>über Ihre Website · gerade eben</span></div>
+  <div class="build__me b7">${avatar(46)}<span><strong>${site.ownerFirst}</strong>baut Ihre Website</span></div>
+  ${sticker(euro(site.packages[0].price), 'Festpreis ab', 'sticker--top')}
+  <svg class="build__cursor b8" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5 19 12l-6.6 1.3L16 20.6l-2.7 1.2-3.5-7.4L4 18.6z" fill="#0b0d14" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
+</div>`;
+
+/* ---------- Small illustrations for sub-page heroes (decorative, labelled) ---------- */
+const illuChat = () => `
+<div class="chatc" aria-label="Beispielhafte Darstellung eines WhatsApp-Chats mit Nikola">
+  <div class="chatc__head">${avatar(40)}<span><strong>${site.ownerFirst} · Niktos</strong><small>Antwort meist am selben Tag</small></span><span class="chatc__wa">${icon('wa')}</span></div>
+  <div class="chatc__body">
+    <p class="cb cb--in">Hallo Nikola, ich brauche eine neue Website für meinen Betrieb. Geht das bis Frühjahr?</p>
+    <p class="cb cb--out">Hallo! Sehr gern, das klappt gut. Passt Ihnen morgen früh ein kurzes Telefonat?</p>
+    <p class="cb cb--in">Morgen um 9 Uhr wäre perfekt.</p>
+    <p class="cb cb--out">Super, dann rufe ich Sie um 9 Uhr an. Bis morgen!</p>
+  </div>
+  <div class="chatc__foot"><span>Nachricht schreiben …</span>${icon('arrow')}</div>
+  <p class="illu-cap">Beispielhafte Darstellung</p>
+</div>`;
+
+const illuStatus = () => `
+<div class="statusc" aria-label="Beispielhafte Darstellung eines Website-Status">
+  <div class="statusc__head"><span class="statusc__dot"></span><span><strong>Alles im grünen Bereich</strong><small>ihre-firma.de</small></span></div>
+  <ul>${[['lock', 'SSL-Zertifikat', 'aktiv'], ['refresh', 'Backup', 'heute, 03:00'], ['shield', 'Sicherheits-Updates', 'installiert'], ['bolt', 'Ladezeit', 'schnell'], ['wa', 'Änderung per WhatsApp', 'erledigt']].map(([ic, t, v]) => `<li><span class="statusc__ico">${icon(ic)}</span><span>${t}</span><b>${icon('check')} ${v}</b></li>`).join('')}</ul>
+  <p class="illu-cap">Beispielhafte Darstellung</p>
+</div>`;
+
+const illuQuote = () => {
+  const p = site.packages.find((x) => x.featured) || site.packages[0];
+  return `
+<div class="quotec" aria-label="Beispiel eines Festpreis-Angebots">
+  <div class="quotec__head">${logoMark(34)}<span><strong>Angebot</strong><small>Website-Paket ${p.name}</small></span></div>
+  <ul>${[['Individuelles Design', 'inklusive'], ['Bis zu 8 Unterseiten', 'inklusive'], ['SEO-Texte', 'inklusive'], ['Google-Unternehmensprofil', 'inklusive'], ['3 Monate Support', 'inklusive']].map(([t, v]) => `<li><span>${t}</span><b>${v}</b></li>`).join('')}</ul>
+  <div class="quotec__total"><span>Festpreis</span><strong>${euro(p.price)}</strong></div>
+  <span class="quotec__stamp">Keine versteckten Kosten</span>
+  <p class="illu-cap">Beispiel</p>
+</div>`;
+};
+
+const factsCard = () => `
+<div class="facts">
+  <div class="facts__head">${avatar(64)}<span><strong>${site.owner}</strong><small>Inhaber · Webdesigner & SEO</small></span></div>
+  <dl>
+    <div><dt>Sitz</dt><dd>${site.address.city}</dd></div>
+    <div><dt>Unterwegs in</dt><dd>Landkreis Ludwigsburg & Region Stuttgart</dd></div>
+    <div><dt>Sprachen</dt><dd>Deutsch, Kroatisch</dd></div>
+    <div><dt>Mache ich</dt><dd>Websites, SEO, Google-Profil, Wartung</dd></div>
+    <div><dt>Erreichbar</dt><dd>WhatsApp, Telefon, E-Mail</dd></div>
+  </dl>
+  <a class="btn btn--wa btn--block" href="${site.whatsapp}" target="_blank" rel="noopener">${icon('wa')} Direkt schreiben</a>
+</div>`;
 
 /* ---------- Google Maps card: illustrated map + Niktos pin, real map after click ---------- */
 const gmark = `<svg class="gmark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7z" fill="#ea4335"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg>`;
@@ -433,4 +513,4 @@ const contactCards = () => `
   <a class="ccard" href="${site.googleMapsUrl}" target="_blank" rel="noopener"><span class="ccard__ico">${icon('pin')}</span><span><small>Google Maps</small><strong>Niktos · ${site.address.zip} ${site.address.city}</strong></span>${icon('arrowUpRight')}</a>
 </div>`;
 
-module.exports = { rotator, allInOne, esc, euro, img, hasImg, icon, logoMark, startBtn, waBtn, telBtn, ticks, sticker, arrowNote, scribbleArrow, breadcrumb, head, pageHero, marquee, serviceCards, features, steps, processSteps, pricing, compareTable, faq, ctaBand, portrait, browser, projects, mapCard, area, serp, funnel, funnelDialog, contactForm, contactCards };
+module.exports = { avatar, builder, illuChat, illuStatus, illuQuote, factsCard, aioCard, rotator, allInOne, esc, euro, img, hasImg, icon, logoMark, startBtn, waBtn, telBtn, ticks, sticker, arrowNote, scribbleArrow, breadcrumb, head, pageHero, marquee, serviceCards, features, steps, processSteps, pricing, compareTable, faq, ctaBand, portrait, browser, projects, mapCard, area, serp, funnel, funnelDialog, contactForm, contactCards };

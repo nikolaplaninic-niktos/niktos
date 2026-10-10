@@ -43,14 +43,7 @@ module.exports = {
         <span>${icon('check')} Alles aus einer Hand</span>
       </div>
     </div>
-    <div class="stage">
-      <span class="stage__bg" aria-hidden="true"></span>
-      ${C.browser(kabic.img, kabic.domain, { sizes: '(max-width: 1280px) 90vw, 40vw', eager: true })}
-      <div class="stage__phone">${C.img(kabic.mobile, { sizes: '180px', alt: '' })}</div>
-      ${C.sticker(C.euro(site.packages[0].price), 'Festpreis ab', 'sticker--top')}
-      ${C.sticker('LB', 'Made in Ludwigsburg', 'sticker--blue')}
-      ${C.arrowNote('echtes Kundenprojekt!')}
-    </div>
+    <div>${C.builder()}</div>
   </div>
 </section>
 
@@ -72,10 +65,6 @@ ${C.marquee(['Komplette Websites', 'SEO', 'Wartung', 'Sicherheit', 'Bei Google s
         <p class="lead">Darum geht es mir bei jeder Website: <strong>aus Besuchern Kunden machen.</strong> Dafür verbinde ich gutes Design mit einer klaren Botschaft, sauberer Technik und SEO – von der ersten Zeile an.</p>
         ${C.ticks(['In 5 Sekunden klar: Was bieten Sie, für wen und warum gerade Sie?', 'Vertrauen durch Referenzen, echte Fotos und klare Preise', 'Kontakt auf jedem Bildschirm: WhatsApp, Anruf, Anfrage', 'Sauber gebaut für Google, Google Maps und KI-Assistenten'])}
       </div>
-    </div>
-    <div class="promise reveal" style="margin-top:clamp(50px,6vw,80px)">
-      ${logoMark(64)}
-      <p>Mein Versprechen: Sie reden immer direkt mit mir. Kein Callcenter, keine Warteschleife, keine Ausreden. <span class="grad">– ${site.ownerFirst}</span></p>
     </div>
   </div>
 </section>
@@ -102,11 +91,8 @@ ${C.allInOne()}
 
 <section class="section" id="referenzen">
   <div class="container">
-    ${C.head({ eyebrow: 'Frisch aus der Werkstatt', title: 'Ergebnisse statt Versprechen.', lead: 'Ein Auszug aus meinen Projekten – vom Handwerksbetrieb bis zum sozialen Träger.', split: `<a class="btn btn--ghost" href="/referenzen/">Alle Referenzen ${icon('arrow')}</a>` })}
+    ${C.head({ eyebrow: 'Frisch aus der Werkstatt', title: 'Ergebnisse statt Versprechen.', lead: 'Ein aktuelles Projekt aus der Region – vom ersten Gespräch bis zur fertigen Website, alles aus einer Hand.', split: `<a class="btn btn--ghost" href="/referenzen/">Projekt im Detail ${icon('arrow')}</a>` })}
     ${C.projects(site.projects.slice(0, 1))}
-    <div class="grid grid--2" style="margin-top:28px">
-      ${site.projects.slice(1).map((p, i) => `<a class="card reveal reveal-d${i}" href="/referenzen/#projekt-${p.id}" style="padding:18px">${C.browser(p.img, p.domain, { sizes: '(max-width: 980px) 100vw, 40vw' })}<div style="padding:22px 8px 6px"><h3>${p.name}</h3><p class="mb-0">${p.branch} · ${p.place}</p><span class="link-arrow">Projekt ansehen ${icon('arrow')}</span></div></a>`).join('')}
-    </div>
   </div>
 </section>
 
@@ -140,7 +126,7 @@ ${C.allInOne()}
 
 <section class="section">
   <div class="container">
-    ${C.head({ eyebrow: 'Ehrlicher Vergleich', title: 'Warum nicht einfach Wix – oder eine große Agentur?', lead: 'Baukästen sind günstig, bis man die verlorenen Kunden mitrechnet. Große Agenturen sind gut, aber teuer und oft weit weg. Bei mir bekommen Sie das Beste aus beiden Welten.' })}
+    ${C.head({ eyebrow: 'Ehrlicher Vergleich', title: 'Warum nicht einfach ein Baukasten – oder eine große Agentur?', lead: 'Baukästen sind günstig, bis man die verlorenen Kunden mitrechnet. Große Agenturen sind gut, aber teuer und oft weit weg. Bei mir bekommen Sie das Beste aus beiden Welten.' })}
     ${C.compareTable()}
   </div>
 </section>

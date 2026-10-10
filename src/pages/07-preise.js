@@ -65,6 +65,7 @@ module.exports = {
   body: `
 ${C.pageHero({
   crumbs,
+  aside: C.illuQuote(),
   eyebrow: 'Pakete & Preise',
   h1: 'Festpreise. <span class="grad">Keine Überraschungen.</span>',
   lead: 'Was kostet eine professionelle Website? Hier steht es – transparent und ehrlich. Drei Pakete für drei Ziele, jedes individuell für Ihr Unternehmen gestaltet.',

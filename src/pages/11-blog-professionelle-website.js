@@ -129,7 +129,7 @@ const article = `
 <h2 id="kosten">8. Was kostet eine Website – und was bringt sie?</h2>
 <p>Die Spanne ist groß, und das verunsichert viele Unternehmer. Grob lassen sich drei Wege unterscheiden:</p>
 <ul>
-  <li><strong>Baukasten (Wix, Jimdo & Co.):</strong> typischerweise ein monatliches Abo. Günstig im Einstieg, aber begrenzt bei Design, Geschwindigkeit und SEO – und Sie bleiben dauerhaft an den Anbieter gebunden.</li>
+  <li><strong>Website-Baukasten:</strong> typischerweise ein monatliches Abo. Günstig im Einstieg, aber begrenzt bei Design, Geschwindigkeit und SEO – und Sie bleiben dauerhaft an den Anbieter gebunden.</li>
   <li><strong>Freelancer / kleine Agentur:</strong> individuelle Websites, bei kleinen Unternehmen häufig im Bereich von etwa tausend bis einigen tausend Euro – je nach Umfang, Texten und SEO.</li>
   <li><strong>Große Agentur:</strong> umfangreiche Projekte mit Team, entsprechend meist deutlich höhere Budgets.</li>
 </ul>
@@ -192,7 +192,7 @@ module.exports = {
     <p class="eyebrow">Ratgeber · Webdesign & Sichtbarkeit</p>
     <h1 style="max-width:22ch">${H1}</h1>
     <div class="article__meta">
-      <span>${logoMark(28)} Von <a href="/ueber-mich/" rel="author">${site.owner}</a></span>
+      <span>${C.avatar(30)} Von <a href="/ueber-mich/" rel="author">${site.owner}</a></span>
       <span>${icon('calendar')} <time datetime="${PUBLISHED}">${new Date(PUBLISHED).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
       <span>${icon('clock')} ${minutes} Min. Lesezeit</span>
     </div>
@@ -204,7 +204,7 @@ module.exports = {
     <article class="prose" data-article>
       ${article}
       <div class="author">
-        ${logoMark(64)}
+        ${C.avatar(64)}
         <div><strong>${site.owner}</strong><p>Inhaber von Niktos · Webdesigner & SEO aus Ludwigsburg. Ich baue Websites aus einer Hand, die schnell laden, gefunden werden und Kunden bringen. <a href="/ueber-mich/">Mehr über mich</a> · <a href="${site.instagram}" target="_blank" rel="noopener">Instagram</a></p></div>
       </div>
     </article>

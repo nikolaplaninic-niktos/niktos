@@ -16,6 +16,7 @@ module.exports = {
   body: `
 ${C.pageHero({
   crumbs,
+  aside: C.illuChat(),
   eyebrow: 'Kontakt',
   h1: 'Lassen Sie uns <span class="grad">sprechen.</span>',
   lead: 'Ob erste Idee oder konkretes Projekt: Schreiben Sie mir so, wie es Ihnen am liebsten ist. Ich antworte persönlich – innerhalb von 24 Stunden, meistens deutlich schneller.',

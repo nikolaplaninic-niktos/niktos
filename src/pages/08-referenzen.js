@@ -12,7 +12,7 @@ module.exports = {
   crumbs,
   pageType: 'CollectionPage',
   title: 'Referenzen & Projekte – Webdesign aus Ludwigsburg | Niktos',
-  description: 'Ausgewählte Website-Projekte von Niktos: Kabic Hausmeister & Gartenpflege, Kinderbetreuung Spatzennest, Projekt KomLab. Webdesign & SEO aus Ludwigsburg.',
+  description: 'Referenz von Niktos: die neue Website von Kabic Hausmeister & Gartenpflege aus Bietigheim-Bissingen – Webdesign, SEO und Anfrage-Formular aus einer Hand.',
   schema: [{
     '@type': 'ItemList', name: 'Referenzprojekte von Niktos',
     itemListElement: site.projects.map((p, i) => ({
@@ -23,14 +23,26 @@ module.exports = {
   body: `
 ${C.pageHero({
   crumbs,
+  aside: C.builder(),
   eyebrow: 'Referenzen',
   h1: 'Ergebnisse, die man <span class="grad">sehen kann.</span>',
-  lead: 'Jedes Projekt ist anders – das Ziel ist immer gleich: ein Auftritt, der überzeugt und Anfragen bringt. Hier ein Auszug aus meiner Arbeit.',
+  lead: 'Jedes Projekt ist anders – das Ziel ist immer gleich: ein Auftritt, der überzeugt und Anfragen bringt. So sieht das in der Praxis aus.',
 })}
 
 <section class="section">
   <div class="container">
     ${C.projects(site.projects, { h: 'h2' })}
+  </div>
+</section>
+
+<section class="section section--panel">
+  <div class="container">
+    ${C.head({ eyebrow: 'Projekt im Detail', title: 'Kabic: vom alten Auftritt zur Anfrage-Website.', lead: 'Hausmeisterservice und Gartenpflege aus Bietigheim-Bissingen. Der Inhaber wollte mehr Anfragen aus der Region – und einen Auftritt, der zu seiner Arbeit passt.' })}
+    ${C.steps([
+      ['Ausgangslage', 'Eine ältere Website, die auf dem Handy schwer zu bedienen war, wenig Inhalt zu den einzelnen Leistungen und keine einfachen Kontaktwege.'],
+      ['Umsetzung', 'Neues Design, eigene Seiten für jede Leistung, Texte für die Region Ludwigsburg, Anfrageformular mit Bestätigungs-Mail und WhatsApp-Button.'],
+      ['Ergebnis', 'Eine schnelle, klare Website, auf der Kunden in Sekunden sehen, was angeboten wird – und mit einem Klick anfragen können. Alles aus einer Hand.'],
+    ])}
   </div>
 </section>
 

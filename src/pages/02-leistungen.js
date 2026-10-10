@@ -25,6 +25,7 @@ module.exports = {
   body: `
 ${C.pageHero({
   crumbs,
+  aside: C.aioCard(),
   eyebrow: 'Leistungen',
   h1: 'Alles, was Ihre Website <span class="grad">zum Verkaufen</span> braucht.',
   lead: 'Design, Technik, Texte, Sichtbarkeit und Betreuung – alles aus einer Hand, zum Festpreis und mit einem festen Ansprechpartner. Damit Sie sich um Ihr Geschäft kümmern können, während Ihre Website neue Kunden bringt.',
@@ -36,7 +37,6 @@ ${C.pageHero({
   </div>
 </section>
 
-${C.allInOne({ panel: true })}
 
 <section class="section section--panel">
   <div class="container">
