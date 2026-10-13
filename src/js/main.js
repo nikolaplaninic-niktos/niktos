@@ -116,7 +116,7 @@
   const summary = (data) => {
     const skip = ['t', '_gotcha', 'datenschutz', 'form'];
     const lines = []; const seen = new Set();
-    for (const [k, v] of data.entries()) { if (skip.includes(k) || !String(v).trim() || seen.has(k)) continue; seen.add(k); lines.push(`${k.replace('_', ' ')}: ${data.getAll(k).join(', ')}`); }
+    for (const [k, v] of data.entries()) { if (skip.includes(k) || !String(v).trim() || seen.has(k)) continue; seen.add(k); lines.push(`${k.replace('[]', '').replace('_', ' ')}: ${data.getAll(k).join(', ')}`); }
     return lines.join('\n');
   };
   const showError = (form, code, data, serverMsg) => {

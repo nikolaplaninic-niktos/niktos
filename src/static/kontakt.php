@@ -134,6 +134,12 @@ $d = ['form' => $form];
 foreach (NK_FIELDS as $key => $label) {
     if ($key === 'nachricht') { $d[$key] = mb_substr(trim(str_replace("\0", '', (string)($_POST[$key] ?? ''))), 0, 5000); continue; }
     if ($key === 'email') { $d[$key] = filter_var(trim((string)($_POST['email'] ?? '')), FILTER_VALIDATE_EMAIL) ?: ''; continue; }
+    if ($key === 'kontaktweg') {
+        $raw = $_POST['kontaktweg'] ?? [];
+        $allowed = ['WhatsApp', 'Anruf', 'E-Mail'];
+        $d[$key] = implode(', ', array_values(array_intersect($allowed, array_map('strval', (array)$raw))));
+        continue;
+    }
     $d[$key] = $clean($_POST[$key] ?? '', $key === 'website_url' ? 200 : 120);
 }
 $consent = ($_POST['datenschutz'] ?? '') === 'ja';

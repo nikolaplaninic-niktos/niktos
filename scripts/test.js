@@ -43,7 +43,7 @@ const check = (name, ok, info = '') => { if (!ok) fails++; console.log(`${ok ? '
   await pick('branche', 'Handwerk & Bau');
   // budget was preselected by the package → skipped
   check('budget preset skips step 4', (await step()) === 5, 'active=' + (await step()));
-  await pick('zeitrahmen', 'In 1–3 Monaten');
+  await pick('zeitrahmen', 'In 1–3 Wochen');
   check('contact step 6', (await step()) === 6);
   check('line/summary on done steps', await pg.evaluate(() => document.querySelectorAll('#funnel .fstep.is-done').length === 5 && document.querySelector('#funnel .fstep.is-done [data-sum]').textContent.length > 0));
   // edit step 1 and jump back
@@ -56,7 +56,7 @@ const check = (name, ok, info = '') => { if (!ok) fails++; console.log(`${ok ? '
   await pg.evaluate(() => document.querySelector('#funnel [type=submit]').click()); await wait(200);
   check('empty submit blocked', await pg.evaluate(() => document.getElementById('funnel').open && location.pathname === '/preise/'));
   await pg.type('#d-name', 'Test Kunde'); await pg.type('#d-mail', 'test@test.local'); await pg.type('#d-tel', '0170 1111111');
-  await pg.evaluate(() => { document.querySelector('#funnel input[name=kontaktweg][value=WhatsApp]').click(); document.querySelector('#funnel input[name=datenschutz]').click(); });
+  await pg.evaluate(() => { document.querySelector('#funnel input[name="kontaktweg[]"][value=WhatsApp]').click(); document.querySelector('#funnel input[name=datenschutz]').click(); });
   const sent = await pg.evaluate(() => { const f = document.querySelector('#funnel form'); const d = new FormData(f); return Object.fromEntries([...d.entries()].filter(([k]) => k !== 't')); });
   check('payload complete', sent.anliegen === 'Neue Website' && sent.budget === '500 – 1.500 €' && sent.website_url === 'www.beispiel-firma.de' && sent.paket === 'boost', JSON.stringify(sent));
   await Promise.all([pg.waitForNavigation({ timeout: 5000 }).catch(() => null), pg.evaluate(() => document.querySelector('#funnel [type=submit]').click())]);

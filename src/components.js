@@ -490,7 +490,7 @@ const serp = () => `
 
 /* ---------- Funnel (step-by-step enquiry) ---------- */
 function funnel(px = 'f') {
-  const opt = (name, value, label, ic, sub = '') => `<label class="opt"><input type="radio" name="${name}" value="${esc(value)}" data-label="${esc(label)}"><span>${ic ? icon(ic) : ''}<span>${label}${sub ? `<small>${sub}</small>` : ''}</span></span></label>`;
+  const opt = (name, value, label, ic, sub = '', type = 'radio') => `<label class="opt"><input type="${type}" name="${name}" value="${esc(value)}" data-label="${esc(label)}"><span>${ic ? icon(ic) : ''}<span>${label}${sub ? `<small>${sub}</small>` : ''}</span></span></label>`;
   const step = (n, q, hint, body) => `
   <div class="fstep${n === 1 ? ' is-active' : ''}" data-step="${n}" role="group" aria-labelledby="${px}-q${n}">
     <span class="fstep__n" aria-hidden="true">${n}</span>
@@ -540,8 +540,8 @@ function funnel(px = 'f') {
   </div>`)}
   ${step(5, 'Wann soll die Website online gehen?', '', `<div class="opts">
     ${opt('zeitrahmen', 'So schnell wie möglich', 'So schnell wie möglich', 'bolt')}
-    ${opt('zeitrahmen', 'In 1–3 Monaten', 'In 1–3 Monaten', 'calendar')}
-    ${opt('zeitrahmen', 'In 3–6 Monaten', 'In 3–6 Monaten', 'clock')}
+    ${opt('zeitrahmen', 'In 1–3 Wochen', 'In 1–3 Wochen', 'calendar')}
+    ${opt('zeitrahmen', 'In 1 Monat oder mehr', 'In 1 Monat oder mehr', 'clock')}
     ${opt('zeitrahmen', 'Ich informiere mich erst', 'Ich schaue mich erst um', 'eye')}
   </div>`)}
   ${step(6, 'Fast geschafft! Wie erreiche ich Sie?', 'Sie hören innerhalb von 24 Stunden von mir. Versprochen.', `
@@ -550,10 +550,10 @@ function funnel(px = 'f') {
     <div class="field"><label for="${px}-firma">Unternehmen</label><input id="${px}-firma" name="firma" autocomplete="organization"></div>
     <div class="field"><label for="${px}-mail">E-Mail *</label><input id="${px}-mail" name="email" type="email" autocomplete="email" required></div>
     <div class="field"><label for="${px}-tel">Telefon / WhatsApp</label><input id="${px}-tel" name="telefon" type="tel" autocomplete="tel"></div>
-    <div class="field form__full"><fieldset><legend>Wie darf ich mich melden?</legend><div class="opts opts--3">
-      ${opt('kontaktweg', 'WhatsApp', 'WhatsApp', 'wa')}
-      ${opt('kontaktweg', 'Anruf', 'Anruf', 'phone')}
-      ${opt('kontaktweg', 'E-Mail', 'E-Mail', 'mail')}
+    <div class="field form__full"><fieldset><legend>Wie darf ich mich melden? <small style="font-weight:500;color:var(--mut)">(Mehrfachauswahl möglich)</small></legend><div class="opts opts--3">
+      ${opt('kontaktweg[]', 'WhatsApp', 'WhatsApp', 'wa', '', 'checkbox')}
+      ${opt('kontaktweg[]', 'Anruf', 'Anruf', 'phone', '', 'checkbox')}
+      ${opt('kontaktweg[]', 'E-Mail', 'E-Mail', 'mail', '', 'checkbox')}
     </div></fieldset></div>
     <div class="field form__full"><label for="${px}-msg">Noch etwas, das ich wissen sollte? (optional)</label><textarea id="${px}-msg" name="nachricht" rows="3" placeholder="z. B. Wünsche, Websites, die Ihnen gefallen, Anzahl Seiten …" style="min-height:100px"></textarea></div>
     <label class="consent form__full"><input type="checkbox" name="datenschutz" value="ja" required><span>Ich habe die <a href="/datenschutzerklaerung/" target="_blank">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden. *</span></label>
