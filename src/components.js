@@ -235,11 +235,12 @@ const ctaBand = ({ title = 'Lassen Sie uns <span class="hl">gemeinsam starten.</
 </section>`;
 
 /* ---------- Portrait → polaroid (placeholder until the pro photo exists) ---------- */
+const SHOW_PHOTO = false; // Nikola: Niktos-Logo statt Foto im Polaroid und im "baut Ihre Website"-Badge – true = Foto wieder anzeigen
 function portrait({ eager = false } = {}) {
-  const inner = hasImg('portrait')
+  const inner = SHOW_PHOTO && hasImg('portrait')
     ? img('portrait', { sizes: '(max-width: 980px) 90vw, 440px', eager })
     : `<div class="portrait__mono">${logoMark(200)}</div>`;
-  return `<figure class="portrait"${hasImg('portrait') ? '' : ` role="img" aria-label="${site.owner} – Inhaber von Niktos, Webdesigner aus Ludwigsburg"`}>
+  return `<figure class="portrait"${SHOW_PHOTO && hasImg('portrait') ? '' : ` role="img" aria-label="${site.owner} – Inhaber von Niktos, Webdesigner aus Ludwigsburg"`}>
     <span class="tape" aria-hidden="true"></span>
     <div class="portrait__img">${inner}</div>
     <figcaption class="portrait__cap">${site.ownerFirst} · ${site.address.city}</figcaption>
@@ -294,7 +295,7 @@ const builder = () => `
   </div>
   <div class="build__phone b5" aria-hidden="true"><span class="bp-notch"></span><span class="bp-logo"></span><span class="bp-h"></span><span class="bp-l"></span><span class="bp-l bp-l--s"></span><span class="bp-btn"></span><span class="bp-card"></span><span class="bp-card"></span></div>
   <div class="build__toast b6" aria-hidden="true"><span class="build__toast-ico">${icon('mail')}</span><strong>Neue Anfrage</strong></div>
-  <div class="build__me b7">${avatar(46)}<span><strong>${site.ownerFirst}</strong>baut Ihre Website</span></div>
+  <div class="build__me b7">${SHOW_PHOTO ? avatar(46) : logoMark(46)}<span><strong>${site.ownerFirst}</strong>baut Ihre Website</span></div>
   ${sticker(euro(site.packages[0].price), 'Festpreis ab', 'sticker--top')}
   <svg class="build__cursor b8" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5 19 12l-6.6 1.3L16 20.6l-2.7 1.2-3.5-7.4L4 18.6z" fill="#0b0d14" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
 </div>`;
