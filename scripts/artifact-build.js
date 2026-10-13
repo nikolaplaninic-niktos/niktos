@@ -51,7 +51,7 @@ for (const f of files) {
   }
   const depth = f.split('/').length - 1;
   let h = fs.readFileSync(src, 'utf8');
-  h = h.replace(/<script defer src="https:\/\/cloud\.umami\.is[^>]*><\/script>/g, '');
+  h = h.replace(/<script type="text\/plain" data-nk-stats[^>]*><\/script>/g, '');
   h = h.replace(/<button class="btn btn--sm btn--ghost map__load"[\s\S]*?<\/button>/g, '');
   h = h.replace(/<link rel="(manifest|alternate)"[^>]*>/g, '');
   h = h.replace(/\b(href|src|action)="(\/[^"\/][^"]*|\/)"/g, (_, a, p) => `${a}="${rel(p, depth)}"`);

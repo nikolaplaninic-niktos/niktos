@@ -11,7 +11,7 @@ const C = require('../src/components');
 
 const TODAY = new Date().toISOString().slice(0, 10);
 const JS_VERSION = require('crypto').createHash('sha1').update(fs.readFileSync(path.join(ROOT, 'src/js/main.js'))).digest('hex').slice(0, 10);
-const UMAMI = `<script defer src="${site.umami.src}" data-website-id="${site.umami.websiteId}" data-domains="${new URL(site.url).hostname}" data-do-not-track="true"></script>`;
+const UMAMI = `<script type="text/plain" data-nk-stats src="${site.umami.src}" data-website-id="${site.umami.websiteId}" data-domains="${new URL(site.url).hostname}" data-do-not-track="true"></script>`; // activated by main.js only after consent
 if (site.umami.websiteId.startsWith('REPLACE')) console.warn('⚠  Umami websiteId is still a placeholder (src/site.js → umami.websiteId)');
 if (!site.address.street) console.warn('⚠  Street address missing (src/site.js → address.street) – required for the Impressum');
 const abs = (p) => site.url + p;
@@ -170,7 +170,7 @@ function footer(page) {
     <p class="footer__towns"><strong style="color:#fff">Webdesign & SEO für:</strong> ${site.towns.join(' · ')} · Landkreis Ludwigsburg · Region Stuttgart · deutschlandweit</p>
     <div class="footer__bottom">
       <span>© <span id="year">${new Date().getFullYear()}</span> ${site.legalName}</span>
-      <nav aria-label="Rechtliches"><a href="/impressum/">Impressum</a><a href="/datenschutzerklaerung/">Datenschutz</a></nav>
+      <nav aria-label="Rechtliches"><a href="/impressum/">Impressum</a><a href="/datenschutzerklaerung/">Datenschutz</a><button type="button" class="linklike" data-consent-open>Cookie-Einstellungen</button></nav>
     </div>
   </div>
 </footer>
@@ -235,6 +235,7 @@ ${page.body}
 ${footer(page)}
 </div>
 <script src="/assets/js/main.js?v=${JS_VERSION}" defer></script>
+${C.consent()}
 ${UMAMI}
 </body>
 </html>

@@ -603,4 +603,34 @@ const contactCards = () => `
   <a class="ccard" href="${site.googleMapsUrl}" target="_blank" rel="noopener"><span class="ccard__ico">${icon('pin')}</span><span><small>Google Maps</small><strong>Niktos · ${site.address.zip} ${site.address.city}</strong></span>${icon('arrowUpRight')}</a>
 </div>`;
 
-module.exports = { avatar, builder, illuChat, illuStatus, illuDesign, factsCard, aioCard, rotator, allInOne, esc, euro, img, hasImg, icon, logoMark, startBtn, waBtn, telBtn, ticks, sticker, arrowNote, scribbleArrow, breadcrumb, head, pageHero, marquee, serviceCards, features, steps, processSteps, pricing, compareTable, faq, ctaBand, portrait, browser, projects, mapCard, area, serp, funnel, funnelDialog, contactForm, contactCards };
+
+
+/* ---------- Cookie / privacy banner (consent for optional statistics + Google Maps) ---------- */
+const consent = () => {
+  const row = (id, title, text, locked) => `
+    <label class="cset__row${locked ? ' is-locked' : ''}" for="${id}">
+      <span class="cset__txt"><b>${title}</b><small>${text}</small></span>
+      <span class="switch"><input type="checkbox" id="${id}" ${locked ? 'checked disabled' : 'data-consent="' + id.replace('cs-', '') + '"'}><i aria-hidden="true"></i></span>
+    </label>`;
+  return `
+<div class="cbanner" id="cookie-banner" role="dialog" aria-labelledby="cb-title" aria-describedby="cb-text" hidden>
+  <div class="cbanner__head"><span class="cbanner__ico"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5a19 19 0 1 0 19 19 7 7 0 0 1-7-7 7 7 0 0 1-7-7 5 5 0 0 1-5-5Z" fill="#ffd23f" stroke="#0b0d14" stroke-width="2.5" stroke-linejoin="round"/><circle cx="17" cy="20" r="2.4" fill="#0b0d14"/><circle cx="23" cy="31" r="2.4" fill="#0b0d14"/><circle cx="32" cy="29" r="2.2" fill="#0b0d14"/><circle cx="14" cy="30" r="1.8" fill="#0b0d14"/></svg></span><strong id="cb-title">Kurz zu Cookies</strong></div>
+  <div class="cbanner__main">
+    <p id="cb-text">Ich setze <strong>keine Werbe- oder Tracking-Cookies</strong>. Optional können Sie eine anonyme Statistik und die Google-Maps-Karte erlauben – nur mit Ihrem Ok.</p>
+    <div class="cbanner__btns">
+      <button type="button" class="btn btn--sm" data-consent-all>Alle akzeptieren</button>
+      <button type="button" class="btn btn--sm btn--ghost" data-consent-none>Nur notwendige</button>
+    </div>
+    <button type="button" class="cbanner__more" data-consent-toggle aria-expanded="false" aria-controls="cb-settings">Einstellungen</button>
+  </div>
+  <div class="cset" id="cb-settings" hidden>
+    ${row('cs-necessary', 'Notwendig', 'Speichert nur Ihre Cookie-Auswahl auf Ihrem Gerät. Immer aktiv.', true)}
+    ${row('cs-stats', 'Statistik', 'Anonyme Reichweitenmessung mit Umami: ohne Cookies, ohne Profile.', false)}
+    ${row('cs-media', 'Externe Inhalte', 'Zeigt die Google-Maps-Karte sofort an. Dabei werden Daten an Google übertragen.', false)}
+    <button type="button" class="btn btn--sm btn--block" data-consent-save>Auswahl speichern</button>
+  </div>
+  <p class="cbanner__legal"><a href="/datenschutzerklaerung/">Datenschutz</a> · <a href="/impressum/">Impressum</a></p>
+</div>`;
+};
+
+module.exports = { consent, avatar, builder, illuChat, illuStatus, illuDesign, factsCard, aioCard, rotator, allInOne, esc, euro, img, hasImg, icon, logoMark, startBtn, waBtn, telBtn, ticks, sticker, arrowNote, scribbleArrow, breadcrumb, head, pageHero, marquee, serviceCards, features, steps, processSteps, pricing, compareTable, faq, ctaBand, portrait, browser, projects, mapCard, area, serp, funnel, funnelDialog, contactForm, contactCards };

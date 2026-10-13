@@ -853,3 +853,36 @@ a.card:hover { color: inherit; }
   .prose .ptable td + td { border-left: 1px solid var(--line); background: var(--blue-l); color: var(--ink); font-weight: 600; }
   .prose .ptable td::before { content: attr(data-l); font: 600 .66rem/1.2 var(--fb); letter-spacing: .08em; text-transform: uppercase; color: var(--mut); }
 }
+
+/* ---------- Cookie banner ---------- */
+.linklike { border: 0; background: none; padding: 0; font: inherit; color: inherit; cursor: pointer; text-decoration: none; }
+.linklike:hover { color: #fff; text-decoration: underline; }
+.cbanner { position: fixed; z-index: 90; left: 20px; bottom: 20px; width: min(420px, calc(100% - 40px)); padding: 18px 20px 14px; border: 2px solid var(--ink); border-radius: var(--r-lg); background: #fff; box-shadow: var(--sh-lg); animation: cbIn .5s var(--ease) both; }
+@media (min-width: 1101px) { .cbanner { left: calc(var(--side) + 20px); } }
+@keyframes cbIn { from { opacity: 0; transform: translateY(24px) rotate(-1deg); } }
+.cbanner[hidden] { display: none; }
+.cbanner__head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.cbanner__head strong { font: 800 1.3rem/1 var(--fh); color: var(--ink); }
+.cbanner__ico svg { width: 38px; height: 38px; transform: rotate(-10deg); }
+.cbanner p { margin: 0 0 12px; font-size: .93rem; line-height: 1.5; color: var(--tx2); }
+.cbanner__btns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+.cbanner__btns .btn { padding: 0 10px; white-space: normal; text-align: center; line-height: 1.15; }
+.cbanner__more { display: block; margin: 0 auto 6px; border: 0; background: none; padding: 6px; color: var(--blue); font-weight: 700; font-size: .88rem; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.cbanner p.cbanner__legal { margin: 0; text-align: center; font-size: .78rem; color: var(--mut); }
+.cbanner__legal a { color: var(--mut); }
+.cset { display: grid; gap: 10px; margin: 6px 0 12px; padding-top: 12px; border-top: 2px dashed var(--line2); }
+.cset[hidden] { display: none; }
+.cset__row { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 10px 12px; border: 2px solid var(--ink); border-radius: 12px; background: var(--paper); cursor: pointer; }
+.cset__row.is-locked { cursor: default; background: #fff; }
+.cset__txt b { display: block; font-size: .95rem; color: var(--ink); }
+.cset__txt small { display: block; font-size: .8rem; line-height: 1.4; color: var(--mut); }
+.switch { position: relative; flex: none; width: 46px; height: 26px; }
+.switch input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; z-index: 1; }
+.switch i { position: absolute; inset: 0; border-radius: 99px; border: 2px solid var(--ink); background: #fff; transition: background .2s; }
+.switch i::after { content: ''; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; border-radius: 50%; background: var(--ink); transition: transform .2s var(--ease), background .2s; }
+.switch input:checked + i { background: var(--blue); }
+.switch input:checked + i::after { transform: translateX(20px); background: #fff; }
+.switch input:disabled + i { opacity: .55; }
+.switch input:focus-visible + i { outline: 3px solid var(--blue); outline-offset: 2px; }
+@media (max-width: 640px) { .cbanner { left: 10px; right: 10px; bottom: 10px; width: auto; max-height: calc(100vh - 20px); overflow-y: auto; padding: 16px 16px 12px; } }
+@media (prefers-reduced-motion: reduce) { .cbanner { animation: none; } }

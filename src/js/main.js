@@ -8,6 +8,63 @@
   const track = (name, data) => { try { if (window.umami) window.umami.track(name, data); } catch (_) { /* never break a click */ } };
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
+  /* ---------- Cookie consent: optional statistics (Umami) + external content (Google Maps) ---------- */
+  const CKEY = 'nk-consent', CDAYS = 180;
+  const cget = () => { try { const c = JSON.parse(localStorage.getItem(CKEY) || 'null'); return c && c.v === 1 && Date.now() - c.ts < CDAYS * 864e5 ? c : null; } catch (_) { return null; } };
+  const cset = (c) => { try { localStorage.setItem(CKEY, JSON.stringify({ v: 1, ts: Date.now(), stats: !!c.stats, media: !!c.media })); } catch (_) { /* storage blocked: choice only lasts for this page */ } };
+  let consent = cget() || { stats: false, media: false };
+  let statsOn = false;
+  const loadStats = () => {
+    const tpl = d.querySelector('script[data-nk-stats]');
+    if (!tpl || statsOn) return;
+    statsOn = true;
+    const sc = d.createElement('script');
+    sc.defer = true; sc.src = tpl.getAttribute('src');
+    ['data-website-id', 'data-domains', 'data-do-not-track'].forEach((a) => tpl.hasAttribute(a) && sc.setAttribute(a, tpl.getAttribute(a)));
+    d.head.appendChild(sc);
+  };
+  const loadMap = (box) => {
+    if (!box || box.classList.contains('is-loaded')) return;
+    const ifr = d.createElement('iframe');
+    ifr.src = box.dataset.src;
+    ifr.title = 'Google Maps – Standort Niktos Webdesign Ludwigsburg';
+    ifr.loading = 'lazy';
+    ifr.referrerPolicy = 'no-referrer-when-downgrade';
+    ifr.allowFullscreen = true;
+    box.innerHTML = '';
+    box.classList.add('is-loaded');
+    box.appendChild(ifr);
+  };
+  const applyConsent = () => {
+    if (consent.stats) loadStats();
+    if (consent.media) d.querySelectorAll('.map').forEach(loadMap);
+  };
+  const banner = d.getElementById('cookie-banner');
+  if (banner) {
+    const panel = banner.querySelector('#cb-settings');
+    const toggle = banner.querySelector('[data-consent-toggle]');
+    const boxes = [...banner.querySelectorAll('[data-consent]')];
+    const showBanner = (openSettings) => {
+      boxes.forEach((b) => { b.checked = !!consent[b.dataset.consent]; });
+      banner.hidden = false;
+      panel.hidden = !openSettings;
+      toggle.setAttribute('aria-expanded', String(!!openSettings));
+    };
+    const decide = (next) => {
+      const revoked = (statsOn && !next.stats) || (!next.media && d.querySelector('.map.is-loaded'));
+      consent = next; cset(next); banner.hidden = true;
+      if (revoked) { location.reload(); return; }
+      applyConsent();
+    };
+    banner.querySelector('[data-consent-all]').addEventListener('click', () => decide({ stats: true, media: true }));
+    banner.querySelector('[data-consent-none]').addEventListener('click', () => decide({ stats: false, media: false }));
+    banner.querySelector('[data-consent-save]').addEventListener('click', () => decide(Object.fromEntries(boxes.map((b) => [b.dataset.consent, b.checked]))));
+    toggle.addEventListener('click', () => { const open = panel.hidden; panel.hidden = !open; toggle.setAttribute('aria-expanded', String(open)); });
+    d.addEventListener('click', (e) => { if (e.target.closest && e.target.closest('[data-consent-open]')) { e.preventDefault(); showBanner(true); } });
+    if (!cget()) setTimeout(() => showBanner(false), 700);
+  }
+  applyConsent();
+
   /* ---------- Every newly opened page starts at the top ---------- */
   // Browsers (and embedded previews/in-app browsers) sometimes keep the old scroll position.
   // Back/forward keeps its position, links with #anchor still jump to the anchor.
@@ -80,18 +137,7 @@
   }
 
   /* ---------- Google Maps – only after explicit consent ---------- */
-  d.querySelectorAll('[data-map-load]').forEach((btn) => btn.addEventListener('click', () => {
-    const box = btn.closest('.map');
-    const ifr = d.createElement('iframe');
-    ifr.src = box.dataset.src;
-    ifr.title = 'Google Maps – Standort Niktos Webdesign Ludwigsburg';
-    ifr.loading = 'lazy';
-    ifr.referrerPolicy = 'no-referrer-when-downgrade';
-    ifr.allowFullscreen = true;
-    box.innerHTML = '';
-    box.classList.add('is-loaded');
-    box.appendChild(ifr);
-  }));
+  d.querySelectorAll('[data-map-load]').forEach((btn) => btn.addEventListener('click', () => loadMap(btn.closest('.map'))));
 
   /* ---------- Analytics: calls, e-mails, WhatsApp, Instagram ---------- */
   d.addEventListener('click', (e) => {
