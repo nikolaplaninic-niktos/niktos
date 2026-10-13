@@ -267,6 +267,7 @@ const projects = (list = site.projects, { h = 'h3' } = {}) => list.map((p, i) =>
 </article>`).join('');
 
 /* ---------- Avatar (real photo of Nikola) ---------- */
+const logoAvatar = (size = 48, cls = '') => `<span class="avatar avatar--mono ${cls}" style="width:${size}px;height:${size}px">${logoMark(size)}</span>`;
 const avatar = (size = 48, cls = '') => {
   if (!hasImg('avatar')) return `<span class="avatar avatar--mono ${cls}" style="width:${size}px;height:${size}px">${logoMark(size)}</span>`;
   const a = M.photos.avatar;
@@ -295,7 +296,7 @@ const builder = () => `
   </div>
   <div class="build__phone b5" aria-hidden="true"><span class="bp-notch"></span><span class="bp-logo"></span><span class="bp-h"></span><span class="bp-l"></span><span class="bp-l bp-l--s"></span><span class="bp-btn"></span><span class="bp-card"></span><span class="bp-card"></span></div>
   <div class="build__toast b6" aria-hidden="true"><span class="build__toast-ico">${icon('mail')}</span><strong>Neue Anfrage</strong></div>
-  <div class="build__me b7">${SHOW_PHOTO ? avatar(46) : logoMark(46)}<span><strong>${site.ownerFirst}</strong>baut Ihre Website</span></div>
+  <div class="build__me b7">${SHOW_PHOTO ? avatar(46) : logoAvatar(46)}<span><strong>${site.ownerFirst}</strong>baut Ihre Website</span></div>
   ${sticker(euro(site.packages[0].price), 'Festpreis ab', 'sticker--top')}
   <svg class="build__cursor b8" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5 19 12l-6.6 1.3L16 20.6l-2.7 1.2-3.5-7.4L4 18.6z" fill="#0b0d14" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
 </div>`;
@@ -303,7 +304,7 @@ const builder = () => `
 /* ---------- Small illustrations for sub-page heroes (decorative, labelled) ---------- */
 const illuChat = () => `
 <div class="chatc" aria-label="Beispielhafte Darstellung eines WhatsApp-Chats mit Nikola">
-  <div class="chatc__head">${avatar(40)}<span><strong>${site.ownerFirst} · Niktos</strong><small>Antwort meist am selben Tag</small></span><span class="chatc__wa">${icon('wa')}</span></div>
+  <div class="chatc__head">${SHOW_PHOTO ? avatar(40) : logoAvatar(40)}<span><strong>${site.ownerFirst} · Niktos</strong><small>Antwort meist am selben Tag</small></span><span class="chatc__wa">${icon('wa')}</span></div>
   <div class="chatc__body">
     <p class="cb cb--in">Hallo Nikola, ich brauche eine neue Website für meinen Betrieb. Geht das bis Frühjahr?</p>
     <p class="cb cb--out">Hallo! Sehr gern, das klappt gut. Passt Ihnen morgen früh ein kurzes Telefonat?</p>
