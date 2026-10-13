@@ -65,8 +65,8 @@ Tip (Windows/Git Bash): long heredocs with `'` or `${}` break – write helper s
 - Portrait: `portrait`/`avatar` keys in `src/images.config.js` – swap the source file for the pro photo later, then `npm run all`.
 
 ## Open items (need Nikola)
-- Street + house number for the Impressum (`site.address.street`) – legally required before go-live.
+- Street is set (Marbacher Str. 98, Impressum done).
 - Package prices set by Nikola (Oct 2026): Launch 390 / Boost 990 / Dominate 3.490 €. Still confirm Care 39 €/Monat, Check 49 €, extras, 50/50 payment and "Deutsch, Kroatisch".
 - Google Business Profile link (map + Maps buttons currently search "Niktos Webdesign & SEO, 71642 Ludwigsburg").
-- Permission from Kabic to show the screenshots; professional photo to replace the current one.
+- Kabic permission for the screenshots is granted. Still open: professional photo to replace the current one.
 - Before go-live: SMTP mailbox `website@niktos.com` + `niktos-config.php`, Umami websiteId, Search Console.

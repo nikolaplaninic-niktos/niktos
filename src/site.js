@@ -24,7 +24,7 @@ module.exports = {
   mapEmbed: 'https://www.google.com/maps?q=' + encodeURIComponent('Niktos Webdesign & SEO, 71642 Ludwigsburg') + '&z=13&output=embed',
   googleRouteUrl: 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent('Niktos Webdesign & SEO, 71642 Ludwigsburg'),
   // TODO Nikola: Straße + Hausnummer ist im Impressum Pflicht (§ 5 DDG). Leer = wird nicht angezeigt.
-  address: { street: '', zip: '71642', city: 'Ludwigsburg', region: 'Baden-Württemberg', country: 'DE' },
+  address: { street: 'Marbacher Str. 98', zip: '71642', city: 'Ludwigsburg', region: 'Baden-Württemberg', country: 'DE' },
   replyPromise: 'Antwort innerhalb von 24 Stunden (werktags)',
   kleinunternehmer: true, // § 19 UStG → Preise sind Endpreise
   // Umami Analytics – websiteId aus cloud.umami.is eintragen (Settings → Websites)

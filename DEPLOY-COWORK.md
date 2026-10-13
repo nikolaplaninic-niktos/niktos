@@ -21,7 +21,7 @@ Neue Version veröffentlichen (macht Claude lokal): `npm run deploy` → pusht `
 
 ## Phase 2 – Go-live (erst nach Nikolas ausdrücklichem OK)
 
-Vorher erledigt sein muss: Straße + Hausnummer im Impressum (`site.address.street`), Umami-Website-ID, Kabic-Freigabe, Staging getestet.
+Vorher erledigt sein muss: Straße + Hausnummer im Impressum (`site.address.street`), Umami-Website-ID, Staging getestet.
 
 1. **Sicherung der alten WordPress-Seite (nicht löschen!)**
    - Dateimanager: gesamten Inhalt von `public_html` (außer `novi/` und `.well-known/`) als ZIP packen und **außerhalb von `public_html`** ablegen, z. B. `/home/<konto>/backup/wordpress-2026-10.zip`.

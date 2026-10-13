@@ -49,10 +49,10 @@ Iz stare stranice preuzeto: plavi kvadrati uz meni, crna linija sidebara, plava 
 
 ## Potvrditi prije objave (TODO)
 
-- [ ] **Ulica i kućni broj** – `src/site.js → address.street` (Impressum je bez toga pravno nepotpun)
+- [x] Ulica i kućni broj: Marbacher Str. 98 (erledigt)
 - [ ] **Cijene paketa** (Launch 390 / Boost 990 / Dominate 3.490 € – postavio Nikola 10/2026), Care 39 €/mj., Website-Check 49 €, Extras na `/preise/`, plaćanje 50/50
 - [ ] **Jezici** „Deutsch & Kroatisch“ na Über mich
-- [ ] **Dopuštenje Kabica** za screenshot (jedina referenca)
+- [x] Dopuštenje Kabica für die Screenshots: liegt vor
 - [ ] **Profi fotka** – zamijeniti `media/originals/nikola-planinic.jpg` i `nikola-avatar.jpg`, pa `npm run all`
 - [ ] **Google-Unternehmensprofil** – pošalji link profila → `googleMapsUrl`/`mapEmbed` u `site.js` pokazuju točno na Niktos (sad: pretraga „Niktos Webdesign & SEO, 71642 Ludwigsburg“)
 - [ ] **Umami** websiteId (`site.js`) i server regija u Datenschutz
