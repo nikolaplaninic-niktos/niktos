@@ -129,6 +129,7 @@
       `<p style="margin:10px 0 0;font-size:.9rem">Oder <a href="mailto:${MAIL}?subject=${encodeURIComponent('Anfrage über die Website')}&body=${encodeURIComponent(body)}">per E-Mail senden</a> – Ihre Angaben sind bereits eingetragen.</p>`);
     status.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
+  let sent = false;
   const submit = async (form, e) => {
     e.preventDefault();
     const btn = form.querySelector('[type=submit]');
@@ -139,6 +140,8 @@
       const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.ok) throw Object.assign(new Error('send failed'), { code: json.error, serverMsg: json.message });
       track('Anfrage gesendet', { formular: data.get('form'), anliegen: data.get('anliegen') || '-', budget: data.get('budget') || '-' });
+      sent = true;
+      try { Object.keys(sessionStorage).filter((k) => k.startsWith('nk-funnel:')).forEach((k) => sessionStorage.removeItem(k)); } catch (e2) { /* storage blocked */ }
       location.href = json.redirect || '/danke/';
     } catch (err) {
       showError(form, err.code, data, err.serverMsg);
@@ -229,7 +232,41 @@
       const map = { launch: 'bis 500 €', boost: '500 – 1.500 €', dominate: 'über 3.500 €' };
       if (p && map[p]) { const r = form.querySelector(`input[name=budget][value="${map[p]}"]`); if (r) r.checked = true; }
     };
-    funnels.push({ form, reset: () => go(0, false), setPaket });
+    /* keep answers when the visitor leaves (e.g. to the Datenschutz page) and comes back with "Zurück" */
+    const KEY = 'nk-funnel:' + location.pathname + (form.closest('dialog') ? ':d' : ':p');
+    const store = { get: () => { try { return JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch (e) { return null; } },
+                    set: (v) => { try { v ? sessionStorage.setItem(KEY, JSON.stringify(v)) : sessionStorage.removeItem(KEY); } catch (e) { /* storage blocked */ } } };
+    const save = () => {
+      if (sent) return;
+      const vals = {};
+      form.querySelectorAll('input, textarea').forEach((el) => {
+        if (!el.name || ['t', '_gotcha', 'datenschutz', 'form'].includes(el.name)) return;
+        if (el.type === 'radio' || el.type === 'checkbox') { if (el.checked) (vals[el.name] = vals[el.name] || []).push(el.value); }
+        else if (el.value) vals[el.name] = [el.value];
+      });
+      const dlgEl = form.closest('dialog');
+      store.set({ vals, step: cur, open: !!(dlgEl && dlgEl.open) });
+    };
+    const restore = () => {
+      const st = store.get();
+      if (!st || !st.vals) return false;
+      form.querySelectorAll('input, textarea').forEach((el) => {
+        const v = st.vals[el.name];
+        if (!v) return;
+        if (el.type === 'radio' || el.type === 'checkbox') el.checked = v.includes(el.value); else el.value = v[0];
+      });
+      form.querySelectorAll('[data-if]').forEach((el) => { const [k, v] = el.dataset.if.split('='); el.hidden = !(st.vals[k] && st.vals[k][0] === v); });
+      steps.forEach((s2) => { const n = s2.querySelector('[data-next]'); if (n) n.hidden = !s2.querySelector('[data-if]:not([hidden])'); });
+      go(Math.min(st.step || 0, steps.length - 1), false);
+      return st;
+    };
+    const dialogRef = form.closest('dialog');
+    form.addEventListener('input', save); form.addEventListener('click', () => setTimeout(save, 400));
+    d.addEventListener('click', (e) => { const a = e.target.closest && e.target.closest('a[href]'); if (a && form.contains(a)) save(); }, true);
+    addEventListener('pagehide', save);
+    const saved = restore();
+    if (saved && saved.open && dialogRef && typeof dialogRef.showModal === 'function' && !dialogRef.open) { dialogRef.showModal(); d.documentElement.style.overflow = 'hidden'; }
+    funnels.push({ form, reset: () => go(0, false), setPaket, save });
     setProgress();
     const qp = new URLSearchParams(location.search).get('paket');
     if (qp && !form.closest('dialog')) setPaket(qp);
@@ -252,7 +289,7 @@
     const close = () => dlg.close();
     dlg.querySelector('[data-close]').addEventListener('click', close);
     dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
-    dlg.addEventListener('close', () => { d.documentElement.style.overflow = ''; });
+    dlg.addEventListener('close', () => { d.documentElement.style.overflow = ''; if (f) f.save(); });
   }
 
   /* ---------- Blog: reading progress ---------- */
