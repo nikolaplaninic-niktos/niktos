@@ -173,7 +173,7 @@ function pricing({ compact = false } = {}) {
   <div class="guarantee">
     <span>${icon('check')} Festpreis, keine versteckten Kosten</span>
     <span>${icon('check')} Kostenloses Erstgespräch</span>
-    <span>${icon('check')} Die Website gehört Ihnen</span>
+    <span>${icon('check')} Ein Ansprechpartner für alles</span>
     <span>${icon('check')} Alles aus einer Hand</span>
   </div>`;
 }
@@ -293,7 +293,7 @@ const builder = () => `
     </div>
   </div>
   <div class="build__phone b5" aria-hidden="true"><span class="bp-notch"></span><span class="bp-logo"></span><span class="bp-h"></span><span class="bp-l"></span><span class="bp-l bp-l--s"></span><span class="bp-btn"></span><span class="bp-card"></span><span class="bp-card"></span></div>
-  <div class="build__toast b6" aria-hidden="true"><span class="build__toast-ico">${icon('wa')}</span><span><strong>Neue Anfrage</strong>über Ihre Website · gerade eben</span></div>
+  <div class="build__toast b6" aria-hidden="true"><span class="build__toast-ico">${icon('mail')}</span><strong>Neue Anfrage</strong></div>
   <div class="build__me b7">${avatar(46)}<span><strong>${site.ownerFirst}</strong>baut Ihre Website</span></div>
   ${sticker(euro(site.packages[0].price), 'Festpreis ab', 'sticker--top')}
   <svg class="build__cursor b8" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5 19 12l-6.6 1.3L16 20.6l-2.7 1.2-3.5-7.4L4 18.6z" fill="#0b0d14" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
@@ -320,16 +320,101 @@ const illuStatus = () => `
   <p class="illu-cap">Beispielhafte Darstellung</p>
 </div>`;
 
-const illuQuote = () => {
-  const p = site.packages.find((x) => x.featured) || site.packages[0];
+// Webdesign hero: draft (wireframe) → finished design, with phone, colours & type
+const illuDesign = () => {
+  const fh = `font-family="'League Spartan','Arial Black',Arial,sans-serif" font-weight="800"`;
+  const fb = `font-family="Inter,Arial,sans-serif" font-weight="600"`;
+  const dash = 'fill="none" stroke="#9aa3b8" stroke-width="1.6" stroke-dasharray="5 4"';
   return `
-<div class="quotec" aria-label="Beispiel eines Festpreis-Angebots">
-  <div class="quotec__head">${logoMark(34)}<span><strong>Angebot</strong><small>Website-Paket ${p.name}</small></span></div>
-  <ul>${[['Individuelles Design', 'inklusive'], ['Bis zu 10 Seiten', 'inklusive'], ['SEO-Texte', 'inklusive'], ['Lokales SEO', 'inklusive'], ['3 Monate Support', 'inklusive']].map(([t, v]) => `<li><span>${t}</span><b>${v}</b></li>`).join('')}</ul>
-  <div class="quotec__total"><span>Festpreis</span><strong>${euro(p.price)}</strong></div>
-  <span class="quotec__stamp">Keine versteckten Kosten</span>
-  <p class="illu-cap">Beispiel</p>
-</div>`;
+<figure class="designc" aria-label="Illustration: vom Entwurf zur fertigen, individuellen Website">
+  <svg viewBox="0 0 560 440" aria-hidden="true">
+    <defs><clipPath id="dsClip"><rect x="24" y="52" width="420" height="300" rx="16"/></clipPath></defs>
+    <g transform="translate(70 14)">
+      <rect x="0" y="0" width="92" height="26" rx="13" fill="#fff" stroke="#0b0d14" stroke-width="2"/>
+      <text x="46" y="17.5" text-anchor="middle" ${fb} font-size="11.5" fill="#3a4052">Entwurf</text>
+    </g>
+    <g transform="translate(286 14)">
+      <rect x="0" y="0" width="128" height="26" rx="13" fill="#0a66ff" stroke="#0b0d14" stroke-width="2"/>
+      <text x="64" y="17.5" text-anchor="middle" ${fb} font-size="11.5" fill="#fff">Fertige Website</text>
+    </g>
+    <rect x="30" y="58" width="420" height="300" rx="16" fill="#0b0d14"/>
+    <g clip-path="url(#dsClip)">
+      <rect x="24" y="52" width="420" height="300" fill="#fff"/>
+      <rect x="24" y="52" width="420" height="32" fill="#f6f7fb"/>
+      <line x1="24" y1="84" x2="444" y2="84" stroke="#0b0d14" stroke-width="2"/>
+      <circle cx="44" cy="68" r="5" fill="#ff6159" stroke="#0b0d14" stroke-width="1.2"/><circle cx="60" cy="68" r="5" fill="#ffc12f" stroke="#0b0d14" stroke-width="1.2"/><circle cx="76" cy="68" r="5" fill="#2acb4c" stroke="#0b0d14" stroke-width="1.2"/>
+      <rect x="96" y="59" width="190" height="18" rx="9" fill="#fff" stroke="#cfd4e2" stroke-width="1.4"/>
+      <text x="110" y="71.5" ${fb} font-size="9.5" fill="#656c80">ihre-firma.de</text>
+      <!-- left: wireframe -->
+      <rect x="24" y="85" width="210" height="267" fill="#f6f7fb"/>
+      <rect x="40" y="98" width="40" height="12" rx="3" ${dash}/>
+      <rect x="150" y="102" width="14" height="4" rx="2" fill="#cfd4e2"/><rect x="170" y="102" width="14" height="4" rx="2" fill="#cfd4e2"/><rect x="190" y="102" width="14" height="4" rx="2" fill="#cfd4e2"/>
+      <rect x="40" y="124" width="150" height="13" rx="3" fill="#dde1ea"/><rect x="40" y="143" width="110" height="13" rx="3" fill="#dde1ea"/>
+      <rect x="40" y="166" width="165" height="5" rx="2.5" fill="#dde1ea"/><rect x="40" y="176" width="130" height="5" rx="2.5" fill="#dde1ea"/>
+      <rect x="40" y="192" width="72" height="22" rx="6" ${dash}/>
+      <rect x="40" y="226" width="178" height="66" rx="6" ${dash}/>
+      <path d="M40 226 218 292M218 226 40 292" stroke="#cfd4e2" stroke-width="1.4"/>
+      <rect x="40" y="304" width="52" height="34" rx="6" ${dash}/><rect x="100" y="304" width="52" height="34" rx="6" ${dash}/><rect x="160" y="304" width="52" height="34" rx="6" ${dash}/>
+      <!-- right: finished design -->
+      <rect x="250" y="96" width="14" height="14" rx="3" fill="#0a66ff" stroke="#0b0d14" stroke-width="1.4"/>
+      <rect x="270" y="100" width="40" height="6" rx="3" fill="#0b0d14"/>
+      <rect x="380" y="95" width="50" height="17" rx="8.5" fill="#0b0d14"/>
+      <text x="405" y="106.5" text-anchor="middle" ${fb} font-size="8" fill="#fff">Anfrage</text>
+      <rect x="250" y="124" width="74" height="5" rx="2.5" fill="#0a66ff"/>
+      <text x="250" y="150" ${fh} font-size="21" fill="#0b0d14">Ihr Betrieb.</text>
+      <rect x="248" y="161" width="156" height="9" fill="#ffd23f"/>
+      <text x="250" y="170" ${fh} font-size="21" fill="#0b0d14" textLength="152" lengthAdjust="spacingAndGlyphs">Endlich online.</text>
+      <rect x="250" y="180" width="160" height="5" rx="2.5" fill="#cfd4e2"/><rect x="250" y="190" width="120" height="5" rx="2.5" fill="#cfd4e2"/>
+      <rect x="250" y="203" width="84" height="22" rx="7" fill="#0a66ff" stroke="#0b0d14" stroke-width="1.5"/>
+      <text x="292" y="217.5" text-anchor="middle" ${fb} font-size="9" fill="#fff">Angebot anfragen</text>
+      <rect x="341" y="203" width="58" height="22" rx="7" fill="#fff" stroke="#0b0d14" stroke-width="1.5"/>
+      <text x="370" y="217.5" text-anchor="middle" ${fb} font-size="9" fill="#0b0d14">Anrufen</text>
+      <rect x="250" y="236" width="182" height="58" rx="8" fill="#cfe0ff" stroke="#0b0d14" stroke-width="1.5"/>
+      <circle cx="404" cy="254" r="8" fill="#ffd23f"/>
+      <path d="M251 293 300 252l26 22 18-16 87 35z" fill="#0a66ff" stroke="#0b0d14" stroke-width="1.5" stroke-linejoin="round"/>
+      <g fill="#f6f7fb" stroke="#0b0d14" stroke-width="1.3"><rect x="250" y="304" width="56" height="34" rx="6"/><rect x="313" y="304" width="56" height="34" rx="6"/><rect x="376" y="304" width="56" height="34" rx="6"/></g>
+      <g fill="#0a66ff"><rect x="258" y="311" width="10" height="10" rx="2"/><rect x="321" y="311" width="10" height="10" rx="2"/><rect x="384" y="311" width="10" height="10" rx="2"/></g>
+      <g fill="#cfd4e2"><rect x="258" y="327" width="36" height="4" rx="2"/><rect x="321" y="327" width="36" height="4" rx="2"/><rect x="384" y="327" width="36" height="4" rx="2"/></g>
+      <!-- divider -->
+      <line x1="234" y1="84" x2="234" y2="352" stroke="#0b0d14" stroke-width="2.5"/>
+    </g>
+    <rect x="24" y="52" width="420" height="300" rx="16" fill="none" stroke="#0b0d14" stroke-width="2.5"/>
+    <circle cx="234" cy="218" r="17" fill="#ffd23f" stroke="#0b0d14" stroke-width="2.5"/>
+    <path d="M229 212l-6 6 6 6M239 212l6 6-6 6" fill="none" stroke="#0b0d14" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M247 232l12 7.6-5.3 1 2.9 5.8-2.2 1-2.8-5.9-4.6 3.6z" fill="#0b0d14" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/>
+    <!-- phone -->
+    <g transform="rotate(5 462 318)">
+      <rect x="408" y="212" width="112" height="210" rx="20" fill="#0b0d14"/>
+      <rect x="414" y="218" width="100" height="198" rx="15" fill="#fff"/>
+      <rect x="448" y="223" width="32" height="6" rx="3" fill="#0b0d14"/>
+      <rect x="424" y="238" width="11" height="11" rx="2.5" fill="#0a66ff"/>
+      <rect x="424" y="258" width="80" height="9" rx="2" fill="#0b0d14"/><rect x="424" y="271" width="60" height="9" rx="2" fill="#0b0d14"/>
+      <rect x="424" y="276" width="44" height="5" fill="#ffd23f"/>
+      <rect x="424" y="290" width="76" height="4" rx="2" fill="#cfd4e2"/><rect x="424" y="298" width="58" height="4" rx="2" fill="#cfd4e2"/>
+      <rect x="424" y="310" width="80" height="18" rx="6" fill="#0a66ff" stroke="#0b0d14" stroke-width="1.3"/>
+      <rect x="424" y="336" width="80" height="44" rx="7" fill="#cfe0ff" stroke="#0b0d14" stroke-width="1.3"/>
+      <path d="M425 379 452 356l14 12 10-9 27 20z" fill="#0a66ff"/>
+      <rect x="424" y="388" width="80" height="18" rx="6" fill="#f6f7fb" stroke="#0b0d14" stroke-width="1.2"/>
+    </g>
+    <!-- colours & type -->
+    <g transform="rotate(-4 84 372)">
+      <rect x="14" y="330" width="150" height="88" rx="14" fill="#0b0d14"/>
+      <rect x="8" y="324" width="150" height="88" rx="14" fill="#fff" stroke="#0b0d14" stroke-width="2.5"/>
+      <text x="24" y="364" ${fh} font-size="30" fill="#0b0d14">Aa</text>
+      <text x="70" y="352" ${fb} font-size="9" fill="#656c80">Farben</text>
+      <text x="70" y="364" ${fb} font-size="9" fill="#656c80">&amp; Schrift</text>
+      <circle cx="32" cy="388" r="10" fill="#0a66ff" stroke="#0b0d14" stroke-width="1.6"/><circle cx="58" cy="388" r="10" fill="#ffd23f" stroke="#0b0d14" stroke-width="1.6"/><circle cx="84" cy="388" r="10" fill="#0b0d14"/><circle cx="110" cy="388" r="10" fill="#f6f7fb" stroke="#0b0d14" stroke-width="1.6"/>
+    </g>
+    <!-- sticker -->
+    <g transform="rotate(10 470 70)">
+      <circle cx="473" cy="73" r="44" fill="#0b0d14"/>
+      <circle cx="470" cy="70" r="44" fill="#ffd23f" stroke="#0b0d14" stroke-width="2.5"/>
+      <text x="470" y="64" text-anchor="middle" ${fh} font-size="15" fill="#0b0d14">Keine</text>
+      <text x="470" y="83" text-anchor="middle" ${fh} font-size="15" fill="#0b0d14">Vorlage</text>
+    </g>
+  </svg>
+  <figcaption class="illu-cap">Beispielhafte Darstellung</figcaption>
+</figure>`;
 };
 
 const factsCard = () => `
@@ -338,8 +423,8 @@ const factsCard = () => `
   <dl>
     <div><dt>Sitz</dt><dd>${site.address.city}</dd></div>
     <div><dt>Unterwegs in</dt><dd>Landkreis Ludwigsburg & Region Stuttgart</dd></div>
-    <div><dt>Sprachen</dt><dd>Deutsch, Kroatisch</dd></div>
-    <div><dt>Mache ich</dt><dd>Websites, SEO, Google-Profil, Wartung</dd></div>
+    <div><dt>Sprachen</dt><dd>Deutsch, Kroatisch, Englisch</dd></div>
+    <div><dt>Mache ich</dt><dd>Websites, SEO, Wartung</dd></div>
     <div><dt>Erreichbar</dt><dd>WhatsApp, Telefon, E-Mail</dd></div>
   </dl>
   <a class="btn btn--wa btn--block" href="${site.whatsapp}" target="_blank" rel="noopener">${icon('wa')} Direkt schreiben</a>
@@ -518,4 +603,4 @@ const contactCards = () => `
   <a class="ccard" href="${site.googleMapsUrl}" target="_blank" rel="noopener"><span class="ccard__ico">${icon('pin')}</span><span><small>Google Maps</small><strong>Niktos · ${site.address.zip} ${site.address.city}</strong></span>${icon('arrowUpRight')}</a>
 </div>`;
 
-module.exports = { avatar, builder, illuChat, illuStatus, illuQuote, factsCard, aioCard, rotator, allInOne, esc, euro, img, hasImg, icon, logoMark, startBtn, waBtn, telBtn, ticks, sticker, arrowNote, scribbleArrow, breadcrumb, head, pageHero, marquee, serviceCards, features, steps, processSteps, pricing, compareTable, faq, ctaBand, portrait, browser, projects, mapCard, area, serp, funnel, funnelDialog, contactForm, contactCards };
+module.exports = { avatar, builder, illuChat, illuStatus, illuDesign, factsCard, aioCard, rotator, allInOne, esc, euro, img, hasImg, icon, logoMark, startBtn, waBtn, telBtn, ticks, sticker, arrowNote, scribbleArrow, breadcrumb, head, pageHero, marquee, serviceCards, features, steps, processSteps, pricing, compareTable, faq, ctaBand, portrait, browser, projects, mapCard, area, serp, funnel, funnelDialog, contactForm, contactCards };

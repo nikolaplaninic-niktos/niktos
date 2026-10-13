@@ -73,7 +73,7 @@ const article = `
 <table class="ptable">
   <thead><tr><th>Kriterium</th><th>Instagram / Facebook</th><th>Eigene Website</th></tr></thead>
   <tbody>
-    <tr><th scope="row">Gehört Ihnen</th><td data-l="Instagram / Facebook">Nein – die Plattform bestimmt die Regeln</td><td data-l="Eigene Website">Ja, zu 100 %</td></tr>
+    <tr><th scope="row">Wer bestimmt die Regeln?</th><td data-l="Instagram / Facebook">Die Plattform</td><td data-l="Eigene Website">Sie – mit eigener Adresse</td></tr>
     <tr><th scope="row">Bei Google auffindbar</th><td data-l="Instagram / Facebook">Kaum, meist nur das Profil</td><td data-l="Eigene Website">Jede Seite, jede Leistung</td></tr>
     <tr><th scope="row">Von KI-Assistenten nutzbar</th><td data-l="Instagram / Facebook">Eingeschränkt</td><td data-l="Eigene Website">Ja, mit strukturierten Daten</td></tr>
     <tr><th scope="row">Lebensdauer von Inhalten</th><td data-l="Instagram / Facebook">Stunden bis Tage im Feed</td><td data-l="Eigene Website">Dauerhaft</td></tr>
@@ -129,7 +129,7 @@ const article = `
 <h2 id="kosten">8. Was kostet eine Website – und was bringt sie?</h2>
 <p>Die Spanne ist groß, und das verunsichert viele Unternehmer. Grob lassen sich drei Wege unterscheiden:</p>
 <ul>
-  <li><strong>Website-Baukasten:</strong> typischerweise ein monatliches Abo. Günstig im Einstieg, aber begrenzt bei Design, Geschwindigkeit und SEO – und Sie bleiben dauerhaft an den Anbieter gebunden.</li>
+  <li><strong>Website-Baukasten:</strong> typischerweise ein monatliches Abo. Günstig im Einstieg, aber begrenzt bei Design, Geschwindigkeit und SEO – und um Texte, Technik und Pflege kümmern Sie sich selbst.</li>
   <li><strong>Freelancer / kleine Agentur:</strong> individuelle Websites, bei kleinen Unternehmen häufig im Bereich von etwa tausend bis einigen tausend Euro – je nach Umfang, Texten und SEO.</li>
   <li><strong>Große Agentur:</strong> umfangreiche Projekte mit Team, entsprechend meist deutlich höhere Budgets.</li>
 </ul>

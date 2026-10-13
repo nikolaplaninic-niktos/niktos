@@ -5,8 +5,8 @@ const phoneIntl = '+491622403682';
 module.exports = {
   url: 'https://niktos.com',
   name: 'Niktos',
-  legalName: 'Niktos Nikola Planinić',
-  owner: 'Nikola Planinić',
+  legalName: 'Niktos Nikola Planinic',
+  owner: 'Nikola Planinic',
   ownerFirst: 'Nikola',
   slogan: 'Websites, die Kunden bringen. Alles aus einer Hand.',
   phone: '0162 2403682',

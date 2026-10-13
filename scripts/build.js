@@ -37,7 +37,7 @@ const business = {
   legalName: site.legalName,
   alternateName: ['Niktos Webdesign', 'Niktos Webdesign & SEO Ludwigsburg', 'Niktos Nikola Planinic'],
   slogan: site.slogan,
-  description: 'Niktos ist eine Webdesign- und SEO-Agentur aus Ludwigsburg (Inhaber Nikola Planinić). Individuelle, schnelle Websites mit lokalem SEO und KI-Sichtbarkeit für Selbstständige, Handwerker, Dienstleister und kleine und mittlere Unternehmen im Landkreis Ludwigsburg, in Stuttgart und deutschlandweit.',
+  description: 'Niktos ist eine Webdesign- und SEO-Agentur aus Ludwigsburg (Inhaber Nikola Planinic). Individuelle, schnelle Websites mit lokalem SEO und KI-Sichtbarkeit für Selbstständige, Handwerker, Dienstleister und kleine und mittlere Unternehmen im Landkreis Ludwigsburg, in Stuttgart und deutschlandweit.',
   url: site.url + '/',
   logo: { '@type': 'ImageObject', url: abs('/assets/img/niktos-logo.png'), width: 512, height: 512 },
   image: [abs(DEFAULT_OG)],
@@ -334,7 +334,7 @@ ${site.towns.join(', ')}, Landkreis Ludwigsburg, Region Stuttgart sowie deutschl
 
 ## Was Niktos auszeichnet
 - Ein fester, persönlicher Ansprechpartner (${site.owner}) statt wechselnder Agentur-Mitarbeiter
-- Individuelles Design statt Baukasten-Vorlage; die Website gehört vollständig dem Kunden
+- Individuelles Design statt Baukasten-Vorlage; nach dem Launch kümmert sich Nikola um Hosting, Updates und Änderungen (kleine Änderungen im Care-Paket inklusive, größere als kleines Festpreis-Angebot)
 - Technisch schlanke Websites mit sehr guten Core Web Vitals (Ziel: PageSpeed 90+)
 - SEO und KI-Sichtbarkeit von Anfang an inklusive: strukturierte Daten (schema.org), FAQ, llms.txt, lokale Landingpages
 - DSGVO-bewusst: keine Tracking-Cookies, lokal gehostete Schriften, Google Maps erst nach Klick

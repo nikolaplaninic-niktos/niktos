@@ -43,7 +43,7 @@ const FAQ = C.faq([
   ['Sind die Preise Endpreise?', site.kleinunternehmer ? 'Ja. Als Kleinunternehmer gemäß § 19 UStG weise ich keine Umsatzsteuer aus. Der Preis im Angebot ist der Preis, den Sie zahlen.' : 'Alle Preise verstehen sich zzgl. gesetzlicher MwSt.'],
   ['Warum „ab“-Preise?', 'Jede Website ist individuell. Die Pakete zeigen den typischen Umfang – nach dem kostenlosen Erstgespräch erhalten Sie einen verbindlichen Festpreis, der sich nicht mehr ändert, solange sich der Umfang nicht ändert.'],
   ['Wie läuft die Bezahlung?', '50 % bei Projektstart, 50 % beim Launch der Website. Bei größeren Projekten ist auch eine Aufteilung in drei Raten möglich.'],
-  ['Kommen laufende Kosten dazu?', `Für den Betrieb einer Website fallen Kosten für Domain und Hosting an. Die können Sie selbst tragen – oder Sie nutzen das Care-Paket ab ${site.care.price} € im Monat, in dem Hosting, Domain, SSL, Backups, Updates und kleine Änderungen enthalten sind.`],
+  ['Kommen laufende Kosten dazu?', `Für den Betrieb einer Website fallen Kosten für Domain und Hosting an. Darum kümmere ich mich im Care-Paket ab ${site.care.price} € im Monat – mit Hosting, Domain, SSL, Backups, Updates und kleinen Änderungen. Größere Erweiterungen bekommen Sie als kleines Festpreis-Angebot.`],
   ['Kann ich später auf ein größeres Paket upgraden?', 'Jederzeit. Ihre Website ist so gebaut, dass sie mit Ihrem Unternehmen wachsen kann – neue Seiten, Blog, Regionen-Seiten oder ein Funnel lassen sich jederzeit ergänzen. Bereits bezahlte Leistungen werden natürlich angerechnet.'],
   ['Was ist, wenn mir das Design nicht gefällt?', 'Dafür gibt es die Korrekturschleifen. Außerdem stimmen wir Stil, Farben und Beispiele schon vor dem ersten Entwurf gemeinsam ab – so gibt es keine bösen Überraschungen.'],
 ]);
@@ -67,7 +67,6 @@ module.exports = {
   body: `
 ${C.pageHero({
   crumbs,
-  aside: C.illuQuote(),
   eyebrow: 'Pakete & Preise',
   h1: 'Festpreise. <span class="grad">Keine Überraschungen.</span>',
   lead: 'Was kostet eine professionelle Website? Hier steht es – transparent und ehrlich. Drei Pakete für drei Ziele, jedes individuell für Ihr Unternehmen gestaltet.',

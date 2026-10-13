@@ -6,7 +6,7 @@ const crumbs = [{ name: 'Startseite', url: '/' }, { name: 'Leistungen', url: '/l
 
 const FAQ = C.faq([
   ['Bieten Sie alles aus einer Hand an?', 'Ja. Konzept, Design, Texte, Programmierung, SEO, Google-Unternehmensprofil, Hosting und Wartung – alles bei mir. Sie haben einen Ansprechpartner statt fünf Dienstleister.'],
-  ['Kann ich meine Website später selbst bearbeiten?', 'Ja, wenn Sie das möchten. Ich wähle die Technik passend zu Ihrem Ziel: maximal schnell und sicher oder mit einem einfachen Redaktionssystem, in dem Sie Texte und Bilder selbst ändern. Viele Kunden lassen Änderungen aber einfach von mir erledigen, per WhatsApp.'],
+  ['Wie laufen Änderungen nach dem Launch?', 'Ganz einfach: Sie schreiben mir, ich erledige es. Kleine Änderungen wie Texte, Bilder oder Öffnungszeiten sind im Care-Paket inklusive – eine kurze WhatsApp genügt. Für größere Wünsche wie neue Seiten oder Funktionen bekommen Sie vorab ein kleines Festpreis-Angebot, ohne Überraschungen. Sie müssen sich um nichts Technisches kümmern.'],
   ['Können Sie meine bestehende Website überarbeiten?', 'Ja – ein Relaunch ist eine meiner häufigsten Aufgaben. Dabei übernehme ich wertvolle Inhalte und Google-Rankings (per 301-Weiterleitungen), damit Sie nichts verlieren, sondern dazugewinnen.'],
   ['Machen Sie auch Onlineshops?', 'Kleinere Shops und Buchungs- oder Anfrage-Systeme setze ich gerne um. Für große Shops mit tausenden Produkten empfehle ich Ihnen im Erstgespräch den passenden Weg.'],
 ]);

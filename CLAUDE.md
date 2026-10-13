@@ -50,6 +50,9 @@ Tip (Windows/Git Bash): long heredocs with `'` or `${}` break – write helper s
 - **Never mention WordPress, handcoding, HTML/JS or AI as a building tool.** "KI" only as a service (being found in AI search).
 - **No "X Jahre Erfahrung"** (not provable). No invented reviews, rankings or stats; illustrations with fake content are labelled "Beispielhafte Darstellung" / "Beispiel".
 - **No cliché lines** ("Mit ♥ gemacht", "mit Herz", "Made in …", sign-offs like "Ich freue mich auf Ihre Nachricht"). No competitor brand names (Wix, Jimdo …) – say "Baukasten".
+- **Everything stays with Nikola**: never say "the website belongs to you", "you get all files/access", "edit it yourself / CMS", "host it elsewhere". Message instead: after launch Nikola handles hosting, updates and changes – small changes included (Care), bigger ones as a small fixed-price offer.
+- Name is always written **"Planinic"** (no "ć") on the site, in mails and images. Languages: Deutsch, Kroatisch, Englisch.
+- Preise hero has no illustration (Nikola's wish); Webdesign hero uses the `illuDesign()` draft→finished SVG.
 - Emphasise **"Alles aus einer Hand"** (one contact for design, texts, domain, hosting, SEO, Google profile, maintenance).
 - WhatsApp everywhere (main contact channel). Instagram: `@niktos.webdesign`.
 - Hero headline: "Webdesign in Ludwigsburg, das [richtig gut aussieht. | schnell online ist. | zu Ihnen passt. | Kunden bringt.]" – must never cause layout jumps (ghost copies reserve space; headline scales via container query to fit one line).

@@ -9,7 +9,8 @@ const FAQ = C.faq([
   ['Was kostet der Website-Check?', `Der Website-Check kostet einmalig ${site.checkPrice} € (Endpreis). Wenn Sie mich danach mit einem Relaunch oder einer neuen Website beauftragen, verrechne ich den Betrag vollständig.`],
   ['Wie lange dauert der Check?', 'Sie erhalten Ihren PDF-Report in der Regel innerhalb von 3 Werktagen nach Auftrag. Auf Wunsch besprechen wir die Ergebnisse in einem kurzen Video-Call.'],
   ['Was brauche ich dafür?', 'Nur die Adresse Ihrer Website und zwei, drei Sätze zu Ihrem Unternehmen und Ihren wichtigsten Leistungen. Zugangsdaten sind nicht nötig.'],
-  ['Bin ich danach zu etwas verpflichtet?', 'Nein. Der Report gehört Ihnen – Sie können die Empfehlungen selbst umsetzen, von jemand anderem umsetzen lassen oder mich beauftragen.'],
+  [`Was passiert mit den ${site.checkPrice} €, wenn ich danach ein Projekt beauftrage?`, `Sie werden voll angerechnet. Entscheiden Sie sich nach dem Check für ein Projekt-Angebot von Niktos, ziehe ich die ${site.checkPrice} € vom Projektpreis ab – der Check ist für Sie dann praktisch kostenlos.`],
+  ['Bin ich danach zu etwas verpflichtet?', 'Nein. Sie bekommen Ihren Report und entscheiden in Ruhe. Wenn Sie möchten, setze ich die Maßnahmen für Sie um.'],
 ]);
 
 const checks = [
@@ -61,6 +62,11 @@ ${C.pageHero({
       ['Analyse', 'Ich prüfe Ihre Website manuell und mit Profi-Tools – kein automatischer 08/15-Bericht.', 'Tag 1–3'],
       ['Report & Plan', 'Sie erhalten den PDF-Report mit Ampel-Bewertung und priorisierten Maßnahmen.', 'Tag 3'],
     ])}
+    <div class="fit reveal" style="margin-top:30px">
+      <span class="card__ico" style="margin:0">${icon('euro')}</span>
+      <div><p class="eyebrow">Gut zu wissen</p><h3>Die ${site.checkPrice} € werden voll angerechnet.</h3><p>Entscheiden Sie sich nach dem Check für ein Projekt-Angebot von Niktos, ziehe ich die ${site.checkPrice} € vom Projektpreis ab.</p></div>
+      ${C.startBtn('Check anfragen')}
+    </div>
   </div>
 </section>
 

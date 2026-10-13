@@ -14,7 +14,7 @@ module.exports = {
   crumbs,
   pageType: 'CollectionPage',
   title: 'Blog – Webdesign, SEO & KI-Sichtbarkeit | Niktos Ludwigsburg',
-  description: 'Praxiswissen zu Webdesign, SEO, Google Maps und KI-Suche für Unternehmer aus Ludwigsburg und der Region Stuttgart – verständlich erklärt von Nikola Planinić.',
+  description: 'Praxiswissen zu Webdesign, SEO, Google Maps und KI-Suche für Unternehmer aus Ludwigsburg und der Region Stuttgart – verständlich erklärt von Nikola Planinic.',
   schema: [{
     '@type': 'Blog', '@id': site.url + '/blog/#blog', name: 'Niktos Blog', url: site.url + path, inLanguage: 'de-DE',
     publisher: { '@id': site.url + '/#business' },

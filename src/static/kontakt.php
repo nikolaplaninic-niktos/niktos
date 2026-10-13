@@ -190,9 +190,9 @@ if ($cfg['send_confirmation'] ?? true) {
     try {
         $conf = $newMailer();
         $c = build_bestaetigung($d, 'cid:niktoslogo');
-        $conf->setFrom($fromEmail, $cfg['confirmation_from_name'] ?? 'Nikola Planinić · Niktos');
+        $conf->setFrom($fromEmail, $cfg['confirmation_from_name'] ?? 'Nikola Planinic · Niktos');
         $conf->addAddress($d['email'], $d['name']);
-        $conf->addReplyTo($to, 'Nikola Planinić · Niktos');
+        $conf->addReplyTo($to, 'Nikola Planinic · Niktos');
         $conf->Subject = $c['subject'];
         $conf->Body    = $c['html'];
         $conf->AltBody = $c['text'];

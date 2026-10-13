@@ -7,7 +7,8 @@ const crumbs = [{ name: 'Startseite', url: '/' }, { name: 'Leistungen', url: '/l
 
 const FAQ = C.faq([
   ['Was ist im Care-Paket enthalten?', `Hosting auf schnellen Servern, Domain, SSL-Zertifikat, regelmäßige Backups, Sicherheits-Updates, Uptime-Monitoring, kleine inhaltliche Änderungen (z. B. Texte, Bilder, Öffnungszeiten) per WhatsApp, ein regelmäßiger Sicherheits- und Speed-Check und ich als fester Ansprechpartner. Ab ${site.care.price} € im Monat.`],
-  ['Ist das Care-Paket Pflicht?', 'Nein. Die Website gehört Ihnen – Sie können sie auch selbst hosten oder von jemand anderem betreuen lassen. Die meisten Kunden entscheiden sich trotzdem dafür, weil sie sich dann um nichts kümmern müssen.'],
+  ['Was ist, wenn ich mehr als eine kleine Änderung brauche?', 'Kein Problem. Größere Wünsche wie neue Seiten, neue Leistungen oder zusätzliche Funktionen besprechen wir kurz persönlich. Sie bekommen vorab ein kleines Festpreis-Angebot und wissen genau, was es kostet.'],
+  ['Kann ich auch SEO in die Wartung aufnehmen?', 'Ja, auf Wunsch erweitere ich das Care-Paket um laufende SEO-Betreuung – zum Beispiel neue Inhalte, Pflege des Google-Profils und regelmäßige Ranking-Checks. Umfang und Preis stimmen wir individuell ab.'],
   ['Wie schnell werden Änderungen umgesetzt?', 'Kleinere Änderungen erledige ich in der Regel innerhalb von 1–2 Werktagen. Schicken Sie mir einfach eine WhatsApp-Nachricht mit dem, was geändert werden soll – gern mit Foto oder Screenshot.'],
   ['Betreuen Sie auch Websites, die Sie nicht selbst gebaut haben?', 'Gerne nach einer kurzen Prüfung. Je nach Zustand der Website starte ich mit dem Website-Check, damit wir wissen, woran wir sind.'],
 ]);

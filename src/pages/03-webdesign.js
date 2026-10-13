@@ -7,8 +7,8 @@ const crumbs = [{ name: 'Startseite', url: '/' }, { name: 'Leistungen', url: '/l
 
 const FAQ = C.faq([
   ['Was kostet Webdesign in Ludwigsburg?', `Bei Niktos starten individuelle Websites bei ${C.euro(site.packages[0].price)} (Paket Launch). Eine umfangreiche SEO-Website mit bis zu 10 Seiten und Texten kostet ab ${C.euro(site.packages[1].price)} (Boost), das Rundum-Paket für maximale regionale Sichtbarkeit ab ${C.euro(site.packages[2].price)} (Dominate). Alle Preise sind Festpreise und Endpreise.`],
-  ['Was ist der Unterschied zu einer Baukasten-Website?', 'Website-Baukästen nutzen Vorlagen, laden oft langsam und binden Sie per Abo an den Anbieter. Eine individuelle Website von Niktos wird exakt auf Ihr Unternehmen und Ihre Kunden zugeschnitten, ist technisch deutlich schneller, besser für Google optimiert und gehört vollständig Ihnen.'],
-  ['Brauche ich wirklich eine eigene Website, wenn ich Instagram habe?', 'Social Media ist super für Reichweite – aber das Profil gehört Ihnen nicht, Ihre Beiträge verschwinden im Feed und Google zeigt sie kaum an. Ihre Website ist Ihr eigenes Zuhause im Netz: dauerhaft auffindbar, vollständig unter Ihrer Kontrolle und die Basis für Google, Google Maps und KI-Suche.'],
+  ['Was ist der Unterschied zu einer Baukasten-Website?', 'Website-Baukästen nutzen Vorlagen, laden oft langsam und sehen aus wie viele andere. Um Technik, Texte und Pflege müssen Sie sich dort selbst kümmern. Eine individuelle Website von Niktos wird exakt auf Ihr Unternehmen und Ihre Kunden zugeschnitten, ist technisch deutlich schneller, besser für Google optimiert – und ich kümmere mich um alles.'],
+  ['Brauche ich wirklich eine eigene Website, wenn ich Instagram habe?', 'Social Media ist super für Reichweite – aber dort bestimmt die Plattform die Regeln, Ihre Beiträge verschwinden im Feed und Google zeigt sie kaum an. Ihre Website ist Ihr eigenes Zuhause im Netz: dauerhaft auffindbar, mit Ihrer eigenen Adresse und die Basis für Google, Google Maps und KI-Suche.'],
   ['Wie viele Korrekturschleifen sind inklusive?', 'Je nach Paket 1 bis 5 vollständige Korrekturschleifen. In der Praxis reicht das fast immer, weil wir vorab im Erstgespräch Ziele, Stil und Inhalte klar abstimmen.'],
   ['Übernehmen Sie auch Domain, E-Mail und Hosting?', 'Ja. Ich kümmere mich auf Wunsch um Domain, Hosting, SSL-Zertifikat und E-Mail-Postfächer. Mit dem Care-Paket bleibt Ihre Website danach dauerhaft schnell, sicher und aktuell.'],
   ['Wird meine alte Website beim Relaunch ihre Google-Rankings verlieren?', 'Nicht, wenn man es richtig macht. Ich übernehme wertvolle Inhalte, richte 301-Weiterleitungen von alten auf neue Adressen ein und reiche die neue Sitemap bei Google ein. So nehmen Sie Ihre Rankings mit – und bauen sie aus.'],
@@ -33,7 +33,7 @@ ${C.pageHero({
   eyebrow: 'Webdesign & Website-Erstellung',
   h1: 'Webdesign in Ludwigsburg, das <span class="grad">verkauft.</span>',
   lead: 'Eine Website ist kein digitales Prospekt. Sie ist Ihr bester Mitarbeiter: 24/7 im Einsatz, nie krank, immer freundlich. Ich gestalte und entwickle Websites, die genau so arbeiten – individuell, blitzschnell und mit klarem Ziel: mehr Anfragen.',
-  aside: C.browser(site.projects[0].img, site.projects[0].domain, { sizes: '(max-width: 980px) 100vw, 35vw', eager: true }),
+  aside: C.illuDesign(),
 })}
 
 <section class="section">

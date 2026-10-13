@@ -11,6 +11,7 @@ const FAQ = C.faq([
   ['Wie lange dauert es, bis SEO wirkt?', 'Technische Verbesserungen wirken oft schon nach wenigen Wochen. Für stabile Top-Platzierungen bei umkämpften Begriffen sollten Sie mit 3 bis 6 Monaten rechnen. Lokale Suchanfragen in kleineren Orten gehen meist deutlich schneller.'],
   ['Können Sie Platz 1 bei Google garantieren?', 'Nein – und seien Sie vorsichtig bei allen, die das tun. Google entscheidet über Rankings, nicht die Agentur. Was ich garantieren kann: eine technisch einwandfreie, inhaltlich starke Website und eine klare Strategie, mit der Sie in Ihrer Region beste Chancen auf die vorderen Plätze haben.'],
   ['Brauche ich ein Google-Unternehmensprofil?', 'Unbedingt. Das kostenlose Google-Unternehmensprofil entscheidet, ob Sie in Google Maps und im lokalen Kartenbereich der Suche erscheinen. Im Paket Dominate richte ich es für Sie ein bzw. optimiere es, zu jedem anderen Paket können Sie es als Extra dazubuchen – inklusive Kategorien, Leistungen, Fotos und Verknüpfung mit Ihrer Website.'],
+  ['Kann SEO Teil der monatlichen Wartung sein?', `Ja, auf Wunsch. Dann kombiniere ich das <a href="/wartung-hosting/">Care-Paket</a> mit laufender SEO-Betreuung: Inhalte aktuell halten, neue Seiten für Leistungen und Orte, Google-Profil pflegen und Rankings im Blick behalten. Umfang und Preis stimmen wir individuell ab.`],
   ['Kann ich SEO auch für meine bestehende Website buchen?', `Ja. Am besten starten Sie mit dem <a href="/website-check/">Website-Check</a> für ${site.checkPrice} €: Sie erhalten eine klare Liste, was verbessert werden muss. Danach setze ich die Maßnahmen um – oder Sie entscheiden sich für einen Relaunch.`],
 ]);
 
@@ -98,7 +99,7 @@ ${C.pageHero({
       <div class="actions">${C.startBtn('SEO-Beratung anfragen', { cls: 'btn--lg' })}<a class="btn btn--ghost btn--lg" href="/website-check/">Website-Check ${site.checkPrice} €</a></div>
     </div>
     <div class="reveal reveal-d1">
-      ${C.ticks(['SEO-Grundoptimierung ist in jedem Paket enthalten', 'Lokales SEO ab dem Paket Boost', 'Google-Profil, Keyword-Analyse & Regionen-Seiten im Paket Dominate', 'SEO-Betreuung für bestehende Websites auf Anfrage'])}
+      ${C.ticks(['SEO-Grundoptimierung ist in jedem Paket enthalten', 'Lokales SEO ab dem Paket Boost', 'Google-Profil, Keyword-Analyse & Regionen-Seiten im Paket Dominate', 'SEO-Betreuung für bestehende Websites auf Anfrage', 'Laufende SEO-Betreuung auf Wunsch in der monatlichen Wartung (Care)'])}
     </div>
   </div>
 </section>
