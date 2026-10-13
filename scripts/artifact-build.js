@@ -55,6 +55,7 @@ for (const f of files) {
   h = h.replace(/<button class="btn btn--sm btn--ghost map__load"[\s\S]*?<\/button>/g, '');
   h = h.replace(/<link rel="(manifest|alternate)"[^>]*>/g, '');
   h = h.replace(/\b(href|src|action)="(\/[^"\/][^"]*|\/)"/g, (_, a, p) => `${a}="${rel(p, depth)}"`);
+  h = h.replace(/<a href="(?!https?:|mailto:|tel:)([^"]*)" target="_blank"( rel="[^"]*")?/g, '<a href="$1"'); // sandbox opens target=_blank links as blank pages
   h = h.replace(/srcset="([^"]+)"/g, (_, s) => `srcset="${s.split(',').map((x) => { const [u, w] = x.trim().split(/\s+/); return rel(u, depth) + (w ? ' ' + w : ''); }).join(', ')}"`);
   h = h.replace(/url\((\/assets\/[^)]+)\)/g, (_, u) => `url(${rel(u, depth)})`);
   if (f === 'index.html') {
