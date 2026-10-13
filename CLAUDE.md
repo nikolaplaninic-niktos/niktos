@@ -6,7 +6,7 @@ Site language: **German** (Sie-Form). Communication with Nikola: **Croatian** (c
 Goal: the strongest web-design site in the Ludwigsburg region – looks, speed, conversion, SEO + AI search.
 
 ## Status (handoff, October 2026)
-- Built and approved through several feedback rounds. **Not deployed yet** – the live niktos.com is still the old WordPress site.
+- Built and approved. Staging live at novi.niktos.com (Hostinger Git slot, branch `deploy`). Go-live to niktos.com approved by Nikola 13.10.2026 – procedure in DEPLOY-COWORK.md (copy novi → root, WP archived, not deleted).
 - GitHub: `https://github.com/nikolaplaninic-niktos/niktos` (private), branch `main`, pushed and clean.
 - Mobile preview for Nikola: private Claude Artifact `https://claude.ai/artifact/6REmYSZLDZQC1b1miy8cfh`.
   Update it: `npm run build && node scripts/artifact-build.js`, then publish `artifact/index.html` with `root: artifact/`,

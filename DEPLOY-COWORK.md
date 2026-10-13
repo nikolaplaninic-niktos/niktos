@@ -19,19 +19,20 @@ Neue Version veröffentlichen (macht Claude lokal): `npm run deploy` → pusht `
    - Projekt-Anfrage absenden (Test): Mail kommt bei `info@niktos.com` an **und** Bestätigungsmail beim Absender. Falls nicht: `niktos-mail.log` neben `niktos-config.php` lesen (SMTP_LOGIN_FAILED = Passwort/Benutzer prüfen).
    - Lokal macht Claude: `npm run verify -- https://novi.niktos.com`.
 
-## Phase 2 – Go-live (erst nach Nikolas ausdrücklichem OK)
+## Phase 2 – Go-live auf niktos.com (Nikola hat am 13.10.2026 freigegeben)
 
-Vorher erledigt sein muss: Straße + Hausnummer im Impressum (`site.address.street`), Staging getestet.
+Ausgangslage: niktos.com = altes WordPress in  (Root). Dort liegen auch  (eigenes Projekt),  (Staging) und  – **diese bleiben unberührt**. Der Git-Slot von niktos.com gehört dem Projekt Deutsch-richtig (nicht trennen).
 
-1. **Sicherung der alten WordPress-Seite (nicht löschen!)**
-   - Dateimanager: gesamten Inhalt von `public_html` (außer `novi/` und `.well-known/`) als ZIP packen und **außerhalb von `public_html`** ablegen, z. B. `/home/<konto>/backup/wordpress-2026-10.zip`.
-   - Datenbank per phpMyAdmin exportieren (`.sql`), ebenfalls dort ablegen. Die Datenbank selbst in hPanel **nicht löschen**.
-   - Optional: hPanel → Backups → manuelles Backup.
-2. Alte WordPress-Dateien aus `public_html` entfernen (nur nach Schritt 1, `novi/` und `.well-known/` bleiben).
-3. hPanel → Git: Installationspfad auf `public_html` ändern bzw. zweites Repo-Deployment mit Branch `deploy` → `public_html` anlegen und bereitstellen.
-4. `niktos-config.php` liegt schon oberhalb (Phase 1) und wird weiterverwendet.
-5. Prüfen: `https://niktos.com` (und `www.` → leitet auf non-www), alte WP-URLs → 301 (`.htaccess` ist im Repo), **kein** noindex-Header, Formular-Test, `sitemap.xml`, `robots.txt`.
-6. Danach: Google Search Console → Sitemap `https://niktos.com/sitemap.xml` einreichen; Subdomain `novi` kann bleiben (noindex) oder gelöscht werden.
+Vorgehen (kein Git für den Root nötig):
+1. hPanel → Backups: manuelles Backup (Dateien + Datenbank) und warten, bis es fertig ist.
+2. Neuen Ordner  anlegen. Alle WordPress-Dateien aus dem Root **dorthin verschieben (nicht löschen)** – alles außer , , , . Das alte  und  gehören ebenfalls ins Archiv. In  nur . Liste der verschobenen Einträge notieren. Datenbank nicht anfassen.
+3. Den **kompletten Inhalt** von  (inkl. versteckter , ohne ) in  kopieren. Die Unterordner  und  nicht überschreiben.
+4. Prüfen: ,  → non-www, , , , alte WP-URLs → 301, **kein**  auf niktos.com (auf novi.* bleibt er),  lädt weiterhin, Testanfrage über das Formular, .
+5. Danach: Google Search Console → Sitemap  neu einreichen.
+
+**Config-Suche:**  sucht  ab dem eigenen Ordner bis zu 4 Ebenen nach oben. Aus  wird sie also bereits in  gefunden – keine Änderung nötig.
+
+**Updates danach:**  aktualisiert Staging (novi) automatisch. Live wird mit Schritt 3 nachgezogen (novi → Root kopieren; , , ,  nicht anfassen).
 
 ## Rollback
-ZIP + SQL aus Schritt 1 zurückspielen (Dateimanager entpacken; DB per phpMyAdmin importieren) – die alte Seite läuft wieder.
+-Root: die neu kopierten Dateien entfernen (nur die aus Schritt 3), Inhalt von  zurück in den Root verschieben. Notfalls hPanel-Backup einspielen. Die WordPress-Datenbank wurde nie verändert.
