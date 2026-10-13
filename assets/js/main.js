@@ -16,7 +16,7 @@
   let statsOn = false;
   const loadStats = () => {
     const tpl = d.querySelector('script[data-nk-stats]');
-    if (!tpl || statsOn) return;
+    if (!tpl || statsOn || /^REPLACE/.test(tpl.getAttribute('data-website-id') || '')) return; // no Umami ID yet → never call umami
     statsOn = true;
     const sc = d.createElement('script');
     sc.defer = true; sc.src = tpl.getAttribute('src');
