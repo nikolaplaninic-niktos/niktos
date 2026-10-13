@@ -27,8 +27,6 @@ module.exports = {
   address: { street: 'Marbacher Str. 98', zip: '71642', city: 'Ludwigsburg', region: 'Baden-Württemberg', country: 'DE' },
   replyPromise: 'Antwort innerhalb von 24 Stunden (werktags)',
   kleinunternehmer: true, // § 19 UStG → Preise sind Endpreise
-  // Umami Analytics – websiteId aus cloud.umami.is eintragen (Settings → Websites)
-  umami: { src: 'https://cloud.umami.is/script.js', websiteId: 'REPLACE-WITH-UMAMI-WEBSITE-ID' },
 
   services: [
     { id: 'webdesign', title: 'Webdesign & Website-Erstellung', short: 'Individuelle Websites, die schnell laden, Vertrauen aufbauen und Besucher zu Anfragen machen.', href: '/webdesign-ludwigsburg/', icon: 'layout',

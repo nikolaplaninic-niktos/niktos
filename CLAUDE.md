@@ -38,7 +38,7 @@ Tip (Windows/Git Bash): long heredocs with `'` or `${}` break – write helper s
 | `src/pages/NN-*.js` | One module per page (`path`, `title`, `description`, `schema`, `body`, `noindex`) |
 | `src/components.js` | Blocks: hero `builder()` animation, `rotator()` typing headline, pricing, `compareTable`, FAQ (→ FAQPage), funnel + dialog, contact form, `portrait()` polaroid, `avatar()`, `allInOne`/`aioCard`, `illuChat`/`illuStatus`/`illuQuote`, `factsCard`, `serp`, `mapCard`/`area`, `projects` |
 | `scripts/build.js` | Layout (desktop sidebar with blue icon "stickers" / mobile drawer + bottom bar), JSON-LD graph, sitemap, robots, llms.txt |
-| `src/js/main.js` | Nav, scroll-to-top on new page, typing headline, reveal, funnel logic + dialog, forms, map consent, Umami events |
+| `src/js/main.js` | Nav, scroll-to-top on new page, typing headline, reveal, funnel logic + dialog, forms, map consent + cookie banner |
 | `src/css/style.css` | Design system, inlined + minified into every page |
 | `src/static/kontakt.php` + `_lib/mail.php` | Handles both forms (`form=kontakt|projekt`), whitelisted fields `NK_FIELDS` |
 | `media/originals/` | Source images (Kabic screenshots, `nikola-planinic.jpg` + `nikola-avatar.jpg` cropped from his waterfall photo, `ablauf-1..6.jpg` old-site process icons, logos) |
@@ -69,4 +69,4 @@ Tip (Windows/Git Bash): long heredocs with `'` or `${}` break – write helper s
 - Package prices set by Nikola (Oct 2026): Launch 390 / Boost 990 / Dominate 3.490 €. Still confirm Care 39 €/Monat, Check 49 €, extras, 50/50 payment and "Deutsch, Kroatisch".
 - Google Business Profile link (map + Maps buttons currently search "Niktos Webdesign & SEO, 71642 Ludwigsburg").
 - Kabic permission for the screenshots is granted. Still open: professional photo to replace the current one.
-- Before go-live: SMTP mailbox `website@niktos.com` + `niktos-config.php`, Umami websiteId, Search Console.
+- Before go-live: SMTP mailbox `website@niktos.com` + `niktos-config.php`, Search Console. (No analytics: Umami was removed on Nikola's request, Oct 2026.)

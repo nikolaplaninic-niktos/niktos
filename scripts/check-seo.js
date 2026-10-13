@@ -71,7 +71,6 @@ for (const file of htmlFiles) {
   const srcsets = [...html.matchAll(/srcset="([^"]+)"/g)].flatMap((m) => m[1].split(',').map((s) => s.trim().split(' ')[0]));
   for (const r of new Set([...refs, ...srcsets])) if (r.startsWith('/') && !r.startsWith('//') && !exists(r)) err(rel, `broken link ${r}`);
 
-  if (!/cloud\.umami\.is\/script\.js/.test(html)) err(rel, 'Umami snippet missing');
   if (/<img(?![^>]*\balt=)[^>]*>/.test(html)) err(rel, 'img without alt');
 }
 

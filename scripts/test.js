@@ -26,7 +26,6 @@ const check = (name, ok, info = '') => { if (!ok) fails++; console.log(`${ok ? '
   // --- Funnel dialog from a package card (desktop)
   await pg.emulate({ viewport: { width: 1440, height: 900, deviceScaleFactor: 1 }, userAgent: 'Mozilla/5.0 Chrome' });
   await pg.goto(BASE + '/preise/', { waitUntil: 'networkidle0' });
-  await pg.evaluate(() => { window.__ev = []; window.umami = { track: (n) => window.__ev.push(n) }; });
   await pg.evaluate(() => document.querySelector('#paket-boost [data-open-funnel]').click()); await wait(400);
   check('dialog opens', await pg.evaluate(() => document.getElementById('funnel').open));
   check('paket preset', await pg.evaluate(() => document.querySelector('#funnel input[name=paket]').value === 'boost'));

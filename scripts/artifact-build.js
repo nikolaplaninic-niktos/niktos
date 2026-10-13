@@ -1,6 +1,6 @@
 // Builds a preview copy of dist/ for a private Claude Artifact (viewable in the Claude app on any phone).
 // Rewrites root-absolute paths to relative ones, drops what the Artifact sandbox blocks
-// (Umami, PHP, Maps iframe) and fakes form submits → danke page. Output: artifact/ (gitignored).
+// (PHP, Maps iframe) and fakes form submits → danke page. Output: artifact/ (gitignored).
 // Usage: npm run build && node scripts/artifact-build.js
 const fs = require('fs');
 const path = require('path');
