@@ -21,18 +21,18 @@ Neue Version veröffentlichen (macht Claude lokal): `npm run deploy` → pusht `
 
 ## Phase 2 – Go-live auf niktos.com (Nikola hat am 13.10.2026 freigegeben)
 
-Ausgangslage: niktos.com = altes WordPress in  (Root). Dort liegen auch  (eigenes Projekt),  (Staging) und  – **diese bleiben unberührt**. Der Git-Slot von niktos.com gehört dem Projekt Deutsch-richtig (nicht trennen).
+Ausgangslage: niktos.com = altes WordPress in `public_html` (Root). Dort liegen auch `deutsch-richtig/` (eigenes Projekt), `novi/` (Staging) und `.well-known/` – **diese bleiben unberührt**. Der Git-Slot von niktos.com gehört dem Projekt Deutsch-richtig (nicht trennen).
 
 Vorgehen (kein Git für den Root nötig):
 1. hPanel → Backups: manuelles Backup (Dateien + Datenbank) und warten, bis es fertig ist.
-2. Neuen Ordner  anlegen. Alle WordPress-Dateien aus dem Root **dorthin verschieben (nicht löschen)** – alles außer , , , . Das alte  und  gehören ebenfalls ins Archiv. In  nur . Liste der verschobenen Einträge notieren. Datenbank nicht anfassen.
-3. Den **kompletten Inhalt** von  (inkl. versteckter , ohne ) in  kopieren. Die Unterordner  und  nicht überschreiben.
-4. Prüfen: ,  → non-www, , , , alte WP-URLs → 301, **kein**  auf niktos.com (auf novi.* bleibt er),  lädt weiterhin, Testanfrage über das Formular, .
-5. Danach: Google Search Console → Sitemap  neu einreichen.
+2. Neuen Ordner `public_html/_wordpress-arhiva/` anlegen. Alle WordPress-Dateien aus dem Root **dorthin verschieben (nicht löschen)** – alles außer `deutsch-richtig/`, `novi/`, `.well-known/`, `_wordpress-arhiva/`. Das alte `.htaccess` und `index.php` gehören ebenfalls ins Archiv. In `_wordpress-arhiva/.htaccess` nur `Require all denied`. Liste der verschobenen Einträge notieren. Datenbank nicht anfassen.
+3. Den **kompletten Inhalt** von `public_html/novi/` (inkl. versteckter `.htaccess`, ohne `.git`) in `public_html/` kopieren. Die Unterordner `novi/` und `deutsch-richtig/` nicht überschreiben.
+4. Prüfen: `https://niktos.com`, `www` → non-www, `/preise/`, `/kontakt/`, `/datenschutzerklaerung/`, alte WP-URLs → 301, **kein** `X-Robots-Tag: noindex` auf niktos.com (auf novi.* bleibt er), `deutsch-richtig-demo.niktos.com` lädt weiterhin, Testanfrage über das Formular, `niktos-mail.log`.
+5. Danach: Google Search Console → Sitemap `https://niktos.com/sitemap.xml` neu einreichen.
 
-**Config-Suche:**  sucht  ab dem eigenen Ordner bis zu 4 Ebenen nach oben. Aus  wird sie also bereits in  gefunden – keine Änderung nötig.
+**Config-Suche:** `kontakt.php` sucht `niktos-config.php` ab dem eigenen Ordner bis zu 4 Ebenen nach oben. Aus `public_html/` wird sie also bereits in `domains/niktos.com/` gefunden – keine Änderung nötig.
 
-**Updates danach:**  aktualisiert Staging (novi) automatisch. Live wird mit Schritt 3 nachgezogen (novi → Root kopieren; , , ,  nicht anfassen).
+**Updates danach:** `npm run deploy` aktualisiert Staging (novi) automatisch. Live wird mit Schritt 3 nachgezogen (novi → Root kopieren; `_wordpress-arhiva/`, `deutsch-richtig/`, `novi/`, `.well-known/` nicht anfassen).
 
 ## Rollback
--Root: die neu kopierten Dateien entfernen (nur die aus Schritt 3), Inhalt von  zurück in den Root verschieben. Notfalls hPanel-Backup einspielen. Die WordPress-Datenbank wurde nie verändert.
+Die neu kopierten Dateien im Root entfernen (nur die aus Schritt 3) und den Inhalt von `_wordpress-arhiva/` zurück in den Root verschieben. Notfalls das hPanel-Backup einspielen. Die WordPress-Datenbank wird nie verändert.
