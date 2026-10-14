@@ -20,9 +20,9 @@ module.exports = {
   instagramHandle: '@niktos.webdesign',
   // Google-Unternehmensprofil: sobald vorhanden die Place-ID eintragen → Bewertungs-Links + Maps-Link werden präzise.
   googlePlaceId: '',
-  googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Niktos Webdesign & SEO, 71642 Ludwigsburg'),
-  mapEmbed: 'https://www.google.com/maps?q=' + encodeURIComponent('Niktos Webdesign & SEO, 71642 Ludwigsburg') + '&z=13&output=embed',
-  googleRouteUrl: 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent('Niktos Webdesign & SEO, 71642 Ludwigsburg'),
+  googleMapsUrl: 'https://www.google.com/maps?cid=9343046975854003937', // verified Google Business Profile
+  mapEmbed: 'https://www.google.com/maps?q=' + encodeURIComponent('Niktos - Webdesign Ludwigsburg, Marbacher Str. 98, 71642 Ludwigsburg') + '&z=15&output=embed',
+  googleRouteUrl: 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent('Niktos - Webdesign Ludwigsburg, Marbacher Str. 98, 71642 Ludwigsburg'),
   // TODO Nikola: Straße + Hausnummer ist im Impressum Pflicht (§ 5 DDG). Leer = wird nicht angezeigt.
   address: { street: 'Marbacher Str. 98', zip: '71642', city: 'Ludwigsburg', region: 'Baden-Württemberg', country: 'DE' },
   replyPromise: 'Antwort innerhalb von 24 Stunden (werktags)',

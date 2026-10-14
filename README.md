@@ -54,7 +54,6 @@ Iz stare stranice preuzeto: plavi kvadrati uz meni, crna linija sidebara, plava 
 - [ ] **Jezici** „Deutsch & Kroatisch“ na Über mich
 - [x] Dopuštenje Kabica für die Screenshots: liegt vor
 - [ ] **Profi fotka** – zamijeniti `media/originals/nikola-planinic.jpg` i `nikola-avatar.jpg`, pa `npm run all`
-- [ ] **Google-Unternehmensprofil** – pošalji link profila → `googleMapsUrl`/`mapEmbed` u `site.js` pokazuju točno na Niktos (sad: pretraga „Niktos Webdesign & SEO, 71642 Ludwigsburg“)
 - [ ] **SMTP**: mailbox `website@niktos.com` + `niktos-config.php` na serveru (predložak `config.example.php`)
 
 ## SEO & KI – što je napravljeno

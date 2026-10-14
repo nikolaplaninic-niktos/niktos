@@ -65,6 +65,6 @@ Tip (Windows/Git Bash): long heredocs with `'` or `${}` break – write helper s
 ## Open items (need Nikola)
 - Street is set (Marbacher Str. 98, Impressum done).
 - Package prices set by Nikola (Oct 2026): Launch 390 / Boost 990 / Dominate 3.490 €. Still confirm Care 39 €/Monat, Check 49 €, extras, 50/50 payment and "Deutsch, Kroatisch".
-- Google Business Profile link (map + Maps buttons currently search "Niktos Webdesign & SEO, 71642 Ludwigsburg").
+- Google Business Profile: exists and is verified ("Niktos - Webdesign Ludwigsburg", Marbacher Str. 98); map/route links in `src/site.js` point to it (cid 9343046975854003937).
 - Kabic permission for the screenshots is granted. Still open: professional photo to replace the current one.
 - Before go-live: SMTP mailbox `website@niktos.com` + `niktos-config.php`, Search Console. (No analytics: Umami was removed on Nikola's request, Oct 2026.)
