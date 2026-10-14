@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'LS';font-weight:700;src:url(../node_modules/@fontsource/league-spartan/files/league-spartan-latin-700-normal.woff2)}
+@font-face{font-family:'LS';font-weight:800;src:url(../node_modules/@fontsource/league-spartan/files/league-spartan-latin-800-normal.woff2)}
+@font-face{font-family:'In';font-weight:400;src:url(../node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2)}
+@font-face{font-family:'In';font-weight:500;src:url(../node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2)}
+@font-face{font-family:'In';font-weight:600;src:url(../node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2)}
+@font-face{font-family:'Cv';font-weight:700;src:url(../node_modules/@fontsource/caveat/files/caveat-latin-700-normal.woff2)}
+:root{--ink:#0b0d14;--blue:#0a66ff;--blue-l:#e7efff;--yellow:#ffd23f;--wa:#25d366;--tx2:#3a4052;--mut:#656c80}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#888;font-family:'In',sans-serif;color:var(--ink)}
+.s{position:relative;width:1080px;height:1350px;background:#fff;overflow:hidden;margin:0 0 40px}
+.h{font-family:'LS',sans-serif;font-weight:800;letter-spacing:-.015em;line-height:1.02}
+.blue{color:var(--blue)}
+.hl{background:linear-gradient(transparent 60%,var(--yellow) 60%,var(--yellow) 92%,transparent 92%);padding:0 .06em}
+.pill{display:inline-flex;align-items:center;gap:14px;border:3px solid var(--ink);border-radius:999px;padding:14px 28px;font:600 28px/1 'In';box-shadow:5px 5px 0 var(--ink);background:#fff}
+.dot{width:16px;height:16px;border-radius:5px;background:var(--blue)}
+.note{font-family:'Cv',cursive;font-weight:700;color:var(--blue)}
+.foot{position:absolute;left:70px;right:70px;bottom:46px;display:flex;align-items:center;justify-content:space-between;font:600 28px 'In'}
+.foot .l{display:flex;align-items:center;gap:16px}
+.foot img{width:48px;height:48px}
+.foot .c{font-family:'LS';font-weight:700;color:var(--mut);font-size:28px}
+.band{position:absolute;left:-30px;right:-30px;height:130px;background:var(--blue);border-top:4px solid var(--ink);border-bottom:4px solid var(--ink);transform:rotate(-2.2deg);display:flex;align-items:center;gap:34px;white-space:nowrap;padding-left:90px;font-family:'LS';font-weight:800;font-size:62px;letter-spacing:.01em;text-transform:uppercase;color:#fff}
+.band .o{color:transparent;-webkit-text-stroke:2.5px #fff}
+.band .st{color:var(--yellow);font-size:50px}
+.laptop{position:absolute;border:4px solid var(--ink);border-radius:22px;background:#fff;box-shadow:12px 12px 0 var(--ink);overflow:hidden}
+.laptop .bar{height:48px;border-bottom:4px solid var(--ink);display:flex;align-items:center;gap:10px;padding:0 20px;background:#f4f6fb}
+.laptop .bar i{width:15px;height:15px;border-radius:50%;border:2px solid var(--ink)}
+.laptop .bar .u{margin-left:18px;flex:1;height:28px;border-radius:14px;background:#fff;border:2px solid #d5dae6;font:500 17px/24px 'In';color:var(--mut);padding-left:16px}
+.laptop img{display:block;width:100%}
+.phone{position:absolute;border:4px solid var(--ink);border-radius:46px;background:var(--ink);padding:9px;box-shadow:10px 10px 0 var(--ink)}
+.phone img{display:block;width:100%;border-radius:36px}
+.sticker{position:absolute;border:4px solid var(--ink);border-radius:50%;background:var(--yellow);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:6px 6px 0 var(--ink);transform:rotate(-9deg)}
+.sticker small{font:700 21px/1 'LS';letter-spacing:.1em;text-transform:uppercase}
+.sticker b{font:800 62px/1 'LS';white-space:nowrap;margin-top:6px}
+.card{position:absolute;left:70px;right:70px;height:200px;border:4px solid var(--ink);border-radius:30px;background:#fff;box-shadow:8px 8px 0 var(--ink);display:flex;align-items:center;gap:34px;padding:0 40px}
+.ic{flex:none;width:112px;height:112px;border-radius:28px;background:var(--blue);border:4px solid var(--ink);box-shadow:5px 5px 0 var(--ink);display:flex;align-items:center;justify-content:center}
+.ic svg{width:60px;height:60px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font:800 50px/1.05 'LS';margin-bottom:10px}
+.card p{font:400 29px/1.32 'In';color:var(--tx2)}
+.pk{position:absolute;left:70px;right:70px;border:4px solid var(--ink);border-radius:30px;background:#fff;box-shadow:8px 8px 0 var(--ink);display:flex;align-items:center;padding:0 44px;height:236px}
+.pk .nm{font:800 62px/1 'LS';letter-spacing:.02em;text-transform:uppercase}
+.pk .tg{font:600 24px/1.3 'In';color:var(--mut);margin-top:12px}
+.pk .pr{margin-left:auto;text-align:right;font:800 84px/1 'LS'}
+.pk .pr small{font:700 30px 'LS';margin-right:8px;color:var(--mut)}
+.pk .tm{font:600 26px 'In';color:var(--mut);margin-top:10px}
+.pk.f{background:var(--blue);color:#fff}
+.pk.f .tg,.pk.f .tm,.pk.f .pr small{color:#dbe7ff}
+.tag{position:absolute;right:60px;top:-30px;background:var(--yellow);color:var(--ink);border:4px solid var(--ink);border-radius:14px;padding:9px 22px;font:800 24px 'LS';letter-spacing:.06em;text-transform:uppercase;transform:rotate(3deg);box-shadow:4px 4px 0 var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:20px;border:4px solid var(--ink);border-radius:24px;padding:26px 44px;font:800 44px/1 'LS';box-shadow:7px 7px 0 var(--ink)}
+.polaroid{position:absolute;background:#fff;border:4px solid var(--ink);border-radius:18px;box-shadow:9px 9px 0 var(--ink);padding:18px 18px 74px;transform:rotate(3deg)}
+.polaroid img{display:block;width:100%;border:3px solid var(--ink);border-radius:8px}
+.polaroid .cap{position:absolute;left:0;right:0;bottom:16px;text-align:center;font:700 52px/1 'Cv'}
+</style></head><body>
+
+<section class="s" id="s1">
+  <div style="position:absolute;left:70px;top:78px"><span class="pill"><i class="dot"></i>Neu auf niktos.com</span></div>
+  <h1 class="h" style="position:absolute;left:70px;top:176px;font-size:106px;width:960px">Meine neue<br>Website ist <span class="blue hl">online.</span></h1>
+  <div class="note" style="position:absolute;right:86px;top:96px;font-size:66px;transform:rotate(6deg)">Jetzt live!</div>
+
+  <div class="laptop" style="left:70px;top:470px;width:880px">
+    <div class="bar"><i></i><i></i><i></i><span class="u">niktos.com</span></div>
+    <img src="src/home-d.png">
+  </div>
+  <div class="phone" style="left:752px;top:610px;width:262px"><img src="src/home-m.png"></div>
+  <div class="sticker" style="left:830px;top:392px;width:190px;height:190px;z-index:5"><small>Festpreis ab</small><b>390 €</b></div>
+
+  <div class="band" style="top:1150px"><span>Webdesign</span><span class="st">*</span><span class="o">SEO</span><span class="st">*</span><span>Wartung</span></div>
+</section>
+
+<section class="s" id="s2">
+  <div style="position:absolute;left:70px;top:78px"><span class="pill"><i class="dot"></i>Das ist neu</span></div>
+  <h2 class="h" style="position:absolute;left:70px;top:176px;font-size:104px;width:940px">Schnell. Klar.<br><span class="blue hl">Mit Festpreis.</span></h2>
+
+  <div class="card" style="top:480px"><div class="ic"><svg viewBox="0 0 24 24"><path d="M18 7a6.5 6.5 0 1 0 0 10M5 10h9M5 14h9"/></svg></div><div><h3>Feste Preise</h3><p>Pakete ab 390 €. Sie wissen vorher, was es kostet.</p></div></div>
+  <div class="card" style="top:714px"><div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><div><h3>Schnell auf jedem Gerät</h3><p>Kurze Ladezeit, mobil zuerst gestaltet.</p></div></div>
+  <div class="card" style="top:948px"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></div><div><h3>Bei Google gefunden</h3><p>Lokales SEO für Ludwigsburg und die Region.</p></div></div>
+  <div class="foot"><div class="l"><img src="../media/originals/logo-icon.png"><span>@niktos.webdesign</span></div><span class="c">2 / 4</span></div>
+</section>
+
+<section class="s" id="s3">
+  <div style="position:absolute;left:70px;top:78px"><span class="pill"><i class="dot"></i>Pakete &amp; Preise</span></div>
+  <h2 class="h" style="position:absolute;left:70px;top:176px;font-size:90px;width:960px">Drei Pakete.<br><span class="blue hl">Keine Überraschungen.</span></h2>
+
+  <div class="pk" style="top:500px"><div><div class="nm">Launch</div><div class="tg">Für Gründer &amp; Kleinbetriebe</div></div><div class="pr"><small>ab</small>390 €<div class="tm">ca. 1 Woche</div></div></div>
+  <div class="pk f" style="top:766px"><div class="tag">Beliebteste Wahl</div><div><div class="nm">Boost</div><div class="tg">Für wachsende Unternehmen</div></div><div class="pr"><small>ab</small>990 €<div class="tm">ca. 2 Wochen</div></div></div>
+  <div class="pk" style="top:1032px"><div><div class="nm">Dominate</div><div class="tg">Maximale Sichtbarkeit in Ihrer Region</div></div><div class="pr"><small>ab</small>3.490 €<div class="tm">ca. 5–6 Wochen</div></div></div>
+  <div class="foot" style="bottom:22px"><div class="l"><img src="../media/originals/logo-icon.png"><span>@niktos.webdesign</span></div><span class="c">3 / 4</span></div>
+</section>
+
+<section class="s" id="s4">
+  <div style="position:absolute;left:70px;top:78px"><span class="pill"><i class="dot"></i>Alles aus einer Hand</span></div>
+  <h2 class="h" style="position:absolute;left:70px;top:176px;font-size:112px;width:940px">Ihre Website<br>ist die <span class="blue hl">Nächste.</span></h2>
+  <p style="position:absolute;left:70px;top:520px;width:560px;font:400 36px/1.4 'In';color:var(--tx2)">Design, Texte, Domain, Hosting, SEO und Wartung. Ein Ansprechpartner, ein Festpreis.</p>
+
+  <div class="polaroid" style="left:700px;top:470px;width:310px"><div style="aspect-ratio:1;border:3px solid var(--ink);border-radius:8px;background:#fff url(../media/originals/logo-icon.png) center/138% no-repeat"></div><div class="cap">Niktos</div></div>
+  <div class="note" style="position:absolute;left:660px;top:392px;font-size:48px;transform:rotate(-5deg)">Aus Ludwigsburg</div>
+
+  <div style="position:absolute;left:70px;top:900px;display:flex;flex-direction:column;gap:28px">
+    <span class="btn" style="background:var(--wa);width:940px;justify-content:center"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#0b0d14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8c-.8-.4-1.7-1.3-2.1-2.1l.8-1-1-2z"/></svg>WhatsApp · 0162 2403682</span>
+    <span class="btn" style="background:var(--blue);color:#fff;width:940px;justify-content:center">Kostenloses Angebot · Antwort in 24 h</span>
+  </div>
+
+  <div style="position:absolute;left:70px;top:1210px;font:800 76px/1 'LS'">niktos<span class="blue">.com</span></div>
+  
+  <div style="position:absolute;right:70px;bottom:46px;font:700 28px 'LS';color:var(--mut)">4 / 4</div>
+</section>
+</body></html>

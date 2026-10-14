@@ -6,7 +6,7 @@ Site language: **German** (Sie-Form). Communication with Nikola: **Croatian** (c
 Goal: the strongest web-design site in the Ludwigsburg region – looks, speed, conversion, SEO + AI search.
 
 ## Status (handoff, October 2026)
-- **LIVE on https://niktos.com since 13.10.2026** (copied from public_html/novi to the root; old WordPress archived in public_html/_wordpress-arhiva/ with "Require all denied", DB untouched, SQL export on Nikola's PC). Staging stays at novi.niktos.com (Hostinger Git, branch `deploy`). Updates: `npm run deploy` → novi auto-updates → copy novi → root (see DEPLOY-COWORK.md). Never touch deutsch-richtig/, .private/, novi/.
+- **LIVE on https://niktos.com since 13.10.2026.** Old WordPress archived in public_html/_wordpress-arhiva/ ("Require all denied", DB untouched, SQL export on Nikola's PC). **Auto-sync:** a Hostinger cron job (every 5 min, hPanel > Cron Jobs for niktos.com) copies public_html/novi → public_html (tar, no deletions, excludes .git). So `npm run deploy` → Git deploy into novi → live on niktos.com within ~5 min. Deleted/renamed files must be removed from the root by hand. Never touch deutsch-richtig/, .private/, _wordpress-arhiva/. Staging novi.niktos.com stays noindex.
 - GitHub: `https://github.com/nikolaplaninic-niktos/niktos` (private), branch `main`, pushed and clean.
 - Mobile preview for Nikola: private Claude Artifact `https://claude.ai/artifact/6REmYSZLDZQC1b1miy8cfh`.
   Update it: `npm run build && node scripts/artifact-build.js`, then publish `artifact/index.html` with `root: artifact/`,
