@@ -33,8 +33,7 @@ ${C.pageHero({
       <div class="prose">
         <p>Ich habe in den letzten Jahren viele Websites gesehen, die hübsch aussahen – und trotzdem nichts gebracht haben. Keine Anrufe, keine Anfragen, keine Kunden. Oft lag es nicht am Design, sondern daran, dass niemand darüber nachgedacht hat, <strong>wer die Website besucht und was dieser Mensch braucht</strong>.</p>
         <p>Genau das mache ich anders. Bei Niktos verbinde ich <strong>Design, Technik, Verkaufspsychologie und SEO</strong> zu einer Website, die ein klares Ziel hat: Ihr Unternehmen wachsen zu lassen.</p>
-        <p>Ich arbeite bewusst persönlich. Sie sprechen immer direkt mit mir – vom ersten Gespräch bis lange nach dem Launch. Kein Verkaufsteam, keine Praktikanten, kein Ticketsystem. Wenn Sie eine Frage haben, schreiben Sie mir einfach eine WhatsApp.</p>
-        <p>Mein Anspruch: Jede Website, die ich baue, soll <strong>die beste in ihrer Branche und Region</strong> sein. Schnell, klar, ehrlich – und so gebaut, dass Google und KI-Systeme sie verstehen und empfehlen.</p>
+        <p>Mir ist <strong>transparente Arbeit</strong> und ein guter Draht zu meinen Kunden wichtig. Sie wissen jederzeit, woran Sie sind. Und wenn Sie eine Frage haben, schreiben Sie mir einfach per WhatsApp.</p>
       </div>
       <p class="signature">— ${site.owner}</p>
 

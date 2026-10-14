@@ -128,7 +128,7 @@ const steps = (items) => `
 const processSteps = () => `
 <ol class="steps">${[
   ['Kontakt', 'Sie schreiben mir per WhatsApp, rufen an oder nutzen das Formular. Ich melde mich innerhalb von 24 Stunden.', 'Tag 1'],
-  ['Kennenlernen', 'Wir reden über Ihr Unternehmen, Ihre Kunden und Ihr Ziel. Gern bei einem Kaffee in Ludwigsburg, sonst per Video.', 'ca. 30 Minuten'],
+  ['Kennenlernen', 'Wir reden über Ihr Unternehmen, Ihre Kunden und Ihr Ziel. Persönlich in Ludwigsburg oder per Video.', 'ca. 30 Minuten'],
   ['Angebot & Plan', 'Sie bekommen einen Festpreis, die Seitenstruktur und einen klaren Zeitplan. Ohne Kleingedrucktes.', 'innerhalb von 48 h'],
   ['Design & Umsetzung', 'Ich gestalte, schreibe und baue Ihre Website. Sie sehen jeden Zwischenstand und sagen mir ehrlich Ihre Meinung.', '1 bis 6 Wochen'],
   ['Launch', 'Ihre Website geht online, mit Google Search Console, Unternehmensprofil und allem, was dazugehört.', 'der große Tag'],
@@ -421,7 +421,7 @@ const illuDesign = () => {
 
 const factsCard = () => `
 <div class="facts">
-  <div class="facts__head">${avatar(64)}<span><strong>${site.owner}</strong><small>Inhaber · Webdesigner & SEO</small></span></div>
+  <div class="facts__head">${logoAvatar(64)}<span><strong>${site.owner}</strong><small>Inhaber · Webdesigner & SEO</small></span></div>
   <dl>
     <div><dt>Sitz</dt><dd>${site.address.city}</dd></div>
     <div><dt>Unterwegs in</dt><dd>Landkreis Ludwigsburg & Region Stuttgart</dd></div>

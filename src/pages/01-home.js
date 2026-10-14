@@ -137,7 +137,7 @@ ${C.allInOne()}
       <p class="eyebrow">Wer steckt dahinter?</p>
       <h2>Hi, ich bin ${site.ownerFirst}!</h2>
       <p class="lead">Ich baue Websites für Unternehmen aus der Region. Und ich habe gelernt: Unternehmer wollen keine Technik-Vorträge. Sie wollen eine Website, die funktioniert, gut aussieht und Kunden bringt.</p>
-      <p style="color:var(--tx2)">Bei Niktos arbeiten Sie direkt mit mir. Ich beantworte Ihre Nachrichten selbst, auch per WhatsApp, und stehe mit meinem Namen für jedes Projekt ein. Am liebsten lerne ich meine Kunden bei einem Kaffee in Ludwigsburg kennen.</p>
+      <p style="color:var(--tx2)">Transparente Zusammenarbeit: Sie bekommen nur das, was Ihr Unternehmen wirklich braucht – klar erklärt und zum Festpreis. Bei Fragen oder Problemen schreiben Sie mir einfach per WhatsApp oder E-Mail.</p>
       <span class="signature">${site.ownerFirst}</span>
       <div class="actions" style="margin-top:22px">
         <a class="btn btn--ghost" href="/ueber-mich/">Mehr über mich ${icon('arrow')}</a>
