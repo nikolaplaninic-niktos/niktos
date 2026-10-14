@@ -6,14 +6,12 @@ Site language: **German** (Sie-Form). Communication with Nikola: **Croatian** (c
 Goal: the strongest web-design site in the Ludwigsburg region – looks, speed, conversion, SEO + AI search.
 
 ## Status (handoff, October 2026)
-- Built and approved. Staging live at novi.niktos.com (Hostinger Git slot, branch `deploy`). Go-live to niktos.com approved by Nikola 13.10.2026 – procedure in DEPLOY-COWORK.md (copy novi → root, WP archived, not deleted).
+- **LIVE on https://niktos.com since 13.10.2026** (copied from public_html/novi to the root; old WordPress archived in public_html/_wordpress-arhiva/ with "Require all denied", DB untouched, SQL export on Nikola's PC). Staging stays at novi.niktos.com (Hostinger Git, branch `deploy`). Updates: `npm run deploy` → novi auto-updates → copy novi → root (see DEPLOY-COWORK.md). Never touch deutsch-richtig/, .private/, novi/.
 - GitHub: `https://github.com/nikolaplaninic-niktos/niktos` (private), branch `main`, pushed and clean.
 - Mobile preview for Nikola: private Claude Artifact `https://claude.ai/artifact/6REmYSZLDZQC1b1miy8cfh`.
   Update it: `npm run build && node scripts/artifact-build.js`, then publish `artifact/index.html` with `root: artifact/`,
   all files from `artifact/files.json` and **`url` = the artifact link above** (keeps the link; a new chat must pass `url`).
 - **Never touch the Kabic project** (`../../Kabic Hausmeister und Gartenpflege/`) – separate client, separate repo.
-- **No Hostinger deploy without Nikola's explicit OK.** Planned flow when he says go: staging `novi.niktos.com`
-  (`npm run deploy` → `deploy` branch → Hostinger Git deploy into `public_html/novi`), then go-live like Kabic.
 
 ## Commands
 ```bash
