@@ -73,13 +73,12 @@ module.exports = {
       ],
     },
     {
-      id: 'dominate', name: 'Dominate', price: 3490, from: true, tag: 'Für Marktführer von morgen',
-      claim: 'Maximale Sichtbarkeit in Ihrer Region. Die Nr. 1 werden.',
+      id: 'dominate', name: 'Dominate', price: 3490, from: true, tag: 'Für Unternehmen mit Wachstumsplan',
+      claim: 'Ihre Region gezielt erobern: mit Regionen-Seiten, Analyse und laufender Optimierung.',
       time: 'ca. 5–6 Wochen',
       features: [
         '<strong>Alles aus Boost</strong>, plus:',
         'Bis zu 30 Seiten inkl. Regionen-Landingpages',
-        'Google-Unternehmensprofil einrichten & optimieren',
         'Keyword- & Wettbewerbsanalyse',
         'Step-by-Step-Anfrage-Funnel',
         '2 SEO-Blogartikel zum Start',

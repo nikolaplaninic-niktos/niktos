@@ -18,7 +18,7 @@ const matrix = [
   ['SEO-Grundoptimierung & Schema', Y, Y, Y],
   ['SEO-Texte, für Sie geschrieben', N, Y, Y],
   ['Lokales SEO', N, Y, Y],
-  ['Google-Unternehmensprofil', 'Extra', 'Extra', Y],
+  ['Google-Unternehmensprofil', 'Extra', 'Extra', 'Extra'],
   ['KI-Sichtbarkeit (llms.txt, FAQ, Schema)', 'Basis', Y, Y + ' + Monitoring'],
   ['Blog / News-Bereich', N, Y, Y + ' + 2 Artikel'],
   ['Keyword- & Wettbewerbsanalyse', N, N, Y],
@@ -68,7 +68,7 @@ module.exports = {
 ${C.pageHero({
   crumbs,
   eyebrow: 'Pakete & Preise',
-  h1: 'Festpreise. <span class="grad">Keine Überraschungen.</span>',
+  h1: 'Website-Preise: <span class="grad">Festpreise ohne Überraschungen.</span>',
   lead: 'Was kostet eine professionelle Website? Hier steht es – transparent und ehrlich. Drei Pakete für drei Ziele, jedes individuell für Ihr Unternehmen gestaltet.',
   actions: false,
 })}
