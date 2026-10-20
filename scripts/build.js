@@ -49,7 +49,7 @@ const business = {
   address,
   hasMap: site.googleMapsUrl,
   areaServed: site.towns.map((t) => ({ '@type': 'City', name: t })).concat([{ '@type': 'AdministrativeArea', name: 'Landkreis Ludwigsburg' }, { '@type': 'AdministrativeArea', name: 'Region Stuttgart' }, { '@type': 'Country', name: 'Deutschland' }]),
-  sameAs: [site.instagram],
+  sameAs: [site.instagram, site.googleMapsUrl],
   contactPoint: { '@type': 'ContactPoint', telephone: site.phoneSchema, email: site.email, contactType: 'customer service', availableLanguage: ['German', 'Croatian', 'English'], areaServed: 'DE' },
   knowsAbout: ['Webdesign', 'Website-Erstellung', 'Website-Relaunch', 'Suchmaschinenoptimierung (SEO)', 'Lokales SEO', 'Google-Unternehmensprofil', 'KI-Sichtbarkeit (GEO)', 'ChatGPT-Optimierung', 'Core Web Vitals', 'Conversion-Optimierung', 'Website-Wartung', 'Hosting', 'Domain & E-Mail'],
   hasOfferCatalog: {
