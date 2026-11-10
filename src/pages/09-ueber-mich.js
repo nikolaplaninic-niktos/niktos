@@ -11,7 +11,7 @@ module.exports = {
   priority: 0.7,
   crumbs,
   pageType: 'AboutPage',
-  title: 'Über mich – Nikola Planinic, Webdesigner Ludwigsburg | Niktos',
+  title: 'Über mich: Nikola Planinic, Webdesigner Ludwigsburg | Niktos',
   description: `Nikola Planinic, Inhaber von Niktos: Webdesigner & SEO aus Ludwigsburg – alles aus einer Hand. Persönlich, ehrlich, erreichbar – auch per WhatsApp.`,
   schema: [{ '@type': 'ProfilePage', '@id': site.url + path + '#profile', mainEntity: { '@id': site.url + '/#nikola-planinic' }, url: site.url + path }],
   body: `

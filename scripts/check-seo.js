@@ -35,7 +35,7 @@ for (const file of htmlFiles) {
 
   const title = attr(html, /<title>([^<]*)<\/title>/);
   const desc = attr(html, /<meta name="description" content="([^"]*)"/);
-  if (!title) err(rel, 'missing <title>'); else if (title.length > 65) warn(rel, `title ${title.length} chars`);
+  if (!title) err(rel, 'missing <title>'); else if (title.length > 60) warn(rel, `title ${title.length} chars`);
   if (!desc) err(rel, 'missing description'); else if (desc.length > 165) warn(rel, `description ${desc.length} chars`);
 
   const h1 = (html.match(/<h1[\s>]/g) || []).length;

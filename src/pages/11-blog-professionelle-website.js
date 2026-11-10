@@ -165,7 +165,7 @@ module.exports = {
   ogType: 'article',
   ogImage: '/assets/img/og-blog-professionelle-website.jpg',
   minutes,
-  title: 'Warum eine professionelle Website 2026 so wichtig ist | Niktos',
+  title: 'Warum eine professionelle Website 2026 wichtig ist | Niktos',
   description: 'Warum Unternehmen 2026 eine professionelle Website brauchen: erster Eindruck, lokale Suche, KI-Suche (ChatGPT & Google), Vertrauen, Kosten + Checkliste.',
   head: `<meta property="article:published_time" content="${PUBLISHED}T09:00:00+02:00">
 <meta property="article:modified_time" content="${PUBLISHED}T09:00:00+02:00">

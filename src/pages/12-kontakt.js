@@ -11,7 +11,7 @@ module.exports = {
   priority: 0.8,
   crumbs,
   pageType: 'ContactPage',
-  title: 'Kontakt – Webdesign Ludwigsburg | Niktos · WhatsApp & Telefon',
+  title: 'Kontakt: Webdesign Ludwigsburg | Niktos · WhatsApp & Telefon',
   description: `Kontakt zu Niktos in Ludwigsburg: WhatsApp, ☎ ${site.phone}, E-Mail oder Formular. Kostenloses Erstgespräch & Festpreis-Angebot innerhalb von 24 Stunden.`,
   body: `
 ${C.pageHero({

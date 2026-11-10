@@ -131,7 +131,7 @@ const processSteps = () => `
   ['Kennenlernen', 'Wir reden über Ihr Unternehmen, Ihre Kunden und Ihr Ziel. Persönlich in Ludwigsburg oder per Video.', 'ca. 30 Minuten'],
   ['Angebot & Plan', 'Sie bekommen einen Festpreis, die Seitenstruktur und einen klaren Zeitplan. Ohne Kleingedrucktes.', 'innerhalb von 48 h'],
   ['Design & Umsetzung', 'Ich gestalte, schreibe und baue Ihre Website. Sie sehen jeden Zwischenstand und sagen mir ehrlich Ihre Meinung.', '1 bis 6 Wochen'],
-  ['Launch', 'Ihre Website geht online, mit Google Search Console, Unternehmensprofil und allem, was dazugehört.', 'der große Tag'],
+  ['Launch', 'Ihre Website geht online, mit Google Search Console, Sitemap und allem, was technisch dazugehört.', 'der große Tag'],
   ['Betreuung', 'Ich bleibe Ihr Ansprechpartner. Änderungen, Updates und neue Ideen – kurze WhatsApp genügt.', 'solange Sie möchten'],
 ].map(([t, d, time], i) => `
   <li class="step reveal reveal-d${i % 3}">

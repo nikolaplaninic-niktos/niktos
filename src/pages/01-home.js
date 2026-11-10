@@ -19,7 +19,7 @@ module.exports = {
   path: '/',
   nav: 'home',
   priority: 1.0,
-  title: 'Webdesign Ludwigsburg – Websites, die Kunden bringen | Niktos',
+  title: 'Webdesign Ludwigsburg: Websites, die Kunden bringen | Niktos',
   description: `Webdesign & SEO aus Ludwigsburg: individuelle, schnelle Websites, die bei Google & KI gefunden werden und Anfragen bringen. Festpreise ab ${C.euro(site.packages[0].price)}.`,
   schema: [FAQ.schema],
   body: `
