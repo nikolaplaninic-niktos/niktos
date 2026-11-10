@@ -31,11 +31,11 @@ const matrix = [
 ];
 
 const addons = [
-  ['doc', 'Zusätzliche Unterseite', 'ab 90 €'],
-  ['pen', 'SEO-Blogartikel (inkl. Recherche)', 'ab 149 €'],
-  ['globe', 'Mehrsprachigkeit (je Sprache)', 'ab 290 €'],
-  ['sparkle', 'Logo & Branding-Basics', 'ab 249 €'],
-  ['map', 'Google-Unternehmensprofil einrichten', 'ab 149 €'],
+  ['doc', 'Zusätzliche Unterseite', 'auf Anfrage'],
+  ['pen', 'SEO-Blogartikel (inkl. Recherche)', 'auf Anfrage'],
+  ['globe', 'Mehrsprachigkeit (je Sprache)', 'auf Anfrage'],
+  ['sparkle', 'Logo & Branding-Basics', 'auf Anfrage'],
+  ['map', 'Google-Unternehmensprofil einrichten', 'auf Anfrage'],
   ['euro', 'Onlineshop / Buchungssystem', 'auf Anfrage'],
 ];
 
@@ -92,7 +92,7 @@ ${C.pageHero({
 <section class="section">
   <div class="container">
     ${C.head({ eyebrow: 'Extras', title: 'Individuell erweiterbar.', lead: 'Jedes Paket lässt sich flexibel ergänzen – genau um das, was Ihnen noch fehlt.' })}
-    <div class="grid grid--3">${addons.map(([ic, t, p], i) => `<div class="card reveal reveal-d${i % 3}" style="display:flex;align-items:center;gap:18px"><span class="card__ico" style="margin:0;flex:none">${icon(ic)}</span><div><h3 style="font-size:1.15rem;margin:0 0 4px">${t}</h3><p class="mb-0" style="color:#fff;font-weight:600">${p}</p></div></div>`).join('')}</div>
+    <div class="grid grid--3">${addons.map(([ic, t, p], i) => `<div class="card reveal reveal-d${i % 3}" style="display:flex;align-items:center;gap:18px"><span class="card__ico" style="margin:0;flex:none">${icon(ic)}</span><div><h3 style="font-size:1.15rem;margin:0 0 4px">${t}</h3><p class="mb-0" style="color:var(--blue);font-weight:600">${p}</p></div></div>`).join('')}</div>
   </div>
 </section>
 
