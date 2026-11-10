@@ -32,7 +32,7 @@ ${C.pageHero({
   crumbs,
   eyebrow: 'Webdesign & Website-Erstellung',
   h1: 'Webdesign in Ludwigsburg, das <span class="grad">verkauft.</span>',
-  lead: 'Eine Website ist kein digitales Prospekt. Sie ist Ihr bester Mitarbeiter: 24/7 im Einsatz, nie krank, immer freundlich. Ich gestalte und entwickle Websites, die genau so arbeiten – individuell, blitzschnell und mit klarem Ziel: mehr Anfragen.',
+  lead: 'Eine Website ist kein digitales Prospekt. Sie ist Ihr bester Mitarbeiter: 24/7 im Einsatz, nie krank, immer freundlich. Wenn Sie in Ludwigsburg Ihre Website erstellen lassen, bekommen Sie genau das – individuell, blitzschnell und mit klarem Ziel: mehr Anfragen.',
   aside: C.illuDesign(),
 })}
 

@@ -33,8 +33,8 @@ ${C.pageHero({
   crumbs,
   aside: C.serp(),
   eyebrow: 'SEO · Lokales SEO · KI-Sichtbarkeit',
-  h1: 'Gefunden werden. <span class="grad">Bei Google & KI.</span>',
-  lead: 'Die beste Website bringt nichts, wenn sie niemand findet. Ich sorge dafür, dass Kunden aus Ludwigsburg und Umgebung Sie finden – in der Google-Suche, in Google Maps und in KI-Assistenten wie ChatGPT, Gemini und Perplexity.',
+  h1: 'SEO in Ludwigsburg: <span class="grad">Bei Google & KI gefunden werden.</span>',
+  lead: 'Die beste Website bringt nichts, wenn sie niemand findet. Mit lokaler Suchmaschinenoptimierung (SEO) sorge ich dafür, dass Kunden aus Ludwigsburg und Umgebung Sie finden – in der Google-Suche, in Google Maps und in KI-Assistenten wie ChatGPT, Gemini und Perplexity.',
 })}
 
 <section class="section">

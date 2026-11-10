@@ -26,7 +26,7 @@ ${C.pageHero({
   aside: `<div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span class="browser__url">${icon('lock')} niktos.com/blog</span></div><img src="/assets/img/og-blog-professionelle-website.jpg" width="1200" height="630" alt="" loading="lazy"></div>`,
   eyebrow: 'Blog',
   h1: 'Wissen, das Ihnen <span class="grad">Kunden bringt.</span>',
-  lead: 'Webdesign, SEO und KI-Sichtbarkeit – verständlich erklärt, ohne Fachchinesisch. Für Unternehmer, die online wachsen wollen.',
+  lead: '<a href="/webdesign-ludwigsburg/">Webdesign</a>, <a href="/seo-ludwigsburg/">SEO</a> und KI-Sichtbarkeit – verständlich erklärt, ohne Fachchinesisch. Für Unternehmer, die online wachsen wollen.',
   actions: false,
 })}
 

@@ -27,7 +27,7 @@ ${C.pageHero({
   crumbs,
   aside: C.aioCard(),
   eyebrow: 'Leistungen',
-  h1: 'Alles, was Ihre Website <span class="grad">zum Verkaufen</span> braucht.',
+  h1: 'Alles aus einer Hand: <span class="grad">Webdesign, SEO & Wartung.</span>',
   lead: 'Design, Technik, Texte, Sichtbarkeit und Betreuung – alles aus einer Hand, zum Festpreis und mit einem festen Ansprechpartner. Damit Sie sich um Ihr Geschäft kümmern können, während Ihre Website neue Kunden bringt.',
 })}
 

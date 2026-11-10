@@ -140,11 +140,11 @@ function footer(page) {
         </div>
       </div>
       <div>
-        <h2>Was ich mache</h2>
+        <p class="footer__title">Was ich mache</p>
         <ul>${site.services.map((s) => `<li><a href="${s.href}">${s.title}</a></li>`).join('')}<li><a href="/preise/">Pakete & Preise</a></li></ul>
       </div>
       <div>
-        <h2>Mehr entdecken</h2>
+        <p class="footer__title">Mehr entdecken</p>
         <ul>
           <li><a href="/referenzen/">Referenzen</a></li>
           <li><a href="/ueber-mich/">Über mich</a></li>
@@ -156,7 +156,7 @@ function footer(page) {
         </ul>
       </div>
       <div>
-        <h2>Sag Hallo</h2>
+        <p class="footer__title">Sag Hallo</p>
         <address class="footer__nap">
           <span>${icon('pin')}<span>${site.legalName}<br>${site.address.street ? site.address.street + '<br>' : ''}${site.address.zip} ${site.address.city}</span></span>
           <a href="tel:${site.phoneIntl}">${icon('phone')}${site.phone}</a>
