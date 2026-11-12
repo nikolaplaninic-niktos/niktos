@@ -24,7 +24,7 @@ module.exports = {
     '@type': 'Service', '@id': site.url + path + '#service', name: 'Website-Wartung & Hosting (Niktos Care)', serviceType: 'Website-Wartung',
     description: 'Hosting, SSL, Backups, Updates, Monitoring und Änderungen per WhatsApp für Unternehmens-Websites.',
     provider: { '@id': site.url + '/#business' },
-    offers: { '@type': 'Offer', price: site.care.price, priceCurrency: 'EUR', priceSpecification: { '@type': 'UnitPriceSpecification', price: site.care.price, priceCurrency: 'EUR', unitText: 'Monat' } },
+    offers: { '@type': 'AggregateOffer', lowPrice: site.care.price, priceCurrency: 'EUR', priceSpecification: { '@type': 'UnitPriceSpecification', minPrice: site.care.price, priceCurrency: 'EUR', unitText: 'Monat' } },
   }],
   body: `
 ${C.pageHero({
