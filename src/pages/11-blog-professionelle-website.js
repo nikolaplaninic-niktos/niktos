@@ -134,7 +134,7 @@ const article = `
   <li><strong>Große Agentur:</strong> umfangreiche Projekte mit Team, entsprechend meist deutlich höhere Budgets.</li>
 </ul>
 <p>Die wichtigere Frage ist aber nicht, was eine Website kostet, sondern <strong>was sie einbringt</strong>. Eine einfache Beispielrechnung: Bringt Ihnen die neue Website nur einen zusätzlichen Kunden pro Monat mit einem Auftragswert von 500 €, sind das 6.000 € zusätzlicher Umsatz im Jahr. Eine Website ist damit keine Ausgabe, sondern eine Investition mit messbarer Rendite.</p>
-<p>Bei Niktos gibt es dafür transparente Festpreise – von <strong>Launch</strong> ab ${C.euro(site.packages[0].price)} bis <strong>Dominate</strong> ab ${C.euro(site.packages[2].price)}. Alle Details finden Sie auf der Seite <a href="/preise/">Preise</a>.</p>
+<p>Bei Niktos gibt es dafür transparente Festpreise – von <strong>Launch</strong> ab ${C.euro(site.packages[0].price)} bis <strong>Dominate</strong> ab ${C.euro(site.packages[2].price)}. Alle Details finden Sie auf der Seite <a href="/preise/">Preise</a>. Was genau den Preis bestimmt und welche laufenden Kosten dazukommen, erkläre ich im Artikel <a href="/blog/was-kostet-eine-website/">Was kostet eine Website?</a></p>
 
 <h2 id="fehler">9. Die 7 häufigsten Fehler auf Unternehmens-Websites</h2>
 <ol>

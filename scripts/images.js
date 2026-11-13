@@ -91,8 +91,9 @@ async function logos() {
   await logos();
   await stickers();
   await og('og-niktos-webdesign-ludwigsburg.jpg', { eyebrow: 'Webdesign & SEO · Ludwigsburg', title: 'Websites, die Kunden bringen.', sub: 'Individuelles Webdesign · SEO · KI-Sichtbarkeit — niktos.com' });
-  await og('og-preise-webdesign.jpg', { eyebrow: 'Pakete & Preise', title: 'Launch · Boost · Dominate', sub: 'Festpreise ab 990 € — transparent & ohne versteckte Kosten' });
+  await og('og-preise-webdesign.jpg', { eyebrow: 'Pakete & Preise', title: 'Launch · Boost · Dominate', sub: 'Festpreise ab 390 € — transparent & ohne versteckte Kosten' });
   await og('og-blog-professionelle-website.jpg', { eyebrow: 'Niktos Blog', title: 'Warum eine professionelle Website 2026 unverzichtbar ist', sub: 'Von Nikola Planinic · Webdesign & SEO Ludwigsburg' });
+  await og('og-blog-was-kostet-eine-website.jpg', { eyebrow: 'Niktos Blog', title: 'Was kostet eine Website? Preise 2026 im Überblick', sub: 'Von Nikola Planinic · Webdesign & SEO Ludwigsburg' });
   await og('og-seo-ki-sichtbarkeit.jpg', { eyebrow: 'SEO & KI-Sichtbarkeit', title: 'Gefunden werden. Bei Google & KI.', sub: 'Lokales SEO · Google Maps · ChatGPT, Gemini & Co.' });
   await photos();
   fs.writeFileSync(path.join(ROOT, 'src', 'images.manifest.json'), JSON.stringify(manifest, null, 1));

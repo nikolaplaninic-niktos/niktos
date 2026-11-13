@@ -2,10 +2,11 @@ const site = require('../site');
 const C = require('../components');
 const { icon } = C;
 const post = require('./11-blog-professionelle-website');
+const postKosten = require('./11-blog-was-kostet-eine-website');
 
 const path = '/blog/';
 const crumbs = [{ name: 'Startseite', url: '/' }, { name: 'Blog', url: path }];
-const posts = [post];
+const posts = [postKosten, post];
 
 module.exports = {
   path,
@@ -32,9 +33,9 @@ ${C.pageHero({
 
 <section class="section">
   <div class="container">
-    ${posts.map((p) => `
-    <a class="post-card reveal" href="${p.path}">
-      <img src="${p.ogImage}" width="1200" height="630" alt="Blogartikel: ${C.esc(p.title.split(' | ')[0])}" fetchpriority="high">
+    ${posts.map((p, i) => `
+    <a class="post-card reveal" href="${p.path}"${i ? ' style="margin-top:24px"' : ''}>
+      <img src="${p.ogImage}" width="1200" height="630" alt="Blogartikel: ${C.esc(p.title.split(' | ')[0])}"${i ? ' loading="lazy"' : ' fetchpriority="high"'}>
       <div class="post-card__body">
         <p class="eyebrow">Ratgeber · ${p.minutes} Min. Lesezeit</p>
         <h2>${p.title.split(' | ')[0]}</h2>
@@ -44,7 +45,7 @@ ${C.pageHero({
     </a>`).join('')}
     <div class="card reveal" style="margin-top:24px;display:flex;align-items:center;gap:22px;flex-wrap:wrap">
       <span class="card__ico" style="margin:0">${icon('pen')}</span>
-      <div style="flex:1;min-width:240px"><h3 style="margin:0 0 6px">Weitere Artikel folgen</h3><p class="mb-0">Themen wie lokales SEO, Google-Unternehmensprofil, KI-Suche und Website-Kosten sind in Arbeit. Folgen Sie mir auf Instagram, um nichts zu verpassen.</p></div>
+      <div style="flex:1;min-width:240px"><h3 style="margin:0 0 6px">Weitere Artikel folgen</h3><p class="mb-0">Themen wie lokales SEO, Google-Unternehmensprofil und KI-Suche sind in Arbeit. Folgen Sie mir auf Instagram, um nichts zu verpassen.</p></div>
       <a class="btn btn--ghost" href="${site.instagram}" target="_blank" rel="noopener">${icon('insta')} ${site.instagramHandle}</a>
     </div>
   </div>

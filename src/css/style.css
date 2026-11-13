@@ -12,6 +12,12 @@
 @font-face { font-family: 'Inter'; font-weight: 500; font-display: swap; src: url(/assets/fonts/inter-latin-500-normal.woff2) format('woff2'); }
 @font-face { font-family: 'Inter'; font-weight: 600; font-display: swap; src: url(/assets/fonts/inter-latin-600-normal.woff2) format('woff2'); }
 @font-face { font-family: 'Caveat'; font-weight: 700; font-display: swap; src: url(/assets/fonts/caveat-latin-700-normal.woff2) format('woff2'); }
+/* Metric-matched fallbacks: text keeps its line breaks when the web fonts swap in (no layout shift / CLS) */
+@font-face { font-family: 'Inter Fallback'; font-weight: 100 450; src: local('Arial'), local('ArialMT'), local('Liberation Sans'), local('Helvetica'); size-adjust: 106.3%; ascent-override: 91.13%; descent-override: 22.69%; line-gap-override: 0%; }
+@font-face { font-family: 'Inter Fallback'; font-weight: 451 550; src: local('Arial'), local('ArialMT'), local('Liberation Sans'), local('Helvetica'); size-adjust: 107.8%; ascent-override: 89.87%; descent-override: 22.38%; line-gap-override: 0%; }
+@font-face { font-family: 'Inter Fallback'; font-weight: 551 900; src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'), local('Helvetica Bold'); size-adjust: 101.5%; ascent-override: 95.44%; descent-override: 23.76%; line-gap-override: 0%; }
+@font-face { font-family: 'League Spartan Fallback'; font-weight: 700; src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'), local('Helvetica Bold'); size-adjust: 90.95%; ascent-override: 76.97%; descent-override: 24.19%; line-gap-override: 0%; }
+@font-face { font-family: 'League Spartan Fallback'; font-weight: 800; src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'), local('Helvetica Bold'); size-adjust: 93.26%; ascent-override: 75.06%; descent-override: 23.59%; line-gap-override: 0%; }
 
 :root {
   --bg: #ffffff; --paper: #f6f7fb; --paper2: #eef2fb;
@@ -22,8 +28,8 @@
   --r: 16px; --r-sm: 12px; --r-lg: 22px;
   --side: 264px;
   --sh: 3px 3px 0 var(--ink); --sh-lg: 5px 5px 0 var(--ink);
-  --fh: 'League Spartan', 'Arial Black', Arial, sans-serif;
-  --fb: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --fh: 'League Spartan', 'League Spartan Fallback', 'Arial Black', Arial, sans-serif;
+  --fb: 'Inter', 'Inter Fallback', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   --fw: 'Caveat', 'Segoe Print', 'Comic Sans MS', cursive;
   --ease: cubic-bezier(.2,.7,.2,1);
   color-scheme: light;
