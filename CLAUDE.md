@@ -60,6 +60,7 @@ Tip (Windows/Git Bash): long heredocs with `'` or `${}` break – write helper s
 - Never edit `dist/`. Never commit secrets (`niktos-config.php` lives on the server above `public_html`).
 - Business data only in `src/site.js`. Title ≤ 60, description ≤ 160, exactly one `<h1>`; run `npm run check` + `npm run test` after changes; check mobile at 390 px (no horizontal overflow).
 - `mail.php` and `scripts/mail-preview.js` duplicate the e-mail logic – change both.
+- Form spam protection (13.11.2026, after Russian tinyurl bot spam): `kontakt.php` requires the JS time stamp `t`, silently drops links/short links in name/phone/etc. (log `SPAM_BLOCKED` in `niktos-mail.log`), answers foreign script without a link with a visible "please use WhatsApp" message, counts every request in the rate limit and caps customer confirmations at `confirmation_daily_max` (default 25/day). Next step if bots adapt: Cloudflare Turnstile (needs consent/Datenschutz).
 - Portrait: `portrait`/`avatar` keys in `src/images.config.js` – swap the source file for the pro photo later, then `npm run all`.
 
 ## Open items (need Nikola)

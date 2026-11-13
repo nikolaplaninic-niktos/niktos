@@ -65,6 +65,7 @@ function nk_message(string $code): string {
     switch ($code) {
         case 'rate':       return 'Sie haben in kurzer Zeit mehrere Anfragen gesendet. Bitte versuchen Sie es in einigen Minuten erneut – oder schreiben Sie mir direkt per WhatsApp.';
         case 'validation': return 'Bitte füllen Sie alle Pflichtfelder aus und bestätigen Sie den Datenschutzhinweis.';
+        case 'script':     return 'Ihre Nachricht enthält Schriftzeichen, die das Formular leider nicht verarbeiten kann. Bitte schreiben Sie mir direkt per WhatsApp oder rufen Sie an – ich melde mich schnell.';
         default:           return 'Ihre Anfrage konnte leider gerade nicht übermittelt werden. Das tut mir leid! Bitte schreiben Sie mir kurz per WhatsApp oder rufen Sie an – ich kümmere mich sofort darum.';
     }
 }
@@ -74,7 +75,7 @@ function respond(bool $ok, string $code = ''): void {
     header('Cache-Control: no-store');
     if ($wantsJson) {
         header('Content-Type: application/json; charset=utf-8');
-        http_response_code($ok ? 200 : ($code === 'rate' ? 429 : ($code === 'validation' ? 400 : 503)));
+        http_response_code($ok ? 200 : ($code === 'rate' ? 429 : (in_array($code, ['validation', 'script'], true) ? 400 : 503)));
         echo json_encode(['ok' => $ok, 'error' => $code, 'message' => $ok ? null : nk_message($code),
                           'phone' => NK_PHONE, 'whatsapp' => NK_WHATSAPP, 'redirect' => $ok ? '/danke/' : null],
                          JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
@@ -82,7 +83,7 @@ function respond(bool $ok, string $code = ''): void {
     }
     if ($ok) { header('Location: /danke/', true, 303); exit; }
     // No JavaScript: show a small, friendly error page instead of losing the enquiry silently.
-    http_response_code($code === 'rate' ? 429 : ($code === 'validation' ? 400 : 503));
+    http_response_code($code === 'rate' ? 429 : (in_array($code, ['validation', 'script'], true) ? 400 : 503));
     header('Content-Type: text/html; charset=utf-8');
     $msg = htmlspecialchars(nk_message($code), ENT_QUOTES, 'UTF-8');
     echo '<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">'
@@ -108,14 +109,8 @@ if (!is_array($cfg) || empty($cfg['smtp_user']) || empty($cfg['smtp_pass']) || s
     respond(false, 'config');
 }
 
-// 1) Honeypot – bots fill hidden fields; pretend success so they learn nothing.
-if (!empty($_POST['_gotcha'])) respond(true);
-
-// 2) Timing – humans need more than a few seconds (field set by main.js; absent without JS).
-$started = (int)($_POST['t'] ?? 0);
-if ($started > 0 && (time() - intdiv($started, 1000)) < 3) respond(true);
-
-// 3) Rate limit – max N submissions per IP per window (hashed IP, stored outside the web root).
+// 1) Rate limit – max N submissions per IP per window (hashed IP, stored outside the web root).
+//    Every request that gets past this check is counted (also spam), so bots cannot hammer the form.
 $limit  = (int)($cfg['rate_limit'] ?? 3);
 $window = (int)($cfg['rate_window'] ?? 600);
 $dataDir = $privateDir . '/niktos-data';
@@ -126,6 +121,21 @@ $now = time();
 $hits = is_file($rlFile) ? (json_decode((string)file_get_contents($rlFile), true) ?: []) : [];
 $hits = array_values(array_filter($hits, fn($ts) => is_int($ts) && $ts > $now - $window));
 if (count($hits) >= $limit) { nk_log('RATE_LIMITED'); respond(false, 'rate'); }
+$hits[] = $now;
+@file_put_contents($rlFile, json_encode($hits), LOCK_EX);
+
+/** Silent drop: log the reason, tell the bot "ok" so it learns nothing, send no e-mail at all. */
+function nk_spam(string $reason): void { nk_log('SPAM_BLOCKED', $reason); respond(true); }
+
+// 2) Honeypot – bots fill hidden fields.
+if (!empty($_POST['_gotcha'])) nk_spam('honeypot');
+
+// 3) Timing – main.js stamps every form with the page-load time in "t". Bots that post straight to this
+//    script have no (or a fake) stamp. A real visitor without JavaScript gets the friendly WhatsApp/phone page.
+$started = (int)($_POST['t'] ?? 0);
+$age = $started > 0 ? $now - intdiv($started, 1000) : -1;
+if ($age < 0 || $age > 7 * 86400) { nk_log('SPAM_BLOCKED', 'missing or invalid time stamp'); respond(false, 'mail'); }
+if ($age < 3) nk_spam('submitted too fast');
 
 // 4) Validation – only whitelisted fields are used (see NK_FIELDS in _lib/mail.php)
 $clean = static fn($v, int $max = 200): string => mb_substr(trim(str_replace(["\r", "\n", "\0"], ' ', (string)$v)), 0, $max);
@@ -145,6 +155,24 @@ foreach (NK_FIELDS as $key => $label) {
 $consent = ($_POST['datenschutz'] ?? '') === 'ja';
 if ($d['name'] === '' || $d['email'] === '' || !$consent) respond(false, 'validation');
 if ($form === 'kontakt' && $d['nachricht'] === '') respond(false, 'validation');
+
+// 4b) Content filter – drop spam before any mail is sent (a confirmation to a bot's address would make our domain a spam relay).
+$hasUrl = static fn(string $s): bool => (bool)preg_match('~(?:https?:|ftp:)?//|\bwww\.|[a-z0-9-]+\.(?:com|net|org|de|ru|su|cc|co|ly|gl|me|xyz|top|click|link|shop|site|online|info|biz|us|io)(?:/|\b)~i', $s);
+$foreign = static fn(string $s): bool => (bool)preg_match('/[\x{0400}-\x{04FF}\x{0590}-\x{06FF}\x{0E00}-\x{0E7F}\x{3040}-\x{30FF}\x{4E00}-\x{9FFF}\x{AC00}-\x{D7AF}]/u', $s);
+// Links are the spam payload → silent drop. Foreign script without a link may be a real person → visible
+// message with WhatsApp/phone (never a silent loss of a genuine enquiry).
+foreach (['name', 'telefon', 'branche', 'budget', 'zeitrahmen', 'anliegen', 'paket'] as $k) {
+    if ($hasUrl($d[$k])) nk_spam('link in ' . $k);
+}
+// A company name may legitimately look like a domain ("muster.de"), but never carries a full link.
+if (preg_match('~(?:https?:|ftp:)?//~i', $d['firma'])) nk_spam('link in firma');
+if (preg_match('~\b(?:tinyurl|bit\.ly|t\.me|goo\.gl|cutt\.ly|is\.gd|clck\.ru)\b~i', $d['nachricht'] . ' ' . $d['website_url'])) nk_spam('short link');
+if (preg_match_all('~(?:https?:)?//|\bwww\.~i', $d['nachricht']) > 2) nk_spam('too many links in message');
+if (preg_match('/[^\s@]+@(?:[^\s@]+\.)?(?:example\.(?:com|org|net)|test\.com)$/i', $d['email'])) nk_spam('placeholder e-mail');
+foreach (['name', 'firma', 'nachricht'] as $k) {
+    if ($foreign($d[$k])) { nk_log('FOREIGN_SCRIPT', 'asked to use WhatsApp/phone (' . $k . ')'); respond(false, 'script'); }
+}
+
 $d['datum'] = date('d.m.Y') . ', ' . date('H:i') . ' Uhr';
 
 // 5) Send – HTML + plain text; logo embedded (cid) so it shows without "load images"
@@ -190,8 +218,14 @@ try {
 
 nk_log('OK', $form . ' enquiry delivered to SMTP');
 
-// 5b) Automatic confirmation to the customer – a failure here never fails the enquiry
-if ($cfg['send_confirmation'] ?? true) {
+// 5b) Automatic confirmation to the customer – a failure here never fails the enquiry.
+//     Safety valve: at most N confirmations per day in total, so the form can never become a mass-mail relay.
+$dailyMax = (int)($cfg['confirmation_daily_max'] ?? 25);
+$cFile = $dataDir . '/confirmations_' . date('Ymd') . '.txt';
+$cCount = is_file($cFile) ? (int)file_get_contents($cFile) : 0;
+if ($cCount >= $dailyMax) nk_log('CONFIRMATION_DAILY_LIMIT', 'skipped, ' . $cCount . ' sent today');
+elseif ($cfg['send_confirmation'] ?? true) {
+    @file_put_contents($cFile, (string)($cCount + 1), LOCK_EX);
     $conf = null;
     try {
         $conf = $newMailer();
@@ -211,6 +245,4 @@ if ($cfg['send_confirmation'] ?? true) {
     }
 }
 
-$hits[] = $now;
-@file_put_contents($rlFile, json_encode($hits), LOCK_EX);
 respond(true);
