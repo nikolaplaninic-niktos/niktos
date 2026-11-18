@@ -16,6 +16,12 @@ AddDefaultCharset utf-8
   RewriteCond %{HTTP_HOST} ^novi\. [NC]
   RewriteRule ^ - [E=NK_STAGING:1]
 
+  # --- 0b. public_html/novi is the deploy target (cron copies it to public_html). Under the main
+  #         domain it would show up as a second copy at /novi/ → send it to the home page.
+  RewriteCond %{HTTP_HOST} !^novi\. [NC]
+  RewriteCond %{REQUEST_URI} ^/novi(/|$) [NC]
+  RewriteRule ^ https://niktos.com/ [L,R=301]
+
   # --- 1. Canonical host: HTTPS + non-www -------------------------------
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301,NE]
