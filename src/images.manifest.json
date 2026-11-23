@@ -1,8 +1,13 @@
 {
+ "credit": {
+  "creditText": "Niktos",
+  "copyrightNotice": "© Niktos - Nikola Planinic"
+ },
  "photos": {
   "kabicDesktop": {
    "name": "referenz-kabic-hausmeister-gartenpflege-website",
    "alt": "Website von Kabic Hausmeister & Gartenpflege – erstellt von Niktos Webdesign Ludwigsburg",
+   "caption": "Referenzprojekt: Website von Kabic Hausmeister & Gartenpflege aus Bietigheim-Bissingen (Desktop-Ansicht), gestaltet von Niktos",
    "widths": [
     480,
     800,
@@ -14,6 +19,7 @@
   "kabicMobile": {
    "name": "referenz-kabic-hausmeister-mobil",
    "alt": "Mobile Ansicht der Website von Kabic Hausmeister & Gartenpflege",
+   "caption": "Referenzprojekt: Kabic Hausmeister & Gartenpflege auf dem Smartphone, gestaltet von Niktos",
    "widths": [
     480,
     780
@@ -23,6 +29,7 @@
   "portrait": {
    "name": "nikola-planinic-webdesigner-ludwigsburg",
    "alt": "Nikola Planinic, Webdesigner und Inhaber von Niktos aus Ludwigsburg",
+   "caption": "Nikola Planinic, Inhaber von Niktos, Webdesign & SEO in Ludwigsburg",
    "widths": [
     480,
     800,
@@ -33,18 +40,55 @@
   "avatar": {
    "name": "nikola-planinic-avatar",
    "alt": "Nikola Planinic",
+   "caption": "Nikola Planinic, Webdesigner aus Ludwigsburg",
    "widths": [
     400
    ],
    "ratio": 1
   }
  },
+ "icons": {
+  "ablauf1": {
+   "file": "webdesign-ablauf-1-kontakt.webp",
+   "size": 200
+  },
+  "ablauf2": {
+   "file": "webdesign-ablauf-2-kennenlernen.webp",
+   "size": 200
+  },
+  "ablauf3": {
+   "file": "webdesign-ablauf-3-angebot.webp",
+   "size": 200
+  },
+  "ablauf4": {
+   "file": "webdesign-ablauf-4-design-umsetzung.webp",
+   "size": 200
+  },
+  "ablauf5": {
+   "file": "webdesign-ablauf-5-launch.webp",
+   "size": 200
+  },
+  "ablauf6": {
+   "file": "webdesign-ablauf-6-betreuung.webp",
+   "size": 200
+  }
+ },
  "og": {
-  "og-niktos-webdesign-ludwigsburg.jpg": true,
-  "og-preise-webdesign.jpg": true,
-  "og-blog-professionelle-website.jpg": true,
-  "og-blog-was-kostet-eine-website.jpg": true,
-  "og-seo-ki-sichtbarkeit.jpg": true
+  "og-niktos-webdesign-ludwigsburg.jpg": {
+   "caption": "Webdesign & SEO · Ludwigsburg: Websites, die Kunden bringen."
+  },
+  "og-preise-webdesign.jpg": {
+   "caption": "Pakete & Preise: Launch · Boost · Dominate"
+  },
+  "og-blog-professionelle-website.jpg": {
+   "caption": "Niktos Blog: Warum eine professionelle Website 2026 unverzichtbar ist"
+  },
+  "og-blog-was-kostet-eine-website.jpg": {
+   "caption": "Niktos Blog: Was kostet eine Website? Preise 2026 im Überblick"
+  },
+  "og-seo-ki-sichtbarkeit.jpg": {
+   "caption": "SEO & KI-Sichtbarkeit: Gefunden werden. Bei Google & KI."
+  }
  },
  "emailLogo": {
   "width": 272,

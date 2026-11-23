@@ -4,6 +4,7 @@ const { icon, logoMark } = C;
 
 const kabic = site.projects[0];
 const post = require('./11-blog-professionelle-website');
+const postKosten = require('./11-blog-was-kostet-eine-website');
 
 const FAQ = C.faq([
   ['Was kostet eine Website bei Niktos?', `Sie bekommen einen klaren Festpreis. Das Paket <strong>Launch</strong> startet bei ${C.euro(site.packages[0].price)}, <strong>Boost</strong> bei ${C.euro(site.packages[1].price)} und <strong>Dominate</strong> bei ${C.euro(site.packages[2].price)}. Als Kleinunternehmer (§ 19 UStG) weise ich keine Mehrwertsteuer aus, die Preise sind also Endpreise. Nach dem kostenlosen Erstgespräch bekommen Sie ein verbindliches Angebot ohne versteckte Kosten. Alle Details stehen unter <a href="/preise/">Preise</a>.`],
@@ -152,15 +153,17 @@ ${FAQ.html}
 <section class="section section--panel">
   <div class="container">
     ${C.head({ eyebrow: 'Aus dem Blog', title: 'Wissen, das Ihnen Kunden bringt.' })}
-    <a class="post-card reveal" href="/blog/warum-eine-professionelle-website-wichtig-ist/">
-      <img src="/assets/img/og-blog-professionelle-website.jpg" width="1200" height="630" alt="Blogartikel: Warum eine professionelle Website 2026 unverzichtbar ist" loading="lazy">
+    ${[postKosten, post].map((p, i) => `
+    <a class="post-card reveal" href="${p.path}"${i ? ' style="margin-top:24px"' : ''}>
+      <img src="${p.ogImage}" width="1200" height="630" alt="Blogartikel: ${C.esc(p.title.split(' | ')[0])}" loading="lazy">
       <div class="post-card__body">
-        <p class="eyebrow">Ratgeber · ${post.minutes} Min. Lesezeit</p>
-        <h3>Warum eine professionelle Website 2026 unverzichtbar ist</h3>
-        <p style="color:var(--tx2)">Google, Google Maps, ChatGPT & Co.: Wie Kunden heute Unternehmen finden – und was Ihre Website können muss, damit sie Sie auswählen.</p>
+        <p class="eyebrow">Ratgeber · ${p.minutes} Min. Lesezeit</p>
+        <h3>${p.h1 || p.title.split(' | ')[0]}</h3>
+        <p style="color:var(--tx2)">${p.description}</p>
         <span class="link-arrow">Artikel lesen ${icon('arrow')}</span>
       </div>
-    </a>
+    </a>`).join('')}
+
   </div>
 </section>
 

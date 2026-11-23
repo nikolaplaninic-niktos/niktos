@@ -17,7 +17,9 @@ module.exports = {
     '@type': 'ItemList', name: 'Referenzprojekte von Niktos',
     itemListElement: site.projects.map((p, i) => ({
       '@type': 'ListItem', position: i + 1,
-      item: { '@type': 'CreativeWork', name: `Website ${p.name}`, url: p.url, description: p.text, creator: { '@id': site.url + '/#business' }, about: p.branch },
+      item: { '@type': 'CreativeWork', name: `Website ${p.name}`, url: p.url, description: p.text, creator: { '@id': site.url + '/#business' }, about: p.branch,
+        locationCreated: { '@type': 'Place', name: site.address.city }, contentLocation: { '@type': 'Place', name: p.place },
+        image: [p.img, p.mobile].filter(Boolean).map((k) => C.imageObject(k)).filter(Boolean) },
     })),
   }],
   body: `

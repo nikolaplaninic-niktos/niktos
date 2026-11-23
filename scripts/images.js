@@ -11,12 +11,15 @@ fs.mkdirSync(OUT, { recursive: true });
 
 const cfg = require('../src/images.config.js');
 const WIDTHS = [480, 800, 1200, 1600];
-const manifest = { photos: {}, og: {} };
+const manifest = { credit: cfg.credit, photos: {}, icons: {}, og: {} };
 const load = (p) => sharp(path.join(ROOT, p), { limitInputPixels: false }).rotate();
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 
+// Files from earlier pipeline versions (renamed to SEO names) – remove so they are not deployed again.
+for (const f of fs.readdirSync(OUT)) if (/^ablauf-\d\.webp$/.test(f)) fs.rmSync(path.join(OUT, f));
+
 async function photos() {
-  for (const [key, c] of Object.entries(cfg)) {
+  for (const [key, c] of Object.entries(cfg.photos)) {
     const meta = await load(c.src).metadata();
     let w = meta.width, h = meta.height;
     if (meta.orientation >= 5) [w, h] = [h, w];
@@ -24,7 +27,7 @@ async function photos() {
     for (const tw of widths) {
       await load(c.src).resize({ width: tw }).webp({ quality: 72, effort: 5 }).toFile(path.join(OUT, `${c.name}-${tw}.webp`));
     }
-    manifest.photos[key] = { name: c.name, alt: c.alt, widths, ratio: +(h / w).toFixed(4) };
+    manifest.photos[key] = { name: c.name, alt: c.alt, caption: c.caption || c.alt, widths, ratio: +(h / w).toFixed(4) };
     process.stdout.write('.');
   }
 }
@@ -39,8 +42,9 @@ const ogBase = (w = 1200, h = 630) => Buffer.from(`<svg width="${w}" height="${h
 
 async function stickers() {
   // Brand process icons from the old site (blue tiles) → small WebP stickers
-  for (let i = 1; i <= 6; i++) {
-    await load(`media/originals/ablauf-${i}.jpg`).resize(200, 200).webp({ quality: 82 }).toFile(path.join(OUT, `ablauf-${i}.webp`));
+  for (const [key, c] of Object.entries(cfg.icons)) {
+    await load(c.src).resize(c.size, c.size).webp({ quality: 82 }).toFile(path.join(OUT, `${c.name}.webp`));
+    manifest.icons[key] = { file: `${c.name}.webp`, size: c.size };
   }
 }
 
@@ -67,7 +71,7 @@ async function og(file, { eyebrow, title, sub }) {
     { input: word, left: 184, top: 70 + Math.round((84 - wm.height) / 2) },
     { input: txt, left: 0, top: 0 },
   ]).jpeg({ quality: 86, mozjpeg: true }).toFile(path.join(OUT, file));
-  manifest.og[file] = true;
+  manifest.og[file] = { caption: `${eyebrow}: ${title}` };
 }
 
 async function logos() {

@@ -11,3 +11,27 @@
 - **Kabic has already written a Google review (10.11.2026)**; more reviews only from real clients, no incentives, no review gating.
 - **Update 10.11.2026 (evening, SEO session 2):** `/seo-launch audit` run on live URL (report `Izvjestaji/Niktos/seo/2026-11-10_seo-audit-2.md`; skill works, claude-seo parse/fetch scripts + GSC sitemap/inspect OK). Fixed in source (commit `07ff8fc`, **not deployed yet unless noted below**): four titles ≤ 60 chars (home, kontakt, ueber-mich, blog article), `check-seo.js` title limit now 60, Launch process step no longer promises the Unternehmensprofil (it is an on-request service), `googlePlaceId` = `ChIJBf7e4WnRmUcR4caQE7krqYE` (derived from the Maps feature id, verified: the writereview link opens the Niktos profile). Request indexing sent via Search Console UI for `/seo-ludwigsburg/`, `/leistungen/`, `/webdesign-ludwigsburg/`, `/preise/`, `/blog/` (all "Indeksiranje zatraženo"; GSC sometimes shows a transient error on the first click, a second click works). Delivered drafts in `Izvjestaji/Niktos/seo/`: `2026-11-10_google-profil-texte.md` (profile texts, services, Q&A, first post, review-request messages), `2026-11-10_verzeichnisse-daten.md` (NAP + texts + per-directory notes; Das Örtliche/11880/werbeagentur.de conditions unverified, read before registering; Yelp: never ask for reviews), `2026-11-10_artikel-was-kostet-eine-website.md` (article draft, awaiting Nikola's OK, not in `src/`), `2026-11-10_content-plan.md` (articles, niches, towns; no doorway pages). Open: Nikola enters the profile texts himself and renames the profile to "Niktos";  next snapshot ~10.12.2026 (`/seo-launch monitor`).
 - Plan: (1) Google profile text + review request message, get 5–10 honest reviews; (2) directory/listicle entries (Das Örtliche, Gelbe Seiten, 11880, Yelp, Apple Business Connect, Bing Places, Feedbax, werbeagentur.de) with identical NAP; (3) articles/landing pages on prices ("Was kostet eine Website"), niches (Handwerker, Friseur, Praxis) and neighbouring towns – real content only, no doorway pages. Nobody can guarantee #1; realistic 3–6 months.
+
+- 23.11.2026 – Das Örtliche check: search "Niktos" in Ludwigsburg (https://www.dasoertliche.de/?kw=Niktos&ci=Ludwigsburg&form_name=search_nat) and without city = "keinen Treffer". Entry NOT live yet. Next: Nikola calls Verlag Karl Leitermeier, 0711 66780, about Auftrag 1581985; re-check afterwards.
+
+## 23.11.2026 – Google naziv "Niktos" / Bing Places (provjera, read-only)
+- Business Profile dashboard (business.google.com/locations): profil prikazan kao **"Niktos"**, status Potvrđeno, bez poruke o dokazu/pregledu.
+- Javni Google Maps (cid 9343046975854003937): još uvijek **"Niktos - Webdesign Ludwigsburg"** (5,0 ★, 1 recenzija) – promjena još nije javno vidljiva (cache/odgoda).
+- Bing Places "Sync with Google" NIJE započet: čekamo da Maps javno pokaže samo "Niktos". Ponoviti provjeru za 1–2 dana.
+
+## 23.11.2026 – Bing Places kartica (javna provjera, read-only)
+- bing.com/maps "Niktos Ludwigsburg" → samo grad Ludwigsburg; "Niktos Marbacher Str. 98 71642 Ludwigsburg" → samo adresna točka (48.903018, 9.208009), bez poslovne kartice. Bing web-pretraga "Niktos Webdesign Ludwigsburg": niktos.com stranice indeksirane, bez map-paketa/kartice.
+- Zaključak: kartica NIJE javno vidljiva (1–10 dana nakon 13.11.). Ništa promijenjeno u Bing Places. Ponoviti ~25.–27.11.; usporedba NAP-a moguća tek kad se pojavi.
+
+## 23.11.2026 – Bing indeks (URL Inspection, read-only)
+- Sitemap https://niktos.com/sitemap.xml: Success, 15 URL-ova (zadnji crawl 21.11.). Indeksirano: `/`, `/webdesign-ludwigsburg/`, `/seo-ludwigsburg/`. "Discovered but not crawled": `/blog/`, `/website-check/`, `/blog/was-kostet-eine-website/` (poslani 13.11.). Ništa nije ponovno slano.
+
+- 23.11.2026: philippritschel.de unos provjeren (read-only) - domena se i dalje NE razrješava (curl exit 6 "could not resolve host", browser navigacija neuspješna), stranica /niktos-webdesign-ludwigsburg-ludwigsburg/ nedostupna kao i 17.11. Adresa/telefon/web nisu provjereni. Prijedlog: nova provjera 4.12.2026. Vlasnik nije kontaktiran.
+
+## 23.11.2026 – Gelbe Seiten provjera (read-only)
+- gelbeseiten.de pretraga "Niktos" + Ludwigsburg: **0 Treffer** ("keine passenden Einträge" u cijeloj Njemačkoj); bundesweit samo nepovezani "Fliesen Nikos Chalatsis". "Webdesign" + Ludwigsburg: Niktos nije u rezultatima. Unos (Grundeintrag, potvrđen 13.11.) još NIJE vidljiv – redakcijska provjera traje. NAP/radno vrijeme nije bilo moguće provjeriti. Nikakve plaćene nadogradnje. Ponoviti provjeru ~30.11.2026 (ako ni tada, pogledati status u Gelbe Seiten/Verlag mailu ili nazvati podršku).
+
+## 23.11.2026 – Slike, ImageObject, image sitemap, IndexNow
+- Svaka slika u `src/images.config.js` (SEO ime, alt, caption). Ablauf ikone preimenovane u `webdesign-ablauf-N-<korak>.webp`. ImageObject s creator/creditText/copyrightNotice: Person.image (avatar), Referenzen CreativeWork.image (Kabic desktop + mobil, contentLocation Bietigheim-Bissingen), primaryImageOfPage s dimenzijama. Image sitemap sad sadrži sve sadržajne slike po stranici (bez avatara i ikona).
+- Iskreno: EXIF GPS ne pomaže (Google ga ne koristi), ne dodavati. Najveći učinak slika = prave fotke (profi portret, više stvarnih projekata). Komlab i Spatzennest NIKAD kao reference.
+- IndexNow: `npm run deploy` nakon pusha čeka da je deploy live i šalje promijenjene stranice na api.indexnow.org (Bing). Ključ je javan po dizajnu (`site.indexNowKey`).

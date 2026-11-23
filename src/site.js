@@ -20,6 +20,8 @@ module.exports = {
   instagramHandle: '@niktos.webdesign',
   // Google-Unternehmensprofil (vorhanden, verifiziert). Review link: https://search.google.com/local/writereview?placeid=<googlePlaceId>
   googlePlaceId: 'ChIJBf7e4WnRmUcR4caQE7krqYE', // derived from the Maps feature id 0x4799d169e1defe05:0x81a92bb91390c6e1; verified 10.11.2026 (writereview link opens the Niktos profile)
+  // IndexNow (Bing, Yandex, Seznam …): public key, served as /<key>.txt (src/static). Not a secret by design.
+  indexNowKey: '7facacee709b196de51e50db2b01b294',
   googleMapsUrl: 'https://www.google.com/maps?cid=9343046975854003937', // verified Google Business Profile
   mapEmbed: 'https://www.google.com/maps?q=' + encodeURIComponent('Niktos - Webdesign Ludwigsburg, Marbacher Str. 98, 71642 Ludwigsburg') + '&z=15&output=embed',
   googleRouteUrl: 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent('Niktos - Webdesign Ludwigsburg, Marbacher Str. 98, 71642 Ludwigsburg'),

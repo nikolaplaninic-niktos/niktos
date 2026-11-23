@@ -1,6 +1,7 @@
 // Build → audit → publish dist/ as the `deploy` branch (Hostinger pulls that branch into public_html).
 // Usage: npm run deploy            (build, check, commit to `deploy`, push)
 //        npm run deploy -- --no-push   (everything except the push)
+//        npm run deploy -- --no-indexnow   (push, but do not ping IndexNow afterwards)
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
@@ -41,3 +42,9 @@ if (!out('git status --porcelain', WT)) { console.log('✓ Nothing changed – d
 sh(`git commit --quiet -m "Deploy ${new Date().toISOString().slice(0, 16).replace('T', ' ')} (main ${sha})"`, { cwd: WT });
 if (push) sh(`git push origin ${BRANCH}`, { cwd: WT });
 console.log(push ? `✓ Pushed ${BRANCH}. Hostinger pulls it via webhook (or hPanel → Git → Deploy).` : `✓ Committed to ${BRANCH} (not pushed).`);
+
+// 5. IndexNow: submit the changed pages to Bing & co. once they are live (skip with --no-indexnow).
+//    A failure here never fails the deploy – it prints the command to run later.
+if (push && !process.argv.includes('--no-indexnow')) {
+  try { sh('node scripts/indexnow.js'); } catch { console.warn('⚠  IndexNow not sent – run `npm run indexnow` later.'); }
+}

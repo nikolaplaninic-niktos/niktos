@@ -8,6 +8,7 @@ const DIST = path.join(ROOT, 'dist');
 const site = require('../src/site');
 const { sprite, icon, logoMark } = require('../src/icons');
 const C = require('../src/components');
+const M = require('../src/images.manifest.json');
 
 const TODAY = new Date().toISOString().slice(0, 10);
 const JS_VERSION = require('crypto').createHash('sha1').update(fs.readFileSync(path.join(ROOT, 'src/js/main.js'))).digest('hex').slice(0, 10);
@@ -25,6 +26,7 @@ const address = { '@type': 'PostalAddress', ...(site.address.street ? { streetAd
 const person = {
   '@type': 'Person', '@id': PERSON_ID, name: site.owner, alternateName: 'Nikola Planinic', jobTitle: 'Webdesigner & SEO-Berater, Inhaber von Niktos',
   worksFor: { '@id': BUSINESS_ID }, url: abs('/ueber-mich/'), sameAs: [site.instagram],
+  ...(C.hasImg('avatar') ? { image: C.imageObject('avatar') } : {}),
   knowsAbout: ['Webdesign', 'Webentwicklung', 'Suchmaschinenoptimierung', 'Lokales SEO', 'Generative Engine Optimization', 'KI-Suche', 'Conversion-Optimierung', 'Core Web Vitals'],
   address: { '@type': 'PostalAddress', addressLocality: site.address.city, addressCountry: 'DE' },
 };
@@ -68,7 +70,7 @@ function graph(page) {
   const items = [business, person, website, {
     '@type': page.pageType || 'WebPage', '@id': url + '#webpage', url, name: page.title, description: page.description,
     inLanguage: 'de-DE', isPartOf: { '@id': site.url + '/#website' }, about: { '@id': BUSINESS_ID },
-    primaryImageOfPage: { '@type': 'ImageObject', url: abs(page.ogImage || DEFAULT_OG) },
+    primaryImageOfPage: { '@type': 'ImageObject', url: abs(page.ogImage || DEFAULT_OG), contentUrl: abs(page.ogImage || DEFAULT_OG), width: 1200, height: 630, caption: page.ogTitle || page.title, creator: { '@id': BUSINESS_ID }, ...(M.credit || {}) },
     dateModified: TODAY,
     ...(page.crumbs ? { breadcrumb: { '@id': url + '#breadcrumb' } } : {}),
   }];
@@ -243,10 +245,17 @@ ${C.consent()}
 /* ---------- Build ---------- */
 const pageFiles = fs.readdirSync(path.join(ROOT, 'src/pages')).filter((f) => f.endsWith('.js'));
 const pages = pageFiles.map((f) => require(path.join(ROOT, 'src/pages', f)));
+// Content images per page for the image sitemap (OG image first; avatar + process icons are decoration, left out).
+const pageImages = new Map();
+const SKIP_IMG = /\/assets\/img\/(nikola-planinic-avatar|webdesign-ablauf-)/;
 for (const p of pages) {
   const out = p.path === '/404' ? path.join(DIST, '404.html') : path.join(DIST, p.path, 'index.html');
   fs.mkdirSync(path.dirname(out), { recursive: true });
-  fs.writeFileSync(out, layout(p));
+  const html = layout(p);
+  fs.writeFileSync(out, html);
+  const imgs = [p.ogImage, ...[...html.matchAll(/<img[^>]+src="(\/assets\/img\/[^"]+)"/g)].map((m) => m[1])]
+    .filter((u) => u && !SKIP_IMG.test(u));
+  pageImages.set(p.path, [...new Set(imgs)]);
   console.log('✓', p.path.padEnd(52), `${p.title.length}c title · ${p.description.length}c desc`);
 }
 
@@ -259,7 +268,7 @@ fs.cpSync(path.join(ROOT, 'src/static'), DIST, { recursive: true, filter: (src) 
 const indexable = pages.filter((p) => !p.noindex && p.path !== '/404');
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-${indexable.sort((a, b) => (b.priority || .5) - (a.priority || .5)).map((p) => `  <url><loc>${abs(p.path)}</loc><lastmod>${p.modified || TODAY}</lastmod><priority>${(p.priority || .5).toFixed(1)}</priority>${p.ogImage ? `<image:image><image:loc>${abs(p.ogImage)}</image:loc></image:image>` : ''}</url>`).join('\n')}
+${indexable.sort((a, b) => (b.priority || .5) - (a.priority || .5)).map((p) => `  <url><loc>${abs(p.path)}</loc><lastmod>${p.modified || TODAY}</lastmod><priority>${(p.priority || .5).toFixed(1)}</priority>${(pageImages.get(p.path) || []).map((u) => `<image:image><image:loc>${abs(u)}</image:loc></image:image>`).join('')}</url>`).join('\n')}
 </urlset>
 `);
 

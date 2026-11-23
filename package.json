@@ -15,7 +15,8 @@
     "deploy": "node scripts/deploy.js",
     "mail": "node scripts/mail-preview.js",
     "lint:php": "node scripts/lint-php.js",
-    "verify": "node scripts/verify.js"
+    "verify": "node scripts/verify.js",
+    "indexnow": "node scripts/indexnow.js"
   },
   "engines": {
     "node": ">=20"

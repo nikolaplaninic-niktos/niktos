@@ -16,6 +16,19 @@ function img(key, { sizes = '100vw', cls = '', eager = false, alt, style = '' } 
 }
 const hasImg = (key) => !!M.photos[key];
 
+/** schema.org ImageObject for a manifest photo (largest variant) – with creator + credit for Google Images. */
+function imageObject(key) {
+  const p = M.photos[key];
+  if (!p) return undefined;
+  const w = p.widths[p.widths.length - 1];
+  const url = `${site.url}/assets/img/${p.name}-${w}.webp`;
+  return {
+    '@type': 'ImageObject', '@id': `${url}#image`, url, contentUrl: url, width: w, height: Math.round(w * p.ratio),
+    encodingFormat: 'image/webp', name: p.alt, caption: p.caption || p.alt, inLanguage: 'de-DE',
+    creator: { '@id': site.url + '/#business' }, ...(M.credit || {}),
+  };
+}
+
 /* ---------- Buttons ---------- */
 const startBtn = (label = 'Projekt starten', { cls = '', paket = '' } = {}) =>
   `<a class="btn ${cls}" href="/projekt-anfrage/${paket ? `?paket=${paket}` : ''}" data-open-funnel${paket ? ` data-paket="${paket}"` : ''}>${label} ${icon('arrow')}</a>`;
@@ -136,7 +149,7 @@ const processSteps = () => `
 ].map(([t, d, time], i) => `
   <li class="step reveal reveal-d${i % 3}">
     <span class="step__n" aria-hidden="true">0${i + 1}</span>
-    <img class="step__img" src="/assets/img/ablauf-${i + 1}.webp" width="76" height="76" alt="" loading="lazy">
+    <img class="step__img" src="/assets/img/${M.icons[`ablauf${i + 1}`].file}" width="76" height="76" alt="Symbol für Schritt ${i + 1}: ${t}" loading="lazy">
     <span class="step__time">${time}</span>
     <h3>${i + 1}. ${t}</h3><p>${d}</p>
   </li>`).join('')}
@@ -255,7 +268,7 @@ const projects = (list = site.projects, { h = 'h3' } = {}) => list.map((p, i) =>
 <article class="project${i % 2 ? ' project--rev' : ''} reveal" id="projekt-${p.id}">
   <div class="project__media">
     ${browser(p.img, p.domain)}
-    ${p.mobile ? `<div class="project__phone">${img(p.mobile, { sizes: '180px', alt: '' })}</div>` : ''}
+    ${p.mobile ? `<div class="project__phone">${img(p.mobile, { sizes: '180px', alt: `Mobile Ansicht der Website ${p.domain}` })}</div>` : ''}
   </div>
   <div>
     <div class="project__meta">${p.tags.map((t, k) => `<span class="tag${k === 0 ? ' tag--b' : ''}">${t}</span>`).join('')}</div>
@@ -634,4 +647,4 @@ const consent = () => {
 </div>`;
 };
 
-module.exports = { consent, avatar, builder, illuChat, illuStatus, illuDesign, factsCard, aioCard, rotator, allInOne, esc, euro, img, hasImg, icon, logoMark, startBtn, waBtn, telBtn, ticks, sticker, arrowNote, scribbleArrow, breadcrumb, head, pageHero, marquee, serviceCards, features, steps, processSteps, pricing, compareTable, faq, ctaBand, portrait, browser, projects, mapCard, area, serp, funnel, funnelDialog, contactForm, contactCards };
+module.exports = { consent, avatar, imageObject, builder, illuChat, illuStatus, illuDesign, factsCard, aioCard, rotator, allInOne, esc, euro, img, hasImg, icon, logoMark, startBtn, waBtn, telBtn, ticks, sticker, arrowNote, scribbleArrow, breadcrumb, head, pageHero, marquee, serviceCards, features, steps, processSteps, pricing, compareTable, faq, ctaBand, portrait, browser, projects, mapCard, area, serp, funnel, funnelDialog, contactForm, contactCards };

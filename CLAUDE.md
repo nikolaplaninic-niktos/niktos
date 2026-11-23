@@ -25,6 +25,7 @@ npm run mail     # e-mail preview → mail-preview/
 npm run lint:php
 npm run deploy   # lint + build + check + publish dist/ to `deploy` branch
 npm run verify -- <url>
+npm run indexnow # IndexNow ping (deploy does it automatically after the push; --all, --no-wait, /path/)
 node scripts/artifact-build.js   # preview copy for the Claude Artifact → artifact/
 ```
 Tip (Windows/Git Bash): long heredocs with `'` or `${}` break – write helper scripts to a file and run them with node.
@@ -61,7 +62,9 @@ Tip (Windows/Git Bash): long heredocs with `'` or `${}` break – write helper s
 - Business data only in `src/site.js`. Title ≤ 60, description ≤ 160, exactly one `<h1>`; run `npm run check` + `npm run test` after changes; check mobile at 390 px (no horizontal overflow).
 - `mail.php` and `scripts/mail-preview.js` duplicate the e-mail logic – change both.
 - Form spam protection (13.11.2026, after Russian tinyurl bot spam): `kontakt.php` requires the JS time stamp `t`, silently drops links/short links in name/phone/etc. (log `SPAM_BLOCKED` in `niktos-mail.log`), answers foreign script without a link with a visible "please use WhatsApp" message, counts every request in the rate limit and caps customer confirmations at `confirmation_daily_max` (default 25/day). Next step if bots adapt: Cloudflare Turnstile (needs consent/Datenschutz).
+- Images: every image is registered in `src/images.config.js` (`photos` = responsive WebP with SEO file name, alt, caption; `icons` = process icons). `scripts/images.js` renders them + writes the manifest; `build.js` uses it for ImageObject (creator/credit), Person.image, Referenzen CreativeWork.image and the image sitemap. EXIF/GPS geotags are useless (stripped, ignored by Google) – do not add them. **Never use komlab/spatzennest screenshots as references** (Nikola, 23.11.2026).
 - Portrait: `portrait`/`avatar` keys in `src/images.config.js` – swap the source file for the pro photo later, then `npm run all`.
+- IndexNow: key in `site.indexNowKey`, key file `src/static/<key>.txt`; `npm run deploy` waits until the new deploy is live (max 12 min) and submits the changed pages (`scripts/indexnow.js`).
 
 ## Open items (need Nikola)
 - Street is set (Marbacher Str. 98, Impressum done).
