@@ -248,7 +248,7 @@ const ctaBand = ({ title = 'Lassen Sie uns <span class="hl">gemeinsam starten.</
 </section>`;
 
 /* ---------- Portrait → polaroid (placeholder until the pro photo exists) ---------- */
-const SHOW_PHOTO = false; // Nikola: Niktos-Logo statt Foto im Polaroid und im "baut Ihre Website"-Badge – true = Foto wieder anzeigen
+const SHOW_PHOTO = false; // Nikola: Niktos-Logo statt Foto überall (Polaroid, Badges, Blog-Autor) – true = Foto wieder anzeigen
 function portrait({ eager = false } = {}) {
   const inner = SHOW_PHOTO && hasImg('portrait')
     ? img('portrait', { sizes: '(max-width: 980px) 90vw, 440px', eager })
@@ -282,7 +282,7 @@ const projects = (list = site.projects, { h = 'h3' } = {}) => list.map((p, i) =>
 /* ---------- Avatar (real photo of Nikola) ---------- */
 const logoAvatar = (size = 48, cls = '') => `<span class="avatar avatar--mono ${cls}" style="width:${size}px;height:${size}px">${logoMark(size)}</span>`;
 const avatar = (size = 48, cls = '') => {
-  if (!hasImg('avatar')) return `<span class="avatar avatar--mono ${cls}" style="width:${size}px;height:${size}px">${logoMark(size)}</span>`;
+  if (!SHOW_PHOTO || !hasImg('avatar')) return `<span class="avatar avatar--mono ${cls}" style="width:${size}px;height:${size}px">${logoMark(size)}</span>`;
   const a = M.photos.avatar;
   return `<img class="avatar ${cls}" src="/assets/img/${a.name}-${a.widths[a.widths.length - 1]}.webp" width="${size}" height="${size}" alt="${esc(site.owner)}" loading="lazy" decoding="async">`;
 };
