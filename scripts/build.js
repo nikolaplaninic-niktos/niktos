@@ -168,7 +168,7 @@ function footer(page) {
         </address>
       </div>
     </div>
-    <p class="footer__towns"><strong style="color:#fff">Webdesign & SEO für:</strong> <a href="/webdesign-ludwigsburg/">Ludwigsburg</a> & <a href="/einsatzgebiet/">Umkreis (${TOWN_PAGES.length} Orte)</a> · Region Stuttgart · deutschlandweit</p>
+    <p class="footer__towns"><strong style="color:#fff">Webdesign & SEO für:</strong> <a href="/webdesign-ludwigsburg/">Ludwigsburg</a> & <a href="/einsatzgebiet/">Umkreis</a> · Region Stuttgart · deutschlandweit</p>
     <div class="footer__bottom">
       <span>© <span id="year">${new Date().getFullYear()}</span> ${site.legalName}</span>
       <nav aria-label="Rechtliches"><a href="/impressum/">Impressum</a><a href="/datenschutzerklaerung/">Datenschutz</a><button type="button" class="linklike" data-consent-open>Cookie-Einstellungen</button></nav>
