@@ -647,4 +647,4 @@ const consent = () => {
 </div>`;
 };
 
-module.exports = { consent, avatar, imageObject, builder, illuChat, illuStatus, illuDesign, factsCard, aioCard, rotator, allInOne, esc, euro, img, hasImg, icon, logoMark, startBtn, waBtn, telBtn, ticks, sticker, arrowNote, scribbleArrow, breadcrumb, head, pageHero, marquee, serviceCards, features, steps, processSteps, pricing, compareTable, faq, ctaBand, portrait, browser, projects, mapCard, area, serp, funnel, funnelDialog, contactForm, contactCards };
+module.exports = { SHOW_PHOTO, consent, avatar, imageObject, builder, illuChat, illuStatus, illuDesign, factsCard, aioCard, rotator, allInOne, esc, euro, img, hasImg, icon, logoMark, startBtn, waBtn, telBtn, ticks, sticker, arrowNote, scribbleArrow, breadcrumb, head, pageHero, marquee, serviceCards, features, steps, processSteps, pricing, compareTable, faq, ctaBand, portrait, browser, projects, mapCard, area, serp, funnel, funnelDialog, contactForm, contactCards };

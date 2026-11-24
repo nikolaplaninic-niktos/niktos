@@ -26,7 +26,7 @@ const address = { '@type': 'PostalAddress', ...(site.address.street ? { streetAd
 const person = {
   '@type': 'Person', '@id': PERSON_ID, name: site.owner, alternateName: 'Nikola Planinic', jobTitle: 'Webdesigner & SEO-Berater, Inhaber von Niktos',
   worksFor: { '@id': BUSINESS_ID }, url: abs('/ueber-mich/'), sameAs: [site.instagram],
-  ...(C.hasImg('avatar') ? { image: C.imageObject('avatar') } : {}),
+  ...(C.SHOW_PHOTO && C.hasImg('avatar') ? { image: C.imageObject('avatar') } : {}),
   knowsAbout: ['Webdesign', 'Webentwicklung', 'Suchmaschinenoptimierung', 'Lokales SEO', 'Generative Engine Optimization', 'KI-Suche', 'Conversion-Optimierung', 'Core Web Vitals'],
   address: { '@type': 'PostalAddress', addressLocality: site.address.city, addressCountry: 'DE' },
 };
