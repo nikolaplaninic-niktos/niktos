@@ -35,3 +35,10 @@
 - Svaka slika u `src/images.config.js` (SEO ime, alt, caption). Ablauf ikone preimenovane u `webdesign-ablauf-N-<korak>.webp`. ImageObject s creator/creditText/copyrightNotice: Person.image (avatar), Referenzen CreativeWork.image (Kabic desktop + mobil, contentLocation Bietigheim-Bissingen), primaryImageOfPage s dimenzijama. Image sitemap sad sadrži sve sadržajne slike po stranici (bez avatara i ikona).
 - Iskreno: EXIF GPS ne pomaže (Google ga ne koristi), ne dodavati. Najveći učinak slika = prave fotke (profi portret, više stvarnih projekata). Komlab i Spatzennest NIKAD kao reference.
 - IndexNow: `npm run deploy` nakon pusha čeka da je deploy live i šalje promijenjene stranice na api.indexnow.org (Bing). Ključ je javan po dizajnu (`site.indexNowKey`).
+
+## 24.11.2026 – Standortseiten live + indeksiranje
+- Live: hub `/einsatzgebiet/` + 35 stranica `/webdesign-<ort>/` (detalji: `docs/standortseiten.md`). Footer: "Ludwigsburg & Umkreis · Region Stuttgart · deutschlandweit" → Umkreis vodi na hub.
+- Sitemap ponovno poslan u GSC (sc-domain:niktos.com, puni URL https://niktos.com/sitemap.xml): 51 otkrivena stranica. IndexNow (Bing) poslan za 51 URL.
+- GSC "Zatražite indeksiranje" (10 = dnevni limit) za: /einsatzgebiet/, stuttgart, kornwestheim, bietigheim-bissingen, freiberg-am-neckar, besigheim, korntal-muenchingen, asperg, waiblingen, remseck-am-neckar. Svi su bili "Otkriveno – trenutačno nije indeksirano".
+- Još zatražiti (~10/dan), dan 2: marbach-am-neckar, ditzingen, vaihingen-an-der-enz, leonberg, fellbach, gerlingen, backnang, sachsenheim, stuttgart-zuffenhausen, stuttgart-feuerbach. Dan 3: stuttgart-weilimdorf, stuttgart-stammheim, tamm, moeglingen, markgroeningen, schwieberdingen, hemmingen, steinheim-an-der-murr, affalterbach, benningen-am-neckar. Dan 4: pleidelsheim, murr, erdmannhausen, ingersheim, boennigheim, kirchheim-am-neckar. (Nije obavezno – sitemap + interni linkovi ih ionako dovode; ručni zahtjev samo ubrzava.)
+- Provjeriti indeksaciju i prve impresije za "webdesign <ort>" kod snapshota ~10.12.2026.
