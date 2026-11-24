@@ -23,6 +23,7 @@ function routeMap(t) {
   const L = 150 * Math.abs(uy) + 110 * Math.abs(ux), cx = 200, cy = 145;
   const off = Math.abs(ux) * 70 + Math.abs(uy) * 32; // labels sit on the far side of each pin, never on the line
   const a = { x: cx - ux * L / 2, y: cy - uy * L / 2 }, b = { x: cx + ux * L / 2, y: cy + uy * L / 2 };
+  const pill = Math.round(`${de(t.km)} km · ${t.min} Min.`.length * 7.6 + 18);
   const mx = (a.x + b.x) / 2 + uy * 34, my = (a.y + b.y) / 2 - ux * 34; // label offset perpendicular to the line
   const label = (p, s, text, sub, cls) => `<g class="rmap__lbl ${cls}" transform="translate(${Math.min(330, Math.max(70, p.x + s * ux * off)).toFixed(1)} ${Math.min(258, Math.max(20, p.y + s * uy * off - 6)).toFixed(1)})"><rect x="-${(Math.max(text.length, sub.length) * 4.6 + 16).toFixed(0)}" y="-13" width="${(Math.max(text.length, sub.length) * 9.2 + 32).toFixed(0)}" height="38" rx="8"/><text y="2">${C.esc(text)}</text><text class="s" y="17">${C.esc(sub)}</text></g>`;
   return `
@@ -37,7 +38,7 @@ function routeMap(t) {
     <circle cx="${b.x.toFixed(1)}" cy="${b.y.toFixed(1)}" r="11" fill="#ea4335" stroke="#0b0d14" stroke-width="2.5"/><circle cx="${b.x.toFixed(1)}" cy="${b.y.toFixed(1)}" r="4" fill="#fff"/>
     ${label(a, -1, 'Niktos', 'Ludwigsburg', 'is-a')}
     ${label(b, 1, short(t), 'Rathaus', 'is-b')}
-    <g transform="translate(${mx.toFixed(1)} ${my.toFixed(1)}) rotate(-6)"><rect x="-50" y="-17" width="100" height="34" rx="17" fill="#ffd23f" stroke="#0b0d14" stroke-width="2"/><text class="rmap__km" y="6">${de(t.km)} km · ${t.min} Min.</text></g>
+    <g transform="translate(${mx.toFixed(1)} ${my.toFixed(1)}) rotate(-6)"><rect x="-${pill / 2}" y="-17" width="${pill}" height="34" rx="17" fill="#ffd23f" stroke="#0b0d14" stroke-width="2"/><text class="rmap__km" y="6">${de(t.km)} km · ${t.min} Min.</text></g>
   </svg>
   <figcaption>Route über ${t.roads.join(', ')} · Schema, Norden oben · © OpenStreetMap-Mitwirkende</figcaption>
 </figure>`;
@@ -228,9 +229,9 @@ ${C.pageHero({
 <section class="section section--panel">
   <div class="container split">
     <div class="reveal">
-      <p class="eyebrow">Weitere Orte</p>
-      <h2>Auch dort bin ich für Sie da.</h2>
-      <p class="lead">Für diese Orte gibt es noch keine eigene Seite, betreut werden sie genauso: ${others.join(', ')} sowie alle weiteren Orte im Landkreis Ludwigsburg und in der Region Stuttgart.</p>
+      <p class="eyebrow">Auch außerhalb</p>
+      <h2>Ihr Ort fehlt? Kein Problem.</h2>
+      <p class="lead">${others.length ? `Auch ${others.join(', ')} betreue ich, ` : 'Auch Orte ohne eigene Seite betreue ich, '}genauso persönlich: im ganzen Landkreis Ludwigsburg, in der Region Stuttgart und deutschlandweit per Video-Call, Telefon und WhatsApp.</p>
       ${linkRow([['/webdesign-ludwigsburg/', 'Webdesign', 'layout'], ['/seo-ludwigsburg/', 'SEO & KI-Sichtbarkeit', 'search'], ['/preise/', 'Preise', 'euro']])}
     </div>
     <div class="reveal reveal-d1">${C.mapCard()}</div>

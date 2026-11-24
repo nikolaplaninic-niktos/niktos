@@ -168,7 +168,7 @@ function footer(page) {
         </address>
       </div>
     </div>
-    <p class="footer__towns"><strong style="color:#fff">Webdesign & SEO für:</strong> ${site.towns.map((t) => { const s = TOWN_PAGES.find((x) => x.name === t); return t === 'Ludwigsburg' ? '<a href="/webdesign-ludwigsburg/">Ludwigsburg</a>' : s ? `<a href="/webdesign-${s.slug}/">${t}</a>` : t; }).join(' · ')} · <a href="/einsatzgebiet/">Landkreis Ludwigsburg</a> · Region Stuttgart · deutschlandweit</p>
+    <p class="footer__towns"><strong style="color:#fff">Webdesign & SEO für:</strong> <a href="/webdesign-ludwigsburg/">Ludwigsburg</a> & <a href="/einsatzgebiet/">Umkreis (${TOWN_PAGES.length} Orte)</a> · Region Stuttgart · deutschlandweit</p>
     <div class="footer__bottom">
       <span>© <span id="year">${new Date().getFullYear()}</span> ${site.legalName}</span>
       <nav aria-label="Rechtliches"><a href="/impressum/">Impressum</a><a href="/datenschutzerklaerung/">Datenschutz</a><button type="button" class="linklike" data-consent-open>Cookie-Einstellungen</button></nav>

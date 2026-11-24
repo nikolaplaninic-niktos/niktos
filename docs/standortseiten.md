@@ -13,5 +13,6 @@ Benningen am Neckar 7,2 · Pleidelsheim 7,8 · Murr 9,7 · Erdmannhausen 9,8 · 
 Stuttgart-Zuffenhausen 9,8 · Stammheim 10,3 · Feuerbach 13,1 · Weilimdorf 15,4 · Waiblingen 16,5 · Fellbach 19,6 · Leonberg 24,3
 Nachfrage-Signal (GSC 90 Tage, nur eigene Domain, sehr klein): seo freiberg am neckar 24 Impr. (Pos. 13), seo besigheim 6, seo korntal-münchingen 5, webdesign asperg 4, webdesign freiberg 4, seo remseck 2. Kein Keyword-Volumen-Tool angebunden; Reihenfolge nach Ortsgröße, Nähe und GSC.
 Nach Welle 2 (30 Ortsseiten): einzigartig 51–66 %, Ø 56 %. 14 Seiten haben eine 4. Branche, damit sie über 50 % liegen.
-Noch ohne Seite: Stuttgart (Innenstadt), Backnang, Hemmingen, Bönnigheim, Kirchheim am Neckar.
+Welle 3 (24.11.2026): Stuttgart, Backnang, Hemmingen, Bönnigheim, Kirchheim am Neckar. Jetzt 35 Ortsseiten, einzigartig 52–66 %, Ø 56 %.
+Footer zeigt nur noch „Ludwigsburg & Umkreis (N Orte) · Region Stuttgart · deutschlandweit“ mit Link auf /einsatzgebiet/ (Nikolas Wunsch, statt langer Ortsliste).
 Regel: neue Seite nur mit echtem Ortsinhalt, Fakten prüfen, danach Messung ≥ 50 %.

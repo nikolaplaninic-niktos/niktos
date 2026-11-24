@@ -421,6 +421,7 @@ module.exports = [
     intro: [
       'Ingersheim besteht aus Großingersheim und Kleiningersheim, die auf beiden Seiten des Neckars liegen. Weinbau gehört hier dazu, ebenso Handwerk, kleine Gewerbebetriebe und Dienstleister. Viele Kunden kommen aus Bietigheim-Bissingen, Freiberg, Pleidelsheim und Besigheim.',
       'Für die Suche heißt das: Ihre Kunden kennen oft eher Bietigheim-Bissingen als Ingersheim. Eine Website, die klar sagt, wo Sie sitzen und welche Nachbarorte Sie bedienen, holt diese Suchen ab.',
+      'Am Neckar entlang führen beliebte Radwege, im Sommer kommen viele Ausflügler durch den Ort. Für Gastronomie, Ferienwohnungen und Weinverkauf ist das eine Zielgruppe, die spontan unterwegs sucht: „Einkehr Neckar“, „Wein kaufen in der Nähe“. Ein Google-Profil mit aktuellen Zeiten und eine Website, die am Handy sofort lädt, entscheiden hier über den Besuch.',
     ],
     branchen: [
       ['Weinbau & Direktvertrieb', 'Weinliste, Verkaufszeiten, Hoffeste und Weinproben auf eigenen Seiten, mit Fotos aus den eigenen Lagen.'],
@@ -447,6 +448,7 @@ module.exports = [
     intro: [
       'Steinheim an der Murr ist bekannt für den Schädel des „Steinheimer Urmenschen“, der hier 1933 gefunden wurde und im Urmensch-Museum zu sehen ist. Zur Stadt gehören Kleinbottwar und Höpfigheim, das Bottwartal mit seinen Weinbergen beginnt direkt nebenan. Wirtschaftlich prägen Handwerk, Gewerbe und Dienstleister die Stadt, viele davon familiengeführt.',
       'Bei Google konkurriert der Ortsname mit Steinheim in Westfalen, Steinheim am Albuch und weiteren Orten. Betriebe, die nur „Steinheim“ schreiben, werden leicht falsch zugeordnet. Mit dem vollen Namen und klaren Daten ist das Problem lösbar.',
+      'Viele Kunden Steinheimer Betriebe kommen aus dem Bottwartal, also aus Großbottwar und Oberstenfeld, oder aus Marbach und Murr. Wer das Einzugsgebiet auf der Website konkret mit diesen Orten beschreibt, deckt die typischen Suchwege aus dem Tal und vom Neckar ab.',
     ],
     branchen: [
       ['Familienbetriebe im Handwerk', 'Leistungsseiten, Fotos echter Arbeiten und ein Einsatzgebiet, das Murr, Marbach, Großbottwar und Benningen ehrlich nennt.'],
@@ -575,6 +577,7 @@ module.exports = [
     intro: [
       'Vaihingen an der Enz ist flächenmäßig eine der größten Städte im Landkreis Ludwigsburg, mit Altstadt an der Enz, Schloss Kaltenstein über der Stadt und vielen Stadtteilen wie Enzweihingen, Ensingen, Horrheim, Kleinglattbach, Roßwag, Gündelbach, Riet und Aurich. Weinbau, Handwerk, Gewerbe und Handel sind gleichermaßen vertreten.',
       'Wer „Elektriker Vaihingen“ sucht, bekommt häufig Ergebnisse aus Stuttgart-Vaihingen. Betriebe aus Vaihingen an der Enz müssen deshalb sehr genau sein: voller Ortsname, Postleitzahl und Stadtteil, überall gleich geschrieben.',
+      'Der Bahnhof Vaihingen (Enz) liegt an der Schnellfahrstrecke Mannheim–Stuttgart, dadurch kommen Pendler und Geschäftsreisende auch aus größerer Entfernung. Für Hotels, Gastronomie und Dienstleister rund um den Bahnhof lohnt es sich, Anfahrt und Erreichbarkeit mit dem Zug klar zu beschreiben.',
     ],
     branchen: [
       ['Handwerk in den Stadtteilen', 'Leistungsseiten, Fotos aus der Region und ein Einsatzgebiet mit den Stadtteilen und Nachbarorten wie Sachsenheim, Oberriexingen und Illingen.'],
@@ -627,6 +630,7 @@ module.exports = [
     intro: [
       'Stammheim ist ein ruhiger Stadtbezirk mit altem Ortskern, Wohngebieten und Feldern Richtung Kornwestheim. Die Stadtbahn U15 endet hier und verbindet Stammheim mit Zuffenhausen und der Innenstadt. Die Betriebe sind meist klein: Handwerk, Praxen, Läden, Dienstleister, die ihre Kunden in Stammheim, Zuffenhausen und Kornwestheim haben.',
       'Gesucht wird oft mit dem Bezirk („Physiotherapie Stammheim“) oder mit dem Nachbarort. Weil es auch andere Orte namens Stammheim gibt, sollte auf der Website immer „Stuttgart-Stammheim“ stehen.',
+      'Zwischen Stammheim und Kornwestheim liegen nur Felder, viele Wege des Alltags führen über die Stadtgrenze: Einkaufen in Kornwestheim, Arbeiten in Zuffenhausen, Arzttermin in Stammheim. Diese kurzen Wege sollten Betriebe auf ihrer Website ausdrücklich ansprechen.',
     ],
     branchen: [
       ['Handwerk', 'Leistungen, Fotos und ein Einsatzgebiet, das Stammheim, Zuffenhausen, Kornwestheim und Ludwigsburg ehrlich nennt.'],
@@ -730,6 +734,7 @@ module.exports = [
     intro: [
       'Fellbach ist Weinstadt und Wirtschaftsstandort. Am Kappelberg wachsen die Reben, im Herbst zieht der Fellbacher Herbst Besucher aus der ganzen Region an, die Schwabenlandhalle ist ein bekannter Veranstaltungsort. Dazu gehören die Stadtteile Schmiden und Oeffingen mit eigenem Gewerbe, Handel und Handwerk.',
       'Fellbacher Betriebe stehen bei der Suche oft neben Anbietern aus Stuttgart-Bad Cannstatt und Waiblingen. Wer Fellbach, den Stadtteil und die eigene Leistung klar nennt, wird bei den genaueren Suchen bevorzugt.',
+      'Fellbach grenzt direkt an Bad Cannstatt, die Stadtbahn U1 verbindet die Stadt mit der Stuttgarter Innenstadt. Viele Kunden pendeln deshalb zwischen beiden Städten. Wer in Fellbach sitzt und auch Kunden in Cannstatt oder Untertürkheim hat, sollte das mit einem konkreten Beispiel auf der Website zeigen.',
     ],
     branchen: [
       ['Weingüter & Besen', 'Weinliste, Verkaufszeiten, Besenzeiten und Weinproben, mit Fotos vom Kappelberg und klarer Anfahrt.'],
@@ -756,6 +761,7 @@ module.exports = [
     intro: [
       'Leonberg gehört zum Landkreis Böblingen und ist bekannt für seine Altstadt, den Pomeranzengarten, den traditionellen Pferdemarkt und die Hunderasse, die nach der Stadt benannt ist. Zur Stadt gehören Eltingen, Höfingen, Gebersheim und Warmbronn. Durch die Autobahnlage sind Gewerbe, Handel und Dienstleister stark vertreten.',
       'Viele Leonberger Betriebe haben Kunden in Ditzingen, Gerlingen, Renningen und Rutesheim, also über Kreisgrenzen hinweg. Die Website sollte deshalb klar sagen, wo Sie sitzen und welche Orte Sie wirklich bedienen.',
+      'Leonberg ist Große Kreisstadt, die S6 verbindet die Stadt mit Stuttgart und Weil der Stadt. Neben der historischen Altstadt gibt es mit dem Leo-Center ein großes Einkaufszentrum und mehrere Gewerbegebiete. Kunden kommen damit aus dem ganzen Altkreis Leonberg, von Rutesheim bis Weissach.',
     ],
     branchen: [
       ['Gewerbe & Dienstleister', 'Leistungen, Referenzen, Ansprechpartner und Anfahrt von der Autobahn, für Geschäftskunden in wenigen Sekunden erfassbar.'],
@@ -771,6 +777,140 @@ module.exports = [
     faq: [
       ['Betreuen Sie Leonberg, obwohl es im Kreis Böblingen liegt?', 'Ja. Über die A 81 sind es rund 26 Minuten ohne Stau. Das Erstgespräch kann bei Ihnen vor Ort stattfinden, danach läuft vieles per Video-Call und WhatsApp.'],
       ['Soll ich für jeden Leonberger Stadtteil eine eigene Seite anlegen?', 'In der Regel nicht. Besser ist eine starke Seite pro Leistung, die die Stadtteile mit echtem Bezug nennt. Eigene Stadtteilseiten lohnen sich nur mit eigenem, konkretem Inhalt.'],
+    ],
+  },
+
+  /* ---------- Welle 3 (24.11.2026) ---------- */
+  {
+    slug: 'stuttgart', name: 'Stuttgart', zip: '70173', km: 17.3, min: 27, roads: ['L 1124', 'Stuttgarter Straße', 'B 27'],
+    lat: 48.7758, lon: 9.1793, dest: 'Rathaus Stuttgart',
+    title: 'Webdesign Stuttgart – Websites & lokales SEO | Niktos',
+    description: 'Webdesign für Betriebe in Stuttgart: individuelle Websites mit lokalem SEO für Ihren Stadtbezirk, persönlich betreut von Niktos aus Ludwigsburg.',
+    lead: 'In Stuttgart gibt es hunderte Anbieter für fast jede Leistung. Wer hier gefunden werden will, braucht eine klare Strategie statt einer Website, die „für ganz Stuttgart“ spricht. Ich betreue Stuttgarter Betriebe von Ludwigsburg aus, bis zum Rathaus sind es rund 27 Minuten.',
+    intro: [
+      'Stuttgart ist Landeshauptstadt, Wirtschaftszentrum und eine Stadt aus 23 Stadtbezirken, jeder mit eigenem Zentrum und eigenem Publikum. Zwischen Kessel, Halbhöhenlagen und Neckar arbeiten große Konzerne, Mittelstand, Handwerk, Praxen, Gastronomie und unzählige Dienstleister. Die Konkurrenz um Kunden ist entsprechend groß, auch bei Google.',
+      'Darum funktioniert in Stuttgart vor allem Genauigkeit: Wer „Steuerberater Stuttgart“ sucht, bekommt eine lange Liste großer Kanzleien. Wer „Steuerberater Bad Cannstatt“ oder „Friseur Zuffenhausen“ sucht, eine kurze. Kleine und mittlere Betriebe gewinnen, wenn sie ihren Bezirk und ihre Leistung klar nennen.',
+      'Ein Hinweis aus der Praxis: Viele Stuttgarter Betriebe haben Websites, die schön aussehen, aber langsam laden und Leistungen nur in Stichworten nennen. Genau hier liegt die Chance für kleinere Anbieter. Schnelle Ladezeit, klare Texte und ein vollständiges Google-Profil schlagen in der Bezirkssuche oft größere Budgets.',
+    ],
+    branchen: [
+      ['Beratung & Kanzleien', 'Foto, Schwerpunkte, Werdegang und ein einfacher Weg zum Erstgespräch. Mandanten wählen nach Vertrauen, nicht nach der größten Werbefläche.'],
+      ['Gastronomie & Handel', 'Speisekarte oder Sortiment als Text, Öffnungszeiten, Reservierung und ein Google-Profil, das mit der Website exakt übereinstimmt.'],
+      ['Handwerk & Gebäudeservice', 'Leistungsseiten, Fotos echter Projekte und ein Einsatzgebiet nach Bezirken statt „ganz Stuttgart und Umgebung“.'],
+      ['Praxen & Therapie', 'Leistungen in klarer Sprache, Sprechzeiten, Barrierefreiheit und Anfahrt mit Stadtbahn oder S-Bahn.'],
+    ],
+    tips: [
+      ['Bezirk statt Großstadt', 'Nennen Sie Ihren Stadtbezirk in Titel, Adresse und Google-Profil. Für „Stuttgart“ allein konkurrieren Sie mit allen, für den Bezirk mit wenigen.'],
+      ['Leistung vor Ort', 'Eine eigene Seite pro Leistung schlägt eine Startseite mit zehn Themen, gerade bei harter Konkurrenz.'],
+      ['Bewertungen zählen doppelt', 'In der Großstadt vergleicht man viel. Echte Google-Bewertungen entscheiden mit, wer in der Karte oben steht.'],
+    ],
+    faq: [
+      ['Warum eine Webdesign-Agentur aus Ludwigsburg statt aus Stuttgart?', 'Weil Sie bei Niktos einen festen Ansprechpartner haben, der Design, Texte, Technik, SEO und Wartung selbst übernimmt. Die Entfernung spielt kaum eine Rolle: Termine vor Ort sind gut machbar, vieles läuft per Video-Call und WhatsApp.'],
+      ['Kann ich in Stuttgart überhaupt bei Google nach oben kommen?', 'Für allgemeine Begriffe wie „Webdesign Stuttgart“ ist es schwer und dauert. Für Ihren Bezirk und Ihre konkrete Leistung ist es realistisch, mit einer klaren Website, gepflegtem Google-Profil und echten Bewertungen. Garantieren kann eine Platzierung niemand.'],
+    ],
+  },
+  {
+    slug: 'backnang', name: 'Backnang', zip: '71522', km: 26, min: 30, roads: ['L 1124', 'L 1100', 'L 1127', 'B 14'],
+    lat: 48.9467, lon: 9.4304, dest: 'Rathaus Backnang',
+    title: 'Webdesign Backnang – Websites & lokales SEO | Niktos',
+    description: 'Webdesign für Backnang und seine Stadtteile: Websites mit lokalem SEO für Handwerk, Handel, Technik und Praxen an der Murr. Rund 30 Minuten von Niktos.',
+    lead: 'Backnang ist das Zentrum im Norden des Rems-Murr-Kreises, und viele Menschen aus dem Umland erledigen hier ihre Einkäufe und Termine. Ich baue Websites für Backnanger Betriebe, die in der Stadt und im Umland gefunden werden. Von Ludwigsburg sind es rund 30 Minuten.',
+    intro: [
+      'Backnang nennt sich Gerberstadt: Die Lederindustrie hat die Stadt an der Murr über Jahrhunderte geprägt, Spuren davon sieht man bis heute in der Altstadt. Heute ist Backnang Standort für Technik und Raumfahrt-Kommunikation ebenso wie für Handwerk, Handel und Dienstleister. Zur Stadt gehören unter anderem Maubach, Waldrems, Heiningen, Steinbach und Strümpfelbach, die S-Bahn verbindet Backnang mit Stuttgart und Marbach.',
+      'Weil Backnang für viele kleinere Gemeinden ringsum der nächste größere Ort ist, suchen Kunden aus Aspach, Auenwald, Burgstetten oder Oppenweiler oft gleich nach „Backnang“. Betriebe hier können also deutlich mehr Menschen erreichen als nur die Einwohner der Stadt.',
+      'Für Betriebe aus dem Landkreis Ludwigsburg ist Backnang ein naheliegender nächster Markt: Über Marbach und die L 1100 ist die Stadt schnell erreichbar, viele Handwerker und Dienstleister arbeiten bereits auf beiden Seiten der Kreisgrenze. Umgekehrt haben Backnanger Firmen oft Kunden in Marbach, Affalterbach und Erdmannhausen.',
+    ],
+    branchen: [
+      ['Technik & Zulieferer', 'Leistungen, Kompetenzen und Ansprechpartner für Geschäftskunden, eine Karriere-Seite und auf Wunsch eine englische Kurzfassung.'],
+      ['Handel in der Innenstadt', 'Sortiment, Öffnungszeiten und Lage, dazu ein Google-Profil mit aktuellen Fotos. Wer aus dem Umland kommt, plant vorher.'],
+      ['Handwerk', 'Leistungsseiten mit Fotos aus der Region und ein Einsatzgebiet, das die Umlandgemeinden ehrlich nennt.'],
+    ],
+    tips: [
+      ['Kreisgrenze offen nennen', 'Wer auch in Marbach oder Affalterbach arbeitet, schreibt das auf die Leistungsseiten. Kunden suchen nicht nach Landkreisen, sondern nach Orten.'],
+      ['Gerberstadt als Profil', 'Für Gastronomie, Handel und Tourismus ist die Geschichte der Gerberstadt ein guter Anker in Text und Bildern.'],
+      ['Pendler erreichen', 'Mit der S-Bahn fahren viele täglich nach Stuttgart und zurück. Abendliche Erreichbarkeit per WhatsApp oder Rückruf-Formular passt zu ihrem Alltag.'],
+    ],
+    faq: [
+      ['Betreuen Sie Backnang, obwohl es im Rems-Murr-Kreis liegt?', 'Ja. Rund 30 Minuten über Marbach, ohne Stau. Das Erstgespräch kann bei Ihnen stattfinden, danach reicht meist Video-Call oder WhatsApp.'],
+      ['Wie erreiche ich Kunden aus Aspach, Auenwald und Oppenweiler?', 'Indem Ihre Leistungsseiten diese Gemeinden als Einsatzgebiet nennen, Ihr Google-Profil das passende Einzugsgebiet hat und Sie echte Bewertungen von dort sammeln.'],
+    ],
+  },
+  {
+    slug: 'hemmingen', name: 'Hemmingen', zip: '71282', km: 19.4, min: 21, roads: ['L 1124', 'B 27', 'A 81', 'L 1140'],
+    lat: 48.8658, lon: 9.0357, dest: 'Rathaus Hemmingen',
+    title: 'Webdesign Hemmingen (Kreis Ludwigsburg) – Websites | Niktos',
+    description: 'Webdesign für Hemmingen im Strohgäu: Websites, die Google nicht mit Hemmingen bei Hannover verwechselt, mit lokalem SEO. Rund 21 Minuten von Niktos.',
+    lead: 'Hemmingen im Strohgäu hat einen bekannten Namensvetter bei Hannover, und der taucht bei Google oft zuerst auf. Ich baue Websites für Hemminger Betriebe, die eindeutig dem Landkreis Ludwigsburg zugeordnet werden.',
+    intro: [
+      'Hemmingen ist eine Gemeinde im Strohgäu, mit Schloss im Ortskern, in dem heute das Rathaus sitzt, und einem gemeinsamen Verwaltungsverband mit Schwieberdingen. Die Betriebe hier sind überwiegend klein: Handwerk, Praxen, Läden, landwirtschaftliche Betriebe und Dienstleister, deren Kunden aus Hemmingen, Schwieberdingen, Ditzingen und Korntal-Münchingen kommen.',
+      'Bei der Suche ist der Ortsname die größte Hürde. Hemmingen bei Hannover ist deutlich größer, Google ordnet „Hemmingen“ ohne weitere Hinweise oft dorthin zu. Betriebe aus dem Strohgäu brauchen deshalb besonders klare Angaben.',
+      'Praktisch für Kunden: Über die A 81 und die L 1140 ist Hemmingen schnell zu erreichen, nach Stuttgart-Weilimdorf oder Ditzingen fährt man nur wenige Minuten. Viele Hemminger arbeiten deshalb auswärts und erledigen Besorgungen abends oder am Samstag. Wer seine Öffnungs- und Erreichbarkeitszeiten genau darauf abstimmt und sie online zeigt, holt diese Kunden ab.',
+    ],
+    branchen: [
+      ['Handwerk', 'Leistungsseiten, Fotos echter Arbeiten und ein Einsatzgebiet mit Schwieberdingen, Ditzingen und Korntal-Münchingen.'],
+      ['Landwirtschaft & Hofläden', 'Was gibt es gerade, wann ist geöffnet und wie kommt man hin? Saisonangebote müssen schnell aktualisierbar sein.'],
+      ['Praxen & Dienstleister', 'Klare Leistungen, Sprechzeiten und Kontakt, mobil in Sekunden erfassbar.'],
+    ],
+    tips: [
+      ['Postleitzahl 71282 überall', 'Hannover-Hemmingen hat andere Postleitzahlen. Die 71282 in Adresse, Fußzeile und Google-Profil ist das einfachste Unterscheidungsmerkmal, das Google zuverlässig auswertet.'],
+      ['Abends erreichbar sein', 'Pendler suchen nach Feierabend. Ein WhatsApp-Button und ein Formular mit Rückrufwunsch fangen Anfragen auf, die sonst zum nächsten Anbieter gehen.'],
+      ['Schloss als Orientierung', '„Gegenüber dem Schloss“ oder „zwei Minuten vom Rathaus“: Solche Angaben merken sich Kunden aus dem Ort sofort, und sie stehen gut in der Anfahrtsbeschreibung.'],
+    ],
+    faq: [
+      ['Mein Google-Profil zeigt Kunden aus Hannover-Hemmingen. Was tun?', 'Prüfen Sie Adresse, Postleitzahl und Kategorie im Profil und gleichen Sie sie mit Website und Verzeichnissen ab. Wenn alles einheitlich „71282 Hemmingen“ lautet, wird die Zuordnung mit der Zeit sauber.'],
+      ['Was brauche ich mindestens für den Start?', 'Eine kompakte Website mit Leistungen, Foto, Kontaktwegen, Impressum und Datenschutz sowie ein gepflegtes Google-Profil. Mehr Seiten lohnen sich, sobald Sie gezielt für einzelne Leistungen gefunden werden wollen.'],
+    ],
+  },
+  {
+    slug: 'boennigheim', name: 'Bönnigheim', zip: '74357', km: 23, min: 30, roads: ['L 1124', 'B 27', 'L 1107'],
+    lat: 49.0411, lon: 9.0969, dest: 'Rathaus Bönnigheim',
+    title: 'Webdesign Bönnigheim – Websites für Wein & Betriebe | Niktos',
+    description: 'Webdesign für Bönnigheim und Hohenstein: Websites für Weingüter, Gastronomie, Handwerk und Gewerbe am Stromberg, mit lokalem SEO. 30 Minuten von Niktos.',
+    lead: 'Bönnigheim liegt am Fuß des Strombergs, zwischen Weinbergen und Gewerbe. Ich baue Websites für Bönnigheimer Betriebe, die Weinfreunde, Ausflügler und Kunden aus dem Umland erreichen. Von Ludwigsburg sind es rund 30 Minuten.',
+    intro: [
+      'Bönnigheim ist eine alte Ganerbenstadt, die lange von mehreren Herrschaften gemeinsam regiert wurde. Rund um die Altstadt mit Schloss wachsen Reben, Weinbau und Gastronomie haben Tradition. Gleichzeitig ist Bönnigheim Industriestandort: Der Nähfadenhersteller Amann hat hier seinen Ursprung, auf dem früheren Firmengelände ist ein neues Quartier entstanden. Zur Stadt gehört Hohenstein.',
+      'Für Betriebe heißt das: Gäste suchen nach Wein, Besen und Ausflugszielen am Stromberg, Einheimische nach Handwerkern und Praxen, Geschäftskunden nach Zulieferern. Eine gute Website weiß, wen sie anspricht.',
+      'Typisch für Bönnigheim ist die Mischung auf engem Raum: Wer morgens im Gewerbegebiet arbeitet, sitzt abends vielleicht im Besen nebenan. Das prägt auch die Suche nach Betrieben. Ein Weingut wird von Ausflüglern aus Stuttgart und Heilbronn gefunden, ein Zulieferer von Einkäufern aus ganz Deutschland, ein Handwerker von Nachbarn aus Erligheim und Kirchheim.',
+    ],
+    branchen: [
+      ['Weingüter & Besen', 'Weinliste, Verkaufszeiten, Besenzeiten und Weinproben, mit Bildern aus den eigenen Lagen und Anfahrt für Gäste.'],
+      ['Gewerbe & Zulieferer', 'Leistungen, Qualitätsnachweise, Ansprechpartner und eine Karriere-Seite für die Personalsuche.'],
+      ['Handwerk & Dienstleister', 'Leistungsseiten mit Fotos und ein Einsatzgebiet bis Kirchheim, Erligheim, Sachsenheim und Besigheim.'],
+    ],
+    tips: [
+      ['Besenzeiten ins Profil', 'Viele Gäste schauen nur in Google Maps nach, ob geöffnet ist. Tragen Sie Besenzeiten als Sonderöffnungszeiten im Profil ein, nicht nur auf der Website.'],
+      ['Ganerbenstadt erzählen', 'Geschichte verkauft: Ein kurzer Absatz zu Altstadt und Ganerben macht ein Weingut oder Gasthaus für Gäste interessanter als jede Floskel.'],
+      ['Einkäufer gezielt ansprechen', 'Zulieferer brauchen eine nüchterne Seite mit Fertigungsmöglichkeiten, Zertifikaten und Ansprechpartner. Die Weinromantik gehört dort nicht hin.'],
+    ],
+    faq: [
+      ['Kann ich auf meiner Website Weinpakete verkaufen?', 'Ja, als einfache Bestellanfrage oder mit kleinem Shop. Was sich lohnt, hängt davon ab, wie oft Sie versenden. Das klären wir im Erstgespräch ehrlich.'],
+      ['Wie bekomme ich mehr Gäste aus Stuttgart und Heilbronn?', 'Mit einer Seite, die Anfahrt, Parken und Ausflugstipps am Stromberg zeigt, einem Google-Profil mit guten Fotos und Bewertungen von Gästen. Ausflügler entscheiden oft spontan am Handy.'],
+    ],
+  },
+  {
+    slug: 'kirchheim-am-neckar', name: 'Kirchheim am Neckar', short: 'Kirchheim', zip: '74366', km: 26.6, min: 27, roads: ['L 1124', 'B 27', 'A 81', 'L 1115'],
+    lat: 49.0431, lon: 9.1452, dest: 'Rathaus Kirchheim am Neckar',
+    title: 'Webdesign Kirchheim am Neckar – Website & SEO | Niktos',
+    description: 'Webdesign für Kirchheim am Neckar: Websites, die Google nicht mit Kirchheim unter Teck verwechselt, für Wein, Handwerk und Betriebe. Rund 27 Minuten von Niktos.',
+    lead: 'Kirchheim gibt es in Deutschland dutzendfach, das bekannteste liegt unter der Teck. Ich baue Websites für Betriebe aus Kirchheim am Neckar, die trotzdem eindeutig gefunden werden. Von Ludwigsburg sind es rund 27 Minuten.',
+    intro: [
+      'Kirchheim am Neckar liegt im Norden des Landkreises Ludwigsburg, zwischen Besigheim, Bönnigheim und Lauffen, mit Weinbergen am Neckar und einem überschaubaren Ortskern. Die Gemeinde gehört zum Verwaltungsverband Bönnigheim. Betriebe hier sind meist klein: Weinbau, Handwerk, Gastronomie und Dienstleister mit Kunden aus dem Ort und den Nachbargemeinden bis Richtung Heilbronn.',
+      'Das zentrale Problem bei der Suche: Wer „Kirchheim“ eingibt, landet meist in Kirchheim unter Teck oder einem der vielen anderen Kirchheims. Der volle Ortsname und eine klare Postleitzahl sind deshalb Pflicht.',
+      'Durch die Nähe zum Landkreis Heilbronn orientieren sich viele Kirchheimer im Alltag Richtung Lauffen und Heilbronn, andere eher Richtung Besigheim und Bietigheim. Betriebe haben damit Kundschaft aus zwei Landkreisen, die unterschiedlich sucht: mal mit „Heilbronn“, mal mit „Ludwigsburg“ im Suchbegriff.',
+    ],
+    branchen: [
+      ['Weinbau', 'Weinliste, Verkaufszeiten und Veranstaltungen, mit Fotos vom Neckar und Anfahrt für Gäste.'],
+      ['Handwerk', 'Leistungsseiten und ein Einsatzgebiet, das Besigheim, Bönnigheim, Gemmrigheim und Lauffen ehrlich nennt.'],
+      ['Gastronomie', 'Speisekarte als Text, Öffnungszeiten und ein Google-Profil mit aktuellen Bildern.'],
+      ['Dienstleister', 'Ein kompakter Auftritt mit Foto, Leistungen und Kontaktwegen, schnell geladen auch im Mobilfunknetz.'],
+    ],
+    tips: [
+      ['Postleitzahl 74366 als Anker', 'Kirchheim unter Teck, Kirchheim bei München und andere haben eigene Postleitzahlen. Die 74366 in Adresse, Fußzeile und Profil verankert Ihren Betrieb am richtigen Ort.'],
+      ['Zwei Landkreise bedienen', 'Nennen Sie Orte aus beiden Richtungen, in denen Sie tatsächlich arbeiten, etwa Lauffen und Besigheim. So passen Sie zu Suchen aus dem Heilbronner wie dem Ludwigsburger Raum.'],
+      ['Neckarlage zeigen', 'Für Gastronomie und Weinbau ist der Blick auf Fluss und Weinberge ein echtes Argument. Gute eigene Fotos davon gehören auf die Startseite.'],
+    ],
+    faq: [
+      ['Werde ich auch bei Suchen mit „Heilbronn“ gefunden?', 'Für die Stadt Heilbronn selbst ist die Konkurrenz groß. Für Suchen wie „Weinprobe bei Heilbronn“ oder Leistungen in Lauffen und Umgebung haben Sie mit einer klaren Seite und echtem Bezug gute Chancen.'],
+      ['Wie weit ist Kirchheim von Ihnen entfernt?', 'Über die A 81 rund 27 Minuten ohne Stau. Für das Erstgespräch komme ich gern vorbei, danach reicht meist der Kontakt per Video-Call und WhatsApp.'],
     ],
   },
 ];
