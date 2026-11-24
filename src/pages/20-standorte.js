@@ -39,7 +39,7 @@ function routeMap(t) {
     ${label(b, 1, short(t), 'Rathaus', 'is-b')}
     <g transform="translate(${mx.toFixed(1)} ${my.toFixed(1)}) rotate(-6)"><rect x="-50" y="-17" width="100" height="34" rx="17" fill="#ffd23f" stroke="#0b0d14" stroke-width="2"/><text class="rmap__km" y="6">${de(t.km)} km · ${t.min} Min.</text></g>
   </svg>
-  <figcaption>Schematische Darstellung, Norden oben, Richtung maßstäblich. Route über ${t.roads.join(', ')} · Daten © OpenStreetMap-Mitwirkende, Fahrzeit ohne Stau.</figcaption>
+  <figcaption>Route über ${t.roads.join(', ')} · Schema, Norden oben · © OpenStreetMap-Mitwirkende</figcaption>
 </figure>`;
 }
 
@@ -67,7 +67,7 @@ const CSS = `<style>
 
 const nearest = (t, n = 3) => TOWNS.filter((o) => o !== t).sort((x, y) => airKm(t, x) - airKm(t, y)).slice(0, n);
 const linkRow = (items) => `<ul class="tlinks">${items.map(([h, l, ic]) => `<li><a class="badge-s" href="${h}">${icon(ic)} ${l}</a></li>`).join('')}</ul>`;
-const BRANCH_ICONS = ['briefcase', 'users', 'heart'];
+const BRANCH_ICONS = ['briefcase', 'users', 'heart', 'target'];
 
 function townPage(t) {
   const path = href(t);
@@ -114,9 +114,8 @@ ${C.pageHero({
       <dl>
         <div><dt>Start</dt><dd>${site.address.street}, ${site.address.city}</dd></div>
         <div><dt>Ziel</dt><dd>${t.dest}, ${t.zip}</dd></div>
-        <div><dt>Strecke</dt><dd>${de(t.km)} km über ${t.roads.join(', ')}</dd></div>
+        <div><dt>Strecke</dt><dd>${de(t.km)} km</dd></div>
         <div><dt>Fahrzeit</dt><dd>ca. ${t.min} Minuten ohne Stau</dd></div>
-        <div><dt>Termine</dt><dd>bei Ihnen vor Ort, in Ludwigsburg oder per Video-Call</dd></div>
       </dl>
       <a class="btn btn--ghost btn--block" href="${routeUrl(t)}" target="_blank" rel="noopener">${icon('map')} Route in Google Maps</a>
     </div>
@@ -126,7 +125,7 @@ ${C.pageHero({
 <section class="section section--panel">
   <div class="container">
     ${C.head({ eyebrow: `Branchen in ${short(t)}`, title: `Was Betriebe in ${short(t)} von ihrer Website brauchen.`, center: true })}
-    ${C.features(t.branchen.map(([h, d], i) => [BRANCH_ICONS[i % 3], h, d]))}
+    ${C.features(t.branchen.map(([h, d], i) => [BRANCH_ICONS[i % BRANCH_ICONS.length], h, d]), t.branchen.length === 4 ? 2 : 3)}
   </div>
 </section>
 
@@ -158,7 +157,6 @@ ${C.pageHero({
     <div class="card reveal reveal-d1">
       <p class="eyebrow">Passende Leistungen</p>
       <h3>Alles aus einer Hand für ${short(t)}</h3>
-      <p>Design, Texte, Hosting, SEO und Wartung von einem Ansprechpartner.</p>
       ${linkRow([['/webdesign-ludwigsburg/', 'Webdesign', 'layout'], ['/seo-ludwigsburg/', 'SEO & KI-Sichtbarkeit', 'search'], ['/wartung-hosting/', 'Wartung & Hosting', 'shield'], ['/website-check/', 'Website-Check', 'gauge'], ['/preise/', 'Preise', 'euro']])}
     </div>`}
   </div>
@@ -232,7 +230,7 @@ ${C.pageHero({
     <div class="reveal">
       <p class="eyebrow">Weitere Orte</p>
       <h2>Auch dort bin ich für Sie da.</h2>
-      <p class="lead">Für diese Orte gibt es noch keine eigene Seite, betreut werden sie genauso: ${others.join(', ')}, dazu die Stuttgarter Stadtteile im Norden und der ganze Landkreis.</p>
+      <p class="lead">Für diese Orte gibt es noch keine eigene Seite, betreut werden sie genauso: ${others.join(', ')} sowie alle weiteren Orte im Landkreis Ludwigsburg und in der Region Stuttgart.</p>
       ${linkRow([['/webdesign-ludwigsburg/', 'Webdesign', 'layout'], ['/seo-ludwigsburg/', 'SEO & KI-Sichtbarkeit', 'search'], ['/preise/', 'Preise', 'euro']])}
     </div>
     <div class="reveal reveal-d1">${C.mapCard()}</div>

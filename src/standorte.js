@@ -121,6 +121,7 @@ module.exports = [
       ['Handwerk & Bau', 'Leistungsseiten mit Fotos aus der Region, Einsatzgebiet mit den Nachbarorten am Neckar und eine schnelle Anfrage per WhatsApp.'],
       ['Kleine Dienstleister', 'Für Ein-Personen-Betriebe reicht oft eine kompakte Website mit klarer Leistung, Foto und Kontaktwegen. Wichtig ist, dass sie schnell lädt und gut auf dem Handy aussieht.'],
       ['Vereine & lokale Angebote', 'Termine, Ansprechpartner und Anmeldung übersichtlich auf einer Seite, die sich auch später leicht aktuell halten lässt.'],
+      ['Praxen & Therapie', 'Patienten aus Beihingen, Geisingen und Heutingsheim suchen kurze Wege. Sprechzeiten, Leistungen in klarer Sprache und der Ortsteil in der Adresse helfen bei der Orientierung.'],
     ],
     tips: [
       ['Immer „am Neckar“', 'Schreiben Sie in Titel, Adresse und Google-Profil „Freiberg am Neckar“ (oder „Freiberg a. N.“) mit Postleitzahl 71691. So verwechselt Google Sie nicht mit Freiberg in Sachsen.'],
@@ -296,6 +297,7 @@ module.exports = [
       ['Zulieferer & technische Dienstleister', 'Leistungen, Maschinenpark, Zertifikate und Ansprechpartner, auf Wunsch auch auf Englisch. Geschäftskunden wollen Fakten, keine Werbesprüche.'],
       ['Handwerk', 'Leistungsseiten, Fotos echter Projekte und ein Einsatzgebiet von Ditzingen über Gerlingen und Korntal-Münchingen bis Leonberg.'],
       ['Dienstleister & Praxen', 'Ein seriöser Auftritt mit Foto, klaren Leistungen und Online-Kontakt, schnell geladen auch im Mobilfunknetz.'],
+      ['Gastronomie & Kantinenersatz', 'Beschäftigte aus den Gewerbegebieten suchen mittags in der Nähe. Mittagstisch, Abholung und Öffnungszeiten aktuell auf Website und Google-Profil bringen Stammgäste.'],
     ],
     tips: [
       ['Karriere-Seite einplanen', 'Eine eigene Seite mit Team, Aufgaben und einfachem Bewerbungsweg wird bei Suchen wie „Jobs Ditzingen“ gefunden und kostet keine Gebühr pro Anzeige.'],
@@ -305,6 +307,470 @@ module.exports = [
     faq: [
       ['Lohnt sich lokales SEO für einen B2B-Betrieb in Ditzingen?', 'Ja, wenn auch nur ein Teil Ihrer Kunden aus der Region kommt. Geschäftskunden suchen ebenfalls über Google, etwa nach „Laserschneiden Lohnfertigung Ditzingen“. Eine Seite pro Leistung mit klaren Fakten macht Sie dort sichtbar.'],
       ['Kann die Website Bewerbungen direkt annehmen?', 'Ja. Ein schlankes Bewerbungsformular mit Bestätigungs-Mail ist möglich. Sensible Daten behandeln wir dabei DSGVO-bewusst; Details stimmen wir vorher ab.'],
+    ],
+  },
+
+  /* ---------- Welle 2 (24.11.2026) ---------- */
+  {
+    slug: 'benningen-am-neckar', name: 'Benningen am Neckar', short: 'Benningen', zip: '71726', km: 7.2, min: 10, roads: ['L 1124', 'L 1129', 'K 1672'],
+    lat: 48.9443, lon: 9.2443, dest: 'Rathaus Benningen am Neckar',
+    title: 'Webdesign Benningen am Neckar – Website & SEO | Niktos',
+    description: 'Webdesign für Benningen am Neckar: kompakte, schnelle Websites für Handwerk und kleine Betriebe zwischen Marbach und Freiberg. Rund 10 Minuten von Niktos.',
+    lead: 'Benningen ist klein, liegt direkt am Neckar zwischen Marbach und Freiberg, und viele Betriebe hier leben von Empfehlungen. Ich baue Websites, die diese Empfehlungen online bestätigen. Von mir aus sind es rund 10 Minuten.',
+    intro: [
+      'Benningen hat eine lange Geschichte: Hier stand ein römisches Kastell am Neckar, Funde davon zeigt das Museum im Ort. Heute ist Benningen eine überschaubare Gemeinde mit S4-Halt, Wohngebieten und einigen kleinen Handwerks- und Dienstleistungsbetrieben, die vor allem für Kunden aus Benningen, Marbach, Freiberg und Murr arbeiten.',
+      'In einem Ort dieser Größe ruft kaum jemand einen Betrieb an, den er nicht vorher kurz gegoogelt hat, auch wenn der Tipp vom Nachbarn kam. Wer dann nur einen alten Eintrag oder gar nichts findet, ruft oft den nächsten an. Eine kleine, saubere Website schließt genau diese Lücke.',
+    ],
+    branchen: [
+      ['Ein-Personen-Betriebe', 'Eine Seite reicht oft: was Sie machen, wo Sie arbeiten, ein Foto von Ihnen und drei Kontaktwege. Wichtig ist, dass sie am Handy schnell lädt.'],
+      ['Handwerk am Neckar', 'Fotos echter Arbeiten aus Benningen und den Nachbarorten, ein klares Einsatzgebiet und Anfragen per WhatsApp mit Foto vom Schaden.'],
+      ['Vereine & Gastronomie', 'Termine, Öffnungszeiten und Kontakt auf einer Seite, die sich ohne Aufwand aktuell halten lässt.'],
+    ],
+    tips: [
+      ['„am Neckar“ mitschreiben', 'Benningen allein ist nicht eindeutig. „Benningen am Neckar“ mit Postleitzahl 71726 in Adresse und Google-Profil macht die Zuordnung klar.'],
+      ['Empfehlungen sichtbar machen', 'Bitten Sie zufriedene Kunden um eine Google-Bewertung. In kleinen Orten reichen wenige echte Bewertungen, um sich abzuheben.'],
+      ['Klein anfangen', 'Ein kompakter Auftritt mit bis zu 3 Seiten ist schnell fertig und lässt sich später um Leistungsseiten erweitern, wenn mehr Anfragen kommen sollen.'],
+    ],
+    faq: [
+      ['Reicht für meinen kleinen Betrieb in Benningen eine One-Page-Website?', 'Für den Start oft ja. Wenn Sie aber mehrere Leistungen haben, die einzeln gesucht werden, bringt eine eigene Seite pro Leistung mehr Anfragen über Google. Das lässt sich auch später ergänzen.'],
+      ['Muss ich für die Website Texte selbst schreiben?', 'Nein. Sie erzählen mir in einem kurzen Gespräch, was Sie machen. Daraus schreibe ich die Texte, Sie prüfen und geben frei.'],
+    ],
+  },
+  {
+    slug: 'pleidelsheim', name: 'Pleidelsheim', zip: '74385', km: 7.8, min: 14, roads: ['L 1124', 'L 1129', 'K 1700'],
+    lat: 48.9603, lon: 9.2073, dest: 'Rathaus Pleidelsheim',
+    title: 'Webdesign Pleidelsheim – Websites & lokales SEO | Niktos',
+    description: 'Webdesign für Pleidelsheim: Websites mit lokalem SEO für Betriebe zwischen Freiberg, Ingersheim und Mundelsheim. Rund 14 Minuten von Niktos in Ludwigsburg.',
+    lead: 'Pleidelsheim liegt am Neckar zwischen Freiberg und Ingersheim, und Kunden kommen hier oft aus beiden Richtungen. Ich baue Websites für Pleidelsheimer Betriebe, die im ganzen Umkreis gefunden werden.',
+    intro: [
+      'Pleidelsheim gehört zur Verwaltungsgemeinschaft mit Freiberg am Neckar und Ingersheim, eine Gemeinde mit Ortskern, Neubaugebieten und Gewerbeflächen am nördlichen Rand des Landkreises. Viele Familien sind in den letzten Jahren zugezogen, und mit ihnen die Nachfrage nach Handwerkern, Kinderbetreuung, Praxen und Dienstleistern vor Ort.',
+      'Wer neu im Ort ist, kennt noch niemanden und sucht deshalb fast alles über Google: „Kinderarzt Pleidelsheim“, „Elektriker in der Nähe“, „Friseur Pleidelsheim“. Für Betriebe ist das eine gute Gelegenheit, früh sichtbar zu sein.',
+    ],
+    branchen: [
+      ['Handwerk für Neubau & Umbau', 'Fotos von Projekten in der Umgebung, Leistungen einzeln beschrieben und ein Formular, in dem Kunden Bilder ihres Vorhabens mitschicken können.'],
+      ['Familienangebote', 'Kurse, Betreuung, Nachhilfe: Zeiten, Preise und Anmeldung klar auf einer Seite. Eltern vergleichen am Handy, oft abends.'],
+      ['Praxen & Gesundheit', 'Leistungen, Sprechzeiten und ein klarer Hinweis, ob neue Patienten aufgenommen werden. Das spart Ihrem Team viele Anrufe.'],
+    ],
+    tips: [
+      ['Für Neubürger schreiben', 'Erklären Sie kurz, wo Sie sitzen und wie man Sie erreicht. Wer neu ist, kennt den Ort noch nicht.'],
+      ['Nachbarorte mitnehmen', 'Freiberg, Ingersheim, Mundelsheim und Murr liegen nah. Nennen Sie die Orte, in denen Sie wirklich arbeiten, mit einem konkreten Bezug.'],
+      ['Google-Profil zuerst', 'Bei Suchen wie „in der Nähe“ entscheidet die Karte. Ein vollständiges Profil mit Fotos und Öffnungszeiten ist hier der schnellste Hebel.'],
+    ],
+    faq: [
+      ['Wie werde ich von neu zugezogenen Familien in Pleidelsheim gefunden?', 'Über ein gepflegtes Google-Unternehmensprofil, eine Website mit klaren Leistungen und den Ortsnamen an den richtigen Stellen. Neubürger suchen fast immer zuerst online, oft mit „in der Nähe“.'],
+      ['Kann ich auf der Website auch Termine anbieten?', 'Ja. Je nach Bedarf als einfaches Anfrageformular, per WhatsApp oder mit einem Online-Kalender. Was davon sinnvoll ist, klären wir im Erstgespräch.'],
+    ],
+  },
+  {
+    slug: 'murr', name: 'Murr', zip: '71711', km: 9.7, min: 13, roads: ['L 1124', 'L 1100'],
+    lat: 48.9630, lon: 9.2608, dest: 'Rathaus Murr',
+    title: 'Webdesign Murr (Kreis Ludwigsburg) – Websites | Niktos',
+    description: 'Webdesign für Betriebe in Murr bei Steinheim: Websites, die Google klar dem Landkreis Ludwigsburg zuordnet, mit lokalem SEO. Rund 13 Minuten von Niktos.',
+    lead: 'Murr ist ein Ort, ein Fluss und ein halber Landkreisname. Für die Google-Suche ist das eine echte Hürde. Ich baue Websites für Betriebe aus Murr, die trotzdem eindeutig gefunden werden. Von mir aus sind es rund 13 Minuten.',
+    intro: [
+      'Die Gemeinde Murr liegt an der Murr, kurz bevor sie in den Neckar fließt, und bildet mit Steinheim einen gemeinsamen Verwaltungsverband. Der Ort ist geprägt von Wohngebieten, Ortskern und kleineren Betrieben, die Kunden in Murr, Steinheim, Marbach und Benningen haben.',
+      'Das Problem bei der Suche: „Murr“ steht für den Fluss, für Murrhardt und für den Rems-Murr-Kreis, zu dem die Gemeinde Murr gar nicht gehört. Wer nur „Murr“ schreibt, landet bei Google leicht im falschen Landkreis oder wird gar nicht zugeordnet.',
+    ],
+    branchen: [
+      ['Handwerk & Haustechnik', 'Einsatzgebiet mit Murr, Steinheim, Marbach und Pleidelsheim, Leistungsseiten und ein schneller Anfrageweg, auch per WhatsApp.'],
+      ['Dienstleister für Privatkunden', 'Reinigung, Pflege, Gartenarbeit: Preise oder Preisrahmen und ein Rückruf-Formular senken die Hemmschwelle.'],
+      ['Kleine Läden & Gastronomie', 'Öffnungszeiten, Angebot als Text und ein Google-Profil mit Fotos, damit Sie bei „in der Nähe“ auftauchen.'],
+      ['Vereine & Sport', 'Termine, Trainingszeiten und Ansprechpartner auf einer aktuellen Seite. Neue Mitglieder aus Murr und Steinheim finden so den Weg ohne Umwege.'],
+    ],
+    tips: [
+      ['Landkreis ausdrücklich nennen', 'Schreiben Sie „Murr (Landkreis Ludwigsburg)“ oder „Murr bei Steinheim“ mit PLZ 71711. So verwechselt Google Sie nicht mit dem Rems-Murr-Kreis.'],
+      ['Strukturierte Daten setzen', 'Adresse, Postleitzahl und Einzugsgebiet als schema.org-Daten geben Google die Zuordnung schwarz auf weiß. Das ist bei Niktos Standard.'],
+      ['Einheitlich bleiben', 'Gleiche Schreibweise von Name, Adresse und Telefon auf Website, Google-Profil und in Verzeichnissen. Abweichungen verwirren bei mehrdeutigen Ortsnamen besonders.'],
+    ],
+    faq: [
+      ['Warum zeigt Google bei „Murr“ Betriebe aus dem Rems-Murr-Kreis?', 'Weil der Name mehrdeutig ist. Mit Postleitzahl, Landkreis und einheitlichen Firmendaten wird klar, dass Ihr Betrieb in der Gemeinde Murr im Landkreis Ludwigsburg sitzt.'],
+      ['Gilt meine Website dann auch für Steinheim?', 'Wenn Sie dort arbeiten, ja. Nennen Sie Steinheim mit einem echten Bezug, etwa einem Projekt oder Ihrem Einsatzgebiet. Eine eigene Kopie der Seite für jeden Nachbarort braucht es dafür nicht.'],
+    ],
+  },
+  {
+    slug: 'erdmannhausen', name: 'Erdmannhausen', zip: '71729', km: 9.8, min: 14, roads: ['L 1124', 'L 1100', 'L 1127'],
+    lat: 48.9405, lon: 9.2958, dest: 'Rathaus Erdmannhausen',
+    title: 'Webdesign Erdmannhausen – Websites & SEO | Niktos',
+    description: 'Webdesign für Erdmannhausen: Websites für Handwerk und kleine Betriebe zwischen Marbach und Affalterbach, mit lokalem SEO und WhatsApp. 14 Minuten von Niktos.',
+    lead: 'Erdmannhausen liegt etwas abseits der großen Straßen, zwischen Marbach und Affalterbach. Kunden finden Betriebe hier deshalb selten zufällig, sondern über Google. Ich sorge dafür, dass Ihre Website dabei überzeugt.',
+    intro: [
+      'Erdmannhausen gehört zum Gemeindeverwaltungsverband Marbach am Neckar und hat sich vom Bauerndorf zur Wohngemeinde entwickelt. Im Ort arbeiten vor allem kleine Betriebe: Handwerk, Hofläden, Dienstleister, dazu Praxen für die Menschen vor Ort. Ihre Kunden kommen aus Erdmannhausen, Marbach, Affalterbach und Kirchberg an der Murr.',
+      'Weil Erdmannhausen kein Durchgangsort ist, hilft Laufkundschaft wenig. Wer neue Kunden will, braucht einen Auftritt, der bei Suchen im ganzen Umkreis auftaucht und am Handy in wenigen Sekunden zeigt, was Sie anbieten.',
+    ],
+    branchen: [
+      ['Handwerk', 'Fotos echter Arbeiten, Leistungen einzeln beschrieben und ein klares Einsatzgebiet bis Marbach, Affalterbach und Backnang, wenn Sie dorthin fahren.'],
+      ['Hofläden & Direktvermarkter', 'Was gibt es gerade, wann ist geöffnet, wie findet man hin? Diese drei Fragen müssen sofort beantwortet sein, am besten mit Saisonhinweis.'],
+      ['Dienstleister', 'Ein seriöser Auftritt mit Foto und Kontaktwegen. Für viele reicht ein kompaktes Paket zum Start.'],
+    ],
+    tips: [
+      ['Anfahrt beschreiben', 'Abseits der Hauptstraßen ist eine kurze Wegbeschreibung mit Parkhinweis Gold wert, vor allem für Hofläden und Praxen.'],
+      ['Saison aktuell halten', 'Wer saisonal verkauft, braucht eine Seite, die sich schnell ändern lässt. Im Care-Paket schicken Sie mir die Änderung einfach per WhatsApp.'],
+      ['Umkreis ehrlich angeben', 'Nennen Sie die Orte, die Sie wirklich bedienen. Eine überzogene Liste mit 40 Orten wirkt unseriös und hilft bei Google nicht.'],
+    ],
+    faq: [
+      ['Lohnt sich eine Website für einen Hofladen in Erdmannhausen?', 'Ja, wenn sie Öffnungszeiten, Angebot und Anfahrt aktuell zeigt. Viele Kunden suchen kurz vor dem Losfahren, ob geöffnet ist. Zusammen mit dem Google-Profil ist das oft der wichtigste Kanal.'],
+      ['Wie oft muss ich die Website aktualisieren?', 'So oft sich etwas ändert, etwa Öffnungszeiten oder Angebote. Mit dem Care-Paket erledige ich kleine Änderungen für Sie, Sie schicken sie mir einfach per WhatsApp.'],
+    ],
+  },
+  {
+    slug: 'ingersheim', name: 'Ingersheim', zip: '74379', km: 10, min: 15, roads: ['L 1124', 'B 27', 'L 1138', 'L 1113'],
+    lat: 48.9595, lon: 9.1849, dest: 'Rathaus Ingersheim',
+    title: 'Webdesign Ingersheim – Websites für Wein & Handwerk | Niktos',
+    description: 'Webdesign für Ingersheim: Websites für Weinbau, Handwerk und Dienstleister in Groß- und Kleiningersheim, mit lokalem SEO. Rund 15 Minuten von Niktos.',
+    lead: 'Ingersheim liegt am Neckar zwischen Bietigheim-Bissingen und Besigheim, mit Weinbergen auf beiden Seiten. Ich baue Websites für Ingersheimer Betriebe, die Kunden aus dem Ort und Gäste aus der Region erreichen.',
+    intro: [
+      'Ingersheim besteht aus Großingersheim und Kleiningersheim, die auf beiden Seiten des Neckars liegen. Weinbau gehört hier dazu, ebenso Handwerk, kleine Gewerbebetriebe und Dienstleister. Viele Kunden kommen aus Bietigheim-Bissingen, Freiberg, Pleidelsheim und Besigheim.',
+      'Für die Suche heißt das: Ihre Kunden kennen oft eher Bietigheim-Bissingen als Ingersheim. Eine Website, die klar sagt, wo Sie sitzen und welche Nachbarorte Sie bedienen, holt diese Suchen ab.',
+    ],
+    branchen: [
+      ['Weinbau & Direktvertrieb', 'Weinliste, Verkaufszeiten, Hoffeste und Weinproben auf eigenen Seiten, mit Fotos aus den eigenen Lagen.'],
+      ['Handwerk', 'Leistungsseiten, Fotos aus der Region und ein Einsatzgebiet, das Bietigheim-Bissingen und Besigheim ehrlich einschließt.'],
+      ['Dienstleister & Praxen', 'Ein klarer, schneller Auftritt mit Foto, Leistungen und Kontakt. Mehr braucht es zum Start oft nicht.'],
+      ['Ferienwohnungen & Gästezimmer', 'Radfahrer auf dem Neckartal-Radweg und Weinfreunde suchen kurzfristig. Fotos, Ausstattung, Lage am Fluss und eine direkte Anfrage ohne Portalprovision.'],
+    ],
+    tips: [
+      ['Ortsteil nennen', 'Groß- und Kleiningersheim werden im Alltag unterschieden. Nennen Sie Ihren Ortsteil in der Adresse, im Text reicht meist „Ingersheim“.'],
+      ['Bietigheim mitdenken', 'Wer auch Kunden in Bietigheim-Bissingen hat, schreibt das mit einem echten Beispiel auf die Seite. So passen Sie zu Suchen in beiden Orten.'],
+      ['Termine pflegen', 'Hoffeste und Verkaufszeiten ändern sich. Veraltete Termine auf der Website schaden mehr als gar keine.'],
+    ],
+    faq: [
+      ['Brauche ich als Weinbaubetrieb in Ingersheim einen Online-Shop?', 'Nicht unbedingt. Oft reicht eine aktuelle Weinliste mit Bestellung per Telefon, E-Mail oder WhatsApp. Ein Shop lohnt sich, wenn Sie regelmäßig versenden.'],
+      ['Werde ich auch bei Suchen in Bietigheim-Bissingen gefunden?', 'Mit einer starken Leistungsseite, die Bietigheim-Bissingen ehrlich als Einsatzgebiet nennt, steigen die Chancen. Dort ist die Konkurrenz größer, garantieren lässt sich eine Platzierung nicht.'],
+    ],
+  },
+  {
+    slug: 'steinheim-an-der-murr', name: 'Steinheim an der Murr', short: 'Steinheim', zip: '71711', km: 11.3, min: 14, roads: ['L 1124', 'L 1100', 'L 1126'],
+    lat: 48.9651, lon: 9.2792, dest: 'Rathaus Steinheim an der Murr',
+    title: 'Webdesign Steinheim an der Murr – Website & SEO | Niktos',
+    description: 'Webdesign für Steinheim an der Murr, Kleinbottwar und Höpfigheim: Websites, die Google eindeutig zuordnet, mit lokalem SEO. Rund 14 Minuten von Niktos.',
+    lead: 'Steinheim gibt es in Deutschland mehrfach, Steinheim an der Murr nur einmal. Ich baue Websites für Betriebe aus Steinheim, Kleinbottwar und Höpfigheim, die genau so gefunden werden. Fahrzeit von mir: rund 14 Minuten.',
+    intro: [
+      'Steinheim an der Murr ist bekannt für den Schädel des „Steinheimer Urmenschen“, der hier 1933 gefunden wurde und im Urmensch-Museum zu sehen ist. Zur Stadt gehören Kleinbottwar und Höpfigheim, das Bottwartal mit seinen Weinbergen beginnt direkt nebenan. Wirtschaftlich prägen Handwerk, Gewerbe und Dienstleister die Stadt, viele davon familiengeführt.',
+      'Bei Google konkurriert der Ortsname mit Steinheim in Westfalen, Steinheim am Albuch und weiteren Orten. Betriebe, die nur „Steinheim“ schreiben, werden leicht falsch zugeordnet. Mit dem vollen Namen und klaren Daten ist das Problem lösbar.',
+    ],
+    branchen: [
+      ['Familienbetriebe im Handwerk', 'Leistungsseiten, Fotos echter Arbeiten und ein Einsatzgebiet, das Murr, Marbach, Großbottwar und Benningen ehrlich nennt.'],
+      ['Weinbau im Bottwartal', 'Weinliste, Verkaufszeiten und Veranstaltungen mit Fotos aus den eigenen Weinbergen.'],
+      ['Freizeit & Kultur', 'Angebote, Öffnungszeiten und Anfahrt so beschreiben, dass Besucher von außerhalb sofort Bescheid wissen.'],
+      ['Museum, Kultur & Führungen', 'Besucher des Urmensch-Museums planen ihren Ausflug online. Wer Führungen, Kurse oder Gastronomie in der Nähe anbietet, gehört mit Zeiten und Anfahrt sichtbar ins Netz.'],
+    ],
+    tips: [
+      ['Immer „an der Murr“', 'Schreiben Sie „Steinheim an der Murr“ mit PLZ 71711 in Titel, Adresse und Google-Profil. Die Kurzform „Steinheim“ gehört nur in den Fließtext.'],
+      ['Ortsteile ausschreiben', 'Wer in Kleinbottwar oder Höpfigheim sitzt, nennt das in der Adresse. Auch danach wird gesucht.'],
+      ['Bottwartal als Region', 'Für Wein und Ausflüge ist „Bottwartal“ ein gesuchter Begriff. Wo es passt, gehört er in den Text.'],
+    ],
+    faq: [
+      ['Warum werde ich bei „Steinheim“ nicht gefunden?', 'Weil Google mehrere Orte mit diesem Namen kennt. Mit „Steinheim an der Murr“, Postleitzahl und einheitlichen Firmendaten auf Website, Profil und in Verzeichnissen wird die Zuordnung eindeutig.'],
+      ['Können Sie auch eine bestehende Website verbessern statt neu bauen?', `Ja. Am Anfang steht der <a href="/website-check/">Website-Check</a> für ${site.checkPrice} € mit klarer Liste, was fehlt. Danach entscheiden Sie, ob verbessert oder neu gebaut wird.`],
+    ],
+  },
+  {
+    slug: 'affalterbach', name: 'Affalterbach', zip: '71563', km: 12.1, min: 16, roads: ['L 1124', 'L 1100', 'L 1127'],
+    lat: 48.9225, lon: 9.3222, dest: 'Rathaus Affalterbach',
+    title: 'Webdesign Affalterbach – Websites & lokales SEO | Niktos',
+    description: 'Webdesign für Affalterbach: Websites für Zulieferer, Handwerk und Dienstleister am Ostrand des Landkreises Ludwigsburg, mit lokalem SEO. 16 Minuten von Niktos.',
+    lead: 'Affalterbach ist klein, aber weltbekannt, weil ein großer Sportwagenhersteller hier sitzt. Für die Betriebe im Ort heißt das: hohe Ansprüche der Kunden und viel Konkurrenz um Fachkräfte. Ich baue Websites, die beidem gerecht werden.',
+    intro: [
+      'In Affalterbach hat Mercedes-AMG seinen Sitz. Rund um so einen Standort arbeiten Zulieferer, technische Dienstleister, Werkstätten und Handwerk. Gleichzeitig ist Affalterbach eine Gemeinde mit dörflichem Kern, Wohngebieten und Betrieben für den Alltag der Menschen vor Ort, am Ostrand des Landkreises zum Rems-Murr-Kreis hin.',
+      'Für kleinere Firmen bedeutet das: Geschäftskunden erwarten einen präzisen, technisch sauberen Auftritt. Und Bewerber vergleichen Ihren Betrieb mit großen Arbeitgebern in direkter Nähe. Eine gute Website ist hier Vertriebs- und Recruiting-Werkzeug zugleich.',
+    ],
+    branchen: [
+      ['Zulieferer & Technik', 'Leistungen, Fertigungsmöglichkeiten, Qualitätsnachweise und Ansprechpartner. Klare Fakten statt Werbesprüche, auf Wunsch mit englischer Kurzfassung.'],
+      ['Werkstätten & Fahrzeugtechnik', 'Leistungen mit Beispielen, Fotos aus der eigenen Werkstatt und eine einfache Terminanfrage.'],
+      ['Handwerk & Dienstleister', 'Ein Einsatzgebiet von Affalterbach bis Marbach, Erdmannhausen und Winnenden, Leistungsseiten und WhatsApp-Kontakt.'],
+    ],
+    tips: [
+      ['Karriere-Seite einplanen', 'Wer Fachkräfte sucht, braucht eine echte Seite mit Team, Aufgaben und einfachem Bewerbungsweg. Sie wird bei Google gefunden und kostet keine Anzeigengebühr.'],
+      ['Über die Kreisgrenze denken', 'Winnenden und Backnang im Rems-Murr-Kreis liegen nah. Wer dort Kunden hat, nennt das ausdrücklich.'],
+      ['Qualität zeigen', 'Bei technisch anspruchsvollen Kunden wirken saubere Fotos, präzise Texte und eine schnelle Website stärker als jede Behauptung.'],
+    ],
+    faq: [
+      ['Lohnt sich SEO für einen Zulieferer in Affalterbach?', 'Ja, wenn Geschäftskunden Sie über Google finden sollen, etwa bei Suchen nach einer bestimmten Fertigung in der Region. Eine Seite pro Leistung mit klaren Fakten ist dafür die Grundlage.'],
+      ['Kann die Website auf Deutsch und Englisch sein?', 'Ja. Oft reicht eine englische Kurzfassung der wichtigsten Seiten. Den Umfang klären wir vorher, der Preis steht fest.'],
+    ],
+  },
+  {
+    slug: 'sachsenheim', name: 'Sachsenheim', zip: '74343', km: 14.8, min: 21, roads: ['L 1124', 'B 27', 'L 1125'],
+    lat: 48.9597, lon: 9.0655, dest: 'Rathaus Sachsenheim',
+    title: 'Webdesign Sachsenheim – Websites & lokales SEO | Niktos',
+    description: 'Webdesign für Sachsenheim: Websites für Betriebe in Groß- und Kleinsachsenheim, Hohenhaslach, Ochsenbach, Spielberg und Häfnerhaslach. Mit lokalem SEO.',
+    lead: 'Sachsenheim besteht aus sechs Stadtteilen, vom Wasserschloss in Großsachsenheim bis zu den Weinorten am Stromberg. Ich baue Websites für Sachsenheimer Betriebe, die in allen Teilen gefunden werden. Von mir aus sind es rund 21 Minuten.',
+    intro: [
+      'Zu Sachsenheim gehören Großsachsenheim mit dem Wasserschloss, Kleinsachsenheim, Hohenhaslach, Ochsenbach, Spielberg und Häfnerhaslach. Im Süden ist die Stadt eher gewerblich und gut an die B 27 angebunden, im Norden ländlich mit Weinbau am Rand des Strombergs. Entsprechend breit ist das Spektrum: Handwerk, Gewerbe, Weingüter, Gastronomie und Dienstleister.',
+      'Viele Kunden suchen nach dem Stadtteil, nicht nach Sachsenheim. Wer in Hohenhaslach sitzt, wird bei „Weingut Hohenhaslach“ eher gefunden als bei „Weingut Sachsenheim“. Die Website sollte beides sauber abdecken.',
+    ],
+    branchen: [
+      ['Weingüter am Stromberg', 'Weinliste, Verkaufszeiten, Weinproben und Feste, mit Fotos aus den eigenen Lagen und Anfahrt für Ausflügler.'],
+      ['Gewerbe & Handwerk', 'Leistungsseiten, Referenzfotos und ein Einsatzgebiet von Sachsenheim bis Bietigheim-Bissingen und Vaihingen an der Enz.'],
+      ['Gastronomie & Ausflugsziele', 'Speisekarte als Text, Öffnungszeiten und Lage, dazu ein Google-Profil mit aktuellen Fotos.'],
+      ['Hofläden & Direktvermarkter', 'In den ländlichen Stadtteilen verkaufen Betriebe direkt ab Hof. Aktuelles Angebot, Öffnungszeiten und Anfahrt über Feldwege müssen auf einen Blick klar sein.'],
+    ],
+    tips: [
+      ['Stadtteil in die Adresse', 'Nennen Sie Ihren Stadtteil in Adresse, Google-Profil und Text. Danach wird im Alltag gesucht.'],
+      ['Stromberg als Region', 'Für Wein, Wandern und Ausflüge ist „Stromberg“ ein gesuchter Begriff. Wo er passt, gehört er auf die Seite.'],
+      ['Zwei Zielgruppen trennen', 'Gäste und Geschäftskunden brauchen verschiedene Infos. Eigene Seiten pro Zielgruppe machen die Website übersichtlicher.'],
+    ],
+    faq: [
+      ['Soll ich „Sachsenheim“ oder meinen Stadtteil auf die Website schreiben?', 'Beides: den Stadtteil in Adresse und Text, „Sachsenheim“ ebenfalls, weil Google und Ortsfremde den Stadtnamen kennen. Einheitlich auf Website, Profil und in Verzeichnissen.'],
+      ['Kommen Sie für Fotos auch nach Sachsenheim?', 'Für ein Erstgespräch gern. Für die Fotos selbst sind gute eigene Bilder oder ein Fotograf aus der Region am besten. Ich sage Ihnen vorher genau, welche Motive die Website braucht.'],
+    ],
+  },
+  {
+    slug: 'schwieberdingen', name: 'Schwieberdingen', zip: '71701', km: 15.2, min: 18, roads: ['L 1124', 'B 27', 'A 81', 'L 1140'],
+    lat: 48.8759, lon: 9.0731, dest: 'Rathaus Schwieberdingen',
+    title: 'Webdesign Schwieberdingen – Websites & SEO | Niktos',
+    description: 'Webdesign für Schwieberdingen im Strohgäu: Websites für Handwerk, Technik-Dienstleister und Praxen, mit lokalem SEO. Rund 18 Minuten von Niktos in Ludwigsburg.',
+    lead: 'Schwieberdingen liegt im Strohgäu an der Glems, mit einem großen Industriestandort direkt am Ort. Ich baue Websites für Schwieberdinger Betriebe, die bei Privat- und Geschäftskunden überzeugen.',
+    intro: [
+      'Schwieberdingen bildet mit Hemmingen einen Gemeindeverwaltungsverband und ist Teil des Strohgäus. Bosch betreibt hier einen großen Standort, rund herum arbeiten technische Dienstleister, Handwerk und Gewerbe. Im Ortskern rund um das Schloss sitzen Läden, Praxen und Gastronomie für die Menschen vor Ort.',
+      'Dadurch gibt es zwei Arten von Kunden: Privatleute aus Schwieberdingen, Hemmingen und Markgröningen, die einen Handwerker oder eine Praxis suchen, und Geschäftskunden, die einen verlässlichen Partner in der Nähe brauchen. Beide wollen auf der Website schnell das Richtige finden.',
+    ],
+    branchen: [
+      ['Technische Dienstleister', 'Leistungen, Kapazitäten, Ansprechpartner und eine englische Kurzfassung, wenn internationale Kunden dabei sind.'],
+      ['Handwerk', 'Leistungsseiten mit Fotos aus dem Strohgäu und ein Einsatzgebiet, das Hemmingen, Möglingen und Markgröningen nennt.'],
+      ['Praxen & Läden im Ortskern', 'Öffnungszeiten, Leistungen und Anfahrt, mobil in wenigen Sekunden erfassbar.'],
+      ['Gastronomie rund ums Schloss', 'Mittagstisch für Beschäftigte aus dem Industriegebiet, abends Gäste aus dem Ort: zwei Speisekarten, zwei Zielgruppen, beide brauchen aktuelle Zeiten.'],
+    ],
+    tips: [
+      ['Strohgäu nutzen', 'Viele suchen nach der Region statt nach dem Ort. Erwähnen Sie das Strohgäu dort, wo es inhaltlich passt.'],
+      ['Hemmingen mitnehmen', 'Die Nachbargemeinde ist eng verbunden. Wer dort Kunden hat, nennt das mit einem echten Bezug.'],
+      ['Bewerber ansprechen', 'Wer neben großen Arbeitgebern Personal sucht, braucht eine ehrliche Karriere-Seite mit Team und einfachem Bewerbungsweg.'],
+    ],
+    faq: [
+      ['Brauche ich eine eigene Seite für Hemmingen?', 'Nur, wenn Sie dort wirklich etwas Eigenes anbieten oder viele Kunden haben und das konkret beschreiben können. Sonst reicht es, Hemmingen auf Ihren Leistungsseiten ehrlich als Einsatzgebiet zu nennen.'],
+      ['Wie lange dauert eine neue Website?', 'Eine kompakte Website ist in etwa einer Woche fertig, eine größere SEO-Website in etwa zwei Wochen, sobald Texte und Bilder abgestimmt sind.'],
+    ],
+  },
+  {
+    slug: 'gerlingen', name: 'Gerlingen', zip: '70839', km: 21.6, min: 22, roads: ['L 1124', 'B 27', 'A 81', 'L 1141'],
+    lat: 48.7984, lon: 9.0619, dest: 'Rathaus Gerlingen',
+    title: 'Webdesign Gerlingen – Websites & lokales SEO | Niktos',
+    description: 'Webdesign für Gerlingen am Stuttgarter Stadtrand: Websites für Praxen, Dienstleister und Handwerk mit lokalem SEO. Rund 22 Minuten von Niktos über die A 81.',
+    lead: 'Gerlingen grenzt direkt an Stuttgart und ist Sitz eines der größten Konzerne der Region. Für kleine Betriebe hier heißt das: anspruchsvolle Kunden und eine starke Konkurrenz aus der Großstadt. Ich baue Websites, die sich dagegen behaupten.',
+    intro: [
+      'Auf der Schillerhöhe in Gerlingen hat Bosch seine Konzernzentrale. Gleichzeitig ist Gerlingen eine Wohnstadt am Rand von Stuttgart, mit Altstadt, Wald und Blick über das Strohgäu. Viele Einwohner arbeiten in Stuttgart oder bei den großen Arbeitgebern der Umgebung und erwarten einen professionellen Auftritt, auch vom Handwerker oder der Praxis um die Ecke.',
+      'Bei der Suche konkurrieren Gerlinger Betriebe oft mit Anbietern aus Stuttgart-Weilimdorf, Feuerbach und Leonberg. Wer seine Leistungen klar beschreibt und Gerlingen ehrlich in den Mittelpunkt stellt, hat bei lokalen Suchen trotzdem gute Chancen.',
+    ],
+    branchen: [
+      ['Praxen & Therapie', 'Ruhige, gut lesbare Seiten mit Leistungen, Sprechzeiten und Online-Kontakt. Patienten vergleichen hier genau.'],
+      ['Beratung & Dienstleistung', 'Steuerberater, Coaches, Versicherungen: Foto, Werdegang, klare Leistungen und ein einfacher Weg zum Erstgespräch.'],
+      ['Handwerk', 'Hochwertige Fotos echter Projekte, Leistungsseiten und ein Einsatzgebiet bis Stuttgart-West und Leonberg.'],
+    ],
+    tips: [
+      ['Gegen Stuttgart bestehen', 'Bei Suchen mit „Gerlingen“ sind Sie im Vorteil, wenn Ort und Leistung klar auf Ihrer Seite stehen. Allgemeine Startseiten verlieren gegen gezielte Leistungsseiten.'],
+      ['Professionell wirken', 'Ein anspruchsvolles Publikum merkt sofort, ob eine Website gepflegt ist. Aktuelle Fotos, saubere Texte und schnelle Ladezeit sind hier Pflicht.'],
+      ['Bewertungen sammeln', 'Echte Google-Bewertungen entscheiden mit, wer in der Karte oben steht. Fragen Sie nach jedem guten Auftrag direkt mit Link.'],
+    ],
+    faq: [
+      ['Kann ich als Betrieb in Gerlingen auch in Stuttgart gefunden werden?', 'Für Suchen in angrenzenden Stadtteilen wie Weilimdorf ist das realistisch, wenn Sie dort arbeiten und das konkret beschreiben. Für „Stuttgart“ allgemein ist die Konkurrenz sehr groß, da sind Leistungsseiten und Bewertungen entscheidend.'],
+      ['Ist der Weg von Ludwigsburg nach Gerlingen ein Problem?', 'Nein. Über die A 81 sind es rund 22 Minuten ohne Stau. Viele Abstimmungen laufen ohnehin per Video-Call oder WhatsApp.'],
+    ],
+  },
+  {
+    slug: 'vaihingen-an-der-enz', name: 'Vaihingen an der Enz', short: 'Vaihingen/Enz', zip: '71665', km: 28.1, min: 30, roads: ['L 1124', 'B 27', 'A 81', 'B 10'],
+    lat: 48.9322, lon: 8.9562, dest: 'Rathaus Vaihingen an der Enz',
+    title: 'Webdesign Vaihingen an der Enz – Website & SEO | Niktos',
+    description: 'Webdesign für Vaihingen an der Enz und seine Stadtteile: Websites, die Google nicht mit Stuttgart-Vaihingen verwechselt. Mit lokalem SEO, 30 Minuten von Niktos.',
+    lead: 'Vaihingen an der Enz hat ein besonderes Problem bei Google: Stuttgart-Vaihingen ist größer und taucht oft zuerst auf. Ich baue Websites für Betriebe aus Vaihingen an der Enz, die eindeutig dem richtigen Ort zugeordnet werden.',
+    intro: [
+      'Vaihingen an der Enz ist flächenmäßig eine der größten Städte im Landkreis Ludwigsburg, mit Altstadt an der Enz, Schloss Kaltenstein über der Stadt und vielen Stadtteilen wie Enzweihingen, Ensingen, Horrheim, Kleinglattbach, Roßwag, Gündelbach, Riet und Aurich. Weinbau, Handwerk, Gewerbe und Handel sind gleichermaßen vertreten.',
+      'Wer „Elektriker Vaihingen“ sucht, bekommt häufig Ergebnisse aus Stuttgart-Vaihingen. Betriebe aus Vaihingen an der Enz müssen deshalb sehr genau sein: voller Ortsname, Postleitzahl und Stadtteil, überall gleich geschrieben.',
+    ],
+    branchen: [
+      ['Handwerk in den Stadtteilen', 'Leistungsseiten, Fotos aus der Region und ein Einsatzgebiet mit den Stadtteilen und Nachbarorten wie Sachsenheim, Oberriexingen und Illingen.'],
+      ['Weinbau an der Enz', 'Weinliste, Verkaufszeiten und Veranstaltungen, mit Bildern aus den Steillagen und Anfahrt für Gäste.'],
+      ['Handel & Dienstleister in der Altstadt', 'Öffnungszeiten, Angebot und Lage, dazu ein Google-Profil, das mit der Website übereinstimmt.'],
+      ['Ausflugsziele an der Enz', 'Roßwag mit seinen Weinbergterrassen und die Altstadt unter Schloss Kaltenstein ziehen Wanderer und Radfahrer an. Gastgeber brauchen Anfahrt, Zeiten und Fotos, die Lust machen.'],
+    ],
+    tips: [
+      ['Nie nur „Vaihingen“', 'Schreiben Sie in Titel, Adresse und Google-Profil immer „Vaihingen an der Enz“ (oder „Vaihingen/Enz“) mit PLZ. Sonst landen Ihre Suchen leicht in Stuttgart.'],
+      ['Stadtteile nennen', 'Viele suchen nach Horrheim, Enzweihingen oder Kleinglattbach. Ihr Stadtteil gehört in die Adresse, die anderen dorthin, wo es echten Bezug gibt.'],
+      ['Strukturierte Daten', 'Mit Postleitzahl und Koordinaten im schema.org-Code bekommt Google die Lage eindeutig. Bei Niktos ist das Standard.'],
+    ],
+    faq: [
+      ['Warum zeigt Google bei meinem Betrieb Stuttgart-Vaihingen an?', 'Weil „Vaihingen“ allein mehrdeutig ist und Stuttgart-Vaihingen mehr Suchanfragen hat. Mit vollem Ortsnamen, Postleitzahl und einheitlichen Firmendaten auf Website, Profil und in Verzeichnissen wird die Zuordnung klar.'],
+      ['Ist Vaihingen an der Enz nicht zu weit weg von Ludwigsburg?', 'Nein. Es sind rund 30 Minuten ohne Stau. Für das Erstgespräch komme ich gern vorbei, danach läuft vieles per Video-Call und WhatsApp.'],
+    ],
+  },
+  {
+    slug: 'stuttgart-zuffenhausen', name: 'Stuttgart-Zuffenhausen', short: 'Zuffenhausen', zip: '70435', km: 9.8, min: 14, roads: ['L 1124', 'Stuttgarter Straße', 'Ludwigsburger Straße'],
+    lat: 48.8312, lon: 9.1750, dest: 'Bezirksrathaus Zuffenhausen',
+    title: 'Webdesign Stuttgart-Zuffenhausen – Website & SEO | Niktos',
+    description: 'Webdesign für Zuffenhausen, Rot und Neuwirtshaus: Websites, die im Stuttgarter Norden gefunden werden, mit lokalem SEO. Rund 14 Minuten von Niktos.',
+    lead: 'Zuffenhausen ist der Stuttgarter Stadtbezirk, der am nächsten an Ludwigsburg liegt. Ich baue Websites für Betriebe aus Zuffenhausen, die im Stuttgarter Norden gefunden werden, statt in der ganzen Großstadt unterzugehen.',
+    intro: [
+      'Zuffenhausen ist Industriestadtteil und Wohnbezirk zugleich. Porsche hat hier seinen Stammsitz, um den Porscheplatz und entlang der Ludwigsburger Straße arbeiten Werkstätten, Handwerk und Gewerbe. Zum Bezirk gehören auch Rot und Neuwirtshaus, und mit S-Bahn und Stadtbahn ist man schnell in der Innenstadt oder in Kornwestheim.',
+      'Für die Suche ist die Lage Vorteil und Nachteil: Wer „Stuttgart“ eintippt, bekommt hunderte Anbieter. Wer „Zuffenhausen“ eintippt, nur eine Handvoll. Betriebe, die ihren Stadtbezirk klar nennen, haben bei diesen genaueren Suchen deutlich bessere Chancen.',
+    ],
+    branchen: [
+      ['Kfz & Werkstätten', 'Leistungen, Preise oder Preisrahmen, Öffnungszeiten und Terminanfrage. Dazu ein Google-Profil, das zur Website passt.'],
+      ['Handwerk', 'Einsatzgebiet mit Zuffenhausen, Stammheim, Feuerbach und Kornwestheim, Fotos echter Projekte und Anfragen per WhatsApp.'],
+      ['Läden, Gastronomie & Praxen', 'Öffnungszeiten, Angebot und Anfahrt mit S-Bahn oder Stadtbahn, mobil schnell erfassbar.'],
+      ['Gastronomie & Mittagstisch', 'Tausende Beschäftigte der großen Arbeitgeber im Bezirk suchen mittags schnell etwas in der Nähe. Mittagskarte, Zeiten und Abholung gehören tagesaktuell ins Netz.'],
+    ],
+    tips: [
+      ['Stadtbezirk statt Großstadt', 'Nennen Sie „Stuttgart-Zuffenhausen“ in Titel und Adresse. Für „Stuttgart“ allein ist die Konkurrenz riesig, für den Bezirk gut machbar.'],
+      ['Rot und Neuwirtshaus', 'Wer dort sitzt, schreibt den Stadtteil in die Adresse. Auch danach wird gesucht.'],
+      ['Landkreis mitnehmen', 'Kornwestheim und Ludwigsburg liegen nah. Wer dort Kunden hat, nennt das ehrlich und bekommt so auch Suchen über die Stadtgrenze.'],
+    ],
+    faq: [
+      ['Lohnt sich lokales SEO in einem Stuttgarter Stadtbezirk?', 'Ja. Viele suchen gezielt nach ihrem Bezirk, etwa „Friseur Zuffenhausen“. Dort ist die Konkurrenz viel kleiner als bei „Friseur Stuttgart“. Eine klare Website und ein gepflegtes Google-Profil sind die Grundlage.'],
+      ['Betreuen Sie auch Kunden in Stuttgart, obwohl Sie in Ludwigsburg sitzen?', 'Ja. Zuffenhausen liegt näher an meinem Standort als manche Orte im Landkreis, rund 14 Minuten ohne Stau.'],
+    ],
+  },
+  {
+    slug: 'stuttgart-stammheim', name: 'Stuttgart-Stammheim', short: 'Stammheim', zip: '70439', km: 10.3, min: 14, roads: ['L 1124', 'Stuttgarter Straße', 'B 27'],
+    lat: 48.8490, lon: 9.1568, dest: 'Bezirksrathaus Stammheim',
+    title: 'Webdesign Stuttgart-Stammheim – Website & SEO | Niktos',
+    description: 'Webdesign für Stuttgart-Stammheim: Websites für Handwerk, Praxen und kleine Betriebe an der Grenze zu Kornwestheim, mit lokalem SEO. 14 Minuten von Niktos.',
+    lead: 'Stammheim ist der nördlichste Stadtbezirk Stuttgarts und grenzt direkt an Kornwestheim. Ich baue Websites für Stammheimer Betriebe, die auf beiden Seiten der Stadtgrenze gefunden werden.',
+    intro: [
+      'Stammheim ist ein ruhiger Stadtbezirk mit altem Ortskern, Wohngebieten und Feldern Richtung Kornwestheim. Die Stadtbahn U15 endet hier und verbindet Stammheim mit Zuffenhausen und der Innenstadt. Die Betriebe sind meist klein: Handwerk, Praxen, Läden, Dienstleister, die ihre Kunden in Stammheim, Zuffenhausen und Kornwestheim haben.',
+      'Gesucht wird oft mit dem Bezirk („Physiotherapie Stammheim“) oder mit dem Nachbarort. Weil es auch andere Orte namens Stammheim gibt, sollte auf der Website immer „Stuttgart-Stammheim“ stehen.',
+    ],
+    branchen: [
+      ['Handwerk', 'Leistungen, Fotos und ein Einsatzgebiet, das Stammheim, Zuffenhausen, Kornwestheim und Ludwigsburg ehrlich nennt.'],
+      ['Praxen & Therapie', 'Sprechzeiten, Leistungen in klarer Sprache und Anfahrt mit der U15.'],
+      ['Läden & Dienstleister', 'Öffnungszeiten und Angebot als Text, dazu ein Google-Profil mit Fotos.'],
+      ['Vereine & Kinderangebote', 'Sportverein, Musikschule, Nachhilfe: Eltern in Stammheim suchen kurze Wege. Zeiten, Kosten und Anmeldung gehören übersichtlich auf eine Seite.'],
+    ],
+    tips: [
+      ['„Stuttgart-Stammheim“ schreiben', 'Stammheim gibt es mehrfach. Der volle Name mit PLZ in Titel, Adresse und Google-Profil sorgt für die richtige Zuordnung.'],
+      ['Kornwestheim mitdenken', 'Viele Kunden wohnen auf der anderen Seite der Stadtgrenze. Wer dort arbeitet, nennt Kornwestheim mit einem echten Bezug.'],
+      ['Kurz und klar', 'Für kleine Betriebe reicht oft ein kompakter Auftritt mit wenigen Seiten. Wichtig ist, dass alles stimmt und schnell lädt.'],
+    ],
+    faq: [
+      ['Werde ich als Betrieb in Stammheim auch in Kornwestheim gefunden?', 'Wenn Sie dort arbeiten und das auf der Website konkret beschreiben, steigen die Chancen deutlich. Eine Platzierung garantieren kann niemand, aber die Nähe spielt bei lokalen Suchen eine große Rolle.'],
+      ['Was kostet eine kleine Website für meinen Betrieb in Stammheim?', `Eine kompakte Website mit bis zu 3 Seiten startet bei ${euro(site.packages[0].price)} (Paket Launch). Alle Pakete stehen auf der Seite <a href="/preise/">Preise</a>.`],
+    ],
+  },
+  {
+    slug: 'stuttgart-feuerbach', name: 'Stuttgart-Feuerbach', short: 'Feuerbach', zip: '70469', km: 13.1, min: 18, roads: ['L 1124', 'Stuttgarter Straße', 'Borsigstraße'],
+    lat: 48.8121, lon: 9.1592, dest: 'Bezirksrathaus Feuerbach',
+    title: 'Webdesign Stuttgart-Feuerbach – Website & SEO | Niktos',
+    description: 'Webdesign für Stuttgart-Feuerbach: Websites für Handwerk, Gewerbe, Praxen und Gastronomie im Stuttgarter Norden, mit lokalem SEO. Rund 18 Minuten von Niktos.',
+    lead: 'Feuerbach ist Industrie- und Wohnbezirk zugleich, mit eigenem Zentrum rund um den Wilhelm-Geiger-Platz. Ich baue Websites für Feuerbacher Betriebe, die im Bezirk und im Stuttgarter Norden gefunden werden.',
+    intro: [
+      'Feuerbach war lange eine eigene Industriestadt, bevor es zu Stuttgart kam. Bosch hat hier einen seiner traditionsreichsten Standorte, dazu kommen viele Gewerbebetriebe, Handwerk und Dienstleister. Rund um den Wilhelm-Geiger-Platz und die Stuttgarter Straße gibt es Läden, Gastronomie und Praxen, S-Bahn und Stadtbahn halten im Bezirk.',
+      'Feuerbach hat damit ein eigenes Zentrum, und so wird auch gesucht: „Café Feuerbach“, „Zahnarzt Feuerbach“, „Schreinerei Feuerbach“. Betriebe, die den Bezirk klar nennen, stehen dort nicht gegen ganz Stuttgart, sondern gegen eine überschaubare Zahl von Mitbewerbern.',
+    ],
+    branchen: [
+      ['Gewerbe & Technik', 'Leistungen, Referenzen und Ansprechpartner für Geschäftskunden, schnell erfassbar und technisch sauber.'],
+      ['Gastronomie & Cafés', 'Speisekarte als Text, Öffnungszeiten, Reservierung und ein Google-Profil mit aktuellen Fotos.'],
+      ['Praxen & Handwerk', 'Klare Leistungen, Anfahrt mit S-Bahn oder Stadtbahn und ein einfacher Kontaktweg, auch per WhatsApp.'],
+    ],
+    tips: [
+      ['Bezirk in den Titel', '„Stuttgart-Feuerbach“ gehört in Titel, Adresse und Google-Profil. Feuerbach allein ist auch ein Flussname.'],
+      ['Nachbarbezirke nennen', 'Weilimdorf, Zuffenhausen und der Killesberg liegen nah. Wer dort Kunden hat, nennt das mit echtem Bezug.'],
+      ['Mittagsgeschäft abbilden', 'Wer von Beschäftigten der Betriebe im Bezirk lebt, zeigt Mittagstisch und Öffnungszeiten tagesaktuell.'],
+    ],
+    faq: [
+      ['Wie stehe ich gegen Anbieter aus ganz Stuttgart?', 'Bei Suchen mit „Feuerbach“ deutlich besser als bei „Stuttgart“. Wer seinen Bezirk klar nennt, Leistungen einzeln beschreibt und echte Bewertungen sammelt, hat dort gute Chancen.'],
+      ['Können Sie auch Mittagskarte oder Aktionen laufend aktualisieren?', 'Ja. Mit dem Care-Paket schicken Sie mir Änderungen per WhatsApp und ich setze sie um. Für tägliche Wechsel legen wir einen festen Ablauf fest, zum Beispiel ein Foto der Mittagskarte per WhatsApp.'],
+    ],
+  },
+  {
+    slug: 'stuttgart-weilimdorf', name: 'Stuttgart-Weilimdorf', short: 'Weilimdorf', zip: '70499', km: 15.4, min: 21, roads: ['L 1124', 'Stuttgarter Straße', 'B 10'],
+    lat: 48.8139, lon: 9.1137, dest: 'Bezirksrathaus Weilimdorf',
+    title: 'Webdesign Stuttgart-Weilimdorf – Website & SEO | Niktos',
+    description: 'Webdesign für Weilimdorf, Bergheim, Giebel, Hausen und Wolfbusch: Websites mit lokalem SEO für den Stuttgarter Nordwesten. Rund 21 Minuten von Niktos.',
+    lead: 'Weilimdorf ist ein großer Stadtbezirk mit mehreren Stadtteilen und eigenem Zentrum am Löwen-Markt. Ich baue Websites für Betriebe aus Weilimdorf, die im Bezirk und in den Nachbarorten Korntal, Ditzingen und Gerlingen gefunden werden.',
+    intro: [
+      'Zu Weilimdorf gehören Bergheim, Giebel, Hausen und Wolfbusch. Im Zentrum rund um den Löwen-Markt sitzen Läden, Praxen und Gastronomie, im Gewerbegebiet Handwerk und Dienstleister. Der Bezirk grenzt an Korntal-Münchingen, Ditzingen und Gerlingen, viele Kunden pendeln täglich über die Stadtgrenze.',
+      'Für die Suche heißt das: Kunden suchen nach dem Stadtteil, nach Weilimdorf oder nach dem Nachbarort im Landkreis Ludwigsburg. Eine Website, die diese Orte ehrlich und konkret nennt, holt alle drei Arten von Suchen ab.',
+    ],
+    branchen: [
+      ['Läden & Praxen am Löwen-Markt', 'Öffnungszeiten, Leistungen und Lage, mit Google-Profil und Website, die exakt übereinstimmen.'],
+      ['Handwerk & Gewerbe', 'Leistungsseiten mit Fotos, Einsatzgebiet bis Korntal, Ditzingen und Gerlingen und Anfragen per WhatsApp.'],
+      ['Familien- & Freizeitangebote', 'Kurse, Zeiten und Anmeldung übersichtlich, damit Eltern sich am Handy schnell entscheiden können.'],
+      ['Pflege & Senioren', 'In einem großen Wohnbezirk suchen Angehörige oft dringend Hilfe. Leistungen, Einzugsgebiet nach Stadtteilen und ein direkter Rückruf sind hier wichtiger als Effekte.'],
+    ],
+    tips: [
+      ['Stadtteile in die Adresse', 'Bergheim, Giebel, Hausen und Wolfbusch werden einzeln gesucht. Nennen Sie Ihren Stadtteil sichtbar.'],
+      ['Über die Stadtgrenze', 'Korntal-Münchingen und Ditzingen liegen direkt nebenan. Wer dort arbeitet, schreibt es mit einem konkreten Beispiel.'],
+      ['Ein Name, überall gleich', 'Website, Google-Profil und Verzeichnisse brauchen exakt dieselbe Schreibweise von Name, Adresse und Telefon.'],
+    ],
+    faq: [
+      ['Gehört Weilimdorf für Google zu Stuttgart oder zum Strohgäu?', 'Verwaltungsmäßig zu Stuttgart. Viele Kunden denken aber in Nachbarschaften. Auf der Website können Sie beides abdecken, wenn Sie Stuttgart-Weilimdorf als Adresse und die Nachbarorte als echtes Einsatzgebiet nennen.'],
+      ['Kann ich meine Website später erweitern?', 'Ja. Viele starten kompakt und ergänzen später Leistungsseiten oder einen Blog. Das wird beim Aufbau gleich so angelegt.'],
+    ],
+  },
+  {
+    slug: 'waiblingen', name: 'Waiblingen', zip: '71332', km: 16.5, min: 22, roads: ['L 1124', 'L 1100', 'L 1142'],
+    lat: 48.8320, lon: 9.3171, dest: 'Rathaus Waiblingen',
+    title: 'Webdesign Waiblingen – Websites & lokales SEO | Niktos',
+    description: 'Webdesign für Waiblingen im Remstal: Websites für Handwerk, Handel, Praxen und Zulieferer, mit lokalem SEO im Rems-Murr-Kreis. Rund 22 Minuten von Niktos.',
+    lead: 'Waiblingen ist Kreisstadt des Rems-Murr-Kreises und liegt nur über den Neckar von Ludwigsburg entfernt. Ich baue Websites für Waiblinger Betriebe, die in der Stadt und im Remstal gefunden werden. Über Remseck sind es rund 22 Minuten.',
+    intro: [
+      'Waiblingen verbindet Fachwerk-Altstadt an der Rems mit einem starken Wirtschaftsstandort. Stihl hat hier seinen Hauptsitz, dazu kommen viele mittelständische Betriebe, Handel und Handwerk. Zur Stadt gehören unter anderem Neustadt, Hohenacker, Bittenfeld, Hegnach und Beinstein.',
+      'Als Kreisstadt ist Waiblingen auch ein Ziel für Kunden aus dem ganzen Remstal. Betriebe hier konkurrieren deshalb nicht nur mit Anbietern aus der Stadt, sondern aus Fellbach, Winnenden und Schorndorf. Eine klare Positionierung mit Leistung und Ort macht den Unterschied.',
+    ],
+    branchen: [
+      ['Mittelstand & Zulieferer', 'Leistungen, Referenzen, Karriere-Seite und Ansprechpartner. Geschäftskunden und Bewerber vergleichen genau.'],
+      ['Handel & Gastronomie in der Altstadt', 'Öffnungszeiten, Angebot und Lage an der Rems, dazu ein Google-Profil mit aktuellen Fotos.'],
+      ['Handwerk', 'Leistungsseiten mit Fotos aus dem Remstal und ein Einsatzgebiet, das die Stadtteile und Nachbarorte ehrlich nennt.'],
+      ['Ärzte & Therapeuten', 'Als Kreisstadt hat Waiblingen viele Fachpraxen mit Patienten aus dem ganzen Kreis. Anfahrt, Parken, Barrierefreiheit und klare Sprechzeiten entscheiden mit.'],
+    ],
+    tips: [
+      ['Remstal als Region', 'Viele suchen nach dem Remstal statt nach einzelnen Orten. Wo es passt, gehört der Begriff in den Text.'],
+      ['Stadtteile nennen', 'Wer in Hegnach, Bittenfeld oder Hohenacker sitzt, schreibt den Stadtteil in die Adresse. Auch danach wird gesucht.'],
+      ['Karriere mitdenken', 'Neben großen Arbeitgebern finden kleinere Betriebe Personal oft über eine gute eigene Karriere-Seite.'],
+    ],
+    faq: [
+      ['Arbeiten Sie auch im Rems-Murr-Kreis, obwohl Sie in Ludwigsburg sitzen?', 'Ja. Waiblingen ist über Remseck in rund 22 Minuten erreichbar. Erstgespräche führe ich gern vor Ort, danach läuft vieles per Video-Call und WhatsApp.'],
+      ['Wie hebe ich mich in Waiblingen von der Konkurrenz ab?', 'Mit einer eigenen Seite pro Leistung, echten Fotos statt Stockbildern, echten Bewertungen und einer Website, die schnell lädt. Diese Grundlagen fehlen erstaunlich vielen Mitbewerbern.'],
+    ],
+  },
+  {
+    slug: 'fellbach', name: 'Fellbach', zip: '70734', km: 19.6, min: 24, roads: ['L 1124', 'L 1100', 'L 1197'],
+    lat: 48.8083, lon: 9.2759, dest: 'Rathaus Fellbach',
+    title: 'Webdesign Fellbach – Websites & lokales SEO | Niktos',
+    description: 'Webdesign für Fellbach, Schmiden und Oeffingen: Websites für Weingüter, Gastronomie, Handel und Handwerk, mit lokalem SEO. Rund 24 Minuten von Niktos.',
+    lead: 'Fellbach liegt am Kappelberg direkt an der Stuttgarter Stadtgrenze, zwischen Weinbergen und Gewerbegebieten. Ich baue Websites für Fellbacher Betriebe, die Kunden aus Fellbach, Stuttgart und dem Remstal erreichen.',
+    intro: [
+      'Fellbach ist Weinstadt und Wirtschaftsstandort. Am Kappelberg wachsen die Reben, im Herbst zieht der Fellbacher Herbst Besucher aus der ganzen Region an, die Schwabenlandhalle ist ein bekannter Veranstaltungsort. Dazu gehören die Stadtteile Schmiden und Oeffingen mit eigenem Gewerbe, Handel und Handwerk.',
+      'Fellbacher Betriebe stehen bei der Suche oft neben Anbietern aus Stuttgart-Bad Cannstatt und Waiblingen. Wer Fellbach, den Stadtteil und die eigene Leistung klar nennt, wird bei den genaueren Suchen bevorzugt.',
+    ],
+    branchen: [
+      ['Weingüter & Besen', 'Weinliste, Verkaufszeiten, Besenzeiten und Weinproben, mit Fotos vom Kappelberg und klarer Anfahrt.'],
+      ['Handel & Gastronomie', 'Öffnungszeiten, Angebot, Reservierung und Sonderzeiten zu Festen, abgestimmt mit dem Google-Profil.'],
+      ['Handwerk in Schmiden & Oeffingen', 'Leistungsseiten, Fotos echter Projekte und ein Einsatzgebiet bis Bad Cannstatt, Waiblingen und Remseck.'],
+      ['Veranstaltungen & Catering', 'Rund um Schwabenlandhalle und Feste gibt es Bedarf an Catering, Technik und Dekoration. Referenzfotos, Kapazitäten und ein Anfrageformular mit Datum und Gästezahl helfen.'],
+    ],
+    tips: [
+      ['Feste nutzen', 'Zum Fellbacher Herbst und anderen Veranstaltungen gehören Sonderöffnungszeiten und Aktionen rechtzeitig auf Website und Profil.'],
+      ['Stadtteil sichtbar machen', 'Schmiden und Oeffingen werden eigenständig gesucht. Wer dort sitzt, nennt das in Adresse und Text.'],
+      ['Gegen Stuttgart bestehen', 'Für „Stuttgart“ allgemein ist die Konkurrenz riesig. Mit „Fellbach“ plus Leistung sind Sie deutlich besser aufgestellt.'],
+    ],
+    faq: [
+      ['Wie werde ich bei „Besen Fellbach“ oder „Weinprobe Fellbach“ gefunden?', 'Mit eigenen Seiten zu Besen und Weinprobe (Zeiten, Preise, Anfahrt), einem gepflegten Google-Profil und echten Bewertungen. Ein Satz auf der Startseite reicht dafür selten.'],
+      ['Ist Fellbach nicht schon zu weit für persönliche Termine?', 'Nein. Über Remseck sind es rund 24 Minuten ohne Stau. Für das Erstgespräch komme ich gern zu Ihnen.'],
+    ],
+  },
+  {
+    slug: 'leonberg', name: 'Leonberg', zip: '71229', km: 24.3, min: 26, roads: ['L 1124', 'B 27', 'A 81'],
+    lat: 48.7984, lon: 9.0135, dest: 'Rathaus Leonberg',
+    title: 'Webdesign Leonberg – Websites & lokales SEO | Niktos',
+    description: 'Webdesign für Leonberg, Eltingen, Höfingen, Gebersheim und Warmbronn: Websites mit lokalem SEO für Betriebe am Autobahndreieck. Rund 26 Minuten von Niktos.',
+    lead: 'Leonberg liegt am Autobahndreieck von A 8 und A 81 und damit für Kunden aus vielen Richtungen günstig. Ich baue Websites für Leonberger Betriebe, die diese Lage nutzen. Von Ludwigsburg sind es rund 26 Minuten.',
+    intro: [
+      'Leonberg gehört zum Landkreis Böblingen und ist bekannt für seine Altstadt, den Pomeranzengarten, den traditionellen Pferdemarkt und die Hunderasse, die nach der Stadt benannt ist. Zur Stadt gehören Eltingen, Höfingen, Gebersheim und Warmbronn. Durch die Autobahnlage sind Gewerbe, Handel und Dienstleister stark vertreten.',
+      'Viele Leonberger Betriebe haben Kunden in Ditzingen, Gerlingen, Renningen und Rutesheim, also über Kreisgrenzen hinweg. Die Website sollte deshalb klar sagen, wo Sie sitzen und welche Orte Sie wirklich bedienen.',
+    ],
+    branchen: [
+      ['Gewerbe & Dienstleister', 'Leistungen, Referenzen, Ansprechpartner und Anfahrt von der Autobahn, für Geschäftskunden in wenigen Sekunden erfassbar.'],
+      ['Handwerk', 'Leistungsseiten mit Fotos, Einsatzgebiet in den Stadtteilen und Nachbarorten und eine schnelle Anfrage per WhatsApp.'],
+      ['Handel & Gastronomie in der Altstadt', 'Öffnungszeiten, Angebot, Sonderzeiten zum Pferdemarkt und ein passendes Google-Profil.'],
+      ['Logistik & Kurierdienste', 'Die Lage am Autobahndreieck zieht Lager und Kurierdienste an. Geschäftskunden wollen Einsatzradius, Fahrzeugtypen und Reaktionszeiten schnell sehen.'],
+    ],
+    tips: [
+      ['Stadtteile in die Adresse', 'Eltingen, Höfingen, Gebersheim und Warmbronn werden einzeln gesucht. Ihr Stadtteil gehört sichtbar auf die Seite.'],
+      ['Über Kreisgrenzen denken', 'Ditzingen und Gerlingen liegen im Landkreis Ludwigsburg, Renningen im Kreis Böblingen. Nennen Sie alle Orte, in denen Sie arbeiten, mit echtem Bezug.'],
+      ['Anfahrt erklären', 'Für Kunden von außerhalb ist eine Wegbeschreibung ab Autobahn mit Parkhinweis besonders hilfreich.'],
+    ],
+    faq: [
+      ['Betreuen Sie Leonberg, obwohl es im Kreis Böblingen liegt?', 'Ja. Über die A 81 sind es rund 26 Minuten ohne Stau. Das Erstgespräch kann bei Ihnen vor Ort stattfinden, danach läuft vieles per Video-Call und WhatsApp.'],
+      ['Soll ich für jeden Leonberger Stadtteil eine eigene Seite anlegen?', 'In der Regel nicht. Besser ist eine starke Seite pro Leistung, die die Stadtteile mit echtem Bezug nennt. Eigene Stadtteilseiten lohnen sich nur mit eigenem, konkretem Inhalt.'],
     ],
   },
 ];
