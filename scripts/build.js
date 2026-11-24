@@ -149,6 +149,7 @@ function footer(page) {
         <p class="footer__title">Mehr entdecken</p>
         <ul>
           <li><a href="/referenzen/">Referenzen</a></li>
+          <li><a href="/einsatzgebiet/">Einsatzgebiet</a></li>
           <li><a href="/ueber-mich/">Über mich</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/kontakt/">Kontakt</a></li>
@@ -167,7 +168,7 @@ function footer(page) {
         </address>
       </div>
     </div>
-    <p class="footer__towns"><strong style="color:#fff">Webdesign & SEO für:</strong> ${site.towns.join(' · ')} · Landkreis Ludwigsburg · Region Stuttgart · deutschlandweit</p>
+    <p class="footer__towns"><strong style="color:#fff">Webdesign & SEO für:</strong> ${site.towns.map((t) => { const s = TOWN_PAGES.find((x) => x.name === t); return t === 'Ludwigsburg' ? '<a href="/webdesign-ludwigsburg/">Ludwigsburg</a>' : s ? `<a href="/webdesign-${s.slug}/">${t}</a>` : t; }).join(' · ')} · <a href="/einsatzgebiet/">Landkreis Ludwigsburg</a> · Region Stuttgart · deutschlandweit</p>
     <div class="footer__bottom">
       <span>© <span id="year">${new Date().getFullYear()}</span> ${site.legalName}</span>
       <nav aria-label="Rechtliches"><a href="/impressum/">Impressum</a><a href="/datenschutzerklaerung/">Datenschutz</a><button type="button" class="linklike" data-consent-open>Cookie-Einstellungen</button></nav>
@@ -244,7 +245,8 @@ ${C.consent()}
 
 /* ---------- Build ---------- */
 const pageFiles = fs.readdirSync(path.join(ROOT, 'src/pages')).filter((f) => f.endsWith('.js'));
-const pages = pageFiles.map((f) => require(path.join(ROOT, 'src/pages', f)));
+const pages = pageFiles.flatMap((f) => [].concat(require(path.join(ROOT, 'src/pages', f)))); // a page module may export an array (Standortseiten)
+const TOWN_PAGES = require('../src/standorte');
 // Content images per page for the image sitemap (OG image first; avatar + process icons are decoration, left out).
 const pageImages = new Map();
 const SKIP_IMG = /\/assets\/img\/(nikola-planinic-avatar|webdesign-ablauf-)/;
@@ -338,7 +340,10 @@ ${site.packages.map((p) => `- ${p.name} – ab ${C.euro(p.price)} (${p.tag}; Ums
 ${site.projects.map((p) => `- ${p.name} (${p.branch}, ${p.place}): ${p.url} – ${p.text}`).join('\n')}
 
 ## Einsatzgebiet
-${site.towns.join(', ')}, Landkreis Ludwigsburg, Region Stuttgart sowie deutschlandweit (Remote).
+${site.towns.join(', ')}, Landkreis Ludwigsburg, Region Stuttgart sowie deutschlandweit (Remote). Übersicht: ${site.url}/einsatzgebiet/
+
+## Webdesign nach Ort (Anfahrt ab ${site.address.street}, Ludwigsburg)
+${TOWN_PAGES.map((t) => `- [Webdesign ${t.name}](${abs(`/webdesign-${t.slug}/`)}): ${t.km.toString().replace('.', ',')} km, ca. ${t.min} Minuten. ${t.description}`).join('\n')}
 
 ## Was Niktos auszeichnet
 - Ein fester, persönlicher Ansprechpartner (${site.owner}) statt wechselnder Agentur-Mitarbeiter
