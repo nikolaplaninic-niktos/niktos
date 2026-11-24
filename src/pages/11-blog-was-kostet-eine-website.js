@@ -5,6 +5,7 @@ const { icon } = C;
 const path = '/blog/was-kostet-eine-website/';
 const crumbs = [{ name: 'Startseite', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: 'Was kostet eine Website?', url: path }];
 const PUBLISHED = '2026-11-13';
+const MODIFIED = '2026-11-24';
 const H1 = 'Was kostet eine Website? Preise, laufende Kosten und worauf es ankommt';
 const [L, B, D] = site.packages;
 const eur = C.euro;
@@ -122,21 +123,21 @@ module.exports = {
   nav: 'blog',
   priority: 0.8,
   crumbs,
-  modified: PUBLISHED,
+  modified: MODIFIED,
   ogType: 'article',
   ogImage: '/assets/img/og-blog-was-kostet-eine-website.jpg',
   minutes,
-  title: 'Was kostet eine Website? Preise 2026 im Überblick | Niktos',
-  description: `Was kostet eine Website für Selbstständige und kleine Unternehmen? Festpreise von ${eur(L.price)} bis ${eur(D.price)}, laufende Kosten und worauf Sie achten sollten.`,
+  title: `Was kostet eine Website oder Homepage? Ab ${eur(L.price)} | Niktos`,
+  description: `Website- und Homepage-Kosten für Selbstständige und kleine Firmen: Festpreise von ${eur(L.price)} bis ${eur(D.price)}, laufend ab ${site.care.price} € im Monat. Mit Tipps für Angebote.`,
   head: `<meta property="article:published_time" content="${PUBLISHED}T09:00:00+01:00">
-<meta property="article:modified_time" content="${PUBLISHED}T09:00:00+01:00">
+<meta property="article:modified_time" content="${MODIFIED}T09:00:00+01:00">
 <meta property="article:author" content="${site.owner}">
 <meta property="article:section" content="Webdesign">`,
   schema: [FAQ.schema, {
     '@type': 'BlogPosting', '@id': site.url + path + '#article',
     headline: H1, description: 'Was eine Website für Selbstständige und kleine Unternehmen kostet: Preisfaktoren, einmalige und laufende Kosten, Paketpreise und worauf Sie bei Angeboten achten sollten.',
     image: { '@type': 'ImageObject', url: site.url + '/assets/img/og-blog-was-kostet-eine-website.jpg', width: 1200, height: 630 },
-    datePublished: PUBLISHED + 'T09:00:00+01:00', dateModified: PUBLISHED + 'T09:00:00+01:00',
+    datePublished: PUBLISHED + 'T09:00:00+01:00', dateModified: MODIFIED + 'T09:00:00+01:00',
     author: { '@id': site.url + '/#nikola-planinic' }, publisher: { '@id': site.url + '/#business' },
     mainEntityOfPage: { '@id': site.url + path + '#webpage' }, isPartOf: { '@id': site.url + '/blog/#blog' },
     inLanguage: 'de-DE', wordCount: words, timeRequired: `PT${minutes}M`,
