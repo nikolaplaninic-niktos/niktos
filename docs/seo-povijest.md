@@ -43,3 +43,12 @@
 - Još zatražiti (~10/dan), dan 2: marbach-am-neckar, ditzingen, vaihingen-an-der-enz, leonberg, fellbach, gerlingen, backnang, sachsenheim, stuttgart-zuffenhausen, stuttgart-feuerbach. Dan 3: stuttgart-weilimdorf, stuttgart-stammheim, tamm, moeglingen, markgroeningen, schwieberdingen, hemmingen, steinheim-an-der-murr, affalterbach, benningen-am-neckar. Dan 4: pleidelsheim, murr, erdmannhausen, ingersheim, boennigheim, kirchheim-am-neckar. (Nije obavezno – sitemap + interni linkovi ih ionako dovode; ručni zahtjev samo ubrzava.)
 - 25.11.: zatraženo indeksiranje za ditzingen (potvrđeno "Indeksiranje zatraženo"). Preskočeno jer već na Googleu: marbach-am-neckar, vaihingen-an-der-enz. Leonberg: GSC javio "Kvota je premašena" → zahtjev nije poslan, run zaustavljen. Nisu zatraženi ni provjereni (nakon kvote): fellbach, gerlingen, backnang, sachsenheim, stuttgart-zuffenhausen, stuttgart-feuerbach. Jučerašnje provjere (bez novog zahtjeva): /webdesign-stuttgart/ i /einsatzgebiet/ su već indeksirani.
 - Provjeriti indeksaciju i prve impresije za "webdesign <ort>" kod snapshota ~10.12.2026.
+
+## 28.11.2026 – Indeksacija gotova + provjera imenika
+- GSC URL Inspection API: **sve 35 Standortseiten + hub + sve glavne stranice su "Submitted and indexed"**. Ručni zahtjevi za gradove više nisu potrebni (dan 3/4 otpada).
+- Ponovno indeksiranje zatraženo (stranice promijenjene nakon zadnjeg crawla): /blog/was-kostet-eine-website/ (crawl 13.11., novi title 24.11.), /webdesign-ludwigsburg/, /seo-ludwigsburg/, /leistungen/, /preise/ (crawl 10.11., novi footer + Einsatzgebiet linkovi). Svih 5 "Indeksiranje zatraženo".
+- Google Maps javno: naziv **"Niktos"** (promjena vidljiva), 5,0 ★, 1 recenzija (Bojan Kabic), zadnja objava profila 12.11. → uvjet za Bing Places "Sync with Google" ispunjen.
+- Bing Maps "Niktos Ludwigsburg": još bez poslovne kartice.
+- Gelbe Seiten "Niktos" + Ludwigsburg: i dalje 0 Treffer (15 dana nakon potvrde 13.11.) → Nikola: provjeriti mail Verlaga ili nazvati podršku.
+- Das Örtliche "Niktos" Ludwigsburg: i dalje nema unosa → Nikola zove Verlag Karl Leitermeier (0711 66780, Auftrag 1581985).
+- Sljedeće: philippritschel.de provjera 4.12.; snapshot ~10.12.2026 (prve impresije "webdesign <ort>", CTR članka o cijenama).
